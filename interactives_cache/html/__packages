@@ -1,4 +1,3 @@
-tmap
 tidyverse
 ggplot2
 tibble
@@ -9,6 +8,7 @@ dplyr
 stringr
 forcats
 lubridate
+plotly
+tmap
 rnaturalearth
 sf
-plotly

@@ -103,7 +103,7 @@ To view all the layers first, use the function `st_layer()`:
 
 ```{r}
 
-st_layers('/Users/Yann/Downloads/WijkBuurtkaart_2024_v1/wijkenbuurten_2024_v1.gpkg')
+st_layers('WijkBuurtkaart_2024_v1/wijkenbuurten_2024_v1.gpkg')
 
 ```
 

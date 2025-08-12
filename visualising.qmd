@@ -190,7 +190,7 @@ ggplot() +
 
 ## Changing projection
 
-Add the correct string with `+proj=` to the `crs = ` argument in `st_transform()`:
+Add the correct string with `+proj=` to the `crs =` argument in `st_transform()`:
 
 ```{webr-r}
 
@@ -222,7 +222,6 @@ worldmap |>
 
 ```
 
-
 #### Angular conformity
 
 -   Used for navigation and meterology
@@ -234,11 +233,9 @@ worldmap |>
   geom_sf()
 ```
 
-
 #### Equal distance
 
 -   Used for navigation, seismic mapping
-
 
 ```{webr-r}
 worldmap |>
@@ -276,7 +273,7 @@ A geographic CRS uses longitude and latitude to describe a location on earth's s
 
 #### What does it mean for mapping
 
-Merging or mapping multiple datasets must all be in the same CRS. Sometimes this means setting or transforming the existing CRS. 
+Merging or mapping multiple datasets must all be in the same CRS. Sometimes this means setting or transforming the existing CRS.
 
 You can transform a map from one CRS to another using st_transform(). The following will change the CRS to British National Grid:
 
@@ -286,8 +283,6 @@ worldmap <- worldmap |>
   st_transform(crs = 27700)
 
 ```
-
-
 
 ## Exercises
 

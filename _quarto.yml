@@ -1,5 +1,6 @@
 project:
   type: book
+  output-dir: docs
 
 book:
   title: "Information Visualization and the Humanities: Course Book"
@@ -94,9 +95,9 @@ book:
     - extra_exercises.qmd
     - data.qmd
     - final_project.qmd
-    - mcpherson_final_project.qmd
-    - Hogewoning_FinalProject.qmd
-    - Polakowska-FinalProject.qmd
+  #  - mcpherson_final_project.qmd
+ #   - Hogewoning_FinalProject.qmd
+  #  - Polakowska-FinalProject.qmd
       
 
 
@@ -119,4 +120,6 @@ editor: visual
 
 execute:
   cache: true
+
+  
 
