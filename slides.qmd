@@ -1,0 +1,475 @@
+---
+title: "Week 3 Infovis"
+format: revealjs
+filters:
+  - webr
+---
+
+## While you're waiting...
+
+-   Visit posit.cloud and sign up for a free account.
+
+## Data critiques
+
+![](Screenshot%202024-09-23%20at%2012.39.30.png)
+
+## Data critiques
+
+![](Screenshot%202024-09-23%20at%2012.41.27.png)
+
+## Class Objectives
+
+-   Get used to the environment we'll use for creating the visualisations for this course.
+-   Understand the very basics of how R works: arithmetic and vectors
+-   Know how to use Posit cloud and RStudio to submit assignments
+
+## Grading
+
+-   Data critique assignment (10%)
+-   Weekly exercises (10% in total, any submission gets full marks)
+-   Data visualisation assignment (10%)
+-   Map visualisation assignment (10%)
+-   Class participation (10%)
+-   Peer feedback (10%)
+-   Final project (40%)
+
+## Post-its
+
+-   Green: I've finished
+
+-   Orange: I'd like help
+
+## Working with structured data
+
+-   Structured data is data in rows and columns (a bit simplified but will do as a definition for this course)
+-   Most data except language and images
+-   Used in the humanities: cultural metadata (e.g. information about archives or collections), historical databases, social data
+
+## Why code/R?
+
+-   Fast (process millions of records in an instant)
+-   Reproducible (scientifically sound)
+-   Really good transferable skill
+-   Extendable: packages for getting datasets, doing advanced analysis, scraping data from the web and so forth.
+
+## Note:
+
+-   Graded assignments will not test your coding skills specifically
+-   Your code does not have to be complicated, just get the job done!
+
+## Reading
+
+-   A 'doing' course
+-   Two assigned readings - one chapter and one paper
+-   Recommended weekly reading on course website
+
+## I also highly recommend the rest of this book!
+
+![](datafeminism.jpeg)
+
+-   Open access at https://data-feminism.mitpress.mit.edu/
+
+## Code in this book
+
+You can identify these 'live' code cells as they look like this:
+
+```{webr-r}
+1 + 1
+```
+
+::: callout-warning
+Code written in a browser like this will not be saved if you close or refresh the page. Only use it for practising the basics!
+:::
+
+## Installing packages...
+
+If you see the 'Installing package...' or 'Loading package...' message, this means that the programming language is doing some work behind the scenes to get everything working. When it's finished, it will be replaced by a 'Run Code' button.
+
+# Features of the code cell
+
+The code cell itself has a few features:
+
+## Run Code button
+
+Pressing this will run, or execute, the code in the cell.
+
+![](images/Screenshot%202024-08-21%20at%2015.04.17.png){width="6cm" height="2cm"}
+
+## The code input box
+
+The main part of the code cell is where you will find (and type) code.
+
+![](images/Screenshot%202024-08-26%20at%2017.07.20.png){width="10cm" height="2.1cm"}
+
+## Code option button
+
+These two icons on the right-hand side will reset the code (if you changed it), or allow you to copy the contents to the clipboard.
+
+![](images/Screenshot%202024-08-21%20at%2015.06.03.png){width="5cm" height="2.3cm"}
+
+## Output
+
+```{webr-r}
+1 + 1
+```
+
+## Running code
+
+```{webr-r}
+
+1 + 1
+
+```
+
+## R code
+
+-   R code, as most programming languages, involves manipulating data.
+
+-   Data is usually stored as **variables** and the manipulations are usually done by applying these variables to **functions.**
+
+-   Often, programmers will write their own functions, but in this course, we'll exclusively use existing functions, from various packages.
+
+# Basic R operations and data types
+
+## Numbers
+
+You can use `+`, `-`, `*` and `/` to add, subtract, multiple, and divide, respectively.
+
+```{webr-r}
+28 + 32
+```
+
+```{webr-r}
+25 - 10
+```
+
+```{webr-r}
+11 * 9
+```
+
+```{webr-r}
+100 / 8
+```
+
+## Multiple arithmetic actions on one line:
+
+```{webr-r}
+100 + 5 * 10
+```
+
+## Same cell block
+
+```{webr-r}
+100 * 5
+
+50 * 4
+```
+
+## Errors..
+
+```{webr-r}
+
+100 * 5 50 * 4
+
+
+```
+
+## Order of operations
+
+```{webr-r}
+(100 + 5) * 10
+```
+
+Run the code above and see how it differs!
+
+## Assigning variables
+
+To assign a variable in R, use the command `->`. You can also use `=`, but not in all situations, so it's better to use `<-`.
+
+To the left of this command, enter the variable name. On the right hand side, enter the value.
+
+The following code creates a variable called `x` and assigns it the value `10`:
+
+```{webr-r}
+
+x <- 10
+```
+
+## Remember...
+
+::: callout-warning
+Don't forget to run the code! If you don't, the variable will not be assigned and you won't be able to use it later!
+:::
+
+## Try it yourself
+
+**Try it yourself:** In this next box, create a variable called `y` with the value `5`. You need to run the code in order for it to actually create the variable .
+
+```{webr-r}
+
+
+```
+
+## Doing actions on variables
+
+Now, instead of doing arithmetic directly on numbers, we can do it on these named variables:
+
+```{webr-r}
+#| eval: false
+
+x * y
+
+```
+
+## Exercise
+
+In the code block below, write code to do the following things:
+
+-   create a variable called `a` and assign it a value
+
+-   assign the variable `y` to a new value
+
+-   Do a mathematical operation using `a` and `y`.
+
+```{webr-r}
+
+```
+
+## Strings
+
+The following code will create a variable called `album_title`, and give it the value `"Dangerously in Love"`:
+
+```{webr-r}
+album_title <- "Dangerously in Love"
+```
+
+## Printing a string
+
+```{webr-r}
+print(album_title)
+```
+
+## Calculate length
+
+```{webr-r}
+nchar(album_title)
+```
+
+## Exercises:
+
+-   create a new string variable, called `song_title`. Assign the string "Crazy in Love" to it.
+
+-   Calculate the number of characters in the new variable.
+
+```{webr-r}
+
+```
+
+## Vectors
+
+A vector of numbers looks like this:
+
+```{webr-r}
+
+number_vector <- c(1,2,3,4,5)
+
+
+```
+
+## Vector of strings
+
+A vector of strings. Don't forget they need to be in inverted commas!
+
+```{webr-r}
+song_vector <- c("Crazy in Love", "Naughty Girl", "Baby Boy")
+```
+
+## Try it yourself
+
+**Try it yourself:** in the code block below, create a vector containing the names of the courses you are taking this semester. Give it an appropriate name.
+
+```{webr-r}
+
+```
+
+## Comparisons
+
+You can compare numbers or variables using the following:
+
+-   `==` (equals),
+
+-   `>` (greater than),
+
+-   `<`, (less than)
+
+-   `!=` (not equal to).
+
+If you put something on the left and right of these comparisons, R will check if the statement is correct and output either `TRUE` or `FALSE`:
+
+# Comparisons with numbers.
+
+## Equals
+
+This checks if the value on the left is the same as the value on the right.
+
+```{webr-r}
+
+5 == 5
+
+
+```
+
+## Greater than
+
+This checks if the value on the left is greater than the value on the right:
+
+```{webr-r}
+
+10 > 5
+
+```
+
+## Exercises:
+
+-   Write a statement to check if 15 is greater than 5.
+
+```{webr-r}
+
+```
+
+## Exercises
+
+-   Comparisons can be more complicated than this: you can also use them to check arithmetic, for example. In the code block below, write a statement to check if 5 multiplied by 10 is equal to 25 multiplied by 2.
+
+```{webr-r}
+
+
+
+```
+
+## Comparisons with strings
+
+You can do comparisons with strings too. Note that the comparison is strict - the punctuation and capitalisation need to match exactly. Why doesn't this return `TRUE`?
+
+```{webr-r}
+"Crazy in Love" == "Crazy In Love"
+```
+
+## Exercise
+
+You can also compare variables directly. In the code block below, check to see if the `album_title` variable and the `song_title` variable are the same.
+
+```{webr-r}
+
+```
+
+## Comparisons with vectors
+
+We can see if elements in a vector are greater than a given number:
+
+```{webr-r}
+v = c(1,5,4,6,7) # create a vector of numbers
+
+v > 3 # check if the elements in the vector v are greater than 3.
+```
+
+## Comparisons with vectors
+
+We can do the same with strings:
+
+```{webr-r}
+
+song_title == song_vector
+
+```
+
+Here, we ask R to return either TRUE or FALSE, depending on whether each element of the song_vector is the same as the song_title string.
+
+# Practice
+
+# Arithmetic and Variables
+
+## 1. Add together 100 and 150. Save this as a variable (choose your own name).
+
+```{webr-r}
+
+```
+
+## 2. Subtract 50 from this variable. Save this as a new variable.
+
+```{webr-r}
+
+```
+
+## 3. Print the value of the second variable:
+
+```{webr-r}
+
+```
+
+## 4. In a single cell, multiply the second variable by the first one, and then divide it by 2:
+
+```{webr-r}
+
+```
+
+## 5. Create a variable, called `x`, and set it to a numeric value:
+
+```{webr-r}
+
+```
+
+## 6. Change the value of `x` to 500
+
+```{webr-r}
+
+```
+
+## 7. Print the value of `x`:
+
+```{webr-r}
+
+```
+
+# Strings
+
+## 8. Create a string (choose the name of the object yourself), containing the name of the student nearest to you.
+
+```{webr-r}
+
+```
+
+## 9. Print this string:
+
+```{webr-r}
+
+```
+
+## 10. Calculate how many characters are in this string:
+
+```{webr-r}
+
+```
+
+# Vectors
+
+## 11. In one cell, create two vectors: first, a character vector containing the first names of the three students closest to you. Second, a numeric vector containing the years of birth of these three students.
+
+```{webr-r}
+
+
+```
+
+# Comparisons
+
+## 12. Check if 100 multiplied by 5 is equal to 50 multiplied by 10:
+
+```{webr-r}
+
+```
+
+## 13. Using the vector of student names you created above, check if any of the elements in the vector are equal to the string `"Yann"`.
+
+```{webr-r}
+
+```

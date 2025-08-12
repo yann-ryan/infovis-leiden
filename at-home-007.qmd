@@ -1,0 +1,17 @@
+---
+title: "Home Exercise"
+---
+
+-   Using the [Nobel Prize Dataset](https://github.com/yann-ryan/infovis_data/tree/main/nobel), visualise the number of winners for each country. Set a custom scale and theme elements.
+
+-   You'll need to import the dataset yourself, either by downloading from the link above and adding as files to Posit Cloud, or reading it directly.
+
+-   You'll also need to install all the necessary packages, except tidyverse.
+
+**Completely optional:**
+
+-   Use the tmap package to recreate the map.
+
+-   Change the projection
+
+-   Make an interactive version, again using tmap. Have something informative show up when hovering the mouse over a country.

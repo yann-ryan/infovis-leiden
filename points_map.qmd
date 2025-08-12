@@ -1,0 +1,139 @@
+---
+title: "Points map"
+---
+
+## pMaking points maps in R
+
+Whatever method you use, you'll need at minimum, a dataset containing latitude and longitude coordinates (in separate columns). In many cases, you'll also want some further data about each point, which could be used to control their size or colour.
+
+### Making a simple features object
+
+Once you have this, you'll need to make your own **simple features** object from this dataset. If you remember from last week, a simple features object is a special geographic object, which can be created and edited using the R package sf. The maps we downloaded from RNaturalEarth were in this format.
+
+Let's start with the dataset of Nobel prize winners we used last week to make a choropleth map. This data also has longitude and latitude points for each place of birth and death, making it quite easy to turn into a map.
+
+In order to turn this into a simple features object, we use a function from the sf package called `st_as_sf()`. In this function, we will need to specify three things: the dataset of coordinates, the columns containing those coordinates, and the Coordinate Reference System (CRS). Recall from last week that the CRS specifies how distances should be calculated, and which projection should be used.
+
+First, let's load the dataset and the libraries we need to use.
+
+```{r}
+#| warning: false 
+#| #| error: false 
+#| #| message: false  
+
+
+library(tidyverse) 
+library(sf)  
+movie_locations = read_csv('movie_locations.csv')
+
+```
+
+Create the sf object using the following code:
+
+```{r}
+#| warning: false 
+#| #| error: false 
+#| #| message: false   
+
+movie_locations_sf = st_as_sf(movie_locations, coords = c('lng','lat' ), crs = 4326,na.fail = FALSE)
+
+```
+
+The argument `coords =` needs the names of the longitude and latitude columns, in the correct order. They should be given in a vector (surrounded by `c()`. Next we specify the Coordinate Reference System using `crs =`. We'll use the CRS 4326, which is a very widely used one. Last, we need to specify that it should ignore missing values, with the code `na.fail =FALSE`. Otherwise, it would give an error if we have any missing coordinates.
+
+### Map with ggplot and geom_sf
+
+Turning this into a basic map is very simple, and follows the syntax from previous weeks, using `geom_sf`.
+
+```{r}
+#| warning: false 
+#| #| error: false 
+#| #| message: false   
+
+ggplot() +    
+  geom_sf(data = movie_locations_sf)
+
+```
+
+This map obviously needs some work to make it readable. Most likely, it'll need a background map of the world to help with orientation. This is done by simply downloading a base map using RNaturalEarth, and adding it as a layer to the code above (add it before the points data so it doesn't draw on top of it). We may also want to adjust the limits of the coordinates using `coord_sf()`.
+
+### Aggregating the points data
+
+A slightly more fundamental problem in this case is that it's not a very accurate visual representation of the data. This is because each place is simply drawn as a point. If there are multiple instances of the same set of coordinates, these will be drawn on top of each other and will disappear.
+
+In most cases, we'll want to aggregate the points information somehow. This is done using `group_by()` and `tally()` or `summarise()`. We need to include the coordinates information in the group_by, and we make the sf object afterwards. Here is how we could get a new dataset which counted the instances of each city of birth (the `bornCity_now` column in the dataset)
+
+```{r}
+#| warning: false 
+#| #| error: false 
+#| #| message: false   
+
+movie_locations_agg = movie_locations %>%
+  group_by(narrative_locationLabel, lat, lng) %>% 
+  tally()
+
+movie_locations_agg_sf = st_as_sf(movie_locations_agg, coords = c('lng','lat' ), crs = 4326,na.fail = FALSE)
+
+```
+
+Again, this can be turned into a map using ggplot and geom_sf(), this time setting the size to the calculated column, which is called n. This needs to be done within aes().
+
+```{r}
+#| warning: false 
+#| #| error: false 
+#| #| message: false
+   
+ggplot() +   
+  geom_sf(data = movie_locations_agg_sf, aes(size = n))
+
+```
+
+### Adding further variables
+
+Another thing we might want to do is to visualise the dots by some additional variable, for example the category of Nobel prize. We make a simple dataset, but add the `category` variable in to the group_by() function.
+
+```{r}
+#| warning: false 
+#| #| error: false 
+#| #| message: false 
+ 
+movie_locations_agg = movie_locations %>%    
+  group_by(narrative_locationLabel,genreLabel, lat, lng) %>%    
+  tally()  
+
+movie_locations_agg_sf = st_as_sf(movie_locations_agg, coords = c('lng','lat' ), crs = 4326,na.fail = FALSE)
+
+```
+
+We can specify the color using color = within the aes(), as with size. However, we will also run into the problem of points being invisible because others are drawn on top of them. One trick to fix this is to set the transparency of the points to a value lower than one, `using alpha =`. In this case, `alpha =` should *not* go within the aes(), because we want to set all points to a single value.
+
+```{r}
+#| warning: false 
+#| #| error: false 
+#| #| message: false  
+
+ggplot() +   
+  geom_sf(data = movie_locations_agg_sf, aes(size = n, color = genreLabel), alpha = .5)
+
+```
+
+## Exercise:
+
+Make a points map using the Nobel Prize dataset we worked with last week. Try the following:
+
+-   Add a basemap using RNaturalEarth
+
+-   Restrict the map to a certain area
+
+-   Aggregate the data in a way you see fit (for example by gender, category)
+
+You can load the dataset into your workspace with the following:
+
+```{r}
+#| warning: false 
+#| #| error: false 
+#| #| message: false   
+
+nobel_prize = read_csv('https://raw.githubusercontent.com/melaniewalsh/Intro-Cultural-Analytics/master/book/data/nobel-prize-winners/nobel-prize-winners.csv')
+
+```

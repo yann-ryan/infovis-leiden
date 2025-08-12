@@ -1,0 +1,178 @@
+---
+title: "Position scales"
+---
+
+## Position scales
+
+Scales are added to ggplot2 plots in much the same way as other layers. First a `+`, followed by the name of the scale. Options are specified within the parentheses of the scale name.
+
+Scales are either continuous or discrete, depending on the data. A bar chart generally contains one continuous variable (a count) and one discrete variable (the different categories, generally one for each bar), whereas a line chart generally has two continuous variables.
+
+The most common position scales are `scale_x_continuous` and `scale_y_continuous`, which simply map linearly from a data value to a location on the plot. If you plot continuous data on an axis, ggplot will automatically add these to your plot. You only need to specify them explicitly if you want to change any of the default options.
+
+```{webr-r}
+#| context: setup
+library(readr)
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+
+url <- "https://raw.githubusercontent.com/jennybc/gapminder/refs/heads/main/data-raw/04_gap-merged.tsv"
+download.file(url, "gapminder_df.csv")
+
+gapminder_df =  read_tsv('gapminder_df.csv') |> filter(continent!= 'FSU')
+
+
+```
+
+In this chart, which we have seen before, ggplot has automatically created continuous scales to represent the `years` and `gdpPercap.` Each point is placed in a position based on these scales. These are represented on the chart as the x and y axis, so we know what each position refers to.
+
+```{webr-r}
+
+gapminder_df |>
+  filter(country == "Netherlands") |>
+  ggplot(aes(x = year, y = gdpPercap )) +
+  geom_line()
+
+
+```
+
+There are two useful things we can change with the default continuous scale: *limits* and *breaks*.
+
+-   **Limits** specify the limits of the scale - the start and end points of the x and y axes.
+
+-   **Breaks** specify which points and ticks should be drawn on the x and y axes.
+
+To make changes to the default scale, we add `scale_x_continuous` or `scale_y_continuous` following a + sign to the plot.
+
+### Limits
+
+To change the limits, add `limits =` followed by the start and end point of the limit you want, within a vector using `c()`, as in the example below:
+
+```{webr-r}
+gapminder_df |>
+  filter(country == "Netherlands") |>
+  ggplot(aes(x = year, y = gdpPercap )) +
+  geom_line() + 
+  scale_x_continuous(limits = c(1980, 2000))
+```
+
+You can see that it has limited the years to 1980 at earliest and 2000 at the latest.
+
+**Try it yourself:** set the limits of the y axis to 10000 and 50000
+
+```{webr-r}
+
+```
+
+### Breaks
+
+Breaks control which axis ticks, lines and labels are shown. Ggplot picks defaults according to the data but you can override them.
+
+Change the breaks by adding `breaks =` to the plot, followed by a vector (a list) of the values you want to specify.
+
+```{webr-r}
+gapminder_df |>
+  filter(country == "Netherlands") |>
+  ggplot(aes(x = year, y = gdpPercap )) +
+  geom_line() + 
+  scale_x_continuous(limits = c(1980, 2000), 
+                     breaks = c(1980, 1990, 2000)) 
+```
+
+**Try it yourself:** Set the breaks for the y axis to every 5000 instead of 10000
+
+```{webr-r}
+
+```
+
+::: callout-tip
+It would quickly get tedious if you wanted to specify a large number of axis ticks. R has a function called `seq()`, which allows you to create a sequence of numbers according to simple rules. `seq()` needs a `from`, `to` and `by` argument. For example we could specify that the plot show values every two years by adding the following:
+
+```{webr-r}
+
+gapminder_df |>
+  filter(country == "Netherlands") |>
+  ggplot(aes(x = year, y = gdpPercap )) +
+  geom_line() + 
+  scale_x_continuous(limits = c(1980, 2000), 
+                     breaks = seq(from = 1980, to = 2000, by = 2)) 
+
+```
+:::
+
+#### Minor breaks
+
+Note that changing the breaks also changes the vertical lines in the plot. By default, ggplot draws a line for each break, as well as a fainter line in between each break, called *minor breaks*. You can override the positions for these minor breaks, too.
+
+```{webr-r}
+gapminder_df |>
+  filter(country == "Netherlands") |>
+  ggplot(aes(x = year, y = gdpPercap )) +
+  geom_line() + 
+  scale_x_continuous(limits = c(1980, 2000), 
+                     breaks = c(1980, 1990, 2000), 
+                     minor_breaks = 1980:2000) 
+```
+
+You can also add different labels for your axis, using the 'labels' argument:
+
+```{webr-r}
+gapminder_df |>
+  filter(country == "Netherlands") |>
+  ggplot(aes(x = year, y = gdpPercap )) +
+  geom_line() + 
+  scale_x_continuous(limits = c(1980, 2000), 
+                     breaks = c(1980, 1990, 2000), 
+                     minor_breaks = 1980:2000,
+                     labels = c('Year 1', 'Year 2', 'Year 3')) 
+```
+
+**Try it yourself:** copy the chart above, but change the minor breaks to every 5 years, and the labels for the major breaks to 'First Year', 'Second Year', and so forth.
+
+### Scales with bar charts
+
+Bar charts using geom_col generally have a discrete scale instead of a continuous scale on the x axis. Each bar represents a category rather than a numeric value. The name of this is `scale_x_discrete`, which is added automatically by ggplot.
+
+::: callout-note
+A bar chart can also have a numeric variable on the x axis, for example if we made the plot above, but with geom_col instead of geom_line. In this case, though it will contain individual discrete bars for each year, ggplot2 will still give it a continuous scale.
+:::
+
+By default, this will be ordered alphabetically. Reordering these is a very common data visualisation task. Take the following example:
+
+```{webr-r}
+gapminder_df |>
+  filter(country %in% c('Peru', 'Argentina', 'Brazil','Mexico', 'Chile', 'Colombia', 'Bolivia')) |> 
+  filter(year == 2002) |>
+  ggplot(aes(x = country, y = gdpPercap )) +
+  geom_col()
+
+```
+
+In many cases we would want to reorder the countries by the value on the y axis - so that the highest appear at the top. We can do this not within the scale but by using `reorder` in the code of the plot itself:
+
+```{webr-r}
+gapminder_df |>
+  filter(country %in% c('Peru', 'Argentina', 'Brazil','Mexico', 'Chile', 'Colombia', 'Bolivia')) |> 
+  filter(year == 2002) |>
+  ggplot(aes(x = reorder(country,desc(gdpPercap)), y = gdpPercap )) +
+  geom_col()
+```
+
+## Coord_flip()
+
+A final useful function is `coord_flip`. This flips the coordinates of a plot, and reverses the position of the x and y axes.
+
+```{webr-r}
+gapminder_df |>
+  filter(continent == "Americas") |> 
+  filter(year == 2002) |>
+  ggplot(aes(x = reorder(country,gdpPercap), y = gdpPercap )) +
+  geom_col() + coord_flip()
+```
+
+::: callout-note
+Note that we have removed the desc() so that the highest value is at the top rather than the bottom.
+:::
+
+This is particularly useful for a chart with lots of values, because the labels are much easier to read when they are placed along the y-axis - especially if it is going to be viewed online.

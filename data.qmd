@@ -1,0 +1,131 @@
+---
+title: "Data and Inspiration for the Final Project"
+---
+
+On this page you can find links to humanities datasets, as well as tips for finding your own.
+
+I'll update it as the course goes on to contain information relevant for each of the last three graded assignments, which involve making a visualisation, making a map, and the final project.
+
+## Importing a dataset and dataset standards
+
+For these assignments, you'll need to begin by importing your dataset as an object into the RStudio/Posit environment. How you do this depends a little on the standard of your dataset. As we're working with **tabular data** on this course, your data should in most cases be either in one of these formats:
+
+-   comma separated values (files ending in .csv). A very common tabular data format. Use `read_csv()` from the Tidyverse package `readr` (remember to load the package first) to read the file in to Posit.
+
+-   Tab separated values (files ending in .tsv). Another common tabular format. Use `read_tsv()` from the Tidyverse package `readr` to read the file.
+
+-   Excel files: Microsoft proprietary format, which can contain multiple sheets. Use `read_excel()` from the Tidyverse package `readxl` to read the file.
+
+-   Google sheets. You can read Google sheets directly from the internet using the package `googlesheets4`.
+
+You can read data originating from either your local machine, or directly from the internet in some cases.
+
+-   If you're loading from your local machine, remember to upload the file to Posit cloud first, if you're using it.
+
+-   If you know the path online to a file in one of the formats above, you can simply add the full path as the filename within quotation marks, e.g. `read_csv('https://github.com/yann-ryan/nobel_data/blob/main/laureates_df.csv')`.
+
+## Datasets for making a basic visualisation (the first assignment or if you want to stick with something simple for the final project)
+
+The visualisation assignment is asking you to demonstrate your skills in making a visualisation using ggplot2. I highly recommend using one of the datasets we have worked with on the course, which are relatively clean and simple, by humanities data standards. Data cleaning and figuring out formats can be very time consuming, so unless you are very comfortable with these things, I would wait until the final project to use a bespoke dataset.
+
+::: callout-warning
+If you do want to use your own dataset, be aware that your account on Posit Cloud has a limit of 1GB of RAM. This means that you will not be able to load larger datasets into memory, and you'll get an error. In this case, it's best to install R and RStudio on your own machine, which likely has more RAM.
+:::
+
+Whatever dataset you use, a really important task is to read the documentation available, so you undertand, as best as possible, how it was made and who was responsible for it.
+
+### Datasets used on the course
+
+-   The Titanic dataset. There are many versions of this on the internet, because it is widely used in machine learning problems. I created a version based on [this dataset](https://www.openml.org/search?type=data&sort=version&status=any&order=asc&exact_name=Titanic&id=40945), because it contains the full list and hasn't been divided into different parts for training and testing machine learning algorithms. There is a little information on how the dataset was constructed, but unfortunately the link to further information is no longer working. My version is available [here](https://github.com/yann-ryan/infovis_data/blob/main/titanic/titanic_df_full.csv).
+
+-   The Bellevue Almshouse data. This is a dataset of records of immigrants who were admitted to the Bellevue Almshouse (house for the poor) in the 1840s. You can find more information and links to the data [here](https://melaniewalsh.github.io/Intro-Cultural-Analytics/00-Datasets/00-Datasets.html#irish-immigrants-admitted-to-nycs-bellevue-almshouse).
+
+-   The Movie Dialogue dataset. You can find more information about this dataset [here](https://melaniewalsh.github.io/Intro-Cultural-Analytics/00-Datasets/00-Datasets.html#irish-immigrants-admitted-to-nycs-bellevue-almshouse). I created the third file, `imdb_genre`, from a larger IMDB dataset. You can find that file [here](https://github.com/yann-ryan/infovis_data/blob/main/movies/imdb_genre.csv).
+
+-   The Nobel Prize Winners dataset. A dataset containing two tables, with information on the Nobel Prizes and the Nobel Prize winners. I created this using the [official Nobel API](https://www.nobelprize.org/organization/developer-zone-2/). You can find the files [here](https://github.com/yann-ryan/infovis_data/tree/main/nobel).
+
+### Other (relatively simple) datasets
+
+If you really want to use another dataset, choose something which is clean and manageable for a short assignment. It should also be, broadly speaking, related to humanities, meaning don't use datasets which are primarily natural sciences, geography, etc. Before you commit to it, check to see that there is at least some documentation regarding where it came from and how it was done. This is important in general (because data should follow FAIR principles), but also more specifically because you'll need it to write a good report.
+
+-   There are a [large number of datasets](https://github.com/rfordatascience/tidytuesday/blob/master/README.md) from the 'TidyTuesday' weekly challenge. Behind this link you'll find a collection of folders for each year. In each of these folders you'll find another folder for each week, but if you scroll past these folders you'll see useful links to the data and sources. Not all will be relevant, because there are many not relevant to the humanities. They are fairly well documented and include sources, but do check that this information is there before you commit to using them.
+-   The Pudding has [some nice and often fun datasets](https://github.com/the-pudding/data/tree/master), though they have a very American focus.
+-   I've used several of the datasets from this [Introduction to Cultural Analytics](https://melaniewalsh.github.io/Intro-Cultural-Analytics/welcome.html) book by Melanie Walsh. You can find some more datasets on [this page](https://melaniewalsh.github.io/Intro-Cultural-Analytics/00-Datasets/00-Datasets.html). Not all are tabular data - some are primarily text-based, which is outside the scope of this course (you're welcome to use them to produce visualisations but you'll likely need some text mining skills which we won't cover).
+
+## Datasets for the final project
+
+At the moment this is a random assortment of datasets and data sources related to the humanities! I've deliberate avoided listing text-based datasets, of which there are lots but require different techniques to those we have used on the course.
+
+### Individual datasets
+
+-   Shakespeare and Co datasets. Very nice geocoded library lending data. Article [here](https://culturalanalytics.org/article/32551-shakespeare-and-company-project-data-sets) and the datasets are divided into [members](https://doi.org/10.34770/8c2s-a169), [books](https://doi.org/10.34770/yj5r-0m59), and [events](https://doi.org/10.34770/nz90-ym25) (events generally mean library loans here).
+-   [Title list of British Library Newspapers](https://bl.iro.bl.uk/concern/datasets/943bd083-6355-44a1-97eb-b8ff898f87d5)
+-   This [structured literary dataset](https://github.com/karinavdo/RiddleData) made for the litRiddle project. There's also an R package, `install.packages("litRiddle").`
+-   The [Museum of Modern Art dataset](https://github.com/MuseumofModernArt/collection). Nice dataset for analysis of cultural heritage (more examples in the next section).
+-   [This dataset](https://github.com/cldf-datasets/wals/tree/master/cldf) based on the [World Atlas of Language Structures](https://wals.info/). It's a little difficult to find what you need, but has interesting geographic linguistic data. The [languages table](https://github.com/cldf-datasets/wals/blob/master/cldf/languages.csv) is the most important.
+
+### Data repositories or lists
+
+There are many, many sources of datasets available online. Look for relatively simple csv and tsv files or sets of files, and avoid those that mention APIs or Linked Open Data unless you are comfortable working with these things.
+
+-   [CBS Statline](https://opendata.cbs.nl/statline/#/CBS/nl/): Dutch Statistics. Also an R package [here](https://github.com/edwindj/cbsodataR).
+
+-   DANS [Humanities and Social Sciences](https://ssh.datastations.nl/): repository for many datasets, just be aware they may be very specific and not always be easy to use.
+
+-   [KB Labs datasets](https://lab.kb.nl/products/product_type/dataset) (many are text based but some are structured).
+
+-   The [Google dataset search](https://datasetsearch.research.google.com/). However make sure you can trace back the provenance!
+
+-   [Journal of Open Humanities Data](https://openhumanitiesdata.metajnl.com/). Journal with open data and articles outlining possible use cases.
+
+-   [IMDB datasets](https://developer.imdb.com/non-commercial-datasets/). Large-scale datasets from the IMDB website. You'll probably need to install and run R on your local machine, because reading and analysing these will require more RAM than is available in Posit cloud.
+
+-   Book catalogue metadata is a nice source of structured humanities data. The [Hathi Trust metadata files](https://www.hathitrust.org/member-libraries/resources-for-librarians/data-resources/hathifiles/) contain information (not content) on all the works digitised by the Hathi Trust. Look for the most recent file starting with `hathi_full`. These are also large files and will require you to install and run R Studio on your own machine.
+
+-   [The 'DH toychest' datasets](http://dhresourcesforprojectbuilding.pbworks.com/w/page/69244469/Data%20Collections%20and%20Datasets). In particular, follow the link and scroll down to the section 'Datasets'.
+
+-   [List of Museum APIs](http://museum-api.pbworks.com/w/page/21933420/Museum%C2%A0APIs). Also lists some datasets in regular tabular formats like tsv and csv.
+
+::: callout-tip
+For very large datasets, it may also be helpful to use an R package such as data.table which is more efficient than Tidyverse for working with very large data. data.table has a very different syntax to the Tidyverse, but there is a package, tidytable, which converts between the two.
+:::
+
+### R Packages
+
+-   HistData
+
+-   refugees (with guidelines [here](https://www.unhcr.org/refugee-statistics/insights/explainers/refugees-r-package.html))
+
+-   A huge list [here](https://vincentarelbundock.github.io/Rdatasets/datasets.html) - but again, try to only use those with good documentation.
+
+#### R Packages which connect to an API
+
+-   [spotifyr](https://github.com/charlie86/spotifyr) allows you to download data, either public or your own listening data, from Spotify. You need to register for an API key - follow the instructions behind the link.
+
+-   [RedditExtractoR](https://github.com/ivan-rivera/RedditExtractoR). I haven't tried it, but apparently will allow you to download data from Reddit. Use at your own risk!
+
+-   [The osmdata package](https://docs.ropensci.org/osmdata/). Download geographic data through R. Very fun to work with, though takes some understanding of the queries. Try a tutorial [here](https://jcoliver.github.io/learn-r/017-open-street-map.html) if you're interested.
+
+### Social media data
+
+Unfortunately, doing analysis on social media data has become difficult in the last few years as companies have locked down their services. There are some individual datasets of collected tweets which you could use, e.g. [here](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/I5WC7O). There is an additional step needed with tweets - the collected data is only what are known as tweet IDs, and they must be 'hydrated' using software such as [Hydrator](https://github.com/DocNow/hydrator/releases) in order to actually read and analyse them.
+
+## Inspiration for the final project
+
+-   [Current research in digital history](https://crdh.rrchnm.org/) (short historical essays with graphics)
+
+-   [Journal of Digital History](https://journalofdigitalhistory.org/en) (digital history articles with a code layer)
+
+-   [Journal of Cultural Analytics](https://culturalanalytics.org/) (computational articles on culture, often with visual elements)
+
+-   [The Pudding](https://pudding.cool/) (data journalism visual essays with interactive elements)
+
+-   [The Killing Times](https://www.theguardian.com/australia-news/ng-interactive/2019/mar/04/massacre-map-australia-the-killing-times-frontier-wars) project (example of an interactive visual essay, for those interested in using Shiny).
+
+-   Short visual essays by FiveThirtyEight such as [this one](https://projects.fivethirtyeight.com/obama-polling-trends/).
+
+-   [Visualising Emancipation](https://dsl.richmond.edu/emancipation/) (a nice example of a visual essay aimed at an academic readership).
+
+-   [Cool stuff made with cultural heritage APIs](http://museum-api.pbworks.com/w/page/21933412/Cool%20stuff%20made%20with%20cultural%20heritage%20APIs)
+
+-   [Medium post of ways the MoMA data has been used](https://medium.com/@foe/here-s-a-roundup-of-how-people-have-used-our-data-so-far-80862e4ce220#.f6272outn). Sadly many of the links are broken, but [this post](https://fivethirtyeight.com/features/a-nerds-guide-to-the-2229-paintings-at-moma/) is a nice example of the kind of project you could make..

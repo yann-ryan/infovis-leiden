@@ -1,0 +1,420 @@
+---
+title: "Mapping Full Workflow"
+format: 
+  revealjs:
+    scrollable: true
+    incremental: true
+editor-max-height: 2
+execute: 
+  echo: true
+---
+
+
+## 9 Steps to Making a Map
+
+1.  Import your geographic data
+
+2.  Figure out the geographic unit
+
+3.  Find a base map which corresponds
+
+4.  Import your base map
+
+5.  Find the common field
+
+6.  Summarise your data
+
+7.  Join your data and the map together
+
+8.  Map with ggplot and sf
+
+9.  Finishing touches
+
+## 1: Import your external data
+
+-   Find the dataset you want to use. This will of course have some kind of geographic information, such as country, or state, or region, as well as further information.
+
+```{r}
+library(tidyverse)
+dogs = read_csv('allDogDescriptions.csv')
+
+```
+
+
+## 2: Figure out the Geographic Unit{.smaller}
+
+-   Each row of information in your data will have a geographic unit - the *type* of area on the map where it records the geographic information. These are usually based on some kind of political or geographic border. Examples include nations, regions, provinces, municipalities, election areas, and so forth. This will be recorded in a single column.
+
+-   Your data should only have one type of geographic unit. In other words, you shouldn't have data which mixes more than one together. For example, if you had a 'place' column, it won't work if sometimes it records the country, and sometimes the province.
+
+-   It can have different geographic units in *different* columns, for example one column with the country. and another with the province. If this is the case, decide which level you want to use.
+
+## 3: Find and read in a shapefile
+
+-   You need to find a map containing features which correspond to the geographic unit you are going to use in your data.
+
+-   Two of the most common are **shapefiles** and **geoJSON.** There are also formats which package together multiple layers of geographic information, for example **GeoPackage (.gpkg).**
+
+## Shapefiles
+
+**Shapefiles** are a commonly supported file type for spatial data dating back to the early 1990s. Proprietary software for geographic information systems (GIS) such as [ArcGIS](https://www.esri.com/en-us/arcgis/about-arcgis/overview) pioneered this format and helps maintain its continued usage. A shapefile encodes points, lines, and polygons in geographic space, and is actually a set of files. Shapefiles appear with a `.shp` extension, sometimes with accompanying files ending in `.dbf` and `.prj`.
+
+## Shapefiles
+
+-   `.shp` stores the geographic coordinates of the geographic features (e.g. country, state, county)
+
+-   `.dbf` stores data associated with the geographic features (e.g. unemployment rate, crime rates, percentage of votes cast for Donald Trump)
+
+-   `.prj` stores information about the projection of the coordinates in the shapefile
+
+## Shapefiles
+
+**The important thing to note is that while you read in the file ending in .shp, you need to have the other 'layers' in the same folder.** Usually you will download the entire folder as a zip, which can be uploaded directly to Posit Cloud.
+
+## Shapefiles
+
+As an example I have downloaded a file from the US census site. If we have a folder with the file `cb_2018_us_state_20m/cb_2018_us_state_20m.shp` , read this into R using `st_read()`:
+
+```{r}
+
+library(sf)
+
+us_states_map <- st_read('cb_2018_us_state_20m/cb_2018_us_state_20m.shp')
+
+us_states_map |>
+  ggplot() +
+  geom_sf()
+
+
+```
+
+
+## Shapefiles
+
+-   These are often released by official agencies and can be found through a search engine.
+
+-   Dutch geo data can often be found through <https://www.pdok.nl/> or the [CBS](https://www.cbs.nl/nl-nl/dossier/nederland-regionaal/geografische-data). 
+-   Shapefiles for EU regions can be found at [here](https://ec.europa.eu/eurostat/web/gisco/geodata/statistical-units/territorial-units-statistics). 
+
+-   These use a set of boundaries called NUTS, which range from NUTS-0 (countries) to NUTS-3 (small regions).
+
+## Shapefiles
+
+```{r}
+nuts = st_read('NUTS_RG_60M_2024_4326.shp/NUTS_RG_60M_2024_4326.shp')
+```
+
+## Shapefiles
+
+-   Remember that adminstrative units are often redrawn, so try to make sure that your data and map match as much as possible.
+
+-   In some cases, these shapefiles will contain all possible geographic units in one dataset. In that case, you'll need to filter to only include the relevant ones.
+
+-   This is the case for the NUTS data above. All three levels are included so you will need to filter the dataset before using:
+
+## Shapefiles
+
+```{r}
+
+nuts |> filter(LEVL_CODE == 1) |>
+  ggplot() + geom_sf()
+
+```
+
+## geoJSON
+
+-   geoJSON is a new geographic standard based on JSON: a very widely-used standard for storing data.
+
+-   geoJSON files can be read into R simply by using `st_read()`.
+
+## Geopackages (.gpkg files)
+
+-   Another common format you will find geographic information is geopackage, which you can recognise by the ending .gpkg. 
+
+-   Geopackage files are actually an SQL database which can contain many layers of different geographic information.
+
+-   To read these files, use `st_read()`, but first you need to specify which layer you would like to read.
+
+## Geopackages (.gpkg files)
+
+To view all the layers first, use the function `st_layer()`:
+
+```{r}
+
+st_layers('WijkBuurtkaart_2024_v1/wijkenbuurten_2024_v1.gpkg')
+
+```
+
+## Geopackages (.gpkg files)
+
+To read the correct one, simply specify the chosen layer name in the first column:
+
+```{r}
+
+map = st_read('WijkBuurtkaart_2024_v1/wijkenbuurten_2024_v1.gpkg', layer = 'gemeenten')
+```
+
+## Geopackages (.gpkg files)
+
+```{r}
+map |> ggplot() + 
+  geom_sf()
+
+```
+
+## 4: Import your base map into R
+
+-   Using sf, import your basemap. Usually this can be done by using st_read, and giving the location of the shapefile. Specify the layer if necessary.
+
+## 5: Find a Common Field
+
+-   Now, you need to look at your two datasets - your data and your shapefile - and figure out what field they have in common. This means, you need to find the column in each one which uses a standardised set of names.
+
+-   A simple example is where both have a column with country names.
+
+-   A good practice is to use a standardised code where one is available. For instance, both dataset may have a standardised 'ISO' code where the country is recorded. This is less ambiguous than a country name, which may have slight variants, or be recorded in another languages, etc.
+
+
+## 6: Summarise and/or clean your Data
+
+-   Once you have your common code, you can get your dataset ready. Usually, this will mean doing a summary (such as a count, or maybe getting an average, or perhaps some kind of proportion by population) for each entry in the geographic field you are using. 
+
+-   You may also have further cleaning steps, for example fixing inconsistent country names. In the case of the data we're using today, in order to visualise it you want to turn it into 'long' format using the function `pivot_longer()`.
+
+## 6: Summarise and/or clean your Data
+
+-   If you want to draw multiple maps, one for each category, you might summarise by two variables: the category, and the region. Later, you'll need to use facet_wrap to draw each category as a separate map.
+
+-   At this stage, you may also want to filter your data.
+
+## 7: Join your data and map together.
+
+-   Using `left_join()`, you will now merge together the map with the summarised dataset. If the column names are not the same, you'll have to specify which ones it should use (see previous lesson for this).
+
+-   The shapefile should be on the 'left' side, meaning it should come first in the `join` function, e.g.
+
+## 7: Join your data and map together.
+
+```{r}
+#| eval: false
+
+shapefile |> 
+  left_join(external_data, by = 'common_code')
+```
+
+
+## 8: Map with ggplot and geom_sf
+
+-   Now, you can make a map! Remember to use aes() and fill = to specify how ggplot should colour your data.
+
+## 9: Finishing Touches
+
+-   Make edits to your map to make it more readable and looking better aesthetically. 
+
+-   You'll probably want to adjust the limits and projection of the map using `coord_sf`, and experiment with the scale using `scale_fill_`. 
+
+-   You could also think about binning the colors (often it's easier to interpret specific colors on maps rather than a continuous scale). 
+
+## 9: Finishing Touches
+
+-   This is the point where you will need to use `facet_wrap()` to draw maps separately, if you went down this route.
+
+You could also add a map scale bar and a compass using the package ggsn (you'll need to install it separately using `install.packages()`.
+
+
+
+```{r}
+#| echo: false
+#| error: false
+#| warning: false
+#| message: false
+
+library(tidyverse)
+library(plotly)
+
+gapminder_df =  read_tsv('https://raw.githubusercontent.com/jennybc/gapminder/refs/heads/main/data-raw/04_gap-merged.tsv') |> filter(continent!= 'FSU')
+
+titanic_df =  read_csv('https://raw.githubusercontent.com/yann-ryan/infovis-course/master/titanic_df_full.csv')
+
+df <- gapminder_df |>
+  filter(year == 2007) |>
+  mutate(pop_millions = pop/1000000)
+```
+
+## Plotly and ggplotly()
+
+-   To make interactive plots we can use a library called `plotly.` 
+-   Plotly has its own syntax for making plots, but it includes a function which will convert any ggplot plot directly into an interactive plotly plot. 
+-   To use this, simply load the library and add the plot name to the function `ggplotly()`.
+
+## Plotly and ggplotly()
+
+On the interactive plot there are a number of things you can do:
+
+-   Hover over a point to get a 'tooltip' displaying more information about that data point.
+-   Zoom in, just draw a rectangle on the plot by clicking and dragging the mouse.
+-   Toggle any of the categories on or off by clicking the legend points.
+-   When you hover over any part of the plot you'll see some display options at the top right.
+
+-   Any of the themes or scales you use will carry over to the interactive plotly version.
+
+## Plotly and ggplotly()
+
+```{r}
+#| error: false
+#| warning: false
+#| message: false
+
+library(tidyverse)
+library(plotly)
+
+p <- df |> 
+  ggplot(aes(x = lifeExp, y = gdpPercap, size = pop, fill = continent)) + 
+  geom_point()
+
+ggplotly(p)
+```
+
+## Try it yourself
+
+The object `titanic_df` is in your environment. Summarise the data by counting the totals for the `sex` and `embarked` columns, and make a bar chart plotting the sex on the x axis, the total on the y axis, and the embarked location as the fill colour of the bars.
+
+Make the chart interactive using `ggplotly()`.
+
+```{r}
+
+```
+
+## ggplotly() options
+
+ggplotly has some useful options: `dynamicTicks = TRUE` will change the axis ticks as you zoom in. Setting the `tooltip =` argument will allow you to specify the text which is displayed when you hover over a shape with the mouse. By default, the tooltip will display all the aesthetics mapped in your visualisation. In the first chart, for example, we have mapped x, y, size, and fill, and these are all displayed as a label when you hover over a point.
+
+**Try it yourself:**
+
+Copy your bar chart above. Set `dynamicTicks = TRUE` and set the tooltip to display only the `embarked` aesthetic.
+
+```{r}
+
+```
+
+## Tooltips
+
+-   However to get more usefulness out of the interactive it is helpful to be able to make changes to the tooltips, which can be set to any column or series of columns in your data.. Use this to build informative interactives - for example you could even have a small paragraph of text describing something about each point.
+
+-   Further more, the tooltips can be formatted with HTML, meaning you can construct nicely formatted hover text boxes with custom information.
+
+-   This is done using `mutate()` and a function called `paste0()`. `paste0()` will concatenate together text, either from columns in your data or from text within quotation marks. Within `paste0()`, separate each piece of text you want to concatenate together with a comma.
+
+## Tooltips
+
+-   To use this new column, map it to the `text` aesthetic, and set it as the tooltip column:
+
+```{r}
+p <- df |> 
+  mutate(country_continent = paste0("<b>Country: </b>", country, "<br>", "<b>Continent: </b>", continent)) |>
+  ggplot(aes(x = lifeExp, y = gdpPercap, text = country_continent, size = pop, fill = continent)) + 
+  geom_point()
+
+ggplotly(p, dynamicTicks = TRUE, tooltip = 'text')
+```
+
+## tmap basics
+
+Tmap is also based on the 'grammar of graphics', albeit with its own set of vocabulary.
+
+The basic building block is `tm_shape()` which is the equivalent of `ggplot()`. Further layers are built on top of this, for example `tm_fill()` or `tm_dots()`.
+
+## tmap basics
+
+Here are the main layers we can add:
+
+-   [`tm_fill()`](https://r-tmap.github.io/tmap/reference/tm_polygons.html): shaded areas for (multi)polygons
+
+-   [`tm_borders()`](https://r-tmap.github.io/tmap/reference/tm_polygons.html): border outlines for (multi)polygons
+
+-   [`tm_polygons()`](https://r-tmap.github.io/tmap/reference/tm_polygons.html): both, shaded areas and border outlines for (multi)polygons
+
+-   [`tm_lines()`](https://r-tmap.github.io/tmap/reference/tm_lines.html): lines for (multi)linestrings
+
+## tmap basics
+
+-   [`tm_symbols()`](https://r-tmap.github.io/tmap/reference/tm_symbols.html): symbols for (multi)points, (multi)linestrings, and (multi)polygons
+
+-   [`tm_raster()`](https://r-tmap.github.io/tmap/reference/tm_raster.html): colored cells of raster data (there is also [`tm_rgb()`](https://r-tmap.github.io/tmap/reference/tm_rgb.html) for rasters with three layers)
+
+-   [`tm_text()`](https://r-tmap.github.io/tmap/reference/tm_text.html): text information for (multi)points, (multi)linestrings, and (multi)polygons
+
+## tmap aesthetics
+
+If we pass an sf object to `tm_shape()` and then add an appropriate layer, we will get a basic map. To map further data to this map, we can map data columns to aesthetics, again, similarly to that we added using ggplot. Here is the most common aesthetics:
+
+-   `fill`: fill color of a polygon
+
+-   `col`: color of a polygon border, line, point, or raster
+
+-   `lwd`: line width
+
+-   `lty`: line type
+
+-   `size`: size of a symbol
+
+-   `shape`: shape of a symbol
+
+## tmap aesthetics
+
+Set these aesthetics within the relevant shape, e.g. `tm_polygon(fill = 'income_grp')`
+
+## Interactive mapping
+
+To make an interactive map using the worldmap, do the following:
+
+-   Load the tmap library.
+
+-   Download a map from R Natural Earth
+
+-   Switch to the 'view' mode using `tmap_mode("view")` to make the output an interactive map.
+
+## Interactive mapping
+
+-   `tm_shape()` is more or less the equivalent of `ggplot()`: it's the 'base' of the map, where we specify which shapefile should be used. On top of this we add layers, such as polygons or points, and also additional map elements such as a legend, scale, projection, and so forth. We can also add additional `tm_shape()` layers.
+
+-   Add the `tm_polygons()` layer which will draw polygon shapes on the map based on the shapefile. Set the `col` to the `income_grp` column. Note the difference from ggplot - where we would set the `fill`, and the column name would *not* be in quotation marks. Set the `id` which will determine which column is used to display text with a mouse hover.
+
+-   Add a `tm_view()` layer, which allows us to set options for the interactive viewer. Add a vector of three numbers: the starting latitude and longitude, and the zoom level.
+
+## Interactive mapping
+
+```{r}
+#| error: false
+#| warning: false
+#| message: false
+
+library(tmap)
+library(tidyverse)
+library(rnaturalearth)
+library(sf)
+
+sf_use_s2(FALSE)
+
+worldmap = ne_countries(scale = 'medium', returnclass = 'sf') 
+
+tmap_mode("view")
+
+tm_shape(worldmap) +
+  tm_polygons(fill="income_grp", id = 'name' ) +
+  tm_view(set.view = c(0, 50, 3))
+
+```
+
+## Faceting
+
+Tmap can do cool things like interactive facets, using the layer `tm_facets()`:
+
+```{r}
+tmap_mode("view")
+
+tm_shape(worldmap) +
+  tm_polygons(c("income_grp", 'pop_est'), id = 'name') +
+  tm_view(set.view = c(0, 50, 4)) + 
+  tm_facets(sync = TRUE, ncol = 2)
+```

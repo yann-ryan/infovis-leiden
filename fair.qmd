@@ -1,0 +1,37 @@
+---
+title: "Reproducibility and FAIR data"
+---
+
+## Reproducibility
+
+An important principle in working with code and data is **reproducibility.** Reproducibility is a key part of scientific analysis: the idea that we should do work with the aim that anyone, given the same code. data, and methods, should be able to reproduce our work. This allows others to verify what we have done - that we haven't accidentally (or maliciously) come to false conclusions.
+
+To do this, we should generally publically share the code and data in exactly the same formats, so others can recreate the exact same conditions.
+
+### Reproducibility with R
+
+Luckily, our workflow makes this quite easy. R Markdown files will only 'knit' if they have access to the data andwhen the code works from beginning to end. To make the project reproducible, you can simply ensure that all data used is included along with the code. In a 'live' project, you would make this publicly available (checking copyright restrictions), on a code repository, usually [Github](https://github.com/) or [Zenodo](https://zenodo.org/).
+
+For your final project, think about packaging everything up so that it is fully reproducible - so that I or anyone else could open the folder and run the code from start to finish and end up with an exact copy of your visualisation. Include your datasets in the .zip file with the Markdown. If you created any additional datasets, for example to help with data cleaning, make sure you include these too. If possible, download your data from online sources rather than loading it directly from the web. Include basic comments on your code, particularly anything which you think is unclear or might need explaining.
+
+::: callout-note
+## Versioning
+
+A further aspect of reproducibility is 'versioning'. R versions and packages change and this can cause problems for others running your code later on. To fix this you can use something called *version control.* R has a package [renv](https://rstudio.github.io/renv/articles/renv.html) to help with this. It essentially creates a fixed snapshot of R and its packages as you used them at the time you wrote your code, which others can download and use to run your code too. Practicing this is outside the scope of this course, but good to be aware of.
+:::
+
+## FAIR Data
+
+When working with data, you will often hear about how to make it FAIR. FAIR is a set of principles developed to make data as reuable as possible. The principles are:
+
+-   **Findable**. This means making it easy to find your data, usually by adding keywords and making sure it is openly available and described correctly.
+
+-   **Accessible**. In this context, accessible means making data publically available, where possible.
+
+-   **Interoperable**. Data should use existing standards and formats, so others can easily use or interact with it.
+
+-   **Reusable.** Research data should be reusable by others - if data follows the above principles, plus is well documented, this will be the case.
+
+How does this affect your own work? Primarily, you will be working on existing datasets when making visualisations on this course, but in many cases (on your own research project, for example), you might be responsible for creating datasets.
+
+However, it's worth bearing in mind the FAIR principles because they can be relevant in how you make your own work reusable. In most cases, you are the 'end user' of FAIR data, rather than creating it yourself. However you can ensure that the work you do also results in FAIR data, for example by describing and documenting your own work, and how you analysed or cleaned data.

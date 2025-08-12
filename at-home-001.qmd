@@ -1,0 +1,48 @@
+---
+title: "Home exercises"
+---
+
+## Instructions
+
+The at-home exercises should be completed using Posit cloud, in the workspace project 'Home exercise 2'. Create a new .Rmd file (use File -\> New File -\> R Notebook. Delete the existing boilerplate text in the markdown file, underneath the title part.
+
+It's best to save the new file straight away. Because you'll submit this file as an assignment, use a standardised name: \[lastname\]\[firstname\]\[week number\]. Regularly re-save the file.
+
+When you have finished the exercise (or part of it), 'knit' the file. Export the .Rmd and the html as a .zip file, and upload this to the assignment area.
+
+## Exercises
+
+For this exercise, you'll be working with the file `bellevue_almshouse_modified.csv`, which you can find in the folder. This dataset contains information on Irish-born immigrants admitted to the Bellevue Almshouse in the 1840s. This dataset was transcribed from the almshouse's own admissions records by Anelise Shrout. For more information about this dataset, see [The Almshouse Records](#0). The copy here is taken from the version used by Melanie Walsh as part of the course [Introduction to Cultural Analytics & Python](#0).
+
+The first step is to load the necessary packages and read the dataset into the RStudio environment, which we didn't cover in class.
+
+You can do that by copying the following code into a new cell in your R Markdown file. This cell should always be the first one in your document.
+
+```{r}
+#| eval: false
+
+library(tidyverse)
+
+bellevue_dataset <- read_csv('bellevue_almshouse_modified.csv')
+
+```
+
+The first line `library(tidyverse)` loads all the necessary packages we'll use throughout the course. The second line will create a new dataframe in your environment called `bellevue_dataset`, loading it from a spreadsheet file called `bellevue_almshouse_modified.csv`.
+
+For each exercise, write the objective followed by the code in one or multiple code cells. Use the commands we've learned so far, plus the pipe operator, to do the following:
+
+-   Read the dataset into the project environment.
+
+-   Print a preview of the dataset using one of the methods we've looked at in the course.
+
+-   Remove the `children` column.
+
+-   Rename the `last_name` column to `family_name`.
+
+-   Who are the five oldest men in the dataset?
+
+-   Sort the dataset first by gender, and then by age.
+
+-   Sort the full dataset in descending order of the arrival date (e.g. the most recent are first).
+
+-   What is the first name and last name of the five oldest women in the dataset?

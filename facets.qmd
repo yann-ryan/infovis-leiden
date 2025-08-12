@@ -1,0 +1,5 @@
+---
+title: "The Facet layer"
+---
+
+One way to visualise more variables in your data is to create a series of separate plots. This is a particular good way to compare many categories at the same time.

@@ -1,0 +1,19 @@
+---
+title: "Chart scales"
+---
+
+By now, I hope it is clear that when making a visualisation in ggplot, we do so by a process of mapping **data** to **aesthetics**. To give a concrete example, when we write `x = GDPperCAP, y = lifeExp, color = continent`, behind the scences ggplot is taking the values in the columns we give it, and giving them some kind of visual form. In the case of the position (x and y), by default this means that distance on the plot corresponds to equal amounts numerical values. In the case of colour, ggplot2 knows there are five distinct values, and that it should give each a distinct colour.
+
+## Scales
+
+The process by which this happens involve **scales. Scales** are the next 'layer' in our ggplot object. Scales **control the mapping from data to aesthetics**. Data visualisations cannot work without scales, so ggplot2 will automatically add them to your plots, but knowing how to control these and the various options they have available will allow you to have much more control over the look of your visualisations.
+
+::: callout-note
+These scales are communicated to the viewer by means of an **axis** or a **legend,** which we'll cover afterwards.
+:::
+
+We won't go into the [theory of how g gplot2 works with scales](https://ggplot2-book.org/scales-guides) in too much detail, but concentrate on some practical code, examples and tips which I think have the most impact on controlling the aspects of your plots you would expect to be able to do.
+
+## Aesthetics
+
+Recall from last week that we learned about different aesthetics: **position**, **colour**, **size**, **shape**, **linetype**, linewidth, and **transparency**. This chapter on scales will mostly cover **position** and **colour**, and to a lesser extent, **size**. The scales for the other aesthetics are less interesting (you're less likely to want to change the defaults), so we won't look at these. But be aware they also have scales which can be overwritten or adjusted.

@@ -1,0 +1,5 @@
+---
+title: "More Data Visualisation"
+---
+
+In this chapter we will look at the next 'layer' in a ggplot object: scales We'll also take a look at one framework by which we can explain how visualisations work to convey information, gestalt principles.

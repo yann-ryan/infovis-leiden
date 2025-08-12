@@ -1,0 +1,140 @@
+---
+title: "Exercises"
+---
+
+## Exercises
+
+Start a new .Rmd file in Posit Cloud to do the following exercises:
+
+### Exercise 1.1
+
+You have been asked to work on a historical data visualization project as part of a research project into Irish immigration in the nineteenth century.
+
+The project will use data on the Bellevue Almshouse in New York, where poor, sick, homeless and otherwise marginalised people were often sent (both voluntarily and sometimes forcibly).
+
+This data was transcribed from the original records by Anelise Shrout. It has been made available as a .csv file on a code repository, Github. To load this data into R, you can do so directly from the internet without having to download it first, using the following code cell.
+
+```{r}
+#| warning: false
+#| error: false
+#| message: false
+
+library(tidyverse)
+
+bellevue_df = read_csv('bellevue_almshouse_modified.csv')
+
+bellevue_df = bellevue_df %>% mutate(month = cut(date_in, 'month')) %>% mutate(month = lubridate::ymd(month))
+
+```
+
+I have also made some small changes: I've made a new column containing the month of admission, rather than the day. In the final `mutate`, I have specified that R should read the data as a date.
+
+Your first task is to make a few simple counts. You don't need to save these as new datasets - simply write the code which produces the count of the relevant data. As a hint, think about `group_by` and `summarize` as being helpful here. The counts needed are:
+
+-   A simple count of each gender
+
+-   The average age by gender. You'll also see there are some 'NA' values both in age and gender. In order to deal with these, you'll need to use the code `na.rm = TRUE` in the appropriate function.
+
+-   The number of admissions per month
+
+-   The number of admissions per profession, per month.
+
+Finally, create a line chart which first filters to include only the professions: `c('laborer', 'married', 'spinster', 'widow', 'shoemaker')` , and charts the number of admissions by profession with a separate line, per month. Hint: In order to correctly display separate lines correctly, you'll probably need to specify both `color =` and `group =` within the `aes()`.
+
+## Exercise 1.2
+
+After submitting this to the project manager, they have come back to you with a few extra requests:
+
+-   Adjust the `linewidth`of the lines to something more easily readable.
+
+-   Pick a different color scheme, one which specifically takes into account color vision deficiency (CVD).
+
+For the latter, you'll need to set the colors manually and use an appropriate `scale_color_` function. You can find some appropriate color palettes on this page: <http://www.cookbook-r.com/Graphs/Colors_(ggplot2),> including some hints on how to use them. Note that with the correct scale, you can specify more colors than you have categories, and it will just use the first ones.
+
+### Exercise 2.1:
+
+You have been asked to review and edit some data visualisations submitted as part of a project looking at incarceration rates in the US.
+
+Specifically, you have been asked to look for ethical or accessibility issues with some plots which have been created. In order to 'fix' them, you can copy and paste the existing code into a new cell, and make adjustments.
+
+In this first visualisation, the creators have attempted to show the differences between white and black incarceration rates in California in the most recent year with relatively fully available data, 2015.
+
+The researchers calculated the rates of prison population per head of population, and also calculated the differences between the two categories of prisoner. This has been mapped using a choropleth map (which we'll learn more about in the coming weeks).
+
+Running the following code in order should produce this plot from scratch:
+
+```{r}
+#| warning: false
+#| error: false
+#| message: false
+
+library(sf)
+
+us_prison_pop = read_csv('https://raw.githubusercontent.com/melaniewalsh/Neat-Datasets/main/us-prison-pop.csv')
+
+```
+
+```{r}
+#| warning: false
+#| error: false
+#| message: false
+
+us_state_abb = read_csv('https://raw.githubusercontent.com/jasonong/List-of-US-States/master/states.csv')
+
+basemap =  st_as_sf(maps::map("county", plot = FALSE, fill = TRUE))
+
+us_prison_pop = us_prison_pop %>% left_join(us_state_abb, by = c('state' = 'Abbreviation'))
+
+us_prison_pop2 = us_prison_pop %>% 
+  mutate(State = tolower(State)) %>% 
+  mutate(county_name = tolower(county_name)) %>% 
+  mutate(county_name = str_remove(county_name, "county"))%>%
+  mutate(county_name = trimws(county_name, which = 'both')) %>% 
+  mutate(ID = paste0(State, ",", county_name))  %>% 
+  mutate(a = white_male_prison_pop/white_pop_15to64) %>% 
+  mutate(b = black_male_prison_pop/black_pop_15to64) %>%
+  mutate(diff = b - a) %>% 
+  select(ID, year,a,b,diff,State)
+
+prison_sf = basemap %>% filter(str_detect(ID, "california")) %>%
+  left_join(us_prison_pop2 %>% 
+  filter(year == 2015) %>% filter(!is.na(year)))
+
+```
+
+This final cell is the visualisation itself. Once you have run all the other code, you can copy this one into a new cell and make adjustments.
+
+```{r}
+#| warning: false
+#| error: false
+#| message: false
+
+ggplot() + 
+  geom_sf(data = prison_sf, aes(fill = diff)) + 
+  theme_void() +
+  scale_fill_gradient(low = 'red', high = 'yellow')
+
+```
+
+You should comment on the chosen color scheme: what could be improved and why? Make changes to a new version of the code with a more appropriate color scheme.
+
+### Exercise 2.2
+
+In this second example, the total male and female prison population has been plotted. In this case, there are a number of issues you might raise regarding the chart. Hint: as well as color schemes, look at and maybe even change the processing/filtering steps leading up to the chart. Do you think these are a fair representation of the trends in the data?
+
+```{r}
+#| warning: false
+#| error: false
+#| message: false
+
+us_prison_pop %>% 
+ # filter(State %in% c('California')) %>% 
+  select(State, year, male_prison_pop, female_prison_pop) %>% pivot_longer(cols = 3:4) %>% 
+  group_by(year, name) %>% 
+  summarise(n = sum(value, na.rm = TRUE)) %>%  
+  filter(year %in% 2005:2015) %>% 
+  ggplot() + 
+  geom_line(aes(x = year, y = n, color = name), size = 2, alpha = .5) + 
+  scale_color_manual(values =c('pink', 'blue')) + theme_bw() + labs(title = "Total prison population US, 2005 - 2015")
+
+```

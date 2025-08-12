@@ -1,0 +1,23 @@
+---
+title: "Mapping Data Sources"
+---
+
+## Exercise
+
+In groups, create a data map from scratch by following the steps above.
+
+Use one of the following data sources. You'll need to summarise the data first of all, and think about what it is exactly you want your map to show. You'll also have to do some independent research to find a suitable shapefile. Once you have done this, you can read it into R using the function `st_read()`. I can help with any issues at this step!
+
+-   Nobel prize data. This dataset we worked with last week. It contains country and place of birth and death for Nobel prize winners, as well as other information. It's available [here](https://github.com/melaniewalsh/Intro-Cultural-Analytics/tree/master/book/data/nobel-prize-winners), or you can look up the code we used to read it directly into R last week.
+
+-   [This dataset](https://github.com/the-pudding/data/blob/master/dog-shelters/allDogDescriptions.csv) of data on dog adoptions in the US. It was originally used for [this story](https://pudding.cool/2019/10/shelters/) on the news website The Pudding. The easiest way to load this into R is to directly use the 'raw' link on `read_csv` in R. You can also download the file, and then upload it to Posit, and use it that way. Learning how to use datasets directly from Github is a very useful thing to know!
+
+-   EU statistics, from the official [eurostat website](https://ec.europa.eu/eurostat/web/main/data/database). There are many datasets here. To find one which is suitable for creating a data map, look for where the geographic unit (the NUTS code) has been specified in the description.
+
+-   US Refugee arrival data, from [here](https://github.com/melaniewalsh/Intro-Cultural-Analytics/tree/master/book/data/us-refugee-arrivals). Again, you'll need to figure out how to download this from Github.
+
+-   UNHCR refugee data. The easiest way to access this is through the R package `refugees`. This can be installed using `install.packages('refugees')` . Further information on using this package can be found [here](https://www.unhcr.org/refugee-statistics/insights/explainers/refugees-r-package.html).
+
+-   Trans-Atlantic Slave Trade data. Available [here](https://github.com/melaniewalsh/Intro-Cultural-Analytics/blob/master/book/data/Trans-Atlantic-Slave-Trade_Americas.csv). Again, from Github, and easiest to load by reading the 'raw' file directly into R using `read_csv()`
+
+-   Dutch war monuments dataset (from Wikipedia). In this case, I have provided both the dataset and the shapefile, available in the Posit workspace.

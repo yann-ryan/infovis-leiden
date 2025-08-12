@@ -1,0 +1,97 @@
+---
+title: "Home exercises"
+---
+
+## Instructions
+
+The at-home exercises should be completed using Posit cloud. Log in to your Posit account and open the project `Exercise 1`. Create a new .Rmd file (use File -\> New File -\> R Notebook.
+
+I advise saving the new file straight away. Because you'll submit this file as an assignment, use a standardised name: exercise_1_lastname_firstname. Regularly re-save the file.
+
+When you have finished the exercise (or part of it), 'knit' the file. Export the .Rmd and the html as a .zip file, and upload this to the assignment area.
+
+### Exercise 1: work with variables and mathematical operations
+
+
+
+
+
+
+<div>
+
+<div style="float: left; position: relative; top: 0px; padding: 30px;">
+
+![Illustration of book sizes. Found    [here](https://www.heathermollauthor.com/post/austen-and-folios-quartos-and-octavos) ](images/book_sizes.jpg){width="210"}
+</div>
+  
+You're working on a book history project, and you're interested in finding out more about the most-used book formats. When books were still made by hand (up until the beginning of the nineteenth century), books were made by printing on a standard sized sheet of paper and then folding the paper a number of times to make the pages. This process determined the different sizes, or formats, of books.
+
+
+The largest size (a single fold) was called *folio*, followed by *quarto*, *octavo*, and *duodecimo*. (you might have heard of the [Shakespeare 'first folio'](https://www.folger.edu/explore/shakespeare-in-print/first-folio/), which is so named because it was the first time Shakespeare was published in folio format - individual plays had previously been [published as quarto](https://www.folger.edu/explore/shakespeare-in-print/diy-quarto/)).
+
+
+</div>
+
+<div>
+
+::: callout-note
+
+## Why does this matter?
+
+In the study of the book (bibliography), determing the format is important: folio-sized books were reserved for important and expensive publications which were meant to last. In a real-world example, we could do this on a large dataset of information from a book catalogue, to look for patterns and changes over time. In that case, we would usually do a similar calculation, but over a whole column of numbers.
+:::
+
+</div>
+
+#### Steps  
+
+1.  In a first code cell, create two variables, called `book_height` and `book_width`. Set each to a number: make up some realistic values for book height and width in milimetres.
+
+2.  In a new code cell, write code that will multiply them together, and save this as a variable `book_area`.
+
+3.  Now, let's calculate the area of a typical folio book. A full sheet of paper measured 500 x 740 mm. In a new code cell, write code to calculate the area, in millimeters squared, of a folio page (**remember the full sheet of paper is also folded in half to make the page**).
+
+Any book which has an area equal or larger than this is considered folio size.
+
+4.  In a new code cell, write code to do this comparison using the variables created above.
+
+See below for the answer if you get stuck:
+
+```{r}
+#| code-fold: true
+
+book_height <- 500
+
+book_width <- 700
+
+book_area <- book_height * book_width
+
+folio_area <- (500 * 740) / 2 # the width multiplied by the height, divided by two
+
+book_area >= folio_area # check if book area is greater than or equal to folio_area.
+
+```
+
+### Exercise two: create and compare two vectors
+
+1.  Create a vector containing the names of Beyoncé's top-selling albums: *I am Sasha Fierce*, *Dangerously in Love*, *B'Day*, *Beyoncé*, and *4*.
+
+::: callout-tip
+Usually when you create vectors, you can use either single or double quotation marks. What happens when you try to use single quotation marks here?
+
+What happens to the fifth album title? Is it stored as a number or as characters?
+:::
+
+2.  Write code in a new code cell which checks if any of the strings in the vector are equal to "Renaissance"
+
+3.  Create a new vector, containing the titles of the top 5 ranked albums from this *Variety* article: *Renaissance*, *Beyoncé*, *Lemonade*, *4*, and *B'Day*.
+
+4.  Now, check if any of these top-ranked albums are missing from the top-selling list.
+
+::: callout-tip
+The easiest way to compare two vectors is to use another command, `%in%`. This essentially says, check each of the elements of this vector to see if they are equal to any of the elements of this second vector:
+
+e.g., `vector_1 %in% vector_2`
+:::
+
+#### 

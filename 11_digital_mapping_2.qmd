@@ -1,0 +1,27 @@
+---
+title: "Finding, downloading importing shapefiles"
+---
+
+-   Finding and downloading shapefiles
+
+    -   .shp
+
+    -   gpkg
+
+    -   geoJSON
+
+-   Reading in shapefiles as simple features
+
+-   Create a shapefile from coordinates
+
+-   Setting CRS
+
+-   Joining to external data
+
+-   Visualising
+
+-   Changing projections
+
+-   Extra: st_crop, st_join, summarise()
+
+-   Using tmap

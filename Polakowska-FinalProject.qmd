@@ -1,0 +1,217 @@
+---
+title: "The Impact of Tea"
+output:
+  html_document:
+    df_print: paged
+---
+
+Tea is the [second most consumed](https://www.mdpi.com/2072-6643/11/4/929) beverage in the world after water. Coming from a single plant, the camellia sinensis, over 3000 types of tea are known to us today, divided into six main categories: black, green, oolong, white, pu-erh and yellow.
+
+As an avid tea lover and to participate in National Hot Tea Month, which is recognised by the Tea Council of the USA as every January, I collected tea-related datasets from fields ranging from import trade to linguistics to have a look at tea consumption, as well as the etymology of the word 'tea' itself. I decided to narrow the scope to Africa, as it is the third largest tea importer ([15.2% of all imports](https://www.worldstopexports.com/tea-imports-by-country/) in 2022) in the world behind Asia and Europe, and to highlight the continent's linguistic diversity. All the visualisations and data processing were done in [R](https://www.r-project.org/) using the `ggplot2`, `plotly`, `sf`, and `rnaturalearth` packages.
+
+```{r, echo=FALSE, message=FALSE}
+library(sf)
+sf::sf_use_s2(FALSE)
+
+library(ggplot2)
+library(rnaturalearth)
+library(rnaturalearthdata)
+library(dplyr)
+library(plotly)
+
+options(scipen = 999)
+```
+
+# Import trade of tea
+
+The global consumption of tea reached [6.7 billion kilograms](https://www.statista.com/statistics/940102/global-tea-consumption/) in 2022. The bar chart below is based on a dataset from the [United Nations Comtrade Database](https://comtradeplus.un.org/TradeFlow) (`tea_data_less3.csv`). The data revolve around the total trade value of imported black and green tea, specifically focusing on immediate packings of a content exceeding three kilograms, in 2022. After adding a 'Continent' column from [another dataset](https://ourworldindata.org/grapher/continents-according-to-our-world-in-data) which lists all countries and the continents they are located on (`continents.csv`), other continents except for Africa were filtered out and the data were grouped by country, commodity type, and total value. This dataset was then plotted on a bar chart, with the *x*-axis showing the total trade value in USD and the *y*-axis listing the African countries. The two types of tea are shown in their respective colours.
+
+```{r, echo=FALSE}
+tea_imp = read.csv('tea_data_less3.csv')
+
+tea_imp[115, 'ReporterDesc'] = "Côte d'Ivoire"
+tea_imp[144, 'ReporterDesc'] = "Côte d'Ivoire"
+
+tea_imp$CmdCode = as.factor(tea_imp$CmdCode)
+tea_imp$CmdCode = gsub('90220','Green',tea_imp$CmdCode)
+tea_imp$CmdCode = gsub('90240','Black',tea_imp$CmdCode)
+```
+
+```{r, echo=FALSE}
+continents = read.csv('continents.csv')
+
+continents <- continents %>%
+  select(Code, Continent)
+```
+
+```{r, echo=FALSE, message=FALSE}
+tea_imp_cont <- left_join(tea_imp, continents, by = c("ReporterISO" = "Code"))
+
+tea_imp_africa = tea_imp_cont %>%
+  filter(Continent == 'Africa')
+
+tea_imp_africa_value = tea_imp_africa %>%
+  group_by(ReporterISO, ReporterDesc, CmdCode) %>%
+  summarise(total_value = sum(PrimaryValue, na.rm = TRUE))
+```
+
+```{r, echo=FALSE, warning=FALSE}
+ggplot(tea_imp_africa_value, aes(ReporterDesc)) + geom_col(aes(x = reorder(ReporterDesc, total_value), y = total_value, fill = CmdCode)) + coord_flip() +
+  xlab('Country') + ylab('Trade value (USD)') +
+  scale_y_continuous(labels = scales::comma_format(), limits = c(0, 300000000)) +
+  labs(title = 'Import trade of tea in Africa in 2022',
+       subtitle = 'In immediate packings of a content exceeding 3 kilograms',
+       caption = 'Data from: https://comtradeplus.un.org/TradeFlow') +
+  scale_fill_manual(name = 'Type of tea', values=c('gray10', 'forestgreen'))
+```
+
+Below, an interactive version of the same chart can be seen to enable viewing the trade value per tea type for a specific country by hovering over the appropriate bar.
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+tea_trade = ggplot(tea_imp_africa_value, aes(ReporterDesc)) + geom_col(aes(x = reorder(ReporterDesc, total_value), y = total_value, fill = CmdCode)) + coord_flip() +
+  xlab('Country') + ylab('Trade value (USD)') +
+  scale_y_continuous(labels = scales::comma_format(), limits = c(0, 300000000)) +
+  labs(title = 'Import trade of tea in Africa in 2022',
+       subtitle = 'In immediate packings of a content exceeding 3 kilograms',
+       caption = 'Data from: https://comtradeplus.un.org/TradeFlow') +
+  scale_fill_manual(name = 'Type of tea', values=c('gray10', 'forestgreen'))
+
+ggplotly(tea_trade)
+```
+
+From the two bar plots, it can be inferred that Egypt is the top importer of black tea (\$254,954,698.277) and Morocco is the top importer of green tea (\$246,430,133.801). Overall, the top three importers of 2022 were Egypt, Morocco, and South Africa, while Burundi had the lowest import value of all present African countries.
+
+# The etymology of *tea*
+
+Most of the world's pronunciations of the word for tea originally come from Chinese, although there are differences depending on the Chinese variety they were based on. The [dataset](https://ef337d71266b468eb54418f2b7697533.app.posit.cloud/#0) I chose from the World Atlas of Language Structures (WALS) compiles these lexical data and divides it into three categories:
+
+-   Words derived from Sinitic *cha*
+
+-   Words derived from Min Nan Chinese *te*
+
+-   Others
+
+According to [the chapter](https://wals.info/chapter/138) on this lexical feature, the first form 'cha' originates from Cantonese *cha*, which was borrowed by the Portuguese traders, whose trade route went through Macao, China in the 16th century. The other form comes from Min Nan Chinese, a variety spoken in Fujian, China, which was where the Dutch had their trade routes (hence the Dutch *thee*). Other variations may stem from native versions of the word origin.
+
+# The origin of *tea* in languages of Africa
+
+After uploading the dataset (`tea_word.csv`), only African languages were selected based on the language family or, in the case of Malagasy (which is the only Austronesian language spoken in Africa)---geographical location.
+
+The languages were first grouped by the origin and counted. The first visualisation is a pie chart showcasing the distribution of the origin across the 49 African languages present in the dataset. It can be observed that the majority of the languages derive their word for tea from the Sinitic *cha*.
+
+```{r, echo=FALSE}
+tea_word_data = read.csv("tea_word.csv", sep = ";")
+
+tea_word_data$description <- factor(tea_word_data$description, levels=c('Words derived from Sinitic cha', 'Words derived from Min Nan Chinese te', 'Others'))
+
+lang_dataset1 = filter(tea_word_data, name == 'Malagasy')
+lang_dataset2 = filter(tea_word_data, family %in%  c("Niger-Congo", "Saharan", "Central Sudanic", "Afro-Asiatic", "Eastern Sudanic", "Central Sudanic", "Khoe-Kwadi", "Mande", "Kxa", "Songhay"))
+
+lang_dataset = bind_rows(lang_dataset1, lang_dataset2)
+```
+
+```{r, echo=FALSE}
+lang_dataset_count = lang_dataset %>%
+  group_by(description) %>% tally()
+```
+
+```{r, echo=FALSE}
+ggplot(lang_dataset_count, aes(x = "", y = n, fill = description)) + 
+  geom_col(color = 'black', linewidth = .25) + 
+  labs(x=NULL, 
+       y=NULL, 
+       title = "Distribution of the 'tea' origin in African languages",
+       subtitle = 'Total number of languages: 49',
+       caption = 'Data from WALS [https://wals.info/feature/138A#3/1.76/18.75]') +
+  theme_void() + scale_fill_brewer(name = 'Word origin', palette = 'Set2') +
+  coord_polar(theta = "y", start=0) +
+  geom_text(aes(label = n), position = position_stack(vjust = 0.5))
+```
+
+### Other origins
+
+To further analyse the 'Others' and look for any connections between the languages within that category, I examined the distribution of those languages based on language family. However, no conclusions could be drawn from this distribution, as it is even across all language families, with two or three members per family.
+
+These languages' words for tea can be seen in the table below the plot. It is interesting to see the similar structure of some of these words, e.g. *attaya* -- *ataayi* -- *atee*.
+
+```{r, echo=FALSE, message=FALSE}
+tea_others = lang_dataset %>%
+  filter(description == 'Others') %>%
+  group_by(family, name) %>%
+  tally()
+```
+
+```{r, echo=FALSE}
+ggplot(tea_others, aes(x = "", y = n, fill = family)) + 
+  geom_col(color = 'black', linewidth = .25) + 
+  labs(x=NULL, 
+       y=NULL, 
+       title = "Distribution of the 'Others' origin in African languages based on language family",
+       subtitle = 'Total number of languages: 10',
+       caption = 'Data from WALS [https://wals.info/feature/138A#3/1.76/18.75]') + scale_fill_brewer(name = 'Language family', palette = 'Accent') + theme_void() +
+  geom_text(aes(label = name), position = position_stack(vjust = 0.5))
+```
+
+| Language              | Word         |
+|-----------------------|--------------|
+| Rendille              | majáni       |
+| Kabyle                | llatay       |
+| Berber (Middle Atlas) | ashahi       |
+| Soninke               | ataayi; dute |
+| Bambara               | atayi; dite  |
+| Zulu                  | itiye        |
+| Wolof                 | attaya       |
+| Ful (Liptako)         | atee         |
+| Zarma                 | ataayi       |
+| Koyraboro Senni       | atayiti      |
+
+# Geographic distribution
+
+To make the data easier to visualise, the same dataset was also plotted on a map of Africa, which was taken from the `rnaturalearth` package. The linguistic dataset was converted into a shapefile, which allows it to be plotted using geographic data. Each dot represents a language, while the various colours symbolise the different origins of the word for tea. The colours match the pie chart above for the reader's convenience. The national borders are of a much lighter shade as they are not the focus here, since languages are not bound by them---they only serve as a point of reference. The language name can be seen when hovering over a specific dot in the interactive map below.
+
+```{r, echo=FALSE, message=FALSE}
+lang_dataset_sf = st_as_sf(lang_dataset, coords = c('longitude','latitude'), crs = 4326,na.fail = FALSE)
+
+lang_dataset_agg = lang_dataset %>% 
+  group_by(description, family, latitude, longitude)
+
+lang_dataset_agg_sf = st_as_sf(lang_dataset_agg, coords = c('longitude','latitude' ), crs = 4326,na.fail = FALSE)
+```
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+worldmap = ne_countries(scale = 'medium', returnclass = 'sf')
+
+ggplot() + geom_sf(data = worldmap, colour = 'grey') +
+  geom_sf(data = lang_dataset_agg_sf, aes(fill = description, label = name), size = 5, alpha = .5, pch = 21) +
+  coord_sf(xlim = c(-25, 50), ylim = c(-35, 40)) + theme_void() +
+  labs(title = "The origin of 'tea' in African languages\n",
+       caption = 'Data from WALS [https://wals.info/feature/138A#3/1.76/18.75]'
+  ) + scale_fill_brewer(name = 'Word origin', palette = 'Dark2')
+```
+
+After examining the geographic distribution, a clearer pattern emerges---the derivation from 'cha' is more common in the central-eastern part of the continent and the 'te' form is more common in the western and southern areas. There also appears to be a concentration of other origins in the west, which could be the reason for the similarities between the word forms in the table.
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+tea = ggplot() + geom_sf(data = worldmap, colour = 'grey') +
+  geom_sf(data = lang_dataset_agg_sf, aes(fill = description, label = name), size = 5, alpha = .5, pch = 21) +
+  coord_sf(xlim = c(-25, 50), ylim = c(-35, 40)) + theme_void() +
+  labs(title = "The origin of 'tea' in African languages\n",
+       caption = 'Data from WALS [https://wals.info/feature/138A#3/1.76/18.75]'
+  ) + scale_fill_brewer(name = 'Word origin', palette = 'Dark2')
+
+ggplotly(tea)
+```
+
+### Comparison to colonised Africa
+
+This distribution was then compared to a map of former colonies in Africa but surprisingly, the location of the colonies and the distribution of word origins is somewhat opposite to one another; for example, the eastern coast was mostly colonised by the Italians and the British, but that is not reflected in the word origin, which in that region is 'cha'. It appears as though colonisation did not have a large impact on the native word for tea.
+
+[![Map from: https://commons.wikimedia.org/wiki/File:Colonial_Africa\_(1939).svg](Colonial_Africa_(1939).svg.png){width="500"}](https://commons.wikimedia.org/wiki/File:Colonial_Africa_(1939).svg)
+
+### Conclusion
+
+Tea is a beverage with a long and rich history, and it is enjoyed by people all around the world. As the third top importing continent in 2022, Africa had the import trade value of \$619,228,335, with its top importers including Egypt, Morocco, and South Africa. When it comes to the origin of the word for tea in African languages, the majority derives its word from the Sinitic *cha*. While there is no overall pattern for the languages with words of other origin, a geographic patten can be observed when looking at the data on a map of the continent, with *cha* more common in the central-east and *te* in the west and south. This distribution seemingly has no visible connection with the former colonising countries.
+
+```{r, echo=FALSE, message=FALSE, results='hide'}
+sum(tea_imp_africa_value$total_value)
+```

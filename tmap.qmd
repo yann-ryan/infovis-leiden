@@ -1,0 +1,53 @@
+---
+title: "Tmap"
+---
+
+## Interactive maps with tmap
+
+Another feature to improve your data visualisations is to use interactive maps. Again, there are several ways to do this, including the package [Leaflet](https://rstudio.github.io/leaflet/).
+
+The easiest way to create a map is with a package called tmap. This takes an sf object (similar to those we created in earlier weeks), and allows you to make a nice map using a syntax fairly similar to ggplot. Optionally, you can make these maps interactive.
+
+To demonstrate this, I'll use a dataset from the [Shakespeare & Co project at Princeton](https://shakespeareandco.princeton.edu/), which contains information on the locations of members of the famous Shakespeare & Co bookshop and lending library in Paris.
+
+First, install and load the tmap package.
+
+```{r}
+library(tmap)
+library(tidyverse)
+```
+
+Load the dataset:
+
+```{r}
+
+sco_data = read_csv('SCoData_members_v1.2_2022_01.csv')
+
+sco_data = sco_data %>% separate(coordinates, into = c('latitude', 'longitude'), sep = ',')
+
+```
+
+Now, create an sf object, as we learned in previous weeks
+
+```{r}
+library(sf)
+
+sco_data_sf = st_as_sf(sco_data, coords = c('longitude', 'latitude'), na.fail = FALSE)
+
+```
+
+To specify an interactive map with tmap use `tmap_mode("view")`
+
+```{r}
+tmap_mode("view")
+```
+
+Build the map. First add a 'basemap', which is a zoomable world map. A full list of options is available [here](https://leaflet-extras.github.io/leaflet-providers/preview/).
+
+Now, add the data using `tm_shape()`, and specify how it should be drawn using `tm_dots()`. The map below is interactive and clickable:
+
+```{r}
+# tm_basemap('OpenStreetMap.Mapnik') + 
+#   tm_shape(sco_data_sf) + 
+#   tm_dots()
+```

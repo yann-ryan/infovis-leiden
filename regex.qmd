@@ -1,0 +1,119 @@
+---
+title: "Pattern matching with str_detect"
+---
+
+::: callout-warning
+This section is a little more advanced. If you get stuck, feel free to skip and we can go over it in class later. For the most part the methods will not be necessary for this course, though they are nice to know.
+:::
+
+```{webr-r}
+#| context: setup
+
+library(dplyr)
+library(readr)
+library(stringr)
+
+url <- "https://raw.githubusercontent.com/yann-ryan/infovis-course/master/titanic_df_full.csv"
+download.file(url, "titanic_df.csv")
+
+titanic_df =  read_csv('titanic_df.csv')
+
+```
+
+## More advanced filters with `str_detect()` functions.
+
+So far when filtering strings, we have methods to filter when an entire cell is either equal to a single given string, or a list (vector) of given strings.
+
+If we want to do more complex filtering on text, we can use a method within the filter called `str_detect()`. This will any rows where the text in a cell matches a certain pattern. By default, it will look for this pattern anywhere in the text, meaning we can build filters which find partial matches, or a range of matches which fit a particular pattern.
+
+::: callout-note
+## stringr library
+
+The str_detect() function uses another library, called stringr. This is part of the 'tidyverse' package, so if you have loaded that, there is no need to do anything else. Otherwise, you can load it using `library(stringr)`.
+:::
+
+Filtering with str_detect() looks like this:
+
+```{webr-r}
+
+titanic_df |> 
+  filter(str_detect(name, "Ryan"))
+
+```
+
+This will find the exact pattern "Ryan", anywhere in the `name` column.
+
+You can see that within the `filter()` function, we use the function `str_detect()`. The first argument to this is the column we want to look at, and the second argument is the pattern, within quotation marks.
+
+### Regular expressions
+
+This method actually uses a language for matching text patterns called 'Regular expressions'. This language is very useful and we can't cover it in full in this course. However some simple things are worth knowing:
+
+-   You can match any character using a `.`. This will return 'John', 'Johan', but also 'Mohamed':
+
+```{webr-r}
+titanic_df |> 
+  filter(str_detect(name, ".oh.")) 
+```
+
+### Classes
+
+You can create your own 'classes' of characters to match, by putting it within square brackets. This will matche any digit between 0 and 9:
+
+```{webr-r}
+
+titanic_df |> 
+  filter(str_detect(ticket, "[0-9]"))
+
+```
+
+You can specify how many of a character or class should be matched by putting it within curly brackets. This can be a single number `{2}`, a range, `{2,5}`or a minimum with no maximum`{2,}`. This last one, for example, matches 'two or more' uppercase alphabetic characters:
+
+```{webr-r}
+
+titanic_df |> 
+  filter(str_detect(ticket, "[A-Z]{2,}"))
+
+```
+
+### Anchors
+
+Sometimes you want to specify that the pattern should come at the beginning or end of the string. You can do this using `^` and `$`. To find all names beginning with R, use:
+
+```{webr-r}
+
+titanic_df |> 
+  filter(str_detect(name, "^R"))
+
+
+```
+
+What happens if you run the same code without the `^`?
+
+```{webr-r}
+
+```
+
+### Alternation:
+
+To match either one pattern or another, using `|`. This will match all rows containing either `Ry` or `Da`:
+
+```{webr-r}
+titanic_df |> 
+  filter(str_detect(name, "Ry|Da"))
+```
+
+### Escaping
+
+Regular expressions use some special characters, such as `.`, as matching operators. If you want to match an actual `.` in the string, you need to 'escape' it: to tell R it shoudl treat it as a regular character and not a command. In R, do this using `\\`:
+
+```{webr-r}
+
+titanic_df |> 
+  filter(str_detect(name, "Mr\\."))
+
+```
+
+This is just the beginning! You can find out more about how stringr works with regular expresssions [here](https://stringr.tidyverse.org/articles/regular-expressions.html). A more comprehensive tutorial is [here](https://r4ds.had.co.nz/strings.html).
+
+There are also many interactive tutorials available online, although note that there will be small differences in the ways they use regular expressions, even though the main principles remain the same.

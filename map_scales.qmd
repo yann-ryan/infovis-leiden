@@ -1,0 +1,36 @@
+---
+title: "Scales and limits"
+---
+
+```{r}
+#| warning: false
+#| message: false
+
+library(tidyverse)
+
+library(rnaturalearth)
+library(sf)
+library(tidyverse)
+
+sf_use_s2(FALSE)
+
+worldmap = ne_countries(scale = 'medium', returnclass = 'sf')
+```
+
+### Setting limits
+
+Using filter might not always give satisfactory results. In the above case, it includes places which are politically at least part Europe, such as overseas territories and the entirety of Russia. In the case of the Netherlands, this makes the main part of the map very small and difficult to see(if we wanted to include this place, it may be best to add an inset, but that will have to be left to another lesson).
+
+If our data was more specifically about western Europe, we might want to pick a custom 'square' of the map to show. We can do this using the code `+ coord_sf()`. This should be added after the rest of the map code.
+
+Within coord_sf, we'll set the start and end limits for the x and y axis (or longitude and latitude coordinates), using `xlim` and `ylim`, like this:
+
+```{r}
+
+worldmap |>  
+  ggplot() +
+  geom_sf() +
+  coord_sf(xlim = c(-10, 25), ylim = c(38, 60))
+
+
+```

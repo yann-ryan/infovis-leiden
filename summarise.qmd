@@ -1,0 +1,70 @@
+---
+title: "Summarising"
+---
+
+```{webr-r}
+#| context: setup
+
+library(dplyr)
+library(readr)
+
+url <- "https://raw.githubusercontent.com/yann-ryan/infovis-course/master/titanic_df_full.csv"
+download.file(url, "titanic_df.csv")
+
+titanic_df =  read_csv('titanic_df.csv')
+
+```
+
+### Counting with summarise()
+
+Now we are moving into real data analysis - which often is a case of counting things in your data.
+
+The verb summarise will take all the rows in your data and run some function on them to produce a desired summary. It looks a little like mutate(): first we provide the new column name for the summary, followed by the instruction.
+
+We should consider two types of counting: we could count the number of rows, or we could count some kind of value.
+
+Examples should help. To calculate the total number of rows, we can use a function called `n()`, which does exactly that:
+
+```{webr-r}
+titanic_df |>
+  summarise(count = n())
+```
+
+What if we want to calculate the total amount of Fare paid? In that case, we can use a function called `sum()`:
+
+::: callout-note
+Notice that as well as putting the Fare column within the brackets of the sum() function, there is also some extra text after a comma: `na.rm = TRUE`? This is an extra instruction to the sum function, telling it to exclude values where there is no data (NA). Otherwise the result will return NA as the value.
+:::
+
+```{webr-r}
+titanic_df |> 
+  summarise(n = sum(fare, na.rm = FALSE))
+```
+
+Here is a list of some of the most useful summarise functions:
+
+-   Center: [`mean()`](https://rdrr.io/r/base/mean.html), [`median()`](https://rdrr.io/r/stats/median.html)
+
+-   Spread: [`sd()`](https://rdrr.io/r/stats/sd.html), [`IQR()`](https://rdrr.io/r/stats/IQR.html), [`mad()`](https://rdrr.io/r/stats/mad.html)
+
+-   Range: [`min()`](https://rdrr.io/r/base/Extremes.html), [`max()`](https://rdrr.io/r/base/Extremes.html),
+
+-   Position: [`first()`](https://dplyr.tidyverse.org/reference/nth.html), [`last()`](https://dplyr.tidyverse.org/reference/nth.html), [`nth()`](https://dplyr.tidyverse.org/reference/nth.html),
+
+-   Count: [`n()`](https://dplyr.tidyverse.org/reference/context.html), [`n_distinct()`](https://dplyr.tidyverse.org/reference/n_distinct.html)
+
+-   Logical: [`any()`](https://rdrr.io/r/base/any.html), [`all()`](https://rdrr.io/r/base/all.html)
+
+::: callout-tip
+## Save some typing by using tally()
+
+Because summarise combined with n() or sum() is used so frequently, there is a shorter way of writing it, in a single command. To calculate the total rows you can use the verb `tally()`. You don't even need to specify a new column name, as it will call it n by default. In other words, tally() is exactly the same as writing summarise(n = n()).
+
+tally(Fare) is the same as writing summarise(n = sum(Fare, na.rm = TRUE))
+:::
+
+## Exercises:
+
+What is the *average* age of all the passengers? Average can be calculated using a function called mean().
+
+What is the maximum Fare paid? You can use the function max() for this.

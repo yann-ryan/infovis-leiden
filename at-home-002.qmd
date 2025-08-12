@@ -1,0 +1,39 @@
+---
+title: "Home exercises"
+---
+
+## Instructions
+
+The at-home exercises should be completed using Posit cloud. Open the new assignment 'Home Exercise 3'. Create a new .Rmd file (use File -\> New File -\> R Notebook.
+
+I advise saving the new file straight away. Because you'll submit this file as an assignment, use a standardised name: lastname_firstname3. Regularly re-save the file.
+
+When you have finished the exercise (or part of it), 'knit' the file. Export the .Rmd and the html as a .zip file, and upload this to the assignment area.
+
+If you can't knit the file because of an error, either comment out the code which doesn't work using #, or just submit the .Rmd file on its own.
+
+## At home exercises
+
+You can find a copy of the Titanic dataset as a csv in the project folder.
+
+Use summarise and all the previously-learned functions to do the following:
+
+-   Load the `tidyverse` library
+-   Read the dataset `titanic_df_full.csv` into your environment, and save it as an object with the name `titanic_df`. (see the previous week's home exercises to see how to do this and the previous step).
+-   Filter the dataset to include only male passengers who travelled on a ticket worth over 100 pounds.
+-   Filter the dataset so it includes all passengers who were children (those under 18) *or* who embarked at Cherbourg (C).
+-   Filter the dataset to include only passengers who had a second or third class ticket, *and* *they* *also* embarked at Queenstown (Q).
+-   Create a new column, and calculate the age in months for each passenger.
+-   Summarise the data to calculate the average number of siblings or spouses (`sibsp` column) per passenger. Before you do this, remove passengers with no siblings or spouses.
+
+### Filter combined with str_detect (optional)
+
+-   Find all passengers whose family name starts with the letters Ca.
+
+-   Find all the Swedish passengers (names that end in `sson`).
+
+-   Find all the married female passengers who travelled alone.
+
+-   Were there any female doctors on board? Find them.
+
+-   Write a Regular Expressions pattern to match as many common Dutch family names as you can.

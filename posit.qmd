@@ -1,0 +1,33 @@
+---
+title: "Using R Studio and Posit Cloud"
+---
+
+For more complex exercises, for at-home assignments where you're asked to produce a document, or if we need to import data to work with, we'll use the Posit cloud service, we looked at last week. For the at-home assignments, you should run the code in a .Rmd document in Posit cloud, and knit the file to send.
+
+Use the sidebar to switch to the 'Information Visualisation and the Humanities' Workspace, and click on the new assignment, for week 2, called 'Week 2: Introduction to R':
+
+![](images/Screenshot%202023-08-31%20at%2011.59.31.png){width="800"}
+
+You'll see an existing .Rmd file in the file manager in the bottom right. This is a 'live' version of this book chapter. It contains code cells and text. The first part of this practical session simply involves running these cells in the correct order, and looking at the output.
+
+You should now switch to reading this in the .Rmd file in Posit studio. I'll explain and demonstrate each cell, and then you can run them for yourself.
+
+Following that, you'll create your own new markdown notebook, and practice some of the techniques we've learned- and submit it to Brightspace as a weekly task.
+
+## Open the .Rmd file
+
+To begin, click on the .Rmd file. It will open in the reading pane in the top-left. The .Rmd file is an identical copy of this chapter, except you can see the 'source', and can change and run the code directly.
+
+If asked to install packages, go ahead and install them. It might take a few moments to complete.
+
+You can switch between two views - again as we saw last week. Either 'Source' or 'Visual'. In the 'Source' view, you'll see the source markdown code used to write the document. The 'Visual' view will show the page as it would look when finished, including the images.
+
+As we learned in the previous week, .Rmd files contain 'regular' text, as well as code cells - these are shaded boxes with `{r}` in the left corner. On the right corner, they have a number of icons. Clicking the small green triangle icon will 'run' the cell, meaning any code in it will be executed and the output, if any, will be displayed underneath.
+
+Let's try this here. Click on the green triangle to the right of the shaded code cell below this text:
+
+```{webr-r}
+print("Hello World")
+```
+
+The code (which simply tells R to print the message "Hello World" should run, and the result should appear below.

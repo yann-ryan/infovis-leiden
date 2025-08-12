@@ -1,0 +1,55 @@
+---
+title: "Home exercises"
+---
+
+## Instructions
+
+The at-home exercises should be completed using Posit cloud, Home Exercise 4. Create a new .Rmd file (use File -\> New File -\> R Notebook.
+
+I advise saving the new file straight away. Because you'll submit this file as an assignment, use a standardised name: lastname_firstname4. Regularly re-save the file.
+
+When you have finished the exercise (or part of it), 'knit' the file. Export the .Rmd and the html as a .zip file, and upload this to the assignment area.
+
+## Exercises
+
+Open the Posit cloud .Rmd file for this week. There are three files in the project folder (`character_list5.csv`, `imdb_genre.csv`, `meta_data7.csv`), so import these first. You should also load the 'tidyverse' package using library().
+
+Today we will use a dataset from an article written for The Pudding: Hannah Anderson and Matt Daniels, ["Film Dialogue from 2,000 screenplays, Broken Down by Gender and Age"](https://pudding.cool/2017/03/film-dialogue/).
+
+This article used data from screenplays to understand patterns and changes in the gender balance of movies over time. The dataset contains 2000 movie scripts from 1925 to 2015, including names, genders, ages, how many words each character spoke, the release year, and revenue.
+
+The difference with this dataset to our previous ones is that it has two separate files: one containing the information on the dialogue, and another containing the metadata. You first need to merge them together and then use this merged file to run some analyses.
+
+This can be done using a `join` command. You'll also need a key, in this case, the 'script_id' column is found in both datasets and can be used to merge them together.
+
+-   First, merge together the two files using a join, so that all the metadata information is found alongside the dialogue information. Save this as a new object.
+
+-   Create a subset of this data, including only Star Wars movies.
+
+-   Make a summary of the average number of words for men and women per year (back with the full dataset now)
+
+-   Make a new column. This column should contain the value 'more male' if there is more male than female dialogue, and 'more female' if there is more female dialogue. If it has the exact same, it should read 'equal'.
+
+-   Summarise the data to count how many movies had more male and how many had more female dialogue (or equal), for each year.
+
+-   Make a new dataset. This should have a row for each movie, and a column counting the total number of words for each gender.
+
+::: callout-tip
+This is a slightly trickier challenge and will need some techniques we haven't covered in class. One way to do this is to make two separate datasets first (think about what these should contain), and merge them together, and then use the comparisons from the previous week.
+
+You'll need to do the following which we haven't covered:
+
+-   First, use `full_join()` instead of `left_join()`, to make sure your merge includes all the movies, including ones with no male or no female lines.
+
+-   Second, when you do the merge, you will have some rows with an NA for number of words. If you use filter, these lines will be dropped instead of treated as the movie containing no (zero) words of dialogue for that gender. To have these work correctly, you can replace these NAs with 0s. You can do that with the following `mutate()` command: `mutate(name_of_column_with_count_of_lines = replace_na(name_of_column_with_count_of_lines, 0))`. Don't worry if you can't get this to work!
+:::
+
+-   Import the third file in your folder, `imdb_genre`. Join this to your new processed dataset (HINT: the imdb genre dataset doesn't have the script IDs, but has an IMDB ID instead. You'll need to first join the metadata file to your dataset of male and female lines, and take a look to see which column of that will let you join to the IMDB IDs).
+
+-   Calculate which genre has the highest proportion\* for each gender.
+
+-   You can calculate the proportion with a fairly simple mutate formula, if you have the individual totals for male and female.
+
+-   Return to your Star Wars subset. How do these movies compare to the dataset as a whole, in terms of proportion and male and female dialogue?
+
+-   More challenging: can you make the same dataframe (one row per movie, then a proportion of male and female in separate columns), without needing to make new dataframes and use joins? It can be done with a combination of `group_by`, `ungroup`, `summarise`, `mutate` and a new function, `pivot_wider`.

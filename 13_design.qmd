@@ -1,0 +1,13 @@
+---
+title: "Map Design"
+---
+
+## Introduction
+
+Up until now, we have concentrated on the techniques for making charts and maps from data sources. This week, we'll concentrate on what I'm calling the 'finishing touches': the final parts of your charts which will make them more attractive, and most importantly, readable, to viewers.
+
+These can be divided into two categories:
+
+1.  Elements 'extra' to the chart itself, such as titles (main titles, subtitles, titles on the axes), the background color, and guide lines.
+
+2.  Elements within the chart such as labels and annotations.

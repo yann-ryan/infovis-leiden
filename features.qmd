@@ -1,0 +1,58 @@
+---
+title: "Adding geographic features"
+---
+
+```{r}
+#| warning: false
+#| message: false
+
+library(tidyverse)
+
+library(rnaturalearth)
+library(sf)
+library(tidyverse)
+
+sf_use_s2(FALSE)
+
+worldmap = ne_countries(scale = 'medium', returnclass = 'sf')
+```
+
+A map can consist of many layers of geographic information stacked on top of each other.
+
+As well as the basic countries and coastline maps, it is also possible to download lots of other specific geographic data from RNaturalearth, using a function `ne_download`. To use this, you'll need to specify the `category` and `type` of the map, as well as the `scale` and `returnclass` as before. The full list of categories and types is available on [this page](https://cran.r-project.org/web/packages/rnaturalearth/vignettes/rnaturalearth.html), towards the end.
+
+The following example will download the 'rivers_lake_centerlines' data from the 'physical' category of maps:
+
+```{r}
+
+rivers = rnaturalearth::ne_download(scale = 'medium',category = 'physical', type = 'rivers_lake_centerlines', returnclass = 'sf')
+
+```
+
+We can add this river data using a new layer, with another `geom_sf` and a `+`.
+
+One thing to note is that you always need to put the `coord_sf()` after your last geom_sf, otherwise it will ignore it and give the full map:
+
+```{r}
+
+worldmap |> 
+  ggplot() +
+  geom_sf() + 
+  geom_sf(data = rivers) +  
+  coord_sf(xlim = c(-10, 25), ylim = c(38, 60))
+
+
+```
+
+We can also change aspects of the map such as the fill of the shapes, and the colour of the outline. As with before, this is done using `color =` and `fill =`. To change all of the geographic data of a layer to a single color, simply type it within the `geom_sf` . If it is to be mapped to specific data, it should be enclosed within `aes()`
+
+```{r}
+
+worldmap |>
+  ggplot() + 
+  geom_sf(color = 'black', fill = 'lightgreen') +    
+  geom_sf(data = rivers, color = 'blue') +    
+  coord_sf(xlim = c(-10, 25), ylim = c(38, 60))
+
+
+```

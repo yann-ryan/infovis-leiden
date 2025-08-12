@@ -1,0 +1,91 @@
+---
+title: "The pipe operator"
+---
+
+```{webr-r}
+#| context: setup
+
+library(dplyr)
+library(readr)
+
+url <- "https://raw.githubusercontent.com/yann-ryan/infovis-course/master/titanic_df_full.csv"
+download.file(url, "titanic_df.csv")
+
+titanic_df =  read_csv('titanic_df.csv')
+
+
+
+```
+
+### Piping
+
+You can see that in many cases, we might want to do multiple operations to a dataset, one after another. In the previous example we wanted to look at the oldest passengers for each sex. In that case, it would have been nice to use select after arrange to keep only the columns we were interested in looking at.
+
+One way to do this is to wrap the `arrange()` verb in a `select()` verb, like this:
+
+```{webr-r}
+select(arrange(titanic_df, sex, -age), name, sex, age)
+```
+
+This can get confusing pretty quickly, because it looks messy and it's difficult to tell which order things happen in. This is important in some circumstances - for instance you might get different results if you summarise some data before or after you filter it.
+
+R has a special command, called a pipe, which can be used to make much more readable code. The pipe will take a dataframe and pass it along to another function. This can be done multiple times: the code will do one operation, then the resulting dataframe will be passed on to the next function, and so forth. The pipe command is the following two characters: `|>`.
+
+For example, if we wanted to first arrange the dataset, and then select only certain columns from that arranged dataset, we could do the following:
+
+```{webr-r}
+titanic_df |>
+  arrange(sex, -age) |>
+  select(name, sex, age)
+  
+```
+
+::: callout-note
+See that we put each verb/function on a new line? This is not actually necessary as R ignores lines in most cases, but it makes the code much easier to read afterwards. There is a whole style guide available [here](https://style.tidyverse.org/index.html) if you want to learn more about writing nice code in R!
+:::
+
+Notice that we don't need to repeat the name of the dataset after the first function - it is 'passed along' by the pipe operator from one function to the next.
+
+For the rest of this course, the code will be written using the pipe command. I strongly encourage you to do the same - it will make it much easier for you and others to understand your code later.
+
+### Exercises
+
+Use `select()`, `slice()` and `arrange()` (and the pipe operator) to do the following:
+
+-   In one operation, slice the titanic_df dataframe to keep only the hundred oldest passengers, put them in order of the fare they paid (in descending order), and select only the Name, Age, and Fare columns.
+
+```{webr-r}
+
+```
+
+-   What are the names of the oldest and youngest passengers on the Titanic?
+
+```{webr-r}
+
+```
+
+-   How many first-class female passengers survived? What were their names?
+
+```{webr-r}
+
+```
+
+-   Which passenger paid the highest fare? What class were they in?
+
+```{webr-r}
+
+```
+
+### Learning objectives
+
+Look through these and tick off the ones you think you understand. Be honest with yourself, and make a note of anything which is not clear and we can go over it again in the next class.
+
+-   [ ] Know what a dataframe is and how to preview one using code.
+-   [ ] How to explore and adjust rows and columns in a dataframe:
+    -   [ ] select
+    -   [ ] slice
+    -   [ ] rename
+-   [ ] Arrange columns
+    -   [ ] ascending and descending
+    -   [ ] multiple columns
+-   [ ] Write more readable code using the pipe

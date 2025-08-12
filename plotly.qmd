@@ -1,0 +1,23 @@
+---
+title: "Plotly"
+---
+
+## If time: interactive charts
+
+Another way to make more readable charts is to include interactive elements. This can help viewers to find interesting points in the data by hovering and clicking, or by zooming in. This negates the need for annotations and labels in many cases, meaning we can make less cluttered visualisations.
+
+These interactive charts will display in the same .html documents we have used for the weekly exercises and assignments.
+
+In R, we can use a library called plotly to easily turn our visualisations interactive.
+
+First, create a regular ggplot plot. Importantly, you should name this plot in your environment by setting a name followed by `=`.
+
+We'll remove some unnecessary elements, such as the labels and lines, but leave in the colored extra line and the titles.
+
+`{r} p = ggplot() +      geom_line(data = all, aes(x = year, y = n, group = coo), alpha = .5) +   geom_line(data =syria, aes(x = year, y = n), size = 1.5, color = 'forestgreen') +    labs(title = "Asylum seekers to Germany\nby country of origin",         subtitle = "2000-2020 inclusive",         caption = "Data from https://www.unhcr.org/refugee-statistics/",        x = NULL,        y = "Number seeking asylum") +    theme(axis.title = element_text(size = 16))}`
+
+Now, load the library plotly. If it's not installed, install using \`install.packages('plotly').
+
+You can make plots directly in plotly using this syntax, or you can use a function called `ggplotly()` to automatically convert your static chart. Simply pass your chart name to the function:
+
+`{r} library(plotly)  ggplotly(p)}`

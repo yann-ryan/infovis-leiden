@@ -1,0 +1,31 @@
+---
+title: "Ethics"
+---
+
+### Ethics in data visualization
+
+Ethics in data visualization could be thought of as fairly **representing through data and design**. Both by representing data correctly (not being misleading), and not making implicit judgements with design.
+
+#### Falsifying data
+
+One obviously unethical way to make data visualisations is by directly falsifying data. This could be on purpose, or by omission. For instance, we could easily add new data points to a dataset without anyone knowing, to change the narrative of the visualisation. However, we could also filter the data, for example by removing individual points or outliers, or just by making a choice to show parts of the data which fit a particular narrative. For example, imagine a dataset which showed temperatures rising over the past 50 years, but with a dip in the last 5. Choosing to only show the last five years on the chart may be construed as misleading and unethical.
+
+However as we have learned, there are always choices to be made by the designer. As designers, we must tread the fine line between constructing a cohesive narrative, and using charts in misleading ways!
+
+#### Judgements and bias
+
+The second way in which we should be careful with ethics in data visualization is with introducing conscious or unconcious bias into our design choices.
+
+The way that we use color and shape is particularly important. In many cultures, certain colors, shapes, and other visual elements have particular positive or negative connotations. We should avoid manipulating these in ways which replicate or increase cultural biases connected to certain groups.
+
+A very clear example is the repeated use of 'menacing red arrows' to depict refugee and asylum seeker flows. This visual language is very reminiscent of the way in which we depict invading armies.
+
+![](images/arrows.png)
+
+There are many ways around this, for example using colors with more neutral associations, and, as in a graphic by the Economist a few years back, by replacing arrows with icons of people.
+
+![](images/economist_arrows.png)
+
+Colours:
+
+https://www.thoughtco.com/visual-color-symbolism-chart-by-culture-4062177

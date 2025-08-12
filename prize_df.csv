@@ -1,0 +1,629 @@
+prize_id,award_year,award_date,category,amount,amount_adjusted,motivation
+1,1901,1901-11-12,Chemistry,150782,9704878,in recognition of the extraordinary services he has rendered by the discovery of the laws of chemical dynamics and osmotic pressure in solutions
+2,1901,1901-11-14,Literature,150782,9704878,"in special recognition of his poetic composition, which gives evidence of lofty idealism, artistic perfection and a rare combination of the qualities of both heart and intellect"
+3,1901,1901-12-10,Peace,150782,9704878,"for his lifelong work for international peace conferences, diplomacy and arbitration"
+4,1901,1901-11-12,Physics,150782,9704878,in recognition of the extraordinary services he has rendered by the discovery of the remarkable rays subsequently named after him
+5,1901,1901-10-30,Physiology or Medicine,150782,9704878,"for his work on serum therapy, especially its application against diphtheria, by which he has opened a new road in the domain of medical science and thereby placed in the hands of the physician a victorious weapon against illness and deaths"
+6,1902,1902-11-11,Chemistry,141847,9129789,in recognition of the extraordinary services he has rendered by his work on sugar and purine syntheses
+7,1902,1902-11-13,Literature,141847,9129789,"the greatest living master of the art of historical writing, with special reference to his monumental work, <I>A history of Rome</I>"
+8,1902,1902-12-10,Peace,141847,9129789,for his eminently practical administration of the Inter-Parliamentary Union
+9,1902,1902-11-11,Physics,141847,9129789,in recognition of the extraordinary service they rendered by their researches into the influence of magnetism upon radiation phenomena
+10,1902,1902-10-30,Physiology or Medicine,141847,9129789,"for his work on malaria, by which he has shown how it enters the organism and thereby has laid the foundation for successful research on this disease and methods of combating it"
+11,1903,1903-11-12,Chemistry,141358,8830717,in recognition of the extraordinary services he has rendered to the advancement of chemistry by his electrolytic theory of dissociation
+12,1903,1903-11-19,Literature,141358,8830717,"as a tribute to his noble, magnificent and versatile poetry, which has always been distinguished by both the freshness of its inspiration and the rare purity of its spirit"
+13,1903,1903-12-10,Peace,141358,8830717,for his longstanding and devoted effort in favour of the ideas of peace and arbitration
+14,1903,1903-11-12,Physics,141358,8830717,in recognition of the extraordinary services he has rendered by his discovery of spontaneous radioactivity
+15,1903,1903-10-15,Physiology or Medicine,141358,8830717,"in recognition of his contribution to the treatment of diseases, especially lupus vulgaris, with concentrated light radiation, whereby he has opened a new avenue for medical science"
+16,1904,1904-11-08,Chemistry,140859,8799545,"in recognition of his services in the discovery of the inert gaseous elements in air, and his determination of their place in the periodic system"
+17,1904,1904-11-17,Literature,140859,8799545,"in recognition of the fresh originality and true inspiration of his poetic production, which faithfully reflects the natural scenery and native spirit of his people, and, in addition, his significant work as a Proven&ccedil;al philologist"
+18,1904,1904-12-10,Peace,140859,8799545,for its striving in public law to develop peaceful ties between nations and to make the laws of war more humane
+19,1904,1904-11-08,Physics,140859,8799545,for his investigations of the densities of the most important gases and for his discovery of argon in connection with these studies
+20,1904,1904-10-20,Physiology or Medicine,140859,8799545,"in recognition of his work on the physiology of digestion, through which knowledge on vital aspects of the subject has been transformed and enlarged"
+21,1905,1905-11-09,Chemistry,138089,8626501,"in recognition of his services in the advancement of organic chemistry and the chemical industry, through his work on organic dyes and hydroaromatic compounds"
+22,1905,1905-11-09,Literature,138089,8626501,because of his outstanding merits as an epic writer
+23,1905,1905-12-10,Peace,138089,8626501,for her audacity to oppose the horrors of war
+24,1905,1905-11-09,Physics,138089,8626501,for his work on cathode rays
+25,1905,1905-10-12,Physiology or Medicine,138089,8626501,for his investigations and discoveries in relation to tuberculosis
+26,1906,1906-11-12,Chemistry,138536,8407156,"in recognition of the great services rendered by him in his investigation and isolation of the element fluorine, and for the adoption in the service of science of the electric furnace called after him"
+27,1906,1906-11-08,Literature,138536,8407156,"not only in consideration of his deep learning and critical research, but above all as a tribute to the creative energy, freshness of style, and lyrical force which characterize his poetic masterpieces"
+28,1906,1906-12-10,Peace,138536,8407156,"for his role in bringing to an end the bloody war recently waged between two of the world's great powers, Japan and Russia"
+29,1906,1906-11-12,Physics,138536,8407156,in recognition of the great merits of his theoretical and experimental investigations on the conduction of electricity by gases
+30,1906,1906-10-25,Physiology or Medicine,138536,8407156,in recognition of their work on the structure of the nervous system
+31,1907,1907-11-12,Chemistry,138796,7967641,for his biochemical researches and his discovery of cell-free fermentation
+32,1907,1907-11-07,Literature,138796,7967641,"in consideration of the power of observation, originality of imagination, virility of ideas and remarkable talent for narration which characterize the creations of this world-famous author"
+33,1907,1907-12-10,Peace,138796,7967641,"for his work in the press and in peace meetings, both public and private, for an understanding between France and Italy"
+34,1907,1907-11-12,Physics,138796,7967641,for his optical precision instruments and the spectroscopic and metrological investigations carried out with their aid
+35,1907,1907-10-31,Physiology or Medicine,138796,7967641,in recognition of his work on the role played by protozoa in causing diseases
+36,1908,1908-11-10,Chemistry,139800,8025276,"for his investigations into the disintegration of the elements, and the chemistry of radioactive substances"
+37,1908,1908-11-12,Literature,139800,8025276,"in recognition of his earnest search for truth, his penetrating power of thought, his wide range of vision, and the warmth and strength in presentation with which in his numerous works he has vindicated and developed an idealistic philosophy of life"
+38,1908,1908-12-10,Peace,139800,8025276,"for their long time work for the cause of peace as politicians, peace society leaders, orators and authors"
+39,1908,1908-11-10,Physics,139800,8025276,for his method of reproducing colours photographically based on the phenomenon of interference
+40,1908,1908-10-29,Physiology or Medicine,139800,8025276,in recognition of their work on immunity
+41,1909,1909-11-09,Chemistry,139800,8025276,in recognition of his work on catalysis and for his investigations into the fundamental principles governing chemical equilibria and rates of reaction
+42,1909,1909-11-11,Literature,139800,8025276,"in appreciation of the lofty idealism, vivid imagination and spiritual perception that characterize her writings"
+43,1909,1909-12-10,Peace,139800,8025276,for their prominent position in the international movement for peace and arbitration
+44,1909,1909-11-09,Physics,139800,8025276,in recognition of their contributions to the development of wireless telegraphy
+45,1909,1909-10-28,Physiology or Medicine,139800,8025276,"for his work on the physiology, pathology and surgery of the thyroid gland"
+46,1910,1910-11-12,Chemistry,140703,8077113,in recognition of his services to organic chemistry and the chemical industry by his pioneer work in the field of alicyclic compounds
+47,1910,1910-11-10,Literature,140703,8077113,"as a tribute to the consummate artistry, permeated with idealism, which he has demonstrated during his long productive career as a lyric poet, dramatist, novelist and writer of world-renowned short stories"
+48,1910,1910-12-10,Peace,140703,8077113,"for acting as a link between the peace societies of the various countries, and helping them to organize the world rallies of the international peace movement"
+49,1910,1910-11-05,Physics,140703,8077113,for his work on the equation of state for gases and liquids
+50,1910,1910-10-20,Physiology or Medicine,140703,8077113,"in recognition of the contributions to our knowledge of cell chemistry made through his work on proteins, including the nucleic substances"
+51,1911,1911-11-07,Chemistry,140695,8301005,"in recognition of her services to the advancement of chemistry by the discovery of the elements radium and polonium, by the isolation of radium and the study of the nature and compounds of this remarkable element"
+52,1911,1911-11-09,Literature,140695,8301005,"in appreciation of his many-sided literary activities, and especially of his dramatic works, which are distinguished by a wealth of imagination and by a poetic fancy, which reveals, sometimes in the guise of a fairy tale, a deep inspiration, while in a mysterious way they appeal to the readers' own feelings and stimulate their imaginations"
+53,1911,1911-12-10,Peace,140695,8301005,"for his effort to expose and fight what he considers to be the main cause of war, namely, the anarchy in international relations"
+54,1911,1911-11-07,Physics,140695,8301005,for his discoveries regarding the laws governing the radiation of heat
+55,1911,1911-10-19,Physiology or Medicine,140695,8301005,for his work on the dioptrics of the eye
+56,1912,1912-11-12,Chemistry,140476,7650539,for his method of hydrogenating organic compounds in the presence of finely disintegrated metals whereby the progress of organic chemistry has been greatly advanced in recent years
+57,1912,1912-11-14,Literature,140476,7650539,"primarily in recognition of his fruitful, varied and outstanding production in the realm of dramatic art"
+58,1912,1913-12-10,Peace,140476,7650539,for bringing about better understanding between the countries of North and South America and initiating important arbitration agreements between the United States and other countries
+59,1912,1912-11-12,Physics,140476,7650539,for his invention of automatic regulators for use in conjunction with gas accumulators for illuminating lighthouses and buoys
+60,1912,1912-10-10,Physiology or Medicine,140476,7650539,in recognition of his work on vascular suture and the transplantation of blood vessels and organs
+61,1913,1913-11-11,Chemistry,143010,7788545,in recognition of his work on the linkage of atoms in molecules by which he has thrown new light on earlier investigations and opened up new fields of research especially in inorganic chemistry
+62,1913,1913-11-13,Literature,143010,7788545,"because of his profoundly sensitive, fresh and beautiful verse, by which, with consummate skill, he has made his poetic thought, expressed in his own English words, a part of the literature of the West"
+63,1913,1913-12-10,Peace,143010,7788545,for his unparalleled contribution to the organization of peaceful internationalism
+64,1913,1913-11-11,Physics,143010,7788545,"for his investigations on the properties of matter at low temperatures which led, inter alia, to the production of liquid helium"
+65,1913,1913-10-30,Physiology or Medicine,143010,7788545,in recognition of his work on anaphylaxis
+66,1914,1915-11-11,Chemistry,146900,8000400,in recognition of his accurate determinations of the atomic weight of a large number of chemical elements
+69,1914,1915-11-11,Physics,146900,8000400,for his discovery of the diffraction of X-rays by crystals
+70,1914,1915-10-29,Physiology or Medicine,146900,8000400,for his work on the physiology and pathology of the vestibular apparatus
+71,1915,1915-11-11,Chemistry,149223,7043326,"for his researches on plant pigments, especially chlorophyll"
+72,1915,1916-11-09,Literature,149223,7043326,as a tribute to the lofty idealism of his literary production and to the sympathy and love of truth with which he has described different types of human beings
+74,1915,1915-11-12,Physics,149223,7043326,for their services in the analysis of crystal structure by means of X-rays
+77,1916,1916-11-09,Literature,131793,5488791,in recognition of his significance as the leading representative of a new era in our literature
+82,1917,1917-11-08,Literature,133823,4441251,for his authentic descriptions of present-day life in Denmark
+83,1917,1917-12-10,Peace,133823,4441251,for the efforts to take care of wounded soldiers and prisoners of war and their families
+84,1917,1918-11-12,Physics,133823,4441251,for his discovery of the characteristic R&ouml;ntgen radiation of the elements
+86,1918,1919-11-13,Chemistry,138198,3225632,for the synthesis of ammonia from its elements
+89,1918,1919-11-13,Physics,138198,3225632,in recognition of the services he rendered to the advancement of Physics by his discovery of energy quanta
+92,1919,1920-11-11,Literature,133127,2692969,"in special appreciation of his epic, <I>Olympian Spring</I>"
+93,1919,1920-12-10,Peace,133127,2692969,for his role as founder of the League of Nations
+94,1919,1919-11-13,Physics,133127,2692969,for his discovery of the Doppler effect in canal rays and the splitting of spectral lines in electric fields
+95,1919,1920-10-28,Physiology or Medicine,133127,2692969,for his discoveries relating to immunity
+96,1920,1921-11-10,Chemistry,134100,2712651,in recognition of his work in thermochemistry
+97,1920,1920-11-11,Literature,134100,2712651,"for his monumental work, <I>Growth of the Soil</I>"
+98,1920,1920-12-10,Peace,134100,2712651,for his longstanding contribution to the cause of peace and justice and his prominent role in the establishment of the League of Nations
+99,1920,1920-11-11,Physics,134100,2712651,in recognition of the service he has rendered to precision measurements in Physics by his discovery of anomalies in nickel steel alloys
+100,1920,1920-10-28,Physiology or Medicine,134100,2712651,for his discovery of the capillary motor regulating mechanism
+101,1921,1922-11-09,Chemistry,121573,2869123,"for his contributions to our knowledge of the chemistry of radioactive substances, and his investigations into the origin and nature of isotopes"
+102,1921,1921-11-10,Literature,121573,2869123,"in recognition of his brilliant literary achievements, characterized as they are by a nobility of style, a profound human sympathy, grace, and a true Gallic temperament"
+103,1921,1921-12-10,Peace,121573,2869123,for their lifelong contributions to the cause of peace and organized internationalism
+104,1921,1922-11-09,Physics,121573,2869123,"for his services to Theoretical Physics, and especially for his discovery of the law of the photoelectric effect"
+106,1922,1922-11-09,Chemistry,122483,3563752,"for his discovery, by means of his mass spectrograph, of isotopes, in a large number of non-radioactive elements, and for his enunciation of the whole-number rule"
+107,1922,1922-11-09,Literature,122483,3563752,for the happy manner in which he has continued the illustrious traditions of the Spanish drama
+108,1922,1922-12-10,Peace,122483,3563752,"for his leading role in the repatriation of prisoners of war, in international relief work and as the League of Nations' High Commissioner for refugees"
+109,1922,1922-11-09,Physics,122483,3563752,for his services in the investigation of the structure of atoms and of the radiation emanating from them
+110,1922,1922-10-25,Physiology or Medicine,122483,3563752,for his discovery relating to the production of heat in the muscle
+111,1923,1923-11-13,Chemistry,114935,3590029,for his invention of the method of micro-analysis of organic substances
+112,1923,1923-11-14,Literature,114935,3590029,"for his always inspired poetry, which in a highly artistic form gives expression to the spirit of a whole nation"
+114,1923,1923-11-13,Physics,114935,3590029,for his work on the elementary charge of electricity and on the photoelectric effect
+115,1923,1923-10-25,Physiology or Medicine,114935,3590029,for the discovery of insulin
+117,1924,1924-11-13,Literature,116719,3645752,"for his great national epic, <I>The Peasants</I>"
+119,1924,1925-11-12,Physics,116719,3645752,for his discoveries and research in the field of X-ray spectroscopy
+120,1924,1924-10-23,Physiology or Medicine,116719,3645752,for his discovery of the mechanism of the electrocardiogram
+121,1925,1926-11-11,Chemistry,118165,3637427,"for his demonstration of the heterogenous nature of colloid solutions and for the methods he used, which have since become fundamental in modern colloid chemistry"
+122,1925,1926-11-11,Literature,118165,3637427,"for his work which is marked by both idealism and humanity, its stimulating satire often being infused with a singular poetic beauty"
+123,1925,1926-12-10,Peace,118165,3637427,for his crucial role in bringing about the Dawes Plan
+124,1925,1926-11-11,Physics,118165,3637427,for their discovery of the laws governing the impact of an electron upon an atom
+126,1926,1926-11-11,Chemistry,116960,3707807,for his work on disperse systems
+127,1926,1927-11-10,Literature,116960,3707807,for her idealistically inspired writings which with plastic clarity picture the life on her native island and with depth and sympathy deal with human problems in general
+128,1926,1926-12-10,Peace,116960,3707807,for their crucial role in bringing about the Locarno Treaty
+129,1926,1926-11-11,Physics,116960,3707807,"for his work on the discontinuous structure of matter, and especially for his discovery of sedimentation equilibrium"
+130,1926,1927-10-27,Physiology or Medicine,116960,3707807,for his discovery of the Spiroptera carcinoma
+131,1927,1928-11-13,Chemistry,126501,4071032,for his investigations of the constitution of the bile acids and related substances
+132,1927,1928-11-13,Literature,126501,4071032,in recognition of his rich and vitalizing ideas and the brilliant skill with which they have been presented
+133,1927,1927-12-10,Peace,126501,4071032,for their contribution to the emergence in France and Germany of a public opinion which favours peaceful international cooperation
+134,1927,1927-11-10,Physics,126501,4071032,for his discovery of the effect named after him
+135,1927,1927-10-27,Physiology or Medicine,126501,4071032,for his discovery of the therapeutic value of malaria inoculation in the treatment of dementia paralytica
+136,1928,1928-11-13,Chemistry,156939,5050582,for the services rendered through his research into the constitution of the sterols and their connection with the vitamins
+137,1928,1928-11-13,Literature,156939,5050582,principally for her powerful descriptions of Northern life during the Middle Ages
+139,1928,1929-11-12,Physics,156939,5050582,for his work on the thermionic phenomenon and especially for the discovery of the law named after him
+140,1928,1928-10-25,Physiology or Medicine,156939,5050582,for his work on typhus
+141,1929,1929-11-12,Chemistry,172760,5559731,for their investigations on the fermentation of sugar and fermentative enzymes
+142,1929,1929-11-12,Literature,172760,5559731,"principally for his great novel, <I>Buddenbrooks</I>, which has won steadily increased recognition as one of the classic works of contemporary literature"
+143,1929,1930-12-10,Peace,172760,5559731,for his crucial role in bringing about the Briand-Kellogg Pact
+144,1929,1929-11-12,Physics,172760,5559731,for his discovery of the wave nature of electrons
+145,1929,1929-10-31,Physiology or Medicine,172760,5559731,for his discovery of the antineuritic vitamin
+146,1930,1930-11-13,Chemistry,172947,5739679,for his researches into the constitution of haemin and chlorophyll and especially for his synthesis of haemin
+147,1930,1930-11-05,Literature,172947,5739679,"for his vigorous and graphic art of description and his ability to create, with wit and humour, new types of characters"
+148,1930,1930-12-10,Peace,172947,5739679,for promoting Christian unity and helping create 'that new attitude of mind which is necessary if peace between nations is to become reality'
+149,1930,1930-11-13,Physics,172947,5739679,for his work on the scattering of light and for the discovery of the effect named after him
+150,1930,1930-10-30,Physiology or Medicine,172947,5739679,for his discovery of human blood groups
+151,1931,1931-11-12,Chemistry,173206,5933702,in recognition of their contributions to the invention and development of chemical high pressure methods
+152,1931,1931-11-08,Literature,173206,5933702,The poetry of Erik Axel Karlfeldt
+153,1931,1931-12-10,Peace,173206,5933702,for their assiduous effort to revive the ideal of peace and to rekindle the spirit of peace in their own nation and in the whole of mankind
+155,1931,1931-10-29,Physiology or Medicine,173206,5933702,for his discovery of the nature and mode of action of the respiratory enzyme
+156,1932,1932-11-10,Chemistry,171753,5980383,for his discoveries and investigations in surface chemistry
+157,1932,1932-11-10,Literature,171753,5980383,for his distinguished art of narration which takes its highest form in <I>The Forsyte Saga</I>
+159,1932,1933-11-09,Physics,171753,5980383,"for the creation of quantum mechanics, the application of which has, inter alia, led to the discovery of the allotropic forms of hydrogen"
+160,1932,1932-10-27,Physiology or Medicine,171753,5980383,for their discoveries regarding the functions of neurons
+162,1933,1933-11-09,Literature,170332,6131952,for the strict artistry with which he has carried on the classical Russian traditions in prose writing
+163,1933,1934-12-10,Peace,170332,6131952,for having exposed by his pen the illusion of war and presented a convincing plea for international cooperation and peace
+164,1933,1933-11-09,Physics,170332,6131952,for the discovery of new productive forms of atomic theory
+165,1933,1933-10-20,Physiology or Medicine,170332,6131952,for his discoveries concerning the role played by the chromosome in heredity
+166,1934,1934-11-15,Chemistry,162608,5853888,for his discovery of heavy hydrogen
+167,1934,1934-11-08,Literature,162608,5853888,for his bold and ingenious revival of dramatic and scenic art
+168,1934,1934-12-10,Peace,162608,5853888,for his untiring struggle and his courageous efforts as Chairman of the League of Nations Disarmament Conference 1931-34
+170,1934,1934-10-25,Physiology or Medicine,162608,5853888,for their discoveries concerning liver therapy in cases of anaemia
+171,1935,1935-11-14,Chemistry,159917,5661062,in recognition of their synthesis of new radioactive elements
+173,1935,1936-11-24,Peace,159917,5661062,for his burning love for freedom of thought and expression and his valuable contribution to the cause of peace
+174,1935,1935-11-14,Physics,159917,5661062,for the discovery of the neutron
+175,1935,1935-10-24,Physiology or Medicine,159917,5661062,for his discovery of the organizer effect in embryonic development
+176,1936,1936-11-12,Chemistry,159850,5565925,for his contributions to our knowledge of molecular structure through his investigations on dipole moments and on the diffraction of X-rays and electrons in gases
+177,1936,1936-11-12,Literature,159850,5565925,"for the power, honesty and deep-felt emotions of his dramatic works, which embody an original concept of tragedy"
+178,1936,1936-11-24,Peace,159850,5565925,"for his role as father of the Argentine Antiwar Pact of 1933, which he also used as a means to mediate peace between Paraguay and Bolivia in 1935"
+179,1936,1936-11-12,Physics,159850,5565925,for his discovery of the positron
+180,1936,1936-10-29,Physiology or Medicine,159850,5565925,for their discoveries relating to chemical transmission of nerve impulses
+181,1937,1937-11-11,Chemistry,158463,5342467,for his investigations on carbohydrates and vitamin C
+182,1937,1937-11-11,Literature,158463,5342467,for the artistic power and truth with which he has depicted human conflict as well as some fundamental aspects of contemporary life in his novel-cycle <I>Les Thibault</I>
+183,1937,1937-11-18,Peace,158463,5342467,"for his tireless effort in support of the League of Nations, disarmament and peace"
+184,1937,1937-11-11,Physics,158463,5342467,for their experimental discovery of the diffraction of electrons by crystals
+185,1937,1937-10-28,Physiology or Medicine,158463,5342467,"for his discoveries in connection with the biological combustion processes, with special reference to vitamin C and the catalysis of fumaric acid"
+186,1938,1939-11-09,Chemistry,155077,5146618,for his work on carotenoids and vitamins
+187,1938,1938-11-10,Literature,155077,5146618,for her rich and truly epic descriptions of peasant life in China and for her biographical masterpieces
+188,1938,1938-11-17,Peace,155077,5146618,for having carried on the work of Fridtjof Nansen to the benefit of refugees across Europe
+189,1938,1938-11-10,Physics,155077,5146618,"for his demonstrations of the existence of new radioactive elements produced by neutron irradiation, and for his related discovery of nuclear reactions brought about by slow neutrons"
+190,1938,1939-10-26,Physiology or Medicine,155077,5146618,for the discovery of the role played by the sinus and aortic mechanisms in the regulation of respiration
+191,1939,1939-11-09,Chemistry,148822,4789363,for his work on sex hormones
+192,1939,1939-11-10,Literature,148822,4789363,for his deep understanding of his country's peasantry and the exquisite art with which he has portrayed their way of life and their relationship with Nature
+194,1939,1939-11-09,Physics,148822,4789363,"for the invention and development of the cyclotron and for results obtained with it, especially with regard to artificial radioactive elements"
+195,1939,1939-10-26,Physiology or Medicine,148822,4789363,for the discovery of the antibacterial effects of prontosil
+211,1943,1944-11-09,Chemistry,123691,2855649,for his work on the use of isotopes as tracers in the study of chemical processes
+214,1943,1944-11-09,Physics,123691,2855649,for his contribution to the development of the molecular ray method and his discovery of the magnetic moment of the proton
+215,1943,1944-10-26,Physiology or Medicine,123691,2855649,for his discovery of the chemical nature of vitamin K
+216,1944,1945-11-15,Chemistry,121841,2843849,for his discovery of the fission of heavy nuclei
+217,1944,1944-11-09,Literature,121841,2843849,"for the rare strength and fertility of his poetic imagination with which is combined an intellectual curiosity of wide scope and a bold, freshly creative style"
+218,1944,1945-11-12,Peace,121841,2843849,for the great work it has performed during the war on behalf of humanity
+219,1944,1944-11-09,Physics,121841,2843849,for his resonance method for recording the magnetic properties of atomic nuclei
+220,1944,1944-10-26,Physiology or Medicine,121841,2843849,for their discoveries relating to the highly differentiated functions of single nerve fibres
+221,1945,1945-11-15,Chemistry,121333,2831992,"for his research and inventions in agricultural and nutrition chemistry, especially for his fodder preservation method"
+222,1945,1945-11-15,Literature,121333,2831992,"for her lyric poetry which, inspired by powerful emotions, has made her name a symbol of the idealistic aspirations of the entire Latin American world"
+223,1945,1945-11-12,Peace,121333,2831992,for his indefatigable work for international understanding and his pivotal role in establishing the United Nations
+224,1945,1945-11-15,Physics,121333,2831992,"for the discovery of the Exclusion Principle, also called the Pauli Principle"
+225,1945,1945-10-25,Physiology or Medicine,121333,2831992,for the discovery of penicillin and its curative effect in various infectious diseases
+226,1946,1946-11-14,Chemistry,121524,2836450,for his discovery that enzymes can be crystallized
+227,1946,1946-11-14,Literature,121524,2836450,"for his inspired writings which, while growing in boldness and penetration, exemplify the classical humanitarian ideals and high qualities of style"
+228,1946,1946-11-14,Peace,121524,2836450,for her lifelong work for the cause of peace
+229,1946,1946-11-14,Physics,121524,2836450,"for the invention of an apparatus to produce extremely high pressures, and for the discoveries he made therewith in the field of high pressure physics"
+230,1946,1946-10-31,Physiology or Medicine,121524,2836450,for the discovery of the production of mutations by means of X-ray irradiation
+231,1947,1947-11-13,Chemistry,146115,3301577,"for his investigations on plant products of biological importance, especially the alkaloids"
+232,1947,1947-11-13,Literature,146115,3301577,"for his comprehensive and artistically significant writings, in which human problems and conditions have been presented with a fearless love of truth and keen psychological insight"
+233,1947,1947-10-30,Peace,146115,3301577,"for their pioneering work in the international peace movement and compassionate effort to relieve human suffering, thereby promoting the fraternity between nations"
+234,1947,1947-11-13,Physics,146115,3301577,for his investigations of the physics of the upper atmosphere especially for the discovery of the so-called Appleton layer
+235,1947,1947-10-23,Physiology or Medicine,146115,3301577,for his discovery of the part played by the hormone of the anterior pituitary lobe in the metabolism of sugar
+236,1948,1948-11-04,Chemistry,159773,3462835,"for his research on electrophoresis and adsorption analysis, especially for his discoveries concerning the complex nature of the serum proteins"
+237,1948,1948-11-04,Literature,159773,3462835,"for his outstanding, pioneer contribution to present-day poetry"
+239,1948,1948-11-04,Physics,159773,3462835,"for his development of the Wilson cloud chamber method, and his discoveries therewith in the fields of nuclear physics and cosmic radiation"
+240,1948,1948-10-28,Physiology or Medicine,159773,3462835,for his discovery of the high efficiency of DDT as a contact poison against several arthropods
+241,1949,1949-11-03,Chemistry,156290,3319600,"for his contributions in the field of chemical thermodynamics, particularly concerning the behaviour of substances at extremely low temperatures"
+242,1949,1950-11-10,Literature,156290,3319600,for his powerful and artistically unique contribution to the modern American novel
+243,1949,1949-10-12,Peace,156290,3319600,"for his lifelong effort to conquer hunger and want, thereby helping to remove a major cause of military conflict and war"
+244,1949,1949-11-03,Physics,156290,3319600,for his prediction of the existence of mesons on the basis of theoretical work on nuclear forces
+245,1949,1949-10-27,Physiology or Medicine,156290,3319600,for his discovery of the therapeutic value of leucotomy in certain psychoses
+246,1950,1950-11-10,Chemistry,164304,3455264,for their discovery and development of the diene synthesis
+247,1950,1950-11-10,Literature,164304,3455264,in recognition of his varied and significant writings in which he champions humanitarian ideals and freedom of thought
+248,1950,1950-09-22,Peace,164304,3455264,for his work as mediator in Palestine in 1948-1949
+249,1950,1950-11-10,Physics,164304,3455264,for his development of the photographic method of studying nuclear processes and his discoveries regarding mesons made with this method
+250,1950,1950-10-26,Physiology or Medicine,164304,3455264,"for their discoveries relating to the hormones of the adrenal cortex, their structure and biological effects"
+251,1951,1951-11-15,Chemistry,167612,3042802,for their discoveries in the chemistry of the transuranium elements
+252,1951,1951-11-15,Literature,167612,3042802,for the artistic vigour and true independence of mind with which he endeavours in his poetry to find answers to the eternal questions confronting mankind
+253,1951,1951-11-05,Peace,167612,3042802,for having devoted his life to the fight against war through the promotion of social justice and brotherhood among men and nations
+254,1951,1951-11-15,Physics,167612,3042802,for their pioneer work on the transmutation of atomic nuclei by artificially accelerated atomic particles
+255,1951,1951-10-18,Physiology or Medicine,167612,3042802,for his discoveries concerning yellow fever and how to combat it
+256,1952,1952-11-06,Chemistry,171135,2884847,for their invention of partition chromatography
+257,1952,1952-11-06,Literature,171135,2884847,for the deep spiritual insight and the artistic intensity with which he has in his novels penetrated the drama of human life
+258,1952,1953-10-30,Peace,171135,2884847,"for his altruism, reverence for life, and tireless humanitarian work which has helped making the idea of brotherhood between men and nations a living one"
+259,1952,1952-11-06,Physics,171135,2884847,for their development of new methods for nuclear magnetic precision measurements and discoveries in connection therewith
+260,1952,1952-10-23,Physiology or Medicine,171135,2884847,"for his discovery of streptomycin, the first antibiotic effective against tuberculosis"
+261,1953,1953-11-04,Chemistry,175293,2908768,for his discoveries in the field of macromolecular chemistry
+262,1953,1953-10-15,Literature,175293,2908768,for his mastery of historical and biographical description as well as for brilliant oratory in defending exalted human values
+263,1953,1953-10-30,Peace,175293,2908768,for proposing and supervising the plan for the economic recovery of Europe
+264,1953,1953-11-04,Physics,175293,2908768,"for his demonstration of the phase contrast method, especially for his invention of the phase contrast microscope"
+265,1953,1953-10-22,Physiology or Medicine,175293,2908768,for his discovery of co-enzyme A and its importance for intermediary metabolism
+266,1954,1954-11-03,Chemistry,181647,2990839,for his research into the nature of the chemical bond and its application to the elucidation of the structure of complex substances
+267,1954,1954-10-28,Literature,181647,2990839,"for his mastery of the art of narrative, most recently demonstrated in <I>The Old Man and the Sea,</I> and for the influence that he has exerted on contemporary style"
+268,1954,1955-11-05,Peace,181647,2990839,for its efforts to heal the wounds of war by providing help and protection to refugees all over the world
+269,1954,1954-11-03,Physics,181647,2990839,"for his fundamental research in quantum mechanics, especially for his statistical interpretation of the wavefunction"
+270,1954,1954-10-21,Physiology or Medicine,181647,2990839,for their discovery of the ability of poliomyelitis viruses to grow in cultures of various types of tissue
+271,1955,1955-11-02,Chemistry,190214,3037703,"for his work on biochemically important sulphur compounds, especially for the first synthesis of a polypeptide hormone"
+272,1955,1955-10-27,Literature,190214,3037703,for his vivid epic power which has renewed the great narrative art of Iceland
+274,1955,1955-11-02,Physics,190214,3037703,for his precision determination of the magnetic moment of the electron
+275,1955,1955-10-20,Physiology or Medicine,190214,3037703,for his discoveries concerning the nature and mode of action of oxidation enzymes
+276,1956,1956-11-01,Chemistry,200123,3057995,for their researches into the mechanism of chemical reactions
+277,1956,1956-10-25,Literature,200123,3057995,"for his lyrical poetry, which in Spanish language constitutes an example of high spirit and artistical purity"
+279,1956,1956-11-01,Physics,200123,3057995,for their researches on semiconductors and their discovery of the transistor effect
+280,1956,1956-10-18,Physiology or Medicine,200123,3057995,for their discoveries concerning heart catheterization and pathological changes in the circulatory system
+281,1957,1957-10-31,Chemistry,208629,3056055,for his work on nucleotides and nucleotide co-enzymes
+282,1957,1957-10-17,Literature,208629,3056055,"for his important literary production, which with clear-sighted earnestness illuminates the problems of the human conscience in our times"
+283,1957,1957-10-03,Peace,208629,3056055,for his crucial contribution to the deployment of a United Nations Emergency Force in the wake of the Suez Crisis
+284,1957,1957-10-31,Physics,208629,3056055,for their penetrating investigation of the so-called parity laws which has led to important discoveries regarding the elementary particles
+285,1957,1957-10-24,Physiology or Medicine,208629,3056055,"for his discoveries relating to synthetic compounds that inhibit the action of certain body substances, and especially their action on the vascular system and the skeletal muscles"
+286,1958,1958-10-28,Chemistry,214559,2998180,"for his work on the structure of proteins, especially that of insulin"
+287,1958,1958-10-28,Literature,214559,2998180,for his important achievement both in contemporary lyrical poetry and in the field of the great Russian epic tradition
+288,1958,1958-11-10,Peace,214559,2998180,for his efforts to help refugees to leave their camps and return to a life of freedom and dignity
+289,1958,1958-10-28,Physics,214559,2998180,for the discovery and the interpretation of the Cherenkov effect
+290,1958,1958-10-30,Physiology or Medicine,214559,2998180,for their discovery that genes act by regulating definite chemical events
+291,1959,1959-10-26,Chemistry,220678,3063530,for his discovery and development of the polarographic methods of analysis
+292,1959,1959-10-22,Literature,220678,3063530,"for his lyrical poetry, which with classical fire expresses the tragic experience of life in our own times"
+293,1959,1959-11-05,Peace,220678,3063530,for his longstanding contribution to the cause of disarmament and peace
+294,1959,1959-10-26,Physics,220678,3063530,for their discovery of the antiproton
+295,1959,1959-10-15,Physiology or Medicine,220678,3063530,for their discovery of the mechanisms in the biological synthesis of ribonucleic acid and deoxyribonucleic acid
+296,1960,1960-11-03,Chemistry,225987,3018845,"for his method to use carbon-14 for age determination in archaeology, geology, geophysics, and other branches of science"
+297,1960,1960-10-26,Literature,225987,3018845,for the soaring flight and the evocative imagery of his poetry which in a visionary fashion reflects the conditions of our time
+298,1960,1961-10-23,Peace,225987,3018845,for his non-violent struggle against apartheid
+299,1960,1960-11-03,Physics,225987,3018845,for the invention of the bubble chamber
+300,1960,1960-10-20,Physiology or Medicine,225987,3018845,for discovery of acquired immunological tolerance
+301,1961,1961-11-02,Chemistry,250233,3260705,for his research on the carbon dioxide assimilation in plants
+302,1961,1961-10-26,Literature,250233,3260705,for the epic force with which he has traced themes and depicted human destinies drawn from the history of his country
+303,1961,1961-10-23,Peace,250233,3260705,"for developing the UN into an effective and constructive international organization, capable of giving life to the principles and aims expressed in the UN Charter"
+304,1961,1961-11-02,Physics,250233,3260705,for his pioneering studies of electron scattering in atomic nuclei and for his thereby achieved discoveries concerning the structure of the nucleons
+305,1961,1961-10-19,Physiology or Medicine,250233,3260705,for his discoveries of the physical mechanism of stimulation within the cochlea
+306,1962,1962-11-01,Chemistry,257220,3213737,for their studies of the structures of globular proteins
+307,1962,1962-10-05,Literature,257220,3213737,"for his realistic and imaginative writings, combining as they do sympathetic humour and keen social perception"
+308,1962,1963-10-10,Peace,257220,3213737,for his fight against the nuclear arms race between East and West
+309,1962,1962-11-01,Physics,257220,3213737,"for his pioneering theories for condensed matter, especially liquid helium"
+310,1962,1962-10-18,Physiology or Medicine,257220,3213737,for their discoveries concerning the molecular structure of nucleic acids and its significance for information transfer in living material
+311,1963,1963-11-05,Chemistry,265000,3216343,for their discoveries in the field of the chemistry and technology of high polymers
+312,1963,1963-10-24,Literature,265000,3216343,"for his eminent lyrical writing, inspired by a deep feeling for the Hellenic world of culture"
+313,1963,1963-10-10,Peace,265000,3216343,for promoting the principles of the Geneva Convention and cooperation with the UN
+314,1963,1963-11-05,Physics,265000,3216343,"for his contributions to the theory of the atomic nucleus and the elementary particles, particularly through the discovery and application of fundamental symmetry principles"
+315,1963,1963-10-17,Physiology or Medicine,265000,3216343,for their discoveries concerning the ionic mechanisms involved in excitation and inhibition in the peripheral and central portions of the nerve cell membrane
+316,1964,1964-10-29,Chemistry,273000,3203602,for her determinations by X-ray techniques of the structures of important biochemical substances
+317,1964,1964-10-22,Literature,273000,3203602,"for his work which, rich in ideas and filled with the spirit of freedom and the quest for truth, has exerted a far-reaching influence on our age"
+318,1964,1964-10-14,Peace,273000,3203602,for his non-violent struggle for civil rights for the Afro-American population
+319,1964,1964-10-29,Physics,273000,3203602,"for fundamental work in the field of quantum electronics, which has led to the construction of oscillators and amplifiers based on the maser-laser principle"
+320,1964,1964-10-15,Physiology or Medicine,273000,3203602,for their discoveries concerning the mechanism and regulation of the cholesterol and fatty acid metabolism
+321,1965,1965-10-21,Chemistry,282000,3152463,for his outstanding achievements in the art of organic synthesis
+322,1965,1965-10-15,Literature,282000,3152463,"for the artistic power and integrity with which, in his epic of the Don, he has given expression to a historic phase in the life of the Russian people"
+323,1965,1965-10-25,Peace,282000,3152463,for its effort to enhance solidarity between nations and reduce the difference between rich and poor states
+324,1965,1965-10-21,Physics,282000,3152463,"for their fundamental work in quantum electrodynamics, with deep-ploughing consequences for the physics of elementary particles"
+325,1965,1965-10-14,Physiology or Medicine,282000,3152463,for their discoveries concerning genetic control of enzyme and virus synthesis
+326,1966,1966-11-03,Chemistry,300000,3154455,for his fundamental work concerning chemical bonds and the electronic structure of molecules by the molecular orbital method
+327,1966,1966-10-20,Literature,300000,3154455,"for her outstanding lyrical and dramatic writing, which interprets Israel's destiny with touching strength"
+329,1966,1966-11-03,Physics,300000,3154455,for the discovery and development of optical methods for studying Hertzian resonances in atoms
+330,1966,1966-10-13,Physiology or Medicine,300000,3154455,for his discoveries concerning hormonal treatment of prostatic cancer
+331,1967,1967-10-30,Chemistry,320000,3221232,"for their studies of extremely fast chemical reactions, effected by disturbing the equilibrium by means of very short pulses of energy"
+332,1967,1967-10-19,Literature,320000,3221232,"for his vivid literary achievement, deep-rooted in the national traits and traditions of Indian peoples of Latin America"
+334,1967,1967-10-30,Physics,320000,3221232,"for his contributions to the theory of nuclear reactions, especially his discoveries concerning the energy production in stars"
+335,1967,1967-10-18,Physiology or Medicine,320000,3221232,for their discoveries concerning the primary physiological and chemical visual processes in the eye
+336,1968,1968-10-30,Chemistry,350000,3457674,"for the discovery of the reciprocal relations bearing his name, which are fundamental for the thermodynamics of irreversible processes"
+337,1968,1968-10-17,Literature,350000,3457674,"for his narrative mastery, which with great sensibility expresses the essence of the Japanese mind"
+338,1968,1968-10-09,Peace,350000,3457674,for his struggle to ensure the rights of man as stipulated in the UN Declaration
+339,1968,1968-10-30,Physics,350000,3457674,"for his decisive contributions to elementary particle physics, in particular the discovery of a large number of resonance states, made possible through his development of the technique of using hydrogen bubble chamber and data analysis"
+340,1968,1968-10-16,Physiology or Medicine,350000,3457674,for their interpretation of the genetic code and its function in protein synthesis
+341,1969,1969-10-30,Chemistry,375000,3604072,for their contributions to the development of the concept of conformation and its application in chemistry
+342,1969,1969-10-27,Economic Sciences,375000,3604072,for having developed and applied dynamic models for the analysis of economic processes
+343,1969,1969-10-23,Literature,375000,3604072,"for his writing, which - in new forms for the novel and drama - in the destitution of modern man acquires its elevation"
+344,1969,1969-10-20,Peace,375000,3604072,for creating international legislation insuring certain norms for working conditions in every country
+345,1969,1969-10-30,Physics,375000,3604072,for his contributions and discoveries concerning the classification of elementary particles and their interactions
+346,1969,1969-10-16,Physiology or Medicine,375000,3604072,for their discoveries concerning the replication mechanism and the genetic structure of viruses
+347,1970,1970-10-27,Chemistry,400000,3600000,for his discovery of sugar nucleotides and their role in the biosynthesis of carbohydrates
+348,1970,1970-10-26,Economic Sciences,400000,3600000,for the scientific work through which he has developed static and dynamic economic theory and actively contributed to raising the level of analysis in economic science
+349,1970,1970-10-08,Literature,400000,3600000,for the ethical force with which he has pursued the indispensable traditions of Russian literature
+350,1970,1970-10-21,Peace,400000,3600000,for having given a well-founded hope - the green revolution
+351,1970,1970-10-27,Physics,400000,3600000,for fundamental work and discoveries in magnetohydro-dynamics with fruitful applications in different parts of plasma physics
+352,1970,1970-10-15,Physiology or Medicine,400000,3600000,"for their discoveries concerning the humoral transmitters in the nerve terminals and the mechanism for their storage, release and inactivation"
+353,1971,1971-11-02,Chemistry,450000,3762992,"for his contributions to the knowledge of electronic structure and geometry of molecules, particularly free radicals"
+354,1971,1971-10-15,Economic Sciences,450000,3762992,for his empirically founded interpretation of economic growth which has led to new and deepened insight into the economic and social structure and process of development
+355,1971,1971-10-21,Literature,450000,3762992,for a poetry that with the action of an elemental force brings alive a continent's destiny and dreams
+356,1971,1971-10-21,Peace,450000,3762992,for paving the way for a meaningful dialogue between East and West
+357,1971,1971-11-02,Physics,450000,3762992,for his invention and development of the holographic method
+358,1971,1971-10-14,Physiology or Medicine,450000,3762992,for his discoveries concerning the mechanisms of the action of hormones
+359,1972,1972-10-20,Chemistry,480000,3790037,"for his work on ribonuclease, especially concerning the connection between the amino acid sequence and the biologically active conformation"
+360,1972,1972-10-25,Economic Sciences,480000,3790037,for their pioneering contributions to general economic equilibrium theory and welfare theory
+361,1972,1972-10-19,Literature,480000,3790037,for his writing which through its combination of a broad perspective on his time and a sensitive skill in characterization has contributed to a renewal of German literature
+363,1972,1972-10-20,Physics,480000,3790037,"for their jointly developed theory of superconductivity, usually called the BCS-theory"
+364,1972,1972-10-12,Physiology or Medicine,480000,3790037,for their discoveries concerning the chemical structure of antibodies
+365,1973,1973-10-23,Chemistry,510000,3774355,"for their pioneering work, performed independently, on the chemistry of the organometallic, so called sandwich compounds"
+366,1973,1973-10-18,Economic Sciences,510000,3774355,for the development of the input-output method and for its application to important economic problems
+367,1973,1973-10-25,Literature,510000,3774355,for an epic and psychological narrative art which has introduced a new continent into literature
+368,1973,1973-10-17,Peace,510000,3774355,for jointly having negotiated a cease fire in Vietnam in 1973
+369,1973,1973-10-23,Physics,510000,3774355,"for his theoretical predictions of the properties of a supercurrent through a tunnel barrier, in particular those phenomena which are generally known as the Josephson effects"
+370,1973,1973-10-11,Physiology or Medicine,510000,3774355,for their discoveries concerning organization and elicitation of individual and social behaviour patterns
+371,1974,1974-10-15,Chemistry,550000,3696835,"for his fundamental achievements, both theoretical and experimental, in the physical chemistry of the macromolecules"
+372,1974,1974-10-09,Economic Sciences,550000,3696835,"for their pioneering work in the theory of money and economic fluctuations and for their penetrating analysis of the interdependence of economic, social and institutional phenomena"
+373,1974,1974-10-03,Literature,550000,3696835,"for a narrative art, far-seeing in lands and ages, in the service of freedom"
+374,1974,1974-10-09,Peace,550000,3696835,for his contribution to stabilize conditions in the Pacific rim area and for signing the Nuclear Non-Proliferation Treaty
+375,1974,1974-10-15,Physics,550000,3696835,"for their pioneering research in radio astrophysics: Ryle for his observations and inventions, in particular of the aperture synthesis technique, and Hewish for his decisive role in the discovery of pulsars"
+376,1974,1974-10-10,Physiology or Medicine,550000,3696835,for their discoveries concerning the structural and functional organization of the cell
+377,1975,1975-10-17,Chemistry,630000,3856254,for his work on the stereochemistry of enzyme-catalyzed reactions
+378,1975,1975-10-14,Economic Sciences,630000,3856254,for their contributions to the theory of optimum allocation of resources
+379,1975,1975-10-23,Literature,630000,3856254,"for his distinctive poetry which, with great artistic sensitivity, has interpreted human values under the sign of an outlook on life with no illusions"
+380,1975,1975-10-09,Peace,630000,3856254,"for his struggle for human rights in the Soviet Union, for disarmament and cooperation between all nations"
+381,1975,1975-10-17,Physics,630000,3856254,for the discovery of the connection between collective motion and particle motion in atomic nuclei and the development of the theory of the structure of the atomic nucleus based on this connection
+382,1975,1975-10-16,Physiology or Medicine,630000,3856254,for their discoveries concerning the interaction between tumour viruses and the genetic material of the cell
+383,1976,1976-10-18,Chemistry,681000,3786503,for his studies on the structure of boranes illuminating problems of chemical bonding
+384,1976,1976-10-14,Economic Sciences,681000,3786503,"for his achievements in the fields of consumption analysis, monetary history and theory and for his demonstration of the complexity of stabilization policy"
+385,1976,1976-10-21,Literature,681000,3786503,for the human understanding and subtle analysis of contemporary culture that are combined in his work
+386,1976,1977-10-10,Peace,681000,3786503,for the courageous efforts in founding a movement to put an end to the violent conflict in Northern Ireland
+387,1976,1976-10-18,Physics,681000,3786503,for their pioneering work in the discovery of a heavy elementary particle of a new kind
+388,1976,1976-10-14,Physiology or Medicine,681000,3786503,for their discoveries concerning new mechanisms for the origin and dissemination of infectious diseases
+389,1977,1977-10-11,Chemistry,700000,3490141,"for his contributions to non-equilibrium thermodynamics, particularly the theory of dissipative structures"
+390,1977,1977-10-14,Economic Sciences,700000,3490141,for their pathbreaking contribution to the theory of international trade and international capital movements
+391,1977,1977-10-06,Literature,700000,3490141,"for a creative poetic writing which illuminates man's condition in the cosmos and in present-day society, at the same time representing the great renewal of the traditions of Spanish poetry between the wars"
+392,1977,1977-10-10,Peace,700000,3490141,for worldwide respect for human rights
+393,1977,1977-10-11,Physics,700000,3490141,for their fundamental theoretical investigations of the electronic structure of magnetic and disordered systems
+394,1977,1977-10-13,Physiology or Medicine,700000,3490141,for their discoveries concerning the peptide hormone production of the brain
+395,1978,1978-10-17,Chemistry,725000,3283369,for his contribution to the understanding of biological energy transfer through the formulation of the chemiosmotic theory
+396,1978,1978-10-16,Economic Sciences,725000,3283369,for his pioneering research into the decision-making process within economic organizations
+397,1978,1978-10-05,Literature,725000,3283369,"for his impassioned narrative art which, with roots in a Polish-Jewish cultural tradition, brings universal human conditions to life"
+398,1978,1978-10-27,Peace,725000,3283369,for jointly having negotiated peace between Egypt and Israel in 1978
+399,1978,1978-10-17,Physics,725000,3283369,for their discovery of cosmic microwave background radiation
+400,1978,1978-10-12,Physiology or Medicine,725000,3283369,for the discovery of restriction enzymes and their application to problems of molecular genetics
+401,1979,1979-10-15,Chemistry,800000,3384861,"for their development of the use of boron- and phosphorus-containing compounds, respectively, into important reagents in organic synthesis"
+402,1979,1979-10-16,Economic Sciences,800000,3384861,for their pioneering research into economic development research with particular consideration of the problems of developing countries
+403,1979,1979-10-18,Literature,800000,3384861,"for his poetry, which, against the background of Greek tradition, depicts with sensuous strength and intellectual clear-sightedness modern man's struggle for freedom and creativeness"
+404,1979,1979-10-27,Peace,800000,3384861,for her work for bringing help to suffering humanity
+405,1979,1979-10-15,Physics,800000,3384861,"for their contributions to the theory of the unified weak and electromagnetic interaction between elementary particles, including, inter alia, the prediction of the weak neutral current"
+406,1979,1979-10-11,Physiology or Medicine,800000,3384861,for the development of computer assisted tomography
+407,1980,1980-10-14,Chemistry,880000,3273415,for their contributions concerning the determination of base sequences in nucleic acids
+408,1980,1980-10-15,Economic Sciences,880000,3273415,for the creation of econometric models and the application to the analysis of economic fluctuations and economic policies
+409,1980,1980-10-09,Literature,880000,3273415,who with uncompromising clear-sightedness voices man's exposed condition in a world of severe conflicts
+410,1980,1980-10-27,Peace,880000,3273415,"for being a source of inspiration to repressed people, especially in Latin America"
+411,1980,1980-10-14,Physics,880000,3273415,for the discovery of violations of fundamental symmetry principles in the decay of neutral K-mesons
+412,1980,1980-10-10,Physiology or Medicine,880000,3273415,for their discoveries concerning genetically determined structures on the cell surface that regulate immunological reactions
+413,1981,1981-10-19,Chemistry,1000000,3318750,"for their theories, developed independently, concerning the course of chemical reactions"
+414,1981,1981-10-13,Economic Sciences,1000000,3318750,"for his analysis of financial markets and their relations to expenditure decisions, employment, production and prices"
+415,1981,1981-10-15,Literature,1000000,3318750,"for writings marked by a broad outlook, a wealth of ideas and artistic power"
+416,1981,1981-10-14,Peace,1000000,3318750,for promoting the fundamental rights of refugees
+417,1981,1981-10-19,Physics,1000000,3318750,for their contribution to the development of laser spectroscopy
+418,1981,1981-10-09,Physiology or Medicine,1000000,3318750,for their discoveries concerning information processing in the visual system
+419,1982,1982-10-18,Chemistry,1150000,3514532,for his development of crystallographic electron microscopy and his structural elucidation of biologically important nucleic acid-protein complexes
+420,1982,1982-10-20,Economic Sciences,1150000,3514532,"for his seminal studies of industrial structures, functioning of markets and causes and effects of public regulation"
+421,1982,1982-10-21,Literature,1150000,3514532,"for his novels and short stories, in which the fantastic and the realistic are combined in a richly composed world of imagination, reflecting a continent's life and conflicts"
+422,1982,1982-10-13,Peace,1150000,3514532,for their work for disarmament and nuclear and weapon-free zones
+423,1982,1982-10-18,Physics,1150000,3514532,for his theory for critical phenomena in connection with phase transitions
+424,1982,1982-10-11,Physiology or Medicine,1150000,3514532,for their discoveries concerning prostaglandins and related biologically active substances
+425,1983,1983-10-19,Chemistry,1500000,4208719,"for his work on the mechanisms of electron transfer reactions, especially in metal complexes"
+426,1983,1983-10-17,Economic Sciences,1500000,4208719,for having incorporated new analytical methods into economic theory and for his rigorous reformulation of the theory of general equilibrium
+427,1983,1983-10-27,Literature,1500000,4208719,"for his novels which, with the perspicuity of realistic narrative art and the diversity and universality of myth, illuminate the human condition in the world of today"
+428,1983,1983-10-05,Peace,1500000,4208719,for non-violent struggle for free trade unions and human rights in Poland
+429,1983,1983-10-19,Physics,1500000,4208719,for his theoretical studies of the physical processes of importance to the structure and evolution of the stars
+430,1983,1983-10-10,Physiology or Medicine,1500000,4208719,for her discovery of mobile genetic elements
+431,1984,1984-10-17,Chemistry,1650000,4284352,for his development of methodology for chemical synthesis on a solid matrix
+432,1984,1984-10-18,Economic Sciences,1650000,4284352,for having made fundamental contributions to the development of systems of national accounts and hence greatly improved the basis for empirical economic analysis
+433,1984,1984-11-27,Literature,1650000,4284352,"for his poetry which endowed with freshness, sensuality and rich inventiveness provides a liberating image of the indomitable spirit and versatility of man"
+434,1984,1984-10-05,Peace,1650000,4284352,for his role as a unifying leader figure in the non-violent campaign to resolve the problem of apartheid in South Africa
+435,1984,1984-10-17,Physics,1650000,4284352,"for their decisive contributions to the large project, which led to the discovery of the field particles W and Z, communicators of weak interaction"
+436,1984,1984-10-15,Physiology or Medicine,1650000,4284352,for theories concerning the specificity in development and control of the immune system and the discovery of the principle for production of monoclonal antibodies
+437,1985,1985-10-16,Chemistry,1800000,4354442,for their outstanding achievements in the development of direct methods for the determination of crystal structures
+438,1985,1985-10-15,Economic Sciences,1800000,4354442,for his pioneering analyses of saving and of financial markets
+439,1985,1985-11-27,Literature,1800000,4354442,who in his novel combines the poet's and the painter's creativeness with a deepened awareness of time in the depiction of the human condition
+440,1985,1985-10-05,Peace,1800000,4354442,for spreading authoritative information and by creating awareness of the catastrophic consequences of nuclear war
+441,1985,1985-10-16,Physics,1800000,4354442,for the discovery of the quantized Hall effect
+442,1985,1985-10-14,Physiology or Medicine,1800000,4354442,for their discoveries concerning the regulation of cholesterol metabolism
+443,1986,1986-10-15,Chemistry,2000000,4642623,for their contributions concerning the dynamics of chemical elementary processes
+444,1986,1986-10-16,Economic Sciences,2000000,4642623,for his development of the contractual and constitutional bases for the theory of economic and political decision-making
+445,1986,1986-10-16,Literature,2000000,4642623,who in a wide cultural perspective and with poetic overtones fashions the drama of existence
+446,1986,1986-10-14,Peace,2000000,4642623,"for being a messenger to mankind: his message is one of peace, atonement and dignity"
+447,1986,1986-10-15,Physics,2000000,4642623,"for his fundamental work in electron optics, and for the design of the first electron microscope"
+448,1986,1986-10-13,Physiology or Medicine,2000000,4642623,for their discoveries of growth factors
+449,1987,1987-10-14,Chemistry,2175000,4842453,for their development and use of molecules with structure-specific interactions of high selectivity
+450,1987,1987-10-21,Economic Sciences,2175000,4842453,for his contributions to the theory of economic growth
+451,1987,1987-10-22,Literature,2175000,4842453,"for an all-embracing authorship, imbued with clarity of thought and poetic intensity"
+452,1987,1987-10-13,Peace,2175000,4842453,for his work for lasting peace in Central America
+453,1987,1987-10-14,Physics,2175000,4842453,for their important break-through in the discovery of superconductivity in ceramic materials
+454,1987,1987-10-12,Physiology or Medicine,2175000,4842453,for his discovery of the genetic principle for generation of antibody diversity
+455,1988,1988-10-19,Chemistry,2500000,5262636,for the determination of the three-dimensional structure of a photosynthetic reaction centre
+456,1988,1988-10-18,Economic Sciences,2500000,5262636,for his pioneering contributions to the theory of markets and efficient utilization of resources
+457,1988,1988-10-13,Literature,2500000,5262636,"who, through works rich in nuance - now clear-sightedly realistic, now evocatively ambiguous - has formed an Arabian narrative art that applies to all mankind"
+458,1988,1988-09-29,Peace,2500000,5262636,for preventing armed clashes and creating conditions for negotiations
+459,1988,1988-10-19,Physics,2500000,5262636,for the neutrino beam method and the demonstration of the doublet structure of the leptons through the discovery of the muon neutrino
+460,1988,1988-10-17,Physiology or Medicine,2500000,5262636,for their discoveries of important principles for drug treatment
+461,1989,1989-10-12,Chemistry,3000000,5938490,for their discovery of catalytic properties of RNA
+462,1989,1989-10-11,Economic Sciences,3000000,5938490,for his clarification of the probability theory foundations of econometrics and his analyses of simultaneous economic structures
+463,1989,1989-10-09,Literature,3000000,5938490,"for a rich and intensive prose, which with restrained compassion forms a challenging vision of man's vulnerability"
+464,1989,1989-10-05,Peace,3000000,5938490,for advocating peaceful solutions based upon tolerance and mutual respect in order to preserve the historical and cultural heritage of his people
+465,1989,1989-10-12,Physics,3000000,5938490,for the development of the ion trap technique
+466,1989,1989-10-09,Physiology or Medicine,3000000,5938490,for their discovery of the cellular origin of retroviral oncogenes
+467,1990,1990-10-17,Chemistry,4000000,7169620,for his development of the theory and methodology of organic synthesis
+468,1990,1990-10-16,Economic Sciences,4000000,7169620,for their pioneering work in the theory of financial economics
+469,1990,1990-10-11,Literature,4000000,7169620,"for impassioned writing with wide horizons, characterized by sensuous intelligence and humanistic integrity"
+470,1990,1990-10-15,Peace,4000000,7169620,for the leading role he played in the radical changes in East-West relations
+471,1990,1990-10-17,Physics,4000000,7169620,"for their pioneering investigations concerning deep inelastic scattering of electrons on protons and bound neutrons, which have been of essential importance for the development of the quark model in particle physics"
+472,1990,1990-10-08,Physiology or Medicine,4000000,7169620,for their discoveries concerning organ and cell transplantation in the treatment of human disease
+473,1991,1991-10-16,Chemistry,6000000,9825752,for his contributions to the development of the methodology of high resolution nuclear magnetic resonance (NMR) spectroscopy
+474,1991,1991-10-15,Economic Sciences,6000000,9825752,for his discovery and clarification of the significance of transaction costs and property rights for the institutional structure and functioning of the economy
+475,1991,1991-10-03,Literature,6000000,9825752,who through her magnificent epic writing has - in the words of Alfred Nobel - been of very great benefit to humanity
+476,1991,1991-10-14,Peace,6000000,9825752,for her non-violent struggle for democracy and human rights
+477,1991,1991-10-16,Physics,6000000,9825752,"for discovering that methods developed for studying order phenomena in simple systems can be generalized to more complex forms of matter, in particular to liquid crystals and polymers"
+478,1991,1991-10-07,Physiology or Medicine,6000000,9825752,for their discoveries concerning the function of single ion channels in cells
+479,1992,1992-10-14,Chemistry,6500000,10403919,for his contributions to the theory of electron transfer reactions in chemical systems
+480,1992,1992-10-13,Economic Sciences,6500000,10403919,"for having extended the domain of microeconomic analysis to a wide range of human behaviour and interaction, including nonmarket behaviour"
+481,1992,1992-10-08,Literature,6500000,10403919,"for a poetic oeuvre of great luminosity, sustained by a historical vision, the outcome of a multicultural commitment"
+482,1992,1992-10-16,Peace,6500000,10403919,for her struggle for social justice and ethno-cultural reconciliation based on respect for the rights of indigenous peoples
+483,1992,1992-10-14,Physics,6500000,10403919,"for his invention and development of particle detectors, in particular the multiwire proportional chamber"
+484,1992,1992-10-12,Physiology or Medicine,6500000,10403919,for their discoveries concerning reversible protein phosphorylation as a biological regulatory mechanism
+485,1993,1993-10-13,Chemistry,6700000,10245356,for his invention of the polymerase chain reaction (PCR) method
+486,1993,1993-10-12,Economic Sciences,6700000,10245356,for having renewed research in economic history by applying economic theory and quantitative methods in order to explain economic and institutional change
+487,1993,1993-10-07,Literature,6700000,10245356,"who in novels characterized by visionary force and poetic import, gives life to an essential aspect of American reality"
+488,1993,1993-10-15,Peace,6700000,10245356,"for their work for the peaceful termination of the apartheid regime, and for laying the foundations for a new democratic South Africa"
+489,1993,1993-10-13,Physics,6700000,10245356,"for the discovery of a new type of pulsar, a discovery that has opened up new possibilities for the study of gravitation"
+490,1993,1993-10-11,Physiology or Medicine,6700000,10245356,for their discoveries of split genes
+491,1994,1994-10-12,Chemistry,7000000,10477801,for his contribution to carbocation chemistry
+492,1994,1994-10-11,Economic Sciences,7000000,10477801,for their pioneering analysis of equilibria in the theory of non-cooperative games
+493,1994,1994-10-13,Literature,7000000,10477801,"who with poetic force creates an imagined world, where life and myth condense to form a disconcerting picture of the human predicament today"
+494,1994,1994-10-14,Peace,7000000,10477801,for their efforts to create peace in the Middle East
+495,1994,1994-10-12,Physics,7000000,10477801,for the development of neutron spectroscopy
+496,1994,1994-10-10,Physiology or Medicine,7000000,10477801,for their discovery of G-proteins and the role of these proteins in signal transduction in cells
+497,1995,1995-10-11,Chemistry,7200000,10510515,"for their work in atmospheric chemistry, particularly concerning the formation and decomposition of ozone"
+498,1995,1995-10-10,Economic Sciences,7200000,10510515,"for having developed and applied the hypothesis of rational expectations, and thereby having transformed macroeconomic analysis and deepened our understanding of economic policy"
+499,1995,1995-10-05,Literature,7200000,10510515,"for works of lyrical beauty and ethical depth, which exalt everyday miracles and the living past"
+500,1995,1995-10-13,Peace,7200000,10510515,"for their efforts to diminish the part played by nuclear arms in international politics and, in the longer run, to eliminate such arms"
+501,1995,1995-10-11,Physics,7200000,10510515,for the detection of the neutrino
+502,1995,1995-10-09,Physiology or Medicine,7200000,10510515,for their discoveries concerning the genetic control of early embryonic development
+503,1996,1996-10-09,Chemistry,7400000,10750752,for their discovery of fullerenes
+504,1996,1996-10-08,Economic Sciences,7400000,10750752,for their fundamental contributions to the economic theory of incentives under asymmetric information
+505,1996,1996-10-03,Literature,7400000,10750752,for poetry that with ironic precision allows the historical and biological context to come to light in fragments of human reality
+506,1996,1996-10-11,Peace,7400000,10750752,for their work towards a just and peaceful solution to the conflict in East Timor
+507,1996,1996-10-09,Physics,7400000,10750752,for their discovery of superfluidity in helium-3
+508,1996,1996-10-07,Physiology or Medicine,7400000,10750752,for their discoveries concerning the specificity of the cell mediated immune defence
+509,1997,1997-10-15,Chemistry,7500000,10844112,"for the first discovery of an ion-transporting enzyme, Na+, K+ -ATPase"
+510,1997,1997-10-14,Economic Sciences,7500000,10844112,for a new method to determine the value of derivatives
+511,1997,1997-10-09,Literature,7500000,10844112,who emulates the jesters of the Middle Ages in scourging authority and upholding the dignity of the downtrodden
+512,1997,1997-10-10,Peace,7500000,10844112,for their work for the banning and clearing of anti-personnel mines
+513,1997,1997-10-15,Physics,7500000,10844112,for development of methods to cool and trap atoms with laser light
+514,1997,1997-10-06,Physiology or Medicine,7500000,10844112,for his discovery of Prions - a new biological principle of infection
+515,1998,1998-10-13,Chemistry,7600000,11003681,for his development of computational methods in quantum chemistry
+516,1998,1998-10-14,Economic Sciences,7600000,11003681,for his contributions to welfare economics
+517,1998,1998-10-08,Literature,7600000,11003681,"who with parables sustained by imagination, compassion and irony continually enables us once again to apprehend an elusory reality"
+518,1998,1998-10-16,Peace,7600000,11003681,for their efforts to find a peaceful solution to the conflict in Northern Ireland
+519,1998,1998-10-13,Physics,7600000,11003681,for their discovery of a new form of quantum fluid with fractionally charged excitations
+520,1998,1998-10-12,Physiology or Medicine,7600000,11003681,for their discoveries concerning nitric oxide as a signalling molecule in the cardiovascular system
+521,1999,1999-10-12,Chemistry,7900000,11383718,for his studies of the transition states of chemical reactions using femtosecond spectroscopy
+522,1999,1999-10-13,Economic Sciences,7900000,11383718,for his analysis of monetary and fiscal policy under different exchange rate regimes and his analysis of optimum currency areas
+523,1999,1999-09-30,Literature,7900000,11383718,whose frolicsome black fables portray the forgotten face of history
+524,1999,1999-10-15,Peace,7900000,11383718,in recognition of the organisation's pioneering humanitarian work on several continents
+525,1999,1999-10-12,Physics,7900000,11383718,for elucidating the quantum structure of electroweak interactions in physics
+526,1999,1999-10-11,Physiology or Medicine,7900000,11383718,for the discovery that proteins have intrinsic signals that govern their transport and localization in the cell
+527,2000,2000-10-10,Chemistry,9000000,12838146,for the discovery and development of conductive polymers
+528,2000,2000-10-11,Economic Sciences,9000000,12838146,for his development of theory and methods for analyzing discrete choice
+529,2000,2000-10-12,Literature,9000000,12838146,"for an œuvre of universal validity, bitter insights and linguistic ingenuity, which has opened new paths for the Chinese novel and drama"
+530,2000,2000-10-13,Peace,9000000,12838146,"for his work for democracy and human rights in South Korea and in East Asia in general, and for peace and reconciliation with North Korea in particular"
+531,2000,2000-10-10,Physics,9000000,12838146,for developing semiconductor heterostructures used in high-speed- and opto-electronics
+532,2000,2000-10-09,Physiology or Medicine,9000000,12838146,for their discoveries concerning signal transduction in the nervous system
+533,2001,2001-10-10,Chemistry,10000000,13927869,for his work on chirally catalysed oxidation reactions
+534,2001,2001-10-10,Economic Sciences,10000000,13927869,for their analyses of markets with asymmetric information
+535,2001,2001-10-11,Literature,10000000,13927869,for having united perceptive narrative and incorruptible scrutiny in works that compel us to see the presence of suppressed histories
+536,2001,2001-10-12,Peace,10000000,13927869,for their work for a better organized and more peaceful world
+537,2001,2001-10-09,Physics,10000000,13927869,"for the achievement of Bose-Einstein condensation in dilute gases of alkali atoms, and for early fundamental studies of the properties of the condensates"
+538,2001,2001-10-08,Physiology or Medicine,10000000,13927869,for their discoveries of key regulators of the cell cycle
+539,2002,2002-10-09,Chemistry,10000000,13632863,for their development of soft desorption ionisation methods for mass spectrometric analyses of biological macromolecules
+540,2002,2002-10-09,Economic Sciences,10000000,13632863,"for having integrated insights from psychological research into economic science, especially concerning human judgment and decision-making under uncertainty"
+541,2002,2002-10-10,Literature,10000000,13632863,for writing that upholds the fragile experience of the individual against the barbaric arbitrariness of history
+542,2002,2002-10-11,Peace,10000000,13632863,"for his decades of untiring effort to find peaceful solutions to international conflicts, to advance democracy and human rights, and to promote economic and social development"
+543,2002,2002-10-08,Physics,10000000,13632863,"for pioneering contributions to astrophysics, in particular for the detection of cosmic neutrinos"
+544,2002,2002-10-07,Physiology or Medicine,10000000,13632863,for their discoveries concerning genetic regulation of organ development and programmed cell death'
+545,2003,2003-10-08,Chemistry,10000000,13375315,for the discovery of water channels
+546,2003,2003-10-08,Economic Sciences,10000000,13375315,for methods of analyzing economic time series with common trends (cointegration)
+547,2003,2003-10-02,Literature,10000000,13375315,who in innumerable guises portrays the surprising involvement of the outsider
+548,2003,2003-10-10,Peace,10000000,13375315,for her efforts for democracy and human rights. She has focused especially on the struggle for the rights of women and children
+549,2003,2003-10-07,Physics,10000000,13375315,for pioneering contributions to the theory of superconductors and superfluids
+550,2003,2003-10-06,Physiology or Medicine,10000000,13375315,for their discoveries concerning magnetic resonance imaging
+551,2004,2004-10-06,Chemistry,10000000,13324969,for the discovery of ubiquitin-mediated protein degradation
+552,2004,2004-10-11,Economic Sciences,10000000,13324969,for their contributions to dynamic macroeconomics: the time consistency of economic policy and the driving forces behind business cycles
+553,2004,2004-10-07,Literature,10000000,13324969,for her musical flow of voices and counter-voices in novels and plays that with extraordinary linguistic zeal reveal the absurdity of society's clich&eacute;s and their subjugating power
+554,2004,2004-10-08,Peace,10000000,13324969,"for her contribution to sustainable development, democracy and peace"
+555,2004,2004-10-05,Physics,10000000,13324969,for the discovery of asymptotic freedom in the theory of the strong interaction
+556,2004,2004-10-04,Physiology or Medicine,10000000,13324969,for their discoveries of odorant receptors and the organization of the olfactory system
+557,2005,2005-10-05,Chemistry,10000000,13266708,for the development of the metathesis method in organic synthesis
+558,2005,2005-10-10,Economic Sciences,10000000,13266708,for having enhanced our understanding of conflict and cooperation through game-theory analysis
+559,2005,2005-10-13,Literature,10000000,13266708,who in his plays uncovers the precipice under everyday prattle and forces entry into oppression's closed rooms
+560,2005,2005-10-07,Peace,10000000,13266708,for their efforts to prevent nuclear energy from being used for military purposes and to ensure that nuclear energy for peaceful purposes is used in the safest possible way
+561,2005,2005-10-04,Physics,10000000,13266708,"for their contributions to the development of laser-based precision spectroscopy, including the optical frequency comb technique"
+562,2005,2005-10-03,Physiology or Medicine,10000000,13266708,for their discovery of the bacterium <i>Helicobacter pylori</i> and its role in gastritis and peptic ulcer disease
+563,2006,2006-10-04,Chemistry,10000000,13086876,for his studies of the molecular basis of eukaryotic transcription
+564,2006,2006-10-09,Economic Sciences,10000000,13086876,for his analysis of intertemporal tradeoffs in macroeconomic policy
+565,2006,2006-10-12,Literature,10000000,13086876,who in the quest for the melancholic soul of his native city has discovered new symbols for the clash and interlacing of cultures
+566,2006,2006-10-13,Peace,10000000,13086876,for their efforts to create economic and social development from below
+567,2006,2006-10-03,Physics,10000000,13086876,for their discovery of the blackbody form and anisotropy of the cosmic microwave background radiation
+568,2006,2006-10-02,Physiology or Medicine,10000000,13086876,for their discovery of RNA interference - gene silencing by double-stranded RNA
+569,2007,2007-10-10,Chemistry,10000000,12802893,for his studies of chemical processes on solid surfaces
+570,2007,2007-10-15,Economic Sciences,10000000,12802893,for having laid the foundations of mechanism design theory
+571,2007,2007-10-11,Literature,10000000,12802893,"that epicist of the female experience, who with scepticism, fire and visionary power has subjected a divided civilisation to scrutiny"
+572,2007,2007-10-12,Peace,10000000,12802893,"for their efforts to build up and disseminate greater knowledge about man-made climate change, and to lay the foundations for the measures that are needed to counteract such change"
+573,2007,2007-10-09,Physics,10000000,12802893,for the discovery of Giant Magnetoresistance
+574,2007,2007-10-08,Physiology or Medicine,10000000,12802893,for their discoveries of principles for introducing specific gene modifications in mice by the use of embryonic stem cells
+575,2008,2008-10-08,Chemistry,10000000,12377622,"for the discovery and development of the green fluorescent protein, GFP"
+576,2008,2008-10-13,Economic Sciences,10000000,12377622,for his analysis of trade patterns and location of economic activity
+577,2008,2008-10-09,Literature,10000000,12377622,"author of new departures, poetic adventure and sensual ecstasy, explorer of a humanity beyond and below the reigning civilization"
+578,2008,2008-10-10,Peace,10000000,12377622,"for his important efforts, on several continents and over more than three decades, to resolve international conflicts"
+579,2008,2008-10-07,Physics,10000000,12377622,for the discovery of the origin of the broken symmetry which predicts the existence of at least three families of quarks in nature
+580,2008,2008-10-06,Physiology or Medicine,10000000,12377622,for their discovery of human immunodeficiency virus
+581,2009,2009-10-07,Chemistry,10000000,12413793,for studies of the structure and function of the ribosome
+582,2009,2009-10-12,Economic Sciences,10000000,12413793,"for her analysis of economic governance, especially the commons"
+583,2009,2009-10-08,Literature,10000000,12413793,"who, with the concentration of poetry and the frankness of prose, depicts the landscape of the dispossessed"
+584,2009,2009-10-09,Peace,10000000,12413793,for his extraordinary efforts to strengthen international diplomacy and cooperation between peoples
+585,2009,2009-10-06,Physics,10000000,12413793,for groundbreaking achievements concerning the transmission of light in fibers for optical communication
+586,2009,2009-10-05,Physiology or Medicine,10000000,12413793,for the discovery of how chromosomes are protected by telomeres and the enzyme telomerase
+587,2010,2010-10-06,Chemistry,10000000,12256203,for palladium-catalyzed cross couplings in organic synthesis
+588,2010,2010-10-11,Economic Sciences,10000000,12256203,for their analysis of markets with search frictions
+589,2010,2010-10-07,Literature,10000000,12256203,"for his cartography of structures of power and his trenchant images of the individual's resistance, revolt, and defeat"
+590,2010,2010-10-08,Peace,10000000,12256203,for his long and non-violent struggle for fundamental human rights in China
+591,2010,2010-10-05,Physics,10000000,12256203,for groundbreaking experiments regarding the two-dimensional material graphene
+592,2010,2010-10-04,Physiology or Medicine,10000000,12256203,for the development of in vitro fertilization
+593,2011,2011-10-05,Chemistry,10000000,11946007,for the discovery of quasicrystals
+594,2011,2011-10-10,Economic Sciences,10000000,11946007,for their empirical research on cause and effect in the macroeconomy
+595,2011,2011-10-06,Literature,10000000,11946007,"because, through his condensed, translucent images, he gives us fresh access to reality"
+596,2011,2011-10-07,Peace,10000000,11946007,for their non-violent struggle for the safety of women and for women's rights to full participation in peace-building work
+597,2011,2011-10-04,Physics,10000000,11946007,for the discovery of the accelerating expansion of the Universe through observations of distant supernovae
+598,2011,2011-10-03,Physiology or Medicine,10000000,11946007,for their discoveries concerning the activation of innate immunity
+599,2012,2012-10-10,Chemistry,8000000,9471572,for studies of G-protein-coupled receptors
+600,2012,2012-10-15,Economic Sciences,8000000,9471572,for the theory of stable allocations and the practice of market design
+601,2012,2012-10-11,Literature,8000000,9471572,"who with hallucinatory realism merges folk tales, history and the contemporary"
+602,2012,2012-10-12,Peace,8000000,9471572,"for over six decades contributed to the advancement of peace and reconciliation, democracy and human rights in Europe"
+603,2012,2012-10-09,Physics,8000000,9471572,for ground-breaking experimental methods that enable measuring and manipulation of individual quantum systems
+604,2012,2012-10-08,Physiology or Medicine,8000000,9471572,for the discovery that mature cells can be reprogrammed to become pluripotent
+605,2013,2013-10-09,Chemistry,8000000,9476854,for the development of multiscale models for complex chemical systems
+606,2013,2013-10-14,Economic Sciences,8000000,9476854,for their empirical analysis of asset prices
+607,2013,2013-10-10,Literature,8000000,9476854,master of the contemporary short story
+608,2013,2013-10-11,Peace,8000000,9476854,for its extensive efforts to eliminate chemical weapons
+609,2013,2013-10-08,Physics,8000000,9476854,"for the theoretical discovery of a mechanism that contributes to our understanding of the origin of mass of subatomic particles, and which recently was confirmed through the discovery of the predicted fundamental particle, by the ATLAS and CMS experiments at CERN's Large Hadron Collider"
+610,2013,2013-10-07,Physiology or Medicine,8000000,9476854,"for their discoveries of machinery regulating vesicle traffic, a major transport system in our cells"
+611,2014,2014-10-08,Chemistry,8000000,9492737,for the development of super-resolved fluorescence microscopy
+612,2014,2014-10-13,Economic Sciences,8000000,9492737,for his analysis of market power and regulation
+613,2014,2014-10-09,Literature,8000000,9492737,"for the art of memory with which he has evoked the most ungraspable human destinies and
+uncovered the life-world of the occupation"
+614,2014,2014-10-10,Peace,8000000,9492737,for their struggle against the suppression of children and young people and for the right of all children to education
+615,2014,2014-10-07,Physics,8000000,9492737,for the invention of efficient blue light-emitting diodes which has enabled bright and energy-saving white light sources
+616,2014,2014-10-06,Physiology or Medicine,8000000,9492737,for their discoveries of cells that constitute a positioning system in the brain
+617,2015,2015-10-07,Chemistry,8000000,9498044,for mechanistic studies of DNA repair
+618,2015,2015-10-12,Economic Sciences,8000000,9498044,"for his analysis of consumption, poverty, and welfare"
+619,2015,2015-10-08,Literature,8000000,9498044,"for her polyphonic writings, a monument to suffering and courage in our time"
+620,2015,2015-10-09,Peace,8000000,9498044,for its decisive contribution to the building of a pluralistic democracy in Tunisia in the wake of the Jasmine Revolution of 2011
+621,2015,2015-10-06,Physics,8000000,9498044,"for the discovery of neutrino oscillations, which shows that neutrinos have mass"
+622,2015,2015-10-05,Physiology or Medicine,8000000,9498044,for their discoveries concerning a novel therapy against infections caused by roundworm parasites
+623,2016,2016-10-05,Chemistry,8000000,9403431,for the design and synthesis of molecular machines
+624,2016,2016-10-10,Economic Sciences,8000000,9403431,for their contributions to contract theory
+625,2016,2016-10-13,Literature,8000000,9403431,for having created new poetic expressions within the great American song tradition
+626,2016,2016-10-07,Peace,8000000,9403431,for his resolute efforts to bring the country's more than 50-year-long civil war to an end
+627,2016,2016-10-04,Physics,8000000,9403431,for theoretical discoveries of topological phase transitions and topological phases of matter
+628,2016,2016-10-03,Physiology or Medicine,8000000,9403431,for his discoveries of mechanisms for autophagy
+629,2017,2017-10-04,Chemistry,9000000,10394780,for developing cryo-electron microscopy for the high-resolution structure determination of biomolecules in solution
+630,2017,2017-10-09,Economic Sciences,9000000,10394780,for his contributions to behavioural economics
+631,2017,2017-10-05,Literature,9000000,10394780,"who, in novels of great emotional force, has uncovered the abyss beneath our illusory sense of connection with the world"
+632,2017,2017-10-06,Peace,9000000,10394780,for its work to draw attention to the catastrophic humanitarian consequences of any use of nuclear weapons and for its ground-breaking efforts to achieve a treaty-based prohibition of such weapons
+633,2017,2017-10-03,Physics,9000000,10394780,for decisive contributions to the LIGO detector and the observation of gravitational waves
+634,2017,2017-10-02,Physiology or Medicine,9000000,10394780,for their discoveries of molecular mechanisms controlling the circadian rhythm
+635,2018,2018-10-03,Chemistry,9000000,10195200,for the directed evolution of enzymes
+636,2018,2018-10-01,Economic Sciences,9000000,10195200,for integrating technological innovations into long-run macroeconomic analysis
+637,2018,2019-10-10,Literature,9000000,10013620,for a narrative imagination that with encyclopedic passion represents the crossing of boundaries as a form of life
+638,2018,2018-10-05,Peace,9000000,10195200,for their efforts to end the use of sexual violence as a weapon of war and armed conflict
+639,2018,2018-10-02,Physics,9000000,10195200,for the optical tweezers and their application to biological systems
+640,2018,2018-10-01,Physiology or Medicine,9000000,10195200,for their discovery of cancer therapy by inhibition of negative immune regulation
+641,2019,2019-10-09,Chemistry,9000000,10013620,for the development of lithium-ion batteries
+642,2019,2019-10-14,Economic Sciences,9000000,10013620,for their experimental approach to alleviating global poverty
+643,2019,2019-10-10,Literature,9000000,10013620,for an influential work that with linguistic ingenuity has explored the periphery and the specificity of human experience
+644,2019,2019-10-11,Peace,9000000,10013620,"for his efforts to achieve peace and international cooperation, and in particular for his decisive initiative to resolve the border conflict with neighbouring Eritrea"
+645,2019,2019-10-08,Physics,9000000,10013620,for the discovery of an exoplanet orbiting a solar-type star
+646,2019,2019-10-07,Physiology or Medicine,9000000,10013620,for their discoveries of how cells sense and adapt to oxygen availability
+647,2020,2020-10-07,Chemistry,10000000,11074035,for the development of a method for genome editing
+648,2020,2020-10-12,Economic Sciences,10000000,11074035,for improvements to auction theory and inventions of new auction formats
+649,2020,2020-10-08,Literature,10000000,11074035,for her unmistakable poetic voice that with austere beauty makes individual existence universal
+650,2020,2020-10-09,Peace,10000000,11074035,"for its efforts to combat hunger, for its contribution to bettering conditions for peace in conflict-affected areas and for acting as a driving force in efforts to prevent the use of hunger as a weapon of war and conflict"
+651,2020,2020-10-06,Physics,10000000,11074035,for the discovery of a supermassive compact object at the centre of our galaxy
+652,2020,2020-10-05,Physiology or Medicine,10000000,11074035,for the discovery of Hepatitis C virus
+653,2021,2021-10-06,Chemistry,10000000,10836735,for the development of asymmetric organocatalysis
+654,2021,2021-10-11,Economic Sciences,10000000,10836735,for his empirical contributions to labour economics
+655,2021,2021-10-07,Literature,10000000,10836735,for his uncompromising and compassionate penetration of the effects of colonialism and the fate of the refugee in the gulf between cultures and continents
+656,2021,2021-10-08,Peace,10000000,10836735,"for their efforts to safeguard freedom of expression, which is a precondition for democracy and lasting peace"
+657,2021,2021-10-05,Physics,10000000,10836735,for the discovery of the interplay of disorder and fluctuations in physical systems from atomic to planetary scales
+658,2021,2021-10-04,Physiology or Medicine,10000000,10836735,for their discoveries of receptors for temperature and touch
+659,2022,2022-10-05,Chemistry,10000000,10000000,for the development of click chemistry and bioorthogonal chemistry
+660,2022,2011-10-10,Economic Sciences,10000000,10000000,for research on banks and financial crises
+661,2022,2022-10-06,Literature,10000000,10000000,"for the courage and clinical acuity with which she uncovers the roots, estrangements and  collective restraints of personal memory"
+662,2022,2022-10-07,Peace,10000000,10000000,"The Peace Prize laureates represent civil society in their home countries. They have for many years promoted the right to criticise power and protect the fundamental rights of citizens. They have made an outstanding effort to document war crimes, human right abuses and the abuse of power. Together they demonstrate the significance of civil society for peace and democracy."
+663,2022,2022-10-04,Physics,10000000,10000000,"for experiments with entangled photons, establishing the violation of Bell inequalities and  pioneering quantum information science"
+664,2022,2022-10-03,Physiology or Medicine,10000000,10000000,for his discoveries concerning the genomes of extinct hominins and human evolution
+665,2023,2023-10-04,Chemistry,11000000,10136226,for the discovery and synthesis of quantum dots
+666,2023,2023-10-09,Economic Sciences,11000000,10136226,for having advanced our understanding of women’s labour market outcomes
+667,2023,2023-10-05,Literature,11000000,10136226,for his innovative plays and prose which give voice to the unsayable
+668,2023,2023-10-06,Peace,11000000,10136226,for her fight against the oppression of women in Iran and her fight to promote human rights and freedom for all
+669,2023,2023-10-03,Physics,11000000,10136226,for experimental methods that generate attosecond pulses of light for the study of electron dynamics in matter
+670,2023,2023-10-02,Physiology or Medicine,11000000,10136226,for their discoveries concerning nucleoside base modifications that enabled the development of effective mRNA vaccines against COVID-19
+671,2024,2024-10-09,Chemistry,11000000,11000000,for computational protein design
+672,2024,2024-10-14,Economic Sciences,11000000,11000000,for studies of how institutions are formed and affect prosperity
+673,2024,2024-10-10,Literature,11000000,11000000,for her intense poetic prose that confronts historical traumas and exposes the fragility of human life
+674,2024,2024-10-11,Peace,11000000,11000000,for its efforts to achieve a world free of nuclear weapons and for demonstrating through witness testimony that nuclear weapons must never be used again
+675,2024,2024-10-08,Physics,11000000,11000000,for foundational discoveries and inventions that enable machine learning with artificial neural networks
+676,2024,2024-10-07,Physiology or Medicine,11000000,11000000,for the discovery of microRNA and its role in post-transcriptional gene regulation

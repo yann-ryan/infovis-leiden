@@ -1,0 +1,323 @@
+---
+title: "R Basics"
+---
+
+## R code
+
+R code, as most programming languages, involves manipulating data. Data is usually stored as **variables** and the manipulations are usually done by applying these variables to **functions.** Often, programmers will write their own functions, but in this course, we'll exclusively use existing functions, from various packages.
+
+### Basic R operations and data types
+
+#### Numbers
+
+The building blocks of most programming languages is basic arithmetic and this is a good place to start. You can use `+`, `-`, `*` and `/` to add, subtract, multiple, and divide, respectively. Here are some examples. Run the code and see if you get the expected results.
+
+```{webr-r}
+28 + 32
+```
+
+```{webr-r}
+25 - 10
+```
+
+```{webr-r}
+11 * 9
+```
+
+```{webr-r}
+100 / 8
+```
+
+You can also do multiple arithmetic actions in one line:
+
+```{webr-r}
+100 + 5 * 10
+```
+
+You can also write multiple lines of code in the same cell block, and they will be evaluated and outputted separately:
+
+```{webr-r}
+100 * 5
+
+50 * 4
+```
+
+If you try to write separate mathematical instructions (or any separate code) on the same line, R will assume it is all part of the same sequence, and will give an error:
+
+```{webr-r}
+
+100 * 5 50 * 4
+
+
+```
+
+::: {.callout-note collapse="true"}
+## More on the order of operations, if you're interested
+
+You'll notice in the last example that R first multiplies 5 \* 10 and then adds that to 100, to give 150. This is because R follows the same order of operations you learned in high school:
+
+-   Parentheses: `(`, `)`
+
+-   Exponents: `^` or `**`
+
+-   Multiply: `*`
+
+-   Divide: `/`
+
+-   Add: `+`
+
+-   Subtract: `-`
+
+If you want to force R to evaluate other parts of the code first, you can do this by putting parts of the code in parentheses, like this:
+
+```{webr-r}
+(100 + 5) * 10
+```
+
+Run the code above and see how it differs!
+:::
+
+### Assigning variables
+
+A variable is simply a value stored in a programming language's memory, which can be changed. A variable needs to have a name and a value. These variables are often assigned or changed by a user.
+
+To assign a variable in R, use the command `->`. You can also use `=`, but not in all situations, so it's better to use `<-`.
+
+To the left of this command, enter the variable name. On the right hand side, enter the value.
+
+The following code creates a variable called `x` and assigns it the value `10`:
+
+```{webr-r}
+
+x <- 10
+```
+
+::: callout-warning
+Don't forget to run the code! If you don't, the variable will not be assigned and you won't be able to use it later!
+:::
+
+**Try it yourself:** In this next box, create a variable called `y` with the value `5`. You need to run the code in order for it to actually create the variable .
+
+```{webr-r}
+
+
+```
+
+Now, instead of doing arithmetic directly on numbers, we can do it on these named variables:
+
+```{webr-r}
+#| eval: false
+
+x * y
+
+```
+
+You can change the value of a variable by simpy assigning it to a new value - it will be replaced in the memory with this new value.
+
+The concept of assigning variables is important, because we will often use it: as well as numbers, variables can also be vectors, strings, or dataframes (which we'll learn about below).
+
+#### Exercises:
+
+In the code block below, write code to do the following things:
+
+-   create a variable called `a` and assign it a value
+
+-   assign the variable `y` to a new value
+
+-   Do a mathematical operation using `a` and `y`.
+
+```{webr-r}
+
+```
+
+::: callout-tip
+Remember you can do this all in one code block, but make sure to write each instruction on a separate line!
+:::
+
+### Strings
+
+Strings are what programming languages call a series of characters, such as a word or sentence. A string in R is placed within inverted commas. The following code will create a variable called `album_title`, and give it the value `"Dangerously in Love"`:
+
+```{webr-r}
+album_title <- "Dangerously in Love"
+```
+
+Obviously you can't do arithmetic with strings, but you can do other useful things. Later in the course we'll learn how to combined strings together and detect, count or remove parts of a string based on pattern matching.
+
+For now we'll just stick with the absolute basics. You can print a string as an output with the command `print()`:
+
+```{webr-r}
+print(album_title)
+```
+
+You can calculate the number of characters of a string using `nchar()`:
+
+```{webr-r}
+nchar(album_title)
+```
+
+#### Exercises:
+
+-   create a new string variable, called `song_title`. Assign the string "Crazy in Love" to it.
+
+-   Calculate the number of characters in the new variable.
+
+```{webr-r}
+
+```
+
+### Vectors
+
+Vectors are the building blocks of data in R. A vector is simply a series, or set, of pieces of data such as a string, or numbers. Each piece of data in a vector is called an 'element'. In R, you can create a vector by putting the set within `c()`, with each element separated by a comma.
+
+A vector of numbers looks like this:
+
+```{webr-r}
+
+number_vector <- c(1,2,3,4,5)
+
+
+```
+
+A vector of strings. Don't forget they need to be in inverted commas!
+
+```{webr-r}
+song_vector <- c("Crazy in Love", "Naughty Girl", "Baby Boy")
+```
+
+**Try it yourself:** in the code block below, create a vector containing the names of the courses you are taking this semester. Give it an appropriate name.
+
+```{webr-r}
+
+```
+
+::: callout-warning
+#### Coercion
+
+Things get a bit more complicated when we try to combine together different data types in the same vector. When this happens, R has to choose which data type to use - it has to treat them all the same. R does something called 'coercion', meaning it coerces all the data to the same type. This happens in a particular order - numbers are converted into strings, because a number can always be treated like a string, but not the other way around.
+
+```{webr-r}
+mixed_vector <- c("element one", 50, "element three", 99)
+
+print(mixed_vector)
+
+
+```
+
+You see that when you print it, all the elements have quotation marks? That means that R is treating them as strings.
+
+Usually, this will happen accidentally and you'll need to look out for it. For example, maybe you have a column of numerical data and one row contains 'unknown' or a typo including a letter. In this case, R will treat the whole column as text data!
+:::
+
+### Comparisons
+
+You can compare numbers or variables using the following:
+
+-   `==` (equals),
+
+-   `>` (greater than),
+
+-   `<`, (less than)
+
+-   `!=` (not equal to).
+
+If you put something on the left and right of these comparisons, R will check if the statement is correct and output either `TRUE` or `FALSE`:
+
+::: callout-warning
+Note that in order to do an equals comparison, you use double equal signs (`==`). This is because a single equal sign is used for other purposes (to assign variables and to give additional instructions in functions, as we'll learn later).
+:::
+
+#### Comparisons with numbers.
+
+This checks if the value on the left is the same as the value on the right.
+
+```{webr-r}
+
+5 == 5
+
+
+```
+
+This checks if the value on the left is greater than the value on the right:
+
+```{webr-r}
+
+10 > 5
+
+```
+
+#### Exercises:
+
+-   Write a statement to check if 15 is greater than 5.
+
+```{webr-r}
+
+```
+
+-   Comparisons can be more complicated than this: you can also use them to check arithmetic, for example. In the code block below, write a statement to check if 5 multiplied by 10 is equal to 25 multiplied by 2.
+
+```{webr-r}
+
+
+
+```
+
+#### Comparisons with strings
+
+You can do comparisons with strings too. Note that the comparison is strict - the punctuation and capitalisation need to match exactly. Why doesn't this return `TRUE`?
+
+```{webr-r}
+"Crazy in Love" == "Crazy In Love"
+```
+
+#### Exercise
+
+You can also compare variables directly. In the code block below, check to see if the `album_title` variable and the `song_title` variable are the same.
+
+```{webr-r}
+
+```
+
+#### Comparisons with Vectors
+
+You can also do comparisons using vectors. If you ask R to compare a vector to something, it will compare each element, and return a new vector consisting of either TRUE or FALSE, depending on the comparison. For example, we can see if elements in a list are greater than a given number:
+
+```{webr-r}
+v = c(1,5,4,6,7) # create a vector of numbers
+
+v > 3 # check if the elements in the vector v are greater than 3.
+```
+
+In this example, the first element (1) is not greater than 3, hence FALSE, and the rest are greater than 3, and so give TRUE.
+
+We can do the same with strings:
+
+```{webr-r}
+
+song_title == song_vector
+
+```
+
+Here, we ask R to return either TRUE or FALSE, depending on whether each element of the song_vector is the same as the song_title string.
+
+::: callout-tip
+## Why do we need comparisons?
+
+Doing these comparisons might seem a bit abstract, but it's actually something we'll use a lot when working on 'real world' data and problems. When we start to work with datasets later in the course, we'll use these basic techniques to construct useful filters so we can subset our data.
+:::
+
+## Learning Objectives
+
+Before moving on, take a look and see if you are confident with all of the following learning objectives. If anything is unclear, try to go back over the material, or make a note and ask in our next class!
+
+(the checkboxes are just for your own use, they won't save if you leave or refresh the page)
+
+-   [ ] Know what a variable is
+-   [ ] Know what data types are
+-   [ ] Know what a dataframe and a vector is
+-   [ ] Practise making vectors
+-   [ ] Know how to do basic arithmetic with R
+-   [ ] Know how to check conditions:
+-   [ ] Equals (numbers and text), greater than, less than, greater than or equal to
+-   [ ] Do the same but with vectors
+-   [ ] Know what data types are

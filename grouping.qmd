@@ -1,0 +1,150 @@
+---
+title: "Grouping"
+---
+
+```{webr-r}
+#| context: setup
+
+library(dplyr)
+library(readr)
+
+url <- "https://raw.githubusercontent.com/yann-ryan/infovis-course/master/titanic_df_full.csv"
+download.file(url, "titanic_df.csv")
+
+titanic_df =  read_csv('titanic_df.csv')
+
+```
+
+In most cases when doing data analysis or visualisation, we will have a 'raw' dataset, such as the passenger names on the Titanic. But we can't visualise that directly: it needs to be summarised into interesting or insightful ways. For example, we don't usually visualise each individual passenger, but we might want to visualise a count of male and female passengers.
+
+To count using attributes like this, we use a concept called *grouping*. Grouping means that we combine the data together based on some variable (column). Once this is done, certain functions will be carried out on each group separately, rather than the whole dataset.
+
+To do this in R, we use a function called group_by(). A simple example is that we could group the `titanic_df` by the `sex` column:
+
+```{webr-r}
+titanic_df |> 
+  group_by(sex) 
+```
+
+The only different here is that the dataframe shows that the data has been divided into groups based on the sex variable. The \[2\] after it shows that there are two groups: male and female.
+
+We can also group by multiple variables. This will group the dataset by both sex and pclass:
+
+```{webr-r}
+titanic_df |>
+  group_by(sex, pclass) 
+```
+
+Now we see that the data has been divided into 6 groups in total: first class males, first class females, second class males, second class female, and so forth. If we run a relevant function on this, it will calculate separately for each of the six groups.
+
+The usefulness of this is because technically speaking, the verb we learned on the previous page, **summarise(), calculates a summary for *each group in a dataset***, meaning we can use it to understand and analyse the data from different perspectives. For example, we can calculate the total number of male and female passengers by first grouping by the sex variable, and then using summarise with the n() function from the previous page. This will make a new dataset with a column called 'total', displaying the total for each group:
+
+```{webr-r}
+
+titanic_df |> 
+  group_by(sex) |> 
+  summarise(total = n())
+
+```
+
+There are lots of other functions that work with groups and summarise. Here is a list of the most useful:
+
+-   Center: [`mean()`](https://rdrr.io/r/base/mean.html), [`median()`](https://rdrr.io/r/stats/median.html)
+
+-   Spread: [`sd()`](https://rdrr.io/r/stats/sd.html), [`IQR()`](https://rdrr.io/r/stats/IQR.html), [`mad()`](https://rdrr.io/r/stats/mad.html)
+
+-   Range: [`min()`](https://rdrr.io/r/base/Extremes.html), [`max()`](https://rdrr.io/r/base/Extremes.html),
+
+-   Position: [`first()`](https://dplyr.tidyverse.org/reference/nth.html), [`last()`](https://dplyr.tidyverse.org/reference/nth.html), [`nth()`](https://dplyr.tidyverse.org/reference/nth.html),
+
+-   Count: [`n()`](https://dplyr.tidyverse.org/reference/context.html), [`n_distinct()`](https://dplyr.tidyverse.org/reference/n_distinct.html)
+
+-   Logical: [`any()`](https://rdrr.io/r/base/any.html), [`all()`](https://rdrr.io/r/base/all.html)
+
+You can also calculate multiple summaries in a single function:
+
+```{webr-r}
+
+titanic_df |> 
+  group_by(sex) |> 
+  summarise(total = n(), maximum = max(age, na.rm = TRUE)) # calculate the total number and the maximum age for each category.
+```
+
+### Exercise:
+
+Create a summary of the data containing the the average age of male and female passengers - call the new summary column 'average_age'.
+
+```{webr-r}
+
+
+```
+
+## Grouping with other functions
+
+### Grouping and slice\_
+
+Other functions we have come across also work with groups. For instance, we can find the five oldest passengers for each passenger class by first using `group_by()`, and then using `slice_max()`:
+
+```{webr-r}
+titanic_new_df |> 
+  group_by(pclass) |>
+  slice_max(order_by = age, n = 5)
+```
+
+See that the result is a dataframe containing 15 rows, 5 for each of the passenger classes?
+
+You can also use `slice_min()` in much the same way.
+
+## Grouping and mutate()
+
+You can also use group_by with mutate(). In this case, it will add the total for each group as a new column, and not remove anything else.
+
+```{webr-r}
+titanic_new_df |> 
+  group_by(pclass) |>
+  mutate(total_class = n())
+```
+
+## Ungroup
+
+Sometimes you'll want to do something in groups and then remove them afterwards because they give unwanted effects. You can do this using the verb `ungroup()`.
+
+### Exercises:
+
+-   Calculate the total number of passengers by both sex and pclass
+
+```{webr-r}
+
+```
+
+-   The Embarked column indicates where the passengers got onto the ship. The code is C = Cherbourg, Q = Queenstown (Cobh in Ireland today), S = Southampton.
+
+-   How many passengers got on at each location?
+
+```{webr-r}
+
+```
+
+-   What was the average fare paid for each location?
+
+```{webr-r}
+
+```
+
+Create a new column, containing the total number which embarked from that person's location.
+
+```{webr-r}
+
+
+
+```
+
+Who are the five youngest male and female passengers who embarked at each location?
+
+::: callout-tip
+## Save some typing by using count()
+
+count(embarked) is the same as using group_by(embarked) \|\> summarise(n = n()).
+
+count(embarked, wt = fare) is the same as using group_by(embarked) \|\> summarise(n = sum(fare, na.rm = TRUE))
+:::

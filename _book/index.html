@@ -1,0 +1,1466 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.56">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Yann Ryan">
+<meta name="dcterms.date" content="2024-09-01">
+
+<title>Information Visualization and the Humanities: Course Book</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./2_r_intro.html" rel="next">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Course Overview</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="./index.html" class="sidebar-logo-link">
+      <img src="./Designer.jpeg" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Information Visualization and the Humanities: Course Book</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Course Overview</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Introduction to R</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./2_r_intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to R</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./basics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">R Basics</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./practise.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Practice the basics</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./1_rmarkdown.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">R-Studio and using R Markdown</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./at-home-000.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Home exercises</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Data Analysis 1</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./3_data_analysis_1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data Analysis 1</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./select.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Subsetting columns</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./slice.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Subsetting rows</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./arrange.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Ordering and sorting dataframes</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./pipes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">The pipe operator</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./at-home-001.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Home exercises</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Data Analysis 2</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./filter.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Filtering data</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./regex.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Pattern matching with str_detect</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./mutate.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Changing columns with mutate</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./summarise.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Summarising</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./at-home-002.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Home exercises</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Data Analysis 3</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./grouping.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Grouping</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./joins.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Joins</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./at-home-003.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Home exercises</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Data Visualisation 1</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./7_data_visualisation_1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Data Visualisation Basics</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ggplot2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Using ggplot2</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chart_types.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">More chart types</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./at-home-004.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Home Exercises</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
+ <span class="menu-text">Data Visualisation 2</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./8_data_visualisation_2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">More Data Visualisation</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./gestalt.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Gestalt Principles</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./scales.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Chart scales</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./position.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Position scales</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./date_scales.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Date scales</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./colour.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Colour and size scales</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./at-home-005.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Home Exercises</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
+ <span class="menu-text">Data Visualisation 3</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./9_data_visualisation_3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Data Visualisation 3</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./titles.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Titles and Labels</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./themes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Chart Themes</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./annotations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Annotations and Highlights</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true">
+ <span class="menu-text">Data Visualisation 4</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./fair.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">Reproducibility and FAIR data</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./accessibility.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">Data Visualisation and Accessibility Considerations</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./at-home-006.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title">Home Exercise</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true">
+ <span class="menu-text">Digital Mapping 1</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./digital_mapping.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title">Digital mapping overview</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./basemaps.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">39</span>&nbsp; <span class="chapter-title">Working with Shapefiles</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./visualising.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">40</span>&nbsp; <span class="chapter-title">Wrangling and visualising map data</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./at-home-007.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">41</span>&nbsp; <span class="chapter-title">Home Exercise</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="true">
+ <span class="menu-text">Digital Mapping 2</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./full_map.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">42</span>&nbsp; <span class="chapter-title">Full map workflow</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./interactives.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">43</span>&nbsp; <span class="chapter-title">Making Plots Interactive</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./extra_exercises.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Links to extra practice exercises</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Data and Inspiration for the Final Project</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./final_project.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Final Project</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./mcpherson_final_project.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Women in Ancient Papyri</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Hogewoning_FinalProject.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">The Top 2000 &amp; The Evergreen Top 1000</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Polakowska-FinalProject.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">F</span>&nbsp; <span class="chapter-title">The Impact of Tea</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#course-overview" id="toc-course-overview" class="nav-link active" data-scroll-target="#course-overview">Course Overview</a>
+  <ul class="collapse">
+  <li><a href="#what-do-we-mean-by-information-visualisation" id="toc-what-do-we-mean-by-information-visualisation" class="nav-link" data-scroll-target="#what-do-we-mean-by-information-visualisation">What do we mean by ‘information visualisation’?</a></li>
+  <li><a href="#course-aims-and-objectives" id="toc-course-aims-and-objectives" class="nav-link" data-scroll-target="#course-aims-and-objectives">Course Aims and Objectives</a>
+  <ul class="collapse">
+  <li><a href="#information-visualisation" id="toc-information-visualisation" class="nav-link" data-scroll-target="#information-visualisation">Information Visualisation…</a></li>
+  <li><a href="#and-the-humanities" id="toc-and-the-humanities" class="nav-link" data-scroll-target="#and-the-humanities">…and the Humanities</a></li>
+  </ul></li>
+  <li><a href="#doing-not-reading..-mostly" id="toc-doing-not-reading..-mostly" class="nav-link" data-scroll-target="#doing-not-reading..-mostly">Doing not reading.. mostly</a></li>
+  <li><a href="#schedule" id="toc-schedule" class="nav-link" data-scroll-target="#schedule">Schedule</a></li>
+  <li><a href="#data-visualisation" id="toc-data-visualisation" class="nav-link" data-scroll-target="#data-visualisation">Data Visualisation</a>
+  <ul class="collapse">
+  <li><a href="#what-will-i-actually-do-on-this-course" id="toc-what-will-i-actually-do-on-this-course" class="nav-link" data-scroll-target="#what-will-i-actually-do-on-this-course">What will I actually do on this course?</a></li>
+  </ul></li>
+  <li><a href="#course-load" id="toc-course-load" class="nav-link" data-scroll-target="#course-load">Course Load</a></li>
+  <li><a href="#grading" id="toc-grading" class="nav-link" data-scroll-target="#grading">Grading</a></li>
+  <li><a href="#mostly-recommended-reading" id="toc-mostly-recommended-reading" class="nav-link" data-scroll-target="#mostly-recommended-reading">(Mostly recommended) Reading</a></li>
+  <li><a href="#the-fine-print" id="toc-the-fine-print" class="nav-link" data-scroll-target="#the-fine-print">The Fine Print</a>
+  <ul class="collapse">
+  <li><a href="#use-of-chatbots-for-assignments" id="toc-use-of-chatbots-for-assignments" class="nav-link" data-scroll-target="#use-of-chatbots-for-assignments">Use of Chatbots for assignments</a></li>
+  </ul></li>
+  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"></a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Information Visualization and the Humanities: Course Book</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Yann Ryan </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">September 1, 2024</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="course-overview" class="level1 unnumbered">
+<h1 class="unnumbered">Course Overview</h1>
+<p>Welcome! You’re probably here because you are taking the course <em>Information Visualization and the Humanities,</em> taking place in Semester 1, 2024-2025, at Leiden University. It’s part of the minor in Digital Humanities. The course instructor is Dr.&nbsp;Yann Ryan.</p>
+<p>This e-book will serve as the course website. The menu on the left side lists the chapters, one for each week of the course. More will appear as the course progresses. The menu on the right contains the table of contents for this particular chapter, so you can skip to different sections.</p>
+<p>You’ll also need to familiarise yourself with the course <a href="https://brightspace.universiteitleiden.nl/d2l/home/322838">Brightspace area</a>, where I’ll put further information and you’ll submit assignments.</p>
+<section id="what-do-we-mean-by-information-visualisation" class="level2">
+<h2 class="anchored" data-anchor-id="what-do-we-mean-by-information-visualisation">What do we mean by ‘information visualisation’?</h2>
+<p>Information visualization (or data visualization, which I’ll use interchangeablely) could be defined as <strong><em>the graphical representation of information and data</em></strong>.</p>
+<p>Data visualization is often used to convey or communicate messages about complex or large-scale data. It has been around in its present form—charts, graphs and so forth—since at least the eighteenth century. One form of data visualisation—maps—have been around for even longer. Today, we come across data visualizations in our daily lives: in everything from scientific articles to news media, and in advertisements.</p>
+<p>In the humanities, the data we use might be, for example, historical statistics or networks, or the text (or data derived from it) found in literary works. It might be something totally different such as audio, images, or spatial data.</p>
+</section>
+<section id="course-aims-and-objectives" class="level2">
+<h2 class="anchored" data-anchor-id="course-aims-and-objectives">Course Aims and Objectives</h2>
+<ul>
+<li><p>At the end of this course, you will:</p>
+<ul>
+<li><p>Be able to construct data visualisations from scratch using the coding language R.</p></li>
+<li><p>Use online publication formats such as Markdown to make professional-standard visual essays containing code, visualisations, and explanatory text.</p></li>
+<li><p>Understand how a FAIR (Findable, Accessible, Interoperable, and Reusable) approach to data is important for your work and that of others.</p></li>
+<li><p>Be able to critically reflect on a range of visualizations, with a specific focus on network and spatial data.</p></li>
+<li><p>Know where to find some of the inspiring visualizations, thinkers, and designers in this field.</p></li>
+<li><p>Be able to discuss your views on information visualization with peers as well as give and receive feedback.</p></li>
+</ul></li>
+</ul>
+<p>In terms of concrete skills, by the end of this course, you should be able to use humanities-focused data to make informative, highly-customised visualisations such as this:</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Show the code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggthemes)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">scipen =</span> <span class="dv">999999</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>df <span class="ot">=</span> data.table<span class="sc">::</span><span class="fu">fread</span>(<span class="st">'box_office.csv'</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>df <span class="ot">=</span> df <span class="sc">%&gt;%</span> </span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">billions =</span>total_inflation_adjusted_box_office<span class="sc">/</span><span class="dv">1000000000</span> )</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span> </span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> df, <span class="fu">aes</span>(year, <span class="fu">as.numeric</span>(billions)), <span class="at">size=</span> <span class="dv">1</span>, <span class="at">alpha =</span> .<span class="dv">5</span>) <span class="sc">+</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">data =</span> df, <span class="fu">aes</span>(year, <span class="fu">as.numeric</span>(billions)), <span class="at">method =</span> <span class="st">"lm"</span>,</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>              <span class="at">formula =</span> y <span class="sc">~</span> <span class="fu">poly</span>(x, <span class="dv">23</span>), <span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">color =</span> <span class="st">'black'</span>, <span class="at">alpha =</span> .<span class="dv">75</span>) <span class="sc">+</span> </span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">15</span>)) <span class="sc">+</span> </span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">'Domestic Yearly Box Office, 1995 to 2023'</span>, </span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"In billion US dollars, adjusted for inflation"</span>, </span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="cn">NULL</span>, </span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Box office in billions US (inflation adjusted)"</span>)  <span class="sc">+</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept=</span><span class="dv">2020</span>, <span class="at">color =</span> <span class="st">'red'</span>, <span class="at">alpha =</span> .<span class="dv">6</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x=</span><span class="dv">2019</span>, <span class="at">y=</span><span class="dv">5</span>, <span class="at">label=</span><span class="st">"First Pandemic Year"</span>, <span class="at">angle=</span><span class="dv">90</span>) <span class="sc">+</span> </span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_economist</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>or this:</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Show the code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggrepel)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>df2 <span class="ot">=</span> data.table<span class="sc">::</span><span class="fu">fread</span>(<span class="st">"top_movie.csv"</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>df2 <span class="ot">=</span> df2 <span class="sc">%&gt;%</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">billions =</span>total_in_2022_dollars<span class="sc">/</span><span class="dv">1000</span>)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>top_data <span class="ot">=</span> df2 <span class="sc">%&gt;%</span> </span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_max</span>(<span class="at">order_by =</span> total_in_2022_dollars, <span class="at">n =</span> <span class="dv">5</span>)</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>   p <span class="ot">=</span>  <span class="fu">ggplot</span>() <span class="sc">+</span> </span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>      <span class="fu">geom_point</span>(<span class="at">data =</span> df2,(<span class="fu">aes</span>(<span class="at">x =</span> year, </span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">y =</span> billions, </span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">size =</span> billions, </span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">fill =</span> distributor)), </span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>                 <span class="at">pch =</span> <span class="dv">21</span>, <span class="at">color =</span> <span class="st">'black'</span>, <span class="at">alpha =</span> .<span class="dv">6</span>, <span class="at">stroke=</span> .<span class="dv">5</span>) <span class="sc">+</span> </span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>      <span class="fu">geom_label_repel</span>(<span class="at">data =</span> top_data, <span class="fu">aes</span>(<span class="at">x =</span> year, </span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>                                            <span class="at">y =</span> billions, </span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>                                            <span class="at">label =</span> movie, </span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>                                            <span class="at">fill =</span> distributor), </span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>                       <span class="at">alpha =</span> .<span class="dv">6</span>,<span class="at">show.legend=</span><span class="cn">FALSE</span>) <span class="sc">+</span> </span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>      <span class="fu">scale_size_area</span>(<span class="at">max_size =</span> <span class="dv">6</span>) <span class="sc">+</span> </span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>      <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"The Rise and Rise of Disney"</span>, </span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>           <span class="at">subtitle =</span> <span class="st">"Nearly 1/3 of the highest-grossing movies (in the US) of the last 30 years</span><span class="sc">\n</span><span class="st">have been made by the Disney Company"</span>) <span class="sc">+</span> </span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>      <span class="fu">theme_fivethirtyeight</span>() <span class="sc">+</span> </span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>      <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Box office in billions US (inflation adjusted)"</span>, </span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>           <span class="at">size =</span> <span class="st">"Takings (Billions): "</span>, <span class="at">fill =</span> <span class="st">'Distributor: '</span>) <span class="sc">+</span> </span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>      <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">'bottom'</span>, </span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>            <span class="at">legend.box=</span><span class="st">"vertical"</span>, </span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>            <span class="at">legend.margin=</span><span class="fu">margin</span>())</span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>                </span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>p</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Perhaps most importantly, you will have total control over every aspect of the visualisation, from the colours, to the titles, labels, and scales. Use the ‘show the code’ button above the visualisation to see the code it was made from.</p>
+<p>Your final and most important piece of work will be a <em>Markdown report:</em> a publishable document containing code, text, and data visualisations. This report will show off all the skills you have learned during the course. You can see some examples from last year as an appendix to this book.</p>
+<section id="information-visualisation" class="level3">
+<h3 class="anchored" data-anchor-id="information-visualisation">Information Visualisation…</h3>
+<p>Most importantly, you’ll learn the basic principles of information visualization, and put them into practice using a platform called R (more on that below). R is widely used by, for example, data journalists at publications like <em>The Economist</em> and the <em>Financial Times.</em></p>
+<p>Using a language like R or python instead of Excel or a simple application for visualising data has many advantages. For one, it’s much easier to work with large datasets. You want to analyse huge datasets of movies like <a href="https://datasets.imdbws.com/">these ones</a>, with 11 millions rows of data? It’ll take a split second in R. A second advantage is that everything you make can be reproducible, meaning your visualisations and analyses can be scientifically checked and verified.</p>
+<p>The visualisations above were made with a few lines of the R language. If you click the ‘Show the code’ button above them, you’ll see the code I used to create them. It might look a little complicated now, but if you follow the course, you should be able to make similar (and hopefully much nicer) ones by the end of the twelve weeks.</p>
+<p>In your final project, you’ll combine text, data and visual outputs to make a <em>report</em> on a topic you’re interested in. You’ll make a document like this. For this course, it’s more than enough to stick to the basic charts like the above. But if you’re interested, you can explore fancier things such as interactive maps and charts, 3D-rendered visualisations, and more.</p>
+</section>
+<section id="and-the-humanities" class="level3">
+<h3 class="anchored" data-anchor-id="and-the-humanities">…and the Humanities</h3>
+<p>This is not to say the course will be an exhaustive ‘how to’ for scientific data visualisations. One of your superpowers as a humanities student is that you learn to to move beyond the surface level and consider the subtexts, biases, and so forth in cultural objects. In this course, we’ll put those skills to good use, and you’ll use your own expertise and interests to tell compelling and truthful stories about humanities subjects, using data.</p>
+<p>Just as importantly, you’ll learn how to critique data visualisations and design. As a group we’ll ask: what makes them good or bad, scientific or unethical? Can we trust the intentions behind commercial or political data visualisations? Can we spot when they are being misleading, and describe exactly <em>how</em>? What are the negative and positive connotations around certain graphical representations, and why do we use them? How can we make better, more ethical data visualisations? How can we make visualisations which properly consider those with accessibility needs?</p>
+</section>
+</section>
+<section id="doing-not-reading..-mostly" class="level2">
+<h2 class="anchored" data-anchor-id="doing-not-reading..-mostly">Doing not reading.. mostly</h2>
+<p>This will be a ‘doing’ course: you’ll spend most of your self-study time completing at-home exercises and assignments. There will be two compulsory readings to get a background on some of the wider themes of the course, which we will discuss in class. The two pieces we’ll read are:</p>
+<ul>
+<li><p>D’Ignazio, C. and Klein, L. (2020) ‘2. Collect, Analyze, Imagine, Teach’, in <em>Data Feminism</em>. Available at: https://data-feminism.mitpress.mit.edu/pub/ei7cogfn (read before the class of the 11th November)</p></li>
+<li><p>Drucker, J., 2011. Humanities Approaches to Graphical Display. <em>Digital Humanities Quarterly</em>, 005(1). Available at https://www.digitalhumanities.org/dhq/vol/5/1/000091/000091.html (read before the class of 9th December)</p></li>
+</ul>
+<p>There will also be some weekly recommended reading if you would like to dig deeper into topics on your own time. You can find it near the end of this page.</p>
+</section>
+<section id="schedule" class="level2">
+<h2 class="anchored" data-anchor-id="schedule">Schedule</h2>
+<p>Below is the course schedule. In the first couple of weeks, you’ll learn how to do the very basics using the coding language R. This will be followed by three weeks focusing on data analysis, then two blocks of three: first, data visualisation, and second, digital mapping. We’ll wrap things up with a week on creating polished, publishable data vis.</p>
+<table class="table-striped caption-top table">
+<caption>Course Schedule</caption>
+<colgroup>
+<col style="width: 4%">
+<col style="width: 11%">
+<col style="width: 28%">
+<col style="width: 28%">
+<col style="width: 28%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>Week</strong></td>
+<td><strong>Date</strong></td>
+<td><strong>Topic</strong></td>
+<td><strong>Topic</strong></td>
+<td><strong>Assignment</strong></td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>2024-09-09</td>
+<td>Introductions</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>2024-09-16</td>
+<td>Design and datavis fundamentals</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>2024-09-23</td>
+<td>Introduction to R</td>
+<td>How to use R and Posit cloud</td>
+<td>Assignment 1 (datavis critique) due</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td>2024-09-30</td>
+<td>Data analysis 1</td>
+<td>Working with dataframes. Selecting and subsetting data.</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>5</td>
+<td>2024-10-07</td>
+<td>Data analysis 2</td>
+<td>Filtering and changing data</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>6</td>
+<td>2024-10-14</td>
+<td>Data analysis 3</td>
+<td>Summarising and grouping data</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>7</td>
+<td>2024-10-21</td>
+<td>Data visualisation 1</td>
+<td>Getting started with R and ggplot2.</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>8</td>
+<td>2024-11-04</td>
+<td>Data visualisation 2</td>
+<td>Data visualisation accessibility considerations</td>
+<td>Assignment 2 (create a datavis) due</td>
+</tr>
+<tr class="even">
+<td>9</td>
+<td>2024-11-11</td>
+<td>Data visualisation 3</td>
+<td>Visualisation, datafication and ethics; course recap so far and catch up. Intro to maps if time</td>
+<td>Read assigned paper before class.</td>
+</tr>
+<tr class="odd">
+<td>10</td>
+<td>2024-11-18</td>
+<td>Digital mapping 1</td>
+<td>Working with R as a GIS. Creating base maps.</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>11</td>
+<td>2024-11-25</td>
+<td>Digital mapping 2</td>
+<td>Importing shapefiles and mapping external data</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>12</td>
+<td>2024-12-02</td>
+<td>Digital mapping 3</td>
+<td>Using QGIS</td>
+<td>Assignment 3 (create a map visualisation) due</td>
+</tr>
+<tr class="even">
+<td>13</td>
+<td>2024-12-09</td>
+<td>Finishing touches</td>
+<td>Designing publishable visualisations and working with R Markdown.</td>
+<td>Read assigned paper before class.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="data-visualisation" class="level2">
+<h2 class="anchored" data-anchor-id="data-visualisation">Data Visualisation</h2>
+<p>In practice, creating data visualisations involves mapping numerical data of some sort to graphical representations - often called geometries. A geometry might be the length of a line, the x and y position on a graph, or the temperature of a colour on a map. A good data visualisation will use this mapping to tell a story about the data, while representing it faithfully.</p>
+<section id="what-will-i-actually-do-on-this-course" class="level3">
+<h3 class="anchored" data-anchor-id="what-will-i-actually-do-on-this-course">What will I actually do on this course?</h3>
+<p>You’ll put these skills into practice using a tool called R. R is a coding language often used for data science - it’s particularly good at working with what are called ‘dataframes’: structured data in the form of rows and columns which we’ll mostly be using on this course.</p>
+<p>To begin with, you’ll practice the basics using interactive code snippets embedded directly in this book. Later, we have set up a learning environment called ‘Posit cloud’, where you can import data, export visualisations, and code in a ‘real world’ way.</p>
+<p>Using a coding language like this allows us to have direct control over every aspect of a visualisation - we can choose from many different geometries depending on our data and what we want to show, adjust the colours in precise ways, and pick the scale we want to use. We can also use R to summarise data, or limit it to just the parts we want to work with. This will complement the learning of Python you’re doing in your other course.</p>
+<p>In this course, you’ll learn these very practical skills. It might be hard-going or frustrating at first, but it is very worthwhile. Skills in R or any other programming language are very valuable to all sorts of employers.</p>
+<p>At the same time, there is one important thing to note:</p>
+<p><strong>Your grade for any assessment will never be dependent on your coding ability.</strong></p>
+<p>This is not a coding course: some of you may pick it up straight away, and others may stay at a basic level throughout the course. That is completely fine. You are welcome to ask for help from me, your peers, and online. In all your assessments, I’ll take into account your understanding of data science and visualisations on a more fundamental, humanities-led level.</p>
+<p>It’s easy to get stuck or lost in assignments. When you’re learning a new skill like coding, you can spend many hours agonising over what might turn out to be a simple problem when it’s explained to you.</p>
+<p>The key is to <strong><em>stick strictly to the number of hours given to each assignment</em></strong> - don’t waste lots of time working out what might turn out to be a small mistake. Set a timer and stop when it runs out - make a note and we can discuss what went wrong in the next class.</p>
+</section>
+</section>
+<section id="course-load" class="level2">
+<h2 class="anchored" data-anchor-id="course-load">Course Load</h2>
+<p>Total course load 5 EC x 28 hours = 140 hours:</p>
+<ul>
+<li><p>Seminar: 13 x 2 (26 hours)</p></li>
+<li><p>Course readings and coding practice (34 hours)</p></li>
+<li><p>Assignment(s): (35 hours)</p></li>
+<li><p>Peer Feedback: (5 hours)</p></li>
+<li><p>Final project/paper: (40 hours)</p></li>
+</ul>
+</section>
+<section id="grading" class="level2">
+<h2 class="anchored" data-anchor-id="grading">Grading</h2>
+<ul>
+<li><p>Assignments: 40 percent</p></li>
+<li><p>Class Participation &amp; Peer Feedback: 20 percent</p></li>
+<li><p>Final project: 40 percent</p></li>
+</ul>
+</section>
+<section id="mostly-recommended-reading" class="level2">
+<h2 class="anchored" data-anchor-id="mostly-recommended-reading">(Mostly recommended) Reading</h2>
+<p>This course will be very practical and your self-study time will be mostly spent completing exercises or assignments. As such, most of the reading is recommended rather than required. Some of the below will relate directly to the class and others I just think are interesting if you’d like to know more about the topic. Compulsory reading is marked in bold.</p>
+<table class="table-striped caption-top table">
+<caption>Weekly Reading Schedule</caption>
+<colgroup>
+<col style="width: 10%">
+<col style="width: 25%">
+<col style="width: 65%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Week</th>
+<th><strong>Date</strong></th>
+<th><strong>Reading</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>2024-09-09</td>
+<td>Isabel Mereilles, <em>Design for Information,</em> ‘Introduction’ (<a href="https://catalogue.leidenuniv.nl/permalink/f/n95gpj/UBL_ALMA51257896950002711">ebook available through Library catalogue</a>)</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>2024-09-16</td>
+<td><p>Day, Shawn. (2023) ‘Visualising humanities data’, in O’Sullivan, J. (ed.) The Bloomsbury Handbook to the Digital Humanities. London: Bloomsbury Publishing, pp.&nbsp;211-219. (ebook available <a href="https://catalogue.leidenuniv.nl/permalink/31UKB_LEU/18s393l/alma9940180698402711">through the Library</a> or open access version available <a href="https://cora.ucc.ie/bitstreams/1cf13aee-b962-416f-88b5-b8edc0786e7f/download">here</a>)</p>
+<p>Jeffrey Heer, Michael Bostock, and Vadim Ogievetsky: <a href="https://queue.acm.org/detail.cfm?id=1805128">A Tour Through the Visualization Zoo</a></p></td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>2024-09-23</td>
+<td><p><a href="http://faculty.salisbury.edu/~jtanderson/teaching/cosc311/fa21/files/tufte.pdf">Edward Tufte, <em>The Visual Display of Quantitative Information</em> (Cheshire: 2001)</a>: Chapter 1</p>
+<p><strong>Chapter 3, ‘On Rational, Scientific, Objective Viewpoints from Mythical, Imaginary, Impossible Standpoints’, from the book <em>Data Feminism</em> (open access, available <a href="https://data-feminism.mitpress.mit.edu/pub/5evfe9yd/release/5">here</a>)</strong></p></td>
+</tr>
+<tr class="even">
+<td></td>
+<td>2024-09-30</td>
+<td>Claus Wilke, <em>Fundamentals of Data Visualization</em> (available online). Chapters <a href="https://clauswilke.com/dataviz/aesthetic-mapping.html">2</a>, <a href="https://clauswilke.com/dataviz/coordinate-systems-axes.html">3</a>, and <a href="https://clauswilke.com/dataviz/color-basics.html">4</a>.</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>2024-10-07</td>
+<td><p><a href="https://view.e.economist.com/?qs=f4d0eecea29f1f91774da16cecf280cb31af5fbc06a5916a37f22c049437192916c8af311beed6f52e3ef7e985b7d44f421f783c3fa3272cc08649f97dca80cc14f33497c6a1b1f485f718837a4f7f5a">Olivia Vane and Rosamund Pearce, ‘How to Visualise Sensitive Topics’</a></p>
+<p><a href="https://view.e.economist.com/?qs=857a751c0e864d3ba45ac0e90aa6ef007db79f778e542dbf21c28f42244b8a3ffee2e8aae4c8a260eb93e716a66edfb0f42e240a6e188df9c5e1ac38c75fce8f91e421db50aa777e57e48fdab6644bed&amp;utm_campaign=r.data-newsletter&amp;utm_medium=email.internal-newsletter.np&amp;utm_source=salesforce-marketing-cloud&amp;utm_term=6/21/2022&amp;utm_id=1209740">Alex Selby-Boothroyd, ‘Mapping Refugee Flows’</a></p>
+<p>https://it.wisc.edu/learn/accessible-content-tech/accessible-data-visualizations/</p></td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>2024-10-14</td>
+<td>Field Trip - No Reading</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>2024-11-21</td>
+<td><p>Isabel Mereilles, <em>Design for Information,</em> ‘Chapter 4 (Spatial Structures: Maps)’ (<a href="https://catalogue.leidenuniv.nl/permalink/f/n95gpj/UBL_ALMA51257896950002711">ebook available through Library catalogue</a>)</p>
+<p>Jeppesen and Sartoretto, <a href="https://www.cogitatiopress.com/mediaandcommunication/article/view/6043">Cartographies of Resistance: Counter-Data Mapping as the New Frontier of Digital Media Activism</a></p></td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>2024-11-04</td>
+<td>Claus Wilke, <em>Fundamentals of Data Visualization</em> (available online). Chapter <a href="https://clauswilke.com/dataviz/geospatial-data.html">15</a>.</td>
+</tr>
+<tr class="odd">
+<td>9</td>
+<td>2024-11-11</td>
+<td>D’Ignazio, C. and Klein, L. (2020) ‘2. Collect, Analyze, Imagine, Teach’, in <em>Data Feminism</em>. Available at: https://data-feminism.mitpress.mit.edu/pub/ei7cogfn</td>
+</tr>
+<tr class="even">
+<td>10</td>
+<td>2024-11-18</td>
+<td>Venturini, T., Jacomy, M., &amp; Jensen, P. (2021). What do we see when we look at networks: Visual network analysis, relational ambiguity, and force-directed layouts. <em>Big Data &amp; Society</em>, <em>8</em>(1). <a href="https://doi.org/10.1177/20539517211018488" class="uri">https://doi.org/10.1177/20539517211018488</a></td>
+</tr>
+<tr class="odd">
+<td>11</td>
+<td>2024-11-25</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>12</td>
+<td>2024-12-02</td>
+<td><p>Read some style guides, e.g.&nbsp;<a href="https://design-system.economist.com/documents/CHARTstyleguide_20170505.pdf">the Economist</a>, <a href="http://urbaninstitute.github.io/graphics-styleguide/">Urban Institute</a></p>
+<p>https://blog.datawrapper.de/text-in-data-visualizations/</p></td>
+</tr>
+<tr class="odd">
+<td>13</td>
+<td>2024-12-09</td>
+<td><strong>Drucker, J., 2011. Humanities Approaches to Graphical Display. <em>Digital Humanities Quarterly</em>, 005(1). Available at https://www.digitalhumanities.org/dhq/vol/5/1/000091/000091.html</strong></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="the-fine-print" class="level2">
+<h2 class="anchored" data-anchor-id="the-fine-print">The Fine Print</h2>
+<p><strong>Attendance</strong> is required. If you know you will need to miss a class, please indicate this at least two weeks prior. If you know beforehand you will have to miss three or more classes, you cannot take this course. If you miss a class due to sickness or other unforeseen circumstances, please notify me without delay.</p>
+<p>Class <strong>participation</strong> is part of your final grade. Participation is evaluated both on attendance and on the quality of feedback given to the work of other students. Aside from participation being part of your grade, I really <strong>appreciate your</strong> <strong>input</strong>. If you think you have something to ask, please speak up: there <em>are</em> no stupid questions, but there are a lot of lost opportunities for information exchange and learning. This field is full of exciting new ideas and developments and it is impossible to be aware of them all. So, if you can share information on an idea, article, project, or tool that is of you value to you, please do!</p>
+<p>If you need to speak to me, I’m happy to arrange a meeting to discuss any issues or problems you encounter on the course. Ideally, send a request a week in advance, via email.</p>
+<p><strong>Plagiarism</strong>: If you have not done so already, please inform yourself on Leiden University’s views and regulations on <a href="https://www.organisatiegids.universiteitleiden.nl/binaries/content/assets/ul2student/reglementen/gedragscode-plagiaat-universiteit-leiden-eng--cvb.docx">plagiarism</a>. This Leiden university library <a href="https://www.library.universiteitleiden.nl/students/citing">portal</a> has several accessible web courses on how to quote and cite right and tips for bibliographic management. Note that plagiarism, copyright and other information sharing or copying issues are often extra complex when dealing with digital sources. If you are still in doubt whether (parts of) any work for this course may constitute plagiarism, you need to signal and verify this with me before you hand it in for grading.</p>
+<section id="use-of-chatbots-for-assignments" class="level3">
+<h3 class="anchored" data-anchor-id="use-of-chatbots-for-assignments">Use of Chatbots for assignments</h3>
+<p>GPT-based chatbots such as ChatGPT or Google Bard are not banned outright but should be used with extreme caution. Due to the nature of this course, chatbot-generated text is unlikely to be of much use as you will be responding to your own visual work and that of your peers.</p>
+<p>You can make use of Chatbots for help with coding, however you must make it very clear that you have done so with the following steps:</p>
+<ul>
+<li><p>Make it clear in your code, using comments, which parts were generated using a chatbot.</p></li>
+<li><p>Include the entire prompt used as an appendix to your assignment.</p></li>
+</ul>
+</section>
+</section>
+<section id="section" class="level2">
+<h2 class="anchored" data-anchor-id="section"></h2>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./2_r_intro.html" class="pagination-link" aria-label="Introduction to R">
+        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to R</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

@@ -1,0 +1,166 @@
+---
+title: "Full map workflow"
+---
+
+## 9 Steps to Making a Map
+
+1.  Import your geographic data
+
+2.  Figure out the geographic unit
+
+3.  Find a base map which corresponds
+
+4.  Import your base map
+
+5.  Find the common field
+
+6.  Summarise your data
+
+7.  Join your data and the map together
+
+8.  Map with ggplot and sf
+
+9.  Finishing touches
+
+### 1: Import your external data
+
+Find the dataset you want to use. This will of course have some kind of geographic information, such as country, or state, or region, as well as further information.
+
+### 2: Figure out the Geographic Unit
+
+Each row of information in your data will have a geographic unit - the *type* of area on the map where it records the geographic information. These are usually based on some kind of political or geographic border. Examples include nations, regions, provinces, municipalities, election areas, and so forth. This will be recorded in a single column.
+
+Your data should only have one type of geographic unit. In other words, you shouldn't have data which mixes more than one together. For example, if you had a 'place' column, it won't work if sometimes it records the country, and sometimes the province.
+
+It can have different geographic units in *different* columns, for example one column with the country. and another with the province. If this is the case, decide which level you want to use.
+
+### 3: Find and read in a shapefile
+
+You need to find a map containing features which correspond to the geographic unit you are going to use in your data. If you have a dataset where information is recorded on the country level, you'll need a world map in which each feature is a country (as the one we used last week from R Natural Earth.
+
+If you have more specific geographic data, you'll probably need to find a corresponding file storing geographic information. There are many different formats which store this information, and it's important to know how to find suitable ones and read them into R. Two of the most common are **shapefiles** and **geoJSON.** There are also formats which package together multiple layers of geographic information, for example **GeoPackage (.gpkg).**
+
+#### Shapefiles
+
+**Shapefiles** are a commonly supported file type for spatial data dating back to the early 1990s. Proprietary software for geographic information systems (GIS) such as [ArcGIS](https://www.esri.com/en-us/arcgis/about-arcgis/overview) pioneered this format and helps maintain its continued usage. A shapefile encodes points, lines, and polygons in geographic space, and is actually a set of files. Shapefiles appear with a `.shp` extension, sometimes with accompanying files ending in `.dbf` and `.prj`.
+
+-   `.shp` stores the geographic coordinates of the geographic features (e.g. country, state, county)
+
+-   `.dbf` stores data associated with the geographic features (e.g. unemployment rate, crime rates, percentage of votes cast for Donald Trump)
+
+-   `.prj` stores information about the projection of the coordinates in the shapefile
+
+**The important thing to note is that while you read in the file ending in .shp, you need to have the other 'layers' in the same folder.** Usually you will download the entire folder as a zip, which can be uploaded directly to Posit Cloud.
+
+As an example I have downloaded a file from the US census site. If we have a folder with the file `cb_2018_us_state_20m/cb_2018_us_state_20m.shp` , read this into R using `st_read()`:
+
+```{r}
+
+library(tidyverse)
+library(sf)
+
+us_states_map <- st_read('cb_2018_us_state_20m/cb_2018_us_state_20m.shp')
+
+us_states_map |>
+  ggplot() +
+  geom_sf()
+
+
+```
+
+These are often released by official agencies and can be found through a search engine. For example, Dutch geo data can often be found through <https://www.pdok.nl/> or the [CBS](https://www.cbs.nl/nl-nl/dossier/nederland-regionaal/geografische-data). Shapefiles for EU regions can be found at [here](https://ec.europa.eu/eurostat/web/gisco/geodata/statistical-units/territorial-units-statistics). These use a set of boundaries called NUTS, which range from NUTS-0 (countries) to NUTS-3 (small regions).
+
+```{r}
+nuts = st_read('NUTS_RG_60M_2024_4326.shp/NUTS_RG_60M_2024_4326.shp')
+```
+
+Remember that adminstrative units are often redrawn, so try to make sure that your data and map match as much as possible.
+
+In some cases, these shapefiles will contain all possible geographic units in one dataset. In that case, you'll need to filter to only include the relevant ones.
+
+This is the case for the NUTS data above. All three levels are included so you will need to filter the dataset before using:
+
+```{r}
+
+nuts |> filter(LEVL_CODE == 1) |>
+  ggplot() + geom_sf()
+
+```
+
+#### geoJSON
+
+geoJSON is a new geographic standard based on JSON: a very widely-used standard for storing data.
+
+geoJSON files can be read into R simply by using `st_read()`.
+
+#### Geopackages (.gpkg files)
+
+Another common format you will find geographic information is geopackage, which you can recognise by the ending .gpkg. Geopackage files are actually an SQL database which can contain many layers of different geographic information.
+
+To read these files, use `st_read()`, but first you need to specify which layer you would like to read.
+
+To view all the layers first, use the function `st_layer()`:
+
+```{r}
+
+st_layers('/Users/Yann/Downloads/WijkBuurtkaart_2024_v1/wijkenbuurten_2024_v1.gpkg')
+
+```
+
+To read the correct one, simply specify the chosen layer name in the first column:
+
+```{r}
+
+map = st_read('WijkBuurtkaart_2024_v1/wijkenbuurten_2024_v1.gpkg', layer = 'gemeenten')
+
+map |> ggplot() + 
+  geom_sf()
+
+```
+
+### 4: Import your base map into R
+
+Using sf, import your basemap. Usually this can be done by using st_read, and giving the location of the shapefile. Specify the layer if necessary.
+
+### 5: Find a Common Field
+
+Now, you need to look at your two datasets - your data and your shapefile - and figure out what field they have in common. This means, you need to find the column in each one which uses a standardised set of names.
+
+A simple example is where both have a column with country names.
+
+A good practice is to use a standardised code where one is available. For instance, both dataset may have a standardised 'ISO' code where the country is recorded. This is less ambiguous than a country name, which may have slight variants, or be recorded in another languages, etc.
+
+In the case of smaller regions such as EU NUTS regions, you will likely have to use a code rather than a specific name.
+
+### 6: Summarise and/or clean your Data
+
+Once you have your common code, you can get your dataset ready. Usually, this will mean doing a summary (such as a count, or maybe getting an average, or perhaps some kind of proportion by population) for each entry in the geographic field you are using. For example, if the field in common is an EU NUTS region code, then you would do a summary for each NUTS region.
+
+You may also have further cleaning steps, for example fixing inconsistent country names. In the case of the data we're using today, in order to visualise it you want to turn it into 'long' format using the function `pivot_longer()`.
+
+If you want to draw multiple maps, one for each category, you might summarise by two variables: the category, and the region. Later, you'll need to use facet_wrap to draw each category as a separate map.
+
+At this stage, you may also want to filter your data. This might be to restrict the data to a certain year or timeframe. You will also need to filter your data if you have multiple geographic units in the same column. For instance, your data may have a 'region' column, where it records not just NUTS level 2, but also NUTS level 1 and 3. In this case you need to figure out how to restrict it to a single geographic unit.
+
+### 7: Join your data and map together.
+
+Using left_join, you will now merge together the map with the summarised dataset. If the column names are not the same, you'll have to specify which ones it should use (see previous lesson for this).
+
+The shapefile should be on the 'left' side, meaning it should come first in the `join` function, e.g.
+
+```{r}
+#| eval: false
+
+shapefile |> 
+  left_join(external_data, by = 'common_code')
+```
+
+### 8: Map with ggplot and geom_sf
+
+Now, you can make a map! Remember to use aes() and fill = to specify how ggplot should colour your data.
+
+### 9: Finishing Touches
+
+Now, make edits to your map to make it more readable and looking better aesthetically. You'll probably want to adjust the limits and projection of the map using `coord_sf`, and experiment with the scale using `scale_fill_`. You could also think about binning the colors (often it's easier to interpret specific colors on maps rather than a continuous scale). This is the point where you will need to use `facet_wrap()` to draw maps separately, if you went down this route.
+
+You could also add a map scale bar and a compass using the package ggsn (you'll need to install it separately using `install.packages()`.

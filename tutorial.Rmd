@@ -1,0 +1,1452 @@
+---
+title: "Titanic Dataset Exploration with dplyr and stringr"
+output: learnr::tutorial
+runtime: shiny_prerendered
+
+---
+
+## Introduction
+
+In this tutorial, you will practice using the `dplyr` and `stringr` packages to manipulate and analyze the Titanic dataset. You will learn to filter, select, mutate, summarize, and clean data using these powerful tools in R.
+
+
+```{r setup, include=FALSE}
+
+# Load the libraries
+library(dplyr)
+library(stringr)
+library(gradethis)
+library(readr)
+library(tidyr)
+gradethis::gradethis_setup()
+
+# Load the Titanic dataset (available in the 'titanic' package)
+data("titanic", package = "titanic")
+
+character_list5 = read_csv('../../Downloads/character_list5.csv')
+
+meta_data7 = read_csv('../../Downloads/meta_data7.csv')
+```
+
+## Exercise 1: Viewing the Dataset
+
+Use the `head()` function to view the first few rows of the Titanic dataset. This will give you an idea of the data structure and the variables available.
+
+### Explanation
+
+- **`head()`**: Displays the first few rows of a dataset.
+
+```{r view-dataset, exercise=TRUE, exercise.eval=FALSE}
+# Your code here
+```
+
+```{r view-dataset-solution, include=FALSE}
+head(titanic)
+```
+
+```{r view-dataset-code-check, include=FALSE}
+grade_code()
+```
+
+## Exercise 2: Filtering Survivors
+
+Use `filter()` to create a new dataset that includes only the passengers who survived. This helps focus on the individuals who made it through the disaster.
+
+### Explanation
+
+- **`filter()`**: To subset the data based on conditions.
+
+```{r filter-survivors, exercise=TRUE, exercise.eval=FALSE}
+# Your code here
+```
+
+```{r filter-survivors-solution, include=FALSE}
+titanic |> 
+  filter(survived == 1)
+```
+
+```{r filter-survivors-code-check, include=FALSE}
+grade_code()
+```
+
+## Exercise 3: Selecting Key Variables
+
+Select only the `Name`, `Sex`, `Age`, and `Survived` columns from the dataset to focus on these important variables.
+
+### Explanation
+
+- **`select()`**: To choose specific columns from a dataset.
+
+```{r select-variables, exercise=TRUE, exercise.eval=FALSE}
+# Your code here
+```
+
+```{r select-variables-solution, include=FALSE}
+titanic |> select(Name, Sex, Age, Survived)
+```
+
+```{r select-variables-code-check, include=FALSE}
+grade_code()
+```
+
+## Exercise 4: Calculating Age
+
+Calculate the age of the passengers today, using `mutate()` to add 112 years to the `Age` column, assuming the dataset contains ages at the time of the Titanic's voyage.
+
+### Explanation
+
+- **`mutate()`**: To create or modify existing variables.
+
+```{r calculate-age, exercise=TRUE, exercise.eval=FALSE}
+# Your code here
+```
+
+```{r calculate-age-solution, include=FALSE}
+titanic |> mutate(Age = Age + 112)
+```
+
+```{r calculate-age-code-check, include=FALSE}
+grade_code()
+```
+
+## Exercise 5: Renaming Columns
+
+Use `rename()` to change the column `Pclass` to `Passenger_Class` for clarity.
+
+### Explanation
+
+- **`rename()`**: To rename columns in a dataset.
+
+```{r rename-columns, exercise=TRUE, exercise.eval=FALSE}
+# Your code here
+```
+
+```{r rename-columns-solution, include=FALSE}
+titanic |> rename(Passenger_Class = Pclass)
+```
+
+```{r rename-columns-code-check, include=FALSE}
+grade_code()
+```
+
+## Exercise 6: Handling Missing Values
+
+Use `mutate()` and `if_else()` to replace missing ages (`NA`) with the median age of the passengers. This step is crucial for ensuring your analyses are not affected by missing values.
+
+### Explanation
+
+- **`if_else()`**: To create conditional replacements.
+- **`median()`**: To calculate the median value.
+
+```{r replace-missing-age, exercise=TRUE, exercise.eval=FALSE}
+# Your code here
+```
+
+```{r replace-missing-age-solution, include=FALSE}
+titanic |> 
+  mutate(Age = if_else(is.na(Age), median(Age, na.rm = TRUE), Age))
+```
+
+```{r replace-missing-age-code-check, include=FALSE}
+grade_code()
+```
+
+## Exercise 7: Creating a Fare Group Variable
+
+Create a new variable `Fare_Group` that categorizes passengers into three groups: 'Low' (0-10), 'Medium' (10-50), and 'High' (50+). This will help analyze fare distributions.
+
+### Explanation
+
+- **`mutate()`**: To create a new variable.
+- **`case_when()`**: To define multiple conditions.
+
+```{r create-fare-group, exercise=TRUE, exercise.eval=FALSE}
+# Your code here
+```
+
+```{r create-fare-group-solution, include=FALSE}
+titanic |> 
+  mutate(Fare_Group = case_when(
+    Fare <= 10 ~ "Low",
+    Fare <= 50 ~ "Medium",
+    TRUE ~ "High"
+  ))
+```
+
+```{r create-fare-group-code-check, include=FALSE}
+grade_code()
+```
+
+## Exercise 8: Counting Passengers by Fare Group
+
+Count how many passengers fall into each fare group. This analysis will help you understand the distribution of passengers based on their fares.
+
+### Explanation
+
+- **`count()`**: To count the number of occurrences of each unique value in a column.
+
+```{r count-passengers-fare-group, exercise=TRUE, exercise.eval=FALSE}
+# Your code here
+```
+
+```{r count-passengers-fare-group-solution, include=FALSE}
+titanic |> 
+  count(Fare_Group)
+```
+
+```{r count-passengers-fare-group-code-check, include=FALSE}
+grade_code()
+```
+
+## Exercise 9: Finding the Oldest Passenger
+
+Use `filter()` to find the oldest passenger on board the Titanic. This will provide insights into age distribution.
+
+### Explanation
+
+- **`filter()`**: To subset the data based on conditions.
+- **`which.max()`**: This function returns the index of the maximum value, which is useful for finding the oldest passenger.
+
+```{r oldest-passenger, exercise=TRUE, exercise.eval=FALSE}
+# Your code here
+```
+
+```{r oldest-passenger-solution, include=FALSE}
+titanic |> 
+  filter(Age == max(Age, na.rm = TRUE))
+```
+
+```{r oldest-passenger-code-check, include=FALSE}
+grade_code()
+```
+
+## Exercise 10: Joining Datasets
+
+Assuming you have another dataset with additional information about the passengers (like their hometown), join this dataset with the Titanic dataset using a common column (e.g., `PassengerId`). This helps in enriching the analysis with more variables.
+
+### Explanation
+
+- **`left_join()`**: This function combines two datasets based on a common column.
+
+```{r join-datasets, exercise=TRUE, exercise.eval=FALSE}
+# Your code here
+```
+
+```{r join-datasets-solution, include=FALSE}
+# Assume `passenger_info` is another dataset
+# titanic |> left_join(passenger_info, by = "PassengerId")
+```
+
+```{r join-datasets-code-check, include=FALSE}
+grade_code()
+```
+
+## Exercise 11: Filtering Joined Data
+
+After joining, filter the data to include only passengers from a specific city (e.g., "London"). This will give you insights into the demographics of passengers from that location.
+
+### Explanation
+
+- **`filter()`**: To subset the data based on conditions.
+
+```{r filter-joined-data, exercise=TRUE, exercise.eval=FALSE}
+# Your code here
+```
+
+```{r filter-joined-data-solution, include=FALSE}
+# titanic |> 
+#   left_join(passenger_info, by = "PassengerId") |> 
+#   filter(City == "London")
+```
+
+```{r filter-joined-data-code-check, include=FALSE}
+grade_code()
+```
+
+## Exercise 12: Counting Passengers from a City
+
+Count how many passengers come from each city after joining the datasets. This will provide insights into the origins of passengers on the Titanic.
+
+### Explanation
+
+- **`count()`**: To count the number of occurrences of each unique value in a column.
+
+```{r count-passengers-city, exercise=TRUE, exercise.eval=FALSE}
+# Your code here
+```
+
+```{r count-passengers-city-solution, include=FALSE}
+# titanic |> 
+#   left_join(passenger_info, by = "PassengerId") |> 
+#   count(City)
+```
+
+```{r count-passengers-city-code-check, include=FALSE}
+grade_code()
+```
+
+## Exercise 13: Analyzing Survival by Class
+
+Group the dataset by passenger class and calculate the survival rate for each class. This will help analyze how class affected survival chances.
+
+### Explanation
+
+- **`group_by()`**: To create subsets of data based on the values of one or more variables.
+- **`summarize()`**: To compute summary statistics for each group.
+
+```{r survival-rate-by-class, exercise=TRUE, exercise.eval=FALSE}
+# Your code here
+```
+
+```{r survival-rate-by-class-solution, include=FALSE}
+titanic |> 
+  group_by(Pclass) |> 
+  summarize(Survival_Rate = mean(Survived, na.rm = TRUE))
+```
+
+```{r survival-rate-by-class-code-check, include=FALSE}
+grade_code()
+```
+
+## Exercise 14: String Manipulation with stringr
+
+Use the `str_detect()` function from the `stringr` package to find passengers whose names contain "Mrs". This will help identify married women on board.
+
+### Explanation
+
+- **`str_detect()`**: To detect the presence of a substring within a string.
+
+```{r detect-mrs-names, exercise=TRUE, exercise.eval=FALSE}
+# Your code here
+```
+
+```{r detect-mrs-names-solution, include=FALSE}
+titanic |> 
+  filter(str_detect(Name, "Mrs"))
+```
+
+```{r detect-mrs-names-code-check, include=FALSE}
+grade_code()
+```
+
+## Exercise 15: Extracting Titles from Names
+
+Use `str_extract()` to extract the title (e.g., Mr, Mrs, Miss) from the `Name` column. This analysis can provide insights into the social status of the passengers.
+
+### Explanation
+
+- **`str_extract()`**: To extract specific patterns from strings.
+
+```{r extract-titles1, exercise=TRUE, exercise.eval=FALSE}
+# Your code here
+```
+
+```{r extract-titles1-solution, include=FALSE}
+titanic |> 
+  mutate(Title = str_extract(Name, "(Mr|Mrs|Miss|Dr|Master)"))
+```
+
+```{r extract-titles1-code-check, include=FALSE}
+grade_code()
+```
+
+## Exercise 16: Counting Passengers by Title
+
+Count how many passengers belong to each title category extracted in the previous exercise. This will give you insights into the social structure aboard the Titanic.
+
+### Explanation
+
+- **`count()`**: To count the number of occurrences of each unique value in a column.
+
+```{r count-passengers-by-title, exercise=TRUE, exercise.eval=FALSE}
+# Your code here
+```
+
+```{r count-passengers-by-title-solution, include=FALSE}
+titanic |> 
+  mutate(Title = str_extract(Name, "(Mr|Mrs|Miss|Dr|Master)")) |> 
+  count(Title)
+```
+
+```{r count-passengers-by-title-code-check, include=FALSE}
+grade_code()
+```
+
+## Exercise 17: Cleaning Up Names
+
+Use `str_replace_all()` to clean up the `Name` column by removing unnecessary characters (like titles) to focus on the passengers' last names. This step is crucial for further analysis.
+
+### Explanation
+
+- **`str_replace_all()`**: To replace all occurrences of a pattern in a string.
+
+```{r clean-up-names, exercise=TRUE, exercise.eval=FALSE}
+# Your code here
+```
+
+```{r clean-up-names-solution, include=FALSE}
+titanic |> 
+  mutate(Last_Name = str_replace_all(Name, "(Mr\\.|Mrs\\.|Miss\\.|Dr\\.|Master\\.)", "")) |> 
+  mutate(Last_Name = str_trim(Last_Name))
+```
+
+```{r clean-up-names-code-check, include=FALSE}
+grade_code()
+```
+
+## Exercise 18: Analyzing Survival by Title
+
+Group the dataset by the title extracted from the `Name` column and calculate the survival rate for each title. This will help analyze how title affected survival chances.
+
+### Explanation
+
+- **`group_by()`**: To create subsets of data based on the values of one or more variables.
+- **`summarize()`**: To compute summary statistics for each group.
+
+```{r survival-rate-by-title, exercise=TRUE, exercise.eval=FALSE}
+# Your code here
+```
+
+```{r survival-rate-by-title-solution, include=FALSE}
+titanic |> 
+  mutate(Title = str_extract(Name, "(Mr|Mrs|Miss|Dr|Master)")) |> 
+  group_by(Title) |> 
+  summarize(Survival_Rate = mean(Survived, na.rm = TRUE))
+```
+
+```{r survival-rate-by-title-code-check, include=FALSE}
+grade_code()
+```
+
+## Exercise 19: Finding Passengers with Specific Characteristics
+
+Use `filter()` and `str_detect()` to find all female passengers who were younger than 18 years. This analysis will help identify young female passengers.
+
+### Explanation
+
+- **`filter()`**: To subset the data based on conditions.
+- **`str_detect()`**: To detect the presence of a substring within a string.
+
+```{r young-female-passengers, exercise=TRUE, exercise.eval=FALSE}
+# Your code here
+```
+
+```{r young-female-passengers-solution, include=FALSE}
+titanic |> 
+  filter(Sex == "female", Age < 18)
+```
+
+```{r young-female-passengers-code-check, include=FALSE}
+grade_code()
+```
+
+## Exercise 20: Summarizing Age by Gender
+
+Group the dataset by gender and calculate the average age for each gender. This analysis provides insights into the demographics of male and female passengers.
+
+### Explanation
+
+- **`group_by()`**: To create subsets of data based on the values of one or more variables.
+- **`summarize()`**: To compute summary statistics for each group.
+
+```{r average-age-by-gender, exercise=TRUE, exercise.eval=FALSE}
+# Your code here
+```
+
+```{r average-age-by-gender-solution, include=FALSE}
+titanic |> 
+  group_by(Sex) |> 
+  summarize(Average_Age = mean(Age, na.rm = TRUE))
+```
+
+```{r average-age-by-gender-code-check, include=FALSE}
+grade_code()
+```
+
+## Exercise 21: Finding the Most Common Last Names
+
+Use `str_extract()` and `count()` to find the most common last names among the passengers. This analysis can provide insights into family connections on board.
+
+### Explanation
+
+- **`str_extract()`**: To extract specific patterns from strings.
+- **`count()`**: To count the number of occurrences of each unique value in a column.
+
+```{r most-common-last-names, exercise=TRUE, exercise.eval=FALSE}
+# Your code here
+```
+
+```{r most-common-last-names-solution, include=FALSE}
+titanic |> 
+  mutate(Last_Name = str_extract(Name, "[^,]+")) |> 
+  count(Last_Name, sort = TRUE)
+```
+
+```{r most-common-last-names-code-check, include=FALSE}
+grade_code()
+```
+
+## Exercise 22: Analyzing Fare Distribution by Class
+
+Group the dataset by passenger class and calculate the average fare for each class. This will help analyze fare distribution among different classes.
+
+### Explanation
+
+- **`group_by()`**: To create subsets of data based on the values of one or more variables.
+- **`summarize()`**: To compute summary statistics for each group.
+
+```{r average-fare-by-class, exercise=TRUE, exercise.eval=FALSE}
+# Your code here
+```
+
+```{r average-fare-by-class-solution, include=FALSE}
+titanic |> 
+  group_by(Pclass) |> 
+  summarize(Average_Fare = mean(Fare, na.rm = TRUE))
+```
+
+```{r average-fare-by-class-code-check, include=FALSE}
+grade_code()
+```
+
+## Exercise 23: Identifying Family Members
+
+Use `str_detect()` to identify family members by checking for shared last names. For example, filter for passengers with the last name "Smith".
+
+### Explanation
+
+- **`filter()`**: To subset the data based on conditions.
+- **`str_detect()`**: To detect the presence of a substring within a string.
+
+```{r family-members, exercise=TRUE, exercise.eval=FALSE}
+# Your code here
+```
+
+```{r family-members-solution, include=FALSE}
+titanic |> 
+  filter(str_detect(Name, "Smith"))
+```
+
+```{r family-members-code-check, include=FALSE}
+grade_code()
+```
+
+## Exercise 24: Counting Family Members
+
+Count how many passengers belong to the same family based on their last names. This analysis can provide insights into family groups aboard the Titanic.
+
+### Explanation
+
+- **`mutate()`**: To create a new variable.
+- **`count()`**: To count the number of occurrences of each unique value in a column.
+
+```{r count-family-members, exercise=TRUE, exercise.eval=FALSE}
+# Your code here
+```
+
+```{r count-family-members-solution, include=FALSE}
+titanic |> 
+  mutate(Last_Name = str_extract(Name, "[^,]+")) |> 
+  count(Last_Name)
+```
+
+```{r count-family-members-code-check, include=FALSE}
+grade_code()
+```
+
+## Exercise 25: Identifying and Replacing Missing Values
+
+Use `mutate()` and `replace_na()` from the `tidyr` package to replace missing values in the `Age` column with a specified value (e.g., 30). This step is crucial for ensuring your analyses are not affected by missing values.
+
+### Explanation
+
+- **`replace_na()`**: To replace missing values in a dataset.
+
+```{r replace-missing-values, exercise=TRUE, exercise.eval=FALSE}
+# Your code here
+```
+
+```{r replace-missing-values-solution, include=FALSE}
+titanic |> 
+  mutate(Age = replace_na(Age, 30))
+```
+
+```{r replace-missing-values-code-check, include=FALSE}
+grade_code()
+```
+
+## Exercise 26: Grouping and Summarizing by Multiple Variables
+
+Group the dataset by `Sex` and `Pclass` and calculate the survival rate for each combination. This will provide a more nuanced understanding of survival rates based on multiple factors.
+
+### Explanation
+
+- **`group_by()`**: To create subsets of data based on the values of one or more variables.
+- **`summarize()`**: To compute summary statistics for each group.
+
+```{r survival-rate-by-sex-and-class, exercise=TRUE, exercise.eval=FALSE}
+# Your code here
+```
+
+```{r survival-rate-by-sex-and-class-solution, include=FALSE}
+titanic |> 
+  group_by(Sex, Pclass) |> 
+  summarize(Survival_Rate = mean(Survived, na.rm = TRUE))
+```
+
+```{r survival-rate-by-sex-and-class-code-check, include=FALSE}
+grade_code()
+```
+
+## Dataset: bellevue_almshouse
+This dataset contains information about individuals who were admitted to the Bellevue Almshouse. The columns include:
+
+- **date_in**: The date of admission
+- **first_name**: The individual's first name
+- **last_name**: The individual's last name
+- **age**: The age of the individual
+- **disease**: The disease or condition they were admitted for
+- **profession**: The individual's profession
+- **gender**: The individual's gender
+- **children**: Whether the individual had children
+
+## Exercise 1: Filter by Disease
+Filter the dataset to find all individuals who were admitted with "Fever."
+
+### Explanation
+- **`filter()`**: To subset the data based on specific conditions.
+
+```{r filter-by-disease, exercise=TRUE, exercise.eval=FALSE}
+# Your code here
+```
+
+```{r filter-by-disease-solution, include=FALSE}
+bellevue_almshouse |> 
+  filter(disease == "Fever")
+```
+
+```{r filter-by-disease-code-check, include=FALSE}
+grade_code()
+```
+
+## Exercise 2: Find Oldest Individuals
+Find the individuals who were 70 years or older when they were admitted.
+
+### Explanation
+- **`filter()`**: To subset the data based on age conditions.
+
+```{r find-oldest, exercise=TRUE, exercise.eval=FALSE}
+# Your code here
+```
+
+```{r find-oldest-solution, include=FALSE}
+bellevue_almshouse |> 
+  filter(age >= 70)
+```
+
+```{r find-oldest-code-check, include=FALSE}
+grade_code()
+```
+
+## Exercise 3: Counting Admissions by Gender
+Count how many individuals were admitted by gender.
+
+### Explanation
+- **`count()`**: To count occurrences of unique values in a column.
+
+```{r count-by-gender, exercise=TRUE, exercise.eval=FALSE}
+# Your code here
+```
+
+```{r count-by-gender-solution, include=FALSE}
+bellevue_almshouse |> 
+  count(gender)
+```
+
+```{r count-by-gender-code-check, include=FALSE}
+grade_code()
+```
+
+## Exercise 4: Group by Disease and Summarize Age
+Group the data by disease and calculate the average age for each disease.
+
+### Explanation
+- **`group_by()`**: To create subsets based on a variable.
+- **`summarize()`**: To compute summary statistics.
+
+```{r average-age-by-disease, exercise=TRUE, exercise.eval=FALSE}
+# Your code here
+```
+
+```{r average-age-by-disease-solution, include=FALSE}
+bellevue_almshouse |> 
+  group_by(disease) |> 
+  summarize(Average_Age = mean(age, na.rm = TRUE))
+```
+
+```{r average-age-by-disease-code-check, include=FALSE}
+grade_code()
+```
+
+## Exercise 5: Filtering by Profession
+Filter the dataset to find all individuals who listed their profession as "Laborer."
+
+### Explanation
+- **`filter()`**: To subset the data based on specific conditions.
+
+```{r filter-by-profession, exercise=TRUE, exercise.eval=FALSE}
+# Your code here
+```
+
+```{r filter-by-profession-solution, include=FALSE}
+bellevue_almshouse |> 
+  filter(profession == "Laborer")
+```
+
+```{r filter-by-profession-code-check, include=FALSE}
+grade_code()
+```
+
+## Exercise 6: Counting Parents and Non-Parents
+Count how many individuals in the dataset had children.
+
+### Explanation
+- **`count()`**: To count occurrences of unique values in a column.
+
+```{r count-parents, exercise=TRUE, exercise.eval=FALSE}
+# Your code here
+```
+
+```{r count-parents-solution, include=FALSE}
+bellevue_almshouse |> 
+  count(children)
+```
+
+```{r count-parents-code-check, include=FALSE}
+grade_code()
+```
+
+## Exercise 7: Use str_detect to Find Specific Names
+Use `str_detect()` to find all individuals whose last name contains "Smith."
+
+### Explanation
+- **`str_detect()`**: To detect the presence of a substring within a string.
+
+```{r detect-smith-names, exercise=TRUE, exercise.eval=FALSE}
+# Your code here
+```
+
+```{r detect-smith-names-solution, include=FALSE}
+bellevue_almshouse |> 
+  filter(str_detect(last_name, "Smith"))
+```
+
+```{r detect-smith-names-code-check, include=FALSE}
+grade_code()
+```
+
+## Exercise 8: Extract Titles from Names
+Extract titles (like "Dr", "Mr", "Mrs") from the `first_name` column using `str_extract()`.
+
+### Explanation
+- **`str_extract()`**: To extract specific patterns from strings.
+
+```{r extract-titles, exercise=TRUE, exercise.eval=FALSE}
+# Your code here
+```
+
+```{r extract-titles-solution, include=FALSE}
+bellevue_almshouse |> 
+  mutate(Title = str_extract(first_name, "(Dr|Mr|Mrs)"))
+```
+
+```{r extract-titles-code-check, include=FALSE}
+grade_code()
+```
+
+## Exercise 9: Clean Up Last Names
+Use `str_replace_all()` to clean up the `last_name` column by removing periods.
+
+### Explanation
+- **`str_replace_all()`**: To replace all occurrences of a pattern in a string.
+
+```{r clean-up-last-names, exercise=TRUE, exercise.eval=FALSE}
+# Your code here
+```
+
+```{r clean-up-last-names-solution, include=FALSE}
+bellevue_almshouse |> 
+  mutate(last_name = str_replace_all(last_name, "\\.", ""))
+```
+
+```{r clean-up-last-names-code-check, include=FALSE}
+grade_code()
+```
+
+## Exercise 10: Analyze Age Distribution by Gender
+Group the data by gender and calculate the average and median age for each gender.
+
+### Explanation
+- **`group_by()`**: To create subsets based on a variable.
+- **`summarize()`**: To compute summary statistics.
+
+```{r age-distribution-by-gender, exercise=TRUE, exercise.eval=FALSE}
+# Your code here
+```
+
+```{r age-distribution-by-gender-solution, include=FALSE}
+bellevue_almshouse |> 
+  group_by(gender) |> 
+  summarize(Average_Age = mean(age, na.rm = TRUE), 
+            Median_Age = median(age, na.rm = TRUE))
+```
+
+```{r age-distribution-by-gender-code-check, include=FALSE}
+grade_code()
+```
+
+## Exercise 11: Case When to Categorize Age Groups
+Use `case_when()` to create a new column called `age_group`, categorizing individuals into "Child" (under 18), "Adult" (18-60), and "Senior" (60+).
+
+### Explanation
+- **`case_when()`**: To create conditional logic and categorize data.
+
+```{r age-groups, exercise=TRUE, exercise.eval=FALSE}
+# Your code here
+```
+
+```{r age-groups-solution, include=FALSE}
+bellevue_almshouse |> 
+  mutate(age_group = case_when(
+    age < 18 ~ "Child",
+    age >= 18 & age <= 60 ~ "Adult",
+    age > 60 ~ "Senior"
+  ))
+```
+
+```{r age-groups-code-check, include=FALSE}
+grade_code()
+```
+
+## Exercise 12: Counting Individuals by Age Group
+Using the `age_group` column created in the previous exercise, count how many individuals belong to each age group.
+
+### Explanation
+- **`count()`**: To count occurrences of unique values in a column.
+
+```{r count-age-groups, exercise=TRUE, exercise.eval=FALSE}
+# Your code here
+```
+
+```{r count-age-groups-solution, include=FALSE}
+bellevue_almshouse |> 
+  mutate(age_group = case_when(
+    age < 18 ~ "Child",
+    age >= 18 & age <= 60 ~ "Adult",
+    age > 60 ~ "Senior"
+  )) |> 
+  count(age_group)
+```
+
+```{r count-age-groups-code-check, include=FALSE}
+grade_code()
+```
+
+## Exercise 13: Calculate Average Age by Profession
+Group the dataset by `profession` and calculate the average age for each profession.
+
+### Explanation
+- **`group_by()`**: To create subsets based on a variable.
+- **`summarize()`**: To compute summary statistics.
+
+```{r average-age-by-profession, exercise=TRUE, exercise.eval=FALSE}
+# Your code here
+```
+
+```{r average-age-by-profession-solution, include=FALSE}
+bellevue_almshouse |> 
+  group_by(profession) |> 
+  summarize(Average_Age = mean(age, na.rm = TRUE))
+```
+
+```{r average-age-by-profession-code-check, include=FALSE}
+grade_code()
+```
+
+## Exercise 14: Use if_else() to Create Binary Variable for Gender
+Use `if_else()` to create a new column called `is_female`, which will have a value of `TRUE` if the individual is female and `FALSE` otherwise.
+
+### Explanation
+- **`if_else()`**: To apply a binary condition to a dataset.
+
+```{r binary-variable-gender, exercise=TRUE, exercise.eval=FALSE}
+# Your code here
+```
+
+```{r binary-variable-gender-solution, include=FALSE}
+bellevue_almshouse |> 
+  mutate(is_female = if_else(gender == "Female", TRUE, FALSE))
+```
+
+```{r binary-variable-gender-code-check, include=FALSE}
+grade_code()
+```
+
+## Exercise 15: Filter by Age and Profession
+Filter the dataset to find all individuals over 50 who listed their profession as "Carpenter."
+
+### Explanation
+- **`filter()`**: To subset the data based on specific conditions.
+
+```{r filter-age-profession, exercise=TRUE, exercise.eval=FALSE}
+# Your code here
+```
+
+```{r filter-age-profession-solution, include=FALSE}
+bellevue_almshouse |> 
+  filter(age > 50 & profession == "Carpenter")
+```
+
+```{r filter-age-profession-code-check, include=FALSE}
+grade_code()
+```
+
+## Exercise 16: Use str_to_title() to Standardize Names
+Use `str_to_title()` to standardize the format of the `first_name` and `last_name` columns (capitalizing the first letter of each word).
+
+### Explanation
+- **`str_to_title()`**: To capitalize the first letter of each word in a string.
+
+```{r standardize-names, exercise=TRUE, exercise.eval=FALSE}
+# Your code here
+```
+
+```{r standardize-names-solution, include=FALSE}
+bellevue_almshouse |> 
+  mutate(first_name = str_to_title(first_name),
+         last_name = str_to_title(last_name))
+```
+
+```{r standardize-names-code-check, include=FALSE}
+grade_code()
+```
+
+## Exercise 17: Filter by Date of Admission
+Filter the dataset to find all individuals who were admitted before January 1, 1900.
+
+### Explanation
+- **`filter()`**: To subset the data based on specific conditions.
+
+```{r filter-by-date, exercise=TRUE, exercise.eval=FALSE}
+# Your code here
+```
+
+```{r filter-by-date-solution, include=FALSE}
+bellevue_almshouse |> 
+  filter(date_in < as.Date("1900-01-01"))
+```
+
+```{r filter-by-date-code-check, include=FALSE}
+grade_code()
+```
+
+## Exercise 18: Join with Another Dataset
+Imagine you have another dataset `diseases_info` containing details about each disease. Perform a left join of the `bellevue_almshouse` dataset with `diseases_info` on the `disease` column.
+
+### Explanation
+- **`left_join()`**: To merge two datasets based on a common column.
+
+```{r join-datasets1, exercise=TRUE, exercise.eval=FALSE}
+# Your code here
+```
+
+```{r join-datasets1-solution, include=FALSE}
+bellevue_almshouse |> 
+  left_join(diseases_info, by = "disease")
+```
+
+```{r join-datasets1-code-check, include=FALSE}
+grade_code()
+```
+
+## Exercise 19: Case When to Create Disease Severity Column
+Use `case_when()` to create a new column called `disease_severity` that assigns "Severe" to diseases containing "Fever" or "Cholera" and "Mild" to others.
+
+### Explanation
+- **`case_when()`**: To create conditional logic and categorize data.
+
+```{r disease-severity, exercise=TRUE, exercise.eval=FALSE}
+# Your code here
+```
+
+```{r disease-severity-solution, include=FALSE}
+bellevue_almshouse |> 
+  mutate(disease_severity = case_when(
+    str_detect(disease, "Fever|Cholera") ~ "Severe",
+    TRUE ~ "Mild"
+  ))
+```
+
+```{r disease-severity-code-check, include=FALSE}
+grade_code()
+```
+
+## Exercise 20: Count Individuals Admitted Per Year
+Use `mutate()` to extract the year from `date_in` and then count how many individuals were admitted per year.
+
+### Explanation
+- **`mutate()`**: To create new columns.
+- **`count()`**: To count occurrences of unique values in a column.
+
+```{r count-per-year, exercise=TRUE, exercise.eval=FALSE}
+# Your code here
+```
+
+```{r count-per-year-solution, include=FALSE}
+bellevue_almshouse |> 
+  mutate(year_in = lubridate::year(date_in)) |> 
+  count(year_in)
+```
+
+```{r count-per-year-code-check, include=FALSE}
+grade_code()
+```
+
+## Dataset: character_list5.csv and meta_data7.csv
+
+## Exercise 1: Filter Characters by Gender
+Filter the `character_list5.csv` dataset to find all characters that are female.
+
+### Explanation
+- **`filter()`**: To subset the data based on specific conditions.
+
+```{r filter-by-gender, exercise=TRUE, exercise.eval=FALSE}
+# Your code here
+```
+
+```{r filter-by-gender-solution, include=FALSE}
+character_list5 |> 
+  filter(gender == "female")
+```
+
+```{r filter-by-gender-code-check, include=FALSE}
+grade_code()
+```
+
+## Exercise 2: Count Characters by Gender
+Count how many male and female characters are present in the `character_list5.csv` dataset.
+
+### Explanation
+- **`count()`**: To count occurrences of unique values in a column.
+
+```{r count-by-gender1, exercise=TRUE, exercise.eval=FALSE}
+# Your code here
+```
+
+```{r count-by-gender1-solution, include=FALSE}
+character_list5 |> 
+  count(gender)
+```
+
+```{r count-by-gender1-code-check, include=FALSE}
+grade_code()
+```
+
+## Exercise 3: Average Number of Words by Gender
+Group the `character_list5.csv` dataset by gender and calculate the average number of words spoken by male and female characters.
+
+### Explanation
+- **`group_by()`**: To create subsets of data based on the values of one or more variables.
+- **`summarize()`**: To compute summary statistics for each group.
+
+```{r avg-words-by-gender, exercise=TRUE, exercise.eval=FALSE}
+# Your code here
+```
+
+```{r avg-words-by-gender-solution, include=FALSE}
+character_list5 |> 
+  group_by(gender) |> 
+  summarize(Average_Words = mean(words, na.rm = TRUE))
+```
+
+```{r avg-words-by-gender-code-check, include=FALSE}
+grade_code()
+```
+
+## Exercise 4: Joining Datasets
+Perform a left join of the `character_list5.csv` dataset with `meta_data7.csv` on the `script_id` column to bring in movie metadata.
+
+### Explanation
+- **`left_join()`**: To merge two datasets based on a common column, retaining all rows from the first dataset.
+
+```{r join-datasets2, exercise=TRUE, exercise.eval=FALSE}
+# Your code here
+```
+
+```{r join-datasets2-solution, include=FALSE}
+character_list5 |> 
+  left_join(meta_data7, by = "script_id")
+```
+
+```{r join-datasets2-code-check, include=FALSE}
+grade_code()
+```
+
+## Exercise 5: Filter Movies Released After 2000
+Using the joined dataset, filter to show characters from movies released after the year 2000.
+
+### Explanation
+- **`filter()`**: To subset the data based on specific conditions.
+
+```{r filter-by-year, exercise=TRUE, exercise.eval=FALSE}
+# Your code here
+```
+
+```{r filter-by-year-solution, include=FALSE}
+character_list5 |> 
+  left_join(meta_data7, by = "script_id") |> 
+  filter(year > 2000)
+```
+
+```{r filter-by-year-code-check, include=FALSE}
+grade_code()
+```
+
+## Exercise 6: Count Characters by Movie
+Using the joined dataset, count how many characters are present in each movie.
+
+### Explanation
+- **`count()`**: To count occurrences of unique values in a column.
+
+```{r count-characters-by-movie, exercise=TRUE, exercise.eval=FALSE}
+# Your code here
+```
+
+```{r count-characters-by-movie-solution, include=FALSE}
+character_list5 |> 
+  left_join(meta_data7, by = "script_id") |> 
+  count(title)
+```
+
+```{r count-characters-by-movie-code-check, include=FALSE}
+grade_code()
+```
+
+## Exercise 7: Calculate Gender Ratio in Movies
+For each movie, calculate the ratio of female to male characters.
+
+### Explanation
+- **`group_by()`**: To create subsets of data based on one or more variables.
+- **`summarize()`**: To compute summary statistics for each group.
+- **`pivot_wider()`**: To reshape data from long to wide format.
+
+```{r gender-ratio, exercise=TRUE, exercise.eval=FALSE}
+# Your code here
+```
+
+```{r gender-ratio-solution, include=FALSE}
+character_list5 |> 
+  left_join(meta_data7, by = "script_id") |> 
+  count(title, gender) |> 
+  pivot_wider(names_from = gender, values_from = n, values_fill = 0) |> 
+  mutate(ratio = female / male)
+```
+
+```{r gender-ratio-code-check, include=FALSE}
+grade_code()
+```
+
+## Exercise 8: Filter Movies with a Female Lead
+Assume the character with the most words in a movie is the lead character. Filter the dataset to show only movies where the lead character is female.
+
+### Explanation
+- **`group_by()`**: To create subsets of data based on one or more variables.
+- **`slice_max()`**: To select the top n rows by a specific variable.
+
+```{r filter-female-lead, exercise=TRUE, exercise.eval=FALSE}
+# Your code here
+```
+
+```{r filter-female-lead-solution, include=FALSE}
+character_list5 |> 
+  group_by(script_id) |> 
+  slice_max(words) |> 
+  left_join(meta_data7, by = "script_id") |> 
+  filter(gender == "female")
+```
+
+```{r filter-female-lead-code-check, include=FALSE}
+grade_code()
+```
+
+## Exercise 9: Average Age of Characters by Gender
+Group the dataset by gender and calculate the average age of male and female characters.
+
+### Explanation
+- **`group_by()`**: To create subsets of data based on one or more variables.
+- **`summarize()`**: To compute summary statistics for each group.
+
+```{r avg-age-by-gender, exercise=TRUE, exercise.eval=FALSE}
+# Your code here
+```
+
+```{r avg-age-by-gender-solution, include=FALSE}
+character_list5 |> 
+  group_by(gender) |> 
+  summarize(Average_Age = mean(age, na.rm = TRUE))
+```
+
+```{r avg-age-by-gender-code-check, include=FALSE}
+grade_code()
+```
+
+## Exercise 10: Find Movies with Gross Revenue Over $100 Million
+Filter the `meta_data7.csv` dataset to find movies with a gross revenue of over $100 million.
+
+### Explanation
+- **`filter()`**: To subset the data based on specific conditions.
+
+```{r filter-high-grossing-movies, exercise=TRUE, exercise.eval=FALSE}
+# Your code here
+```
+
+```{r filter-high-grossing-movies-solution, include=FALSE}
+meta_data7 |> 
+  filter(gross > 100000000)
+```
+
+```{r filter-high-grossing-movies-code-check, include=FALSE}
+grade_code()
+```
+
+## Exercise 11: Gender Balance in High-Grossing Movies
+Using the joined dataset, calculate the gender balance (ratio of female to male characters) for movies that grossed over $100 million.
+
+### Explanation
+- **`left_join()`**: To merge two datasets based on a common column.
+- **`filter()`**: To subset the data based on specific conditions.
+
+```{r gender-balance-high-grossing, exercise=TRUE, exercise.eval=FALSE}
+# Your code here
+```
+
+```{r gender-balance-high-grossing-solution, include=FALSE}
+character_list5 |> 
+  left_join(meta_data7, by = "script_id") |> 
+  filter(gross > 100000000) |> 
+  count(title, gender) |> 
+  pivot_wider(names_from = gender, values_from = n, values_fill = 0) |> 
+  mutate(ratio = female / male)
+```
+
+```{r gender-balance-high-grossing-code-check, include=FALSE}
+grade_code()
+```
+
+## Exercise 12: Top 5 Movies with the Most Female Characters
+Find the top 5 movies with the highest number of female characters.
+
+### Explanation
+- **`slice_max()`**: To select the top n rows by a specific variable.
+
+```{r top-5-female-characters, exercise=TRUE, exercise.eval=FALSE}
+# Your code here
+```
+
+```{r top-5-female-characters-solution, include=FALSE}
+character_list5 |> 
+  left_join(meta_data7, by = "script_id") |> 
+  count(title, gender) |> 
+  filter(gender == "female") |> 
+  slice_max(n, n = 5)
+```
+
+```{r top-5-female-characters-code-check, include=FALSE}
+grade_code()
+```
+
+## Exercise 13: Calculate Word Count by Movie Title
+Sum the total number of words spoken by characters in each movie.
+
+### Explanation
+- **`group_by()`**: To create subsets of data based on one or more variables.
+- **`summarize()`**: To compute summary statistics for each group.
+
+```{r word-count-by-title, exercise=TRUE, exercise.eval=FALSE}
+# Your code here
+```
+
+```{r word-count-by-title-solution, include=FALSE}
+character_list5 |> 
+  left_join(meta_data7, by = "script_id") |> 
+  group_by(title) |> 
+  summarize(Total_Words = sum(words, na.rm = TRUE))
+```
+
+```{r word-count-by-title-code-check, include=FALSE}
+grade_code()
+```
+
+## Exercise 14: Find Movies with No Female Characters
+Filter the dataset to find movies that have no female characters listed.
+
+### Explanation
+- **`anti_join()`**: To find rows in one dataset that do not have matching rows in another dataset.
+
+```{r no-female-characters, exercise=TRUE, exercise.eval=FALSE}
+# Your code here
+```
+
+```{r no-female-characters-solution, include=FALSE}
+meta_data7 |> 
+  anti_join(character_list5 |> filter(gender == "female"), by = "script_id")
+```
+
+```{r no-female-characters-code-check, include=FALSE}
+grade_code()
+```
+
+## Exercise 15: Most Common Character Name
+Find the most common character name (imdb_character_name) across all movies.
+
+### Explanation
+- **`count()`**: To count occurrences of unique values in a column.
+- **`slice_max()`**: To select the top n rows by a specific variable.
+
+```{r most-common-character-name, exercise=TRUE, exercise.eval=FALSE}
+# Your code here
+```
+
+```{r most-common-character-name-solution, include=FALSE}
+character_list5 |> 
+  count(imdb_character_name) |> 
+  slice_max(n, n = 1)
+```
+
+```{r most-common-character-name-code-check, include=FALSE}
+grade_code()
+```
+
+## Exercise 16: Create a Decade Column
+Use `mutate()` to create a new column in the `meta_data7.csv` dataset that represents the decade of the movie (e.g., "2000s" for movies released between 2000 and 2009).
+
+### Explanation
+- **`mutate()`**: To create new columns.
+- **`case_when()`**: To create conditional logic and categorize data.
+
+```{r decade-column, exercise=TRUE, exercise.eval=FALSE}
+# Your code here
+```
+
+```{r decade-column-solution, include=FALSE}
+meta_data7 |> 
+  mutate(decade = case_when(
+    year >= 2000 & year < 2010 ~ "2000s",
+    year >= 1990 & year < 2000 ~ "1990s",
+    year >= 1980 & year < 1990 ~ "1980s",
+    TRUE ~ "Other"
+  ))
+```
+
+```{r decade-column-code-check, include=FALSE}
+grade_code()
+```
+
+## Exercise 17: Find Movies with the Most Dialogue
+Find the top 10 movies with the highest total number of words spoken by characters.
+
+### Explanation
+- **`slice_max()`**: To select the top n rows by a specific variable.
+
+```{r top-10-movies-dialogue, exercise=TRUE, exercise.eval=FALSE}
+# Your code here
+```
+
+```{r top-10-movies-dialogue-solution, include=FALSE}
+character_list5 |> 
+  left_join(meta_data7, by = "script_id") |> 
+  group_by(title) |> 
+  summarize(Total_Words = sum(words, na.rm = TRUE)) |> 
+  slice_max(Total_Words, n = 10)
+```
+
+```{r top-10-movies-dialogue-code-check, include=FALSE}
+grade_code()
+```
+
+## Exercise 18: Find the Top 3 Movies by Gross Revenue per Decade
+Use the `meta_data7.csv` dataset to find the top 3 movies by gross revenue in each decade.
+
+### Explanation
+- **`slice_max()`**: To select the top n rows by a specific variable.
+
+```{r top-3-by-decade, exercise=TRUE, exercise.eval=FALSE}
+# Your code here
+```
+
+```{r top-3-by-decade-solution, include=FALSE}
+meta_data7 |> 
+  mutate(decade = case_when(
+    year >= 2000 & year < 2010 ~ "2000s",
+    year >= 1990 & year < 2000 ~ "1990s",
+    year >= 1980 & year < 1990 ~ "1980s",
+    TRUE ~ "Other"
+  )) |> 
+  group_by(decade) |> 
+  slice_max(gross, n = 3)
+```
+
+```{r top-3-by-decade-code-check, include=FALSE}
+grade_code()
+```
+
+## Exercise 19: Calculate Total Gross by Gender
+Join the two datasets and calculate the total gross revenue of movies that have male characters versus movies that have female characters.
+
+### Explanation
+- **`group_by()`**: To create subsets of data based on one or more variables.
+- **`summarize()`**: To compute summary statistics for each group.
+
+```{r total-gross-by-gender, exercise=TRUE, exercise.eval=FALSE}
+# Your code here
+```
+
+```{r total-gross-by-gender-solution, include=FALSE}
+character_list5 |> 
+  left_join(meta_data7, by = "script_id") |> 
+  group_by(gender) |> 
+  summarize(Total_Gross = sum(gross, na.rm = TRUE))
+```
+
+```{r total-gross-by-gender-code-check, include=FALSE}
+grade_code()
+```
+
+## Exercise 20: Find Movies with More than 70% Female Characters
+Filter the dataset to find movies where more than 70% of the characters are female.
+
+### Explanation
+- **`mutate()`**: To create new columns.
+- **`summarize()`**: To compute summary statistics for each group.
+
+```{r movies-70-percent-female, exercise=TRUE, exercise.eval=FALSE}
+# Your code here
+```
+
+```{r movies-70-percent-female-solution, include=FALSE}
+character_list5 |> 
+  left_join(meta_data7, by = "script_id") |> 
+  count(title, gender) |> 
+  pivot_wider(names_from = gender, values_from = n, values_fill = 0) |> 
+  mutate(total = female + male, female_ratio = female / total) |> 
+  filter(female_ratio > 0.7)
+```
+
+```{r movies-70-percent-female-code-check, include=FALSE}
+grade_code()
+```
+
+
+## Conclusion
+
+In this tutorial, you practiced using `dplyr` and `stringr` to manipulate and analyze the Titanic dataset. You learned how to filter, select, mutate, summarize, and clean data, gaining insights into the passengers and their experiences.

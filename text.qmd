@@ -1,0 +1,18 @@
+---
+title: "Working with Text"
+---
+
+We have used the stringr package in R with the str_detect() function. stringr is a package we can use for pattern matching, but also character manipulation. It is worth understanding a little about how this character manipulation works because it gives you much greater control over the ways you can label and annotate your plots.
+
+There are two main ways we'll work with text, which focuses on tabular data:
+
+-   Where we provide text for our plots directly, usually for titles and for annotations.
+-   Where we ask R to draw labels from our data directly on to a plot.
+
+::: callout-note
+If you have actual text data you want to analyse, I recommend looking at the package [Tidytext](https://www.tidytextmining.com/), but this is out of the scope of this course.
+:::
+
+The first case is quite straightforward. We'll see in the next section that you just provide the titles and annotations as text within quotation marks.
+
+If you want R to

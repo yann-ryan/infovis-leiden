@@ -1,0 +1,70 @@
+---
+title: "Introduction to R"
+execute:
+  warning: false
+  message: false
+---
+
+## Class Objectives
+
+This week, we're going to get used to the environment we'll use for creating the visualisations for this course. By the end of today, you should be comfortable with the interface, and able to use R, load packages, and do some basic manipulations of dataframes.
+
+### Learning Objectives
+
+By the end of this section of the book, you should:
+
+-   Know what a variable is
+-   Know what data types are
+-   Know what a dataframe and a vector is
+-   Practise making vectors
+-   Know how to do basic arithmetic with R
+-   Know how to check conditions:
+    -   Equals (numbers and text), greater than, less than, greater than or equal to
+    -   Do the same but with vectors
+-   Know what data types are
+
+### What if I get stuck?
+
+It's OK! Take your orange post-it, and place it on the back of your computer. I'll come around to help as soon as possible.
+
+If you've finished everything, put up your green post-it. I'll give you some advanced exercises to complete.
+
+Remove this and explain how the code in the book works - or keep it an option if the interactive version doesn't work.
+
+## Working with this book.
+
+Each week we'll demonstrate and practise some basics by running code directly in your browser, in this book. You can see the content and structure of the book in the sidebar on the left-hand side. Each week has a 'part' (this week is 'Introduction to R', and each part has a number of chapters, which you can identify because they are numbered. You can switch to a new part of the book by clicking in the sidebar, or you can use the link at the bottom of each page to go to the next chapter.
+
+For the first few weeks, we'll learn the basics through live code cells which are embedded in the book itself, and running in your browser. Later, we'll switch to an IDE (Integrated Development Environment) which will give us a 'real world' system to practice in.
+
+::: callout-warning
+Code written in a browser like this will not be saved if you close or refresh the page. Only use it for practising the basics!
+:::
+
+You can identify these 'live' code cells as they look like this:
+
+```{webr-r}
+1 + 1
+```
+
+If you see the 'Installing package...' or 'Loading package...' message, this means that the programming language is doing some work behind the scenes to get everything working. When it's finished, it will be replaced by a 'Run Code' button.
+
+#### Features of the code cell
+
+The code cell itself has a few features:
+
+| Feature            | Image                                                   | Description                                                                                                                                                                                                                           |
+|--------------------|---------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Run Code button    | ![](images/Screenshot%202024-08-21%20at%2015.04.17.png) | Pressing this will run, or execute, the code in the cell.                                                                                                                                                                             |
+| The code input box | ![](images/Screenshot%202024-08-26%20at%2017.07.20.png) | The main part of the code cell is where you will find (and type) code. The number 1 here is a line identifier and is not part of the code. Important to note is that you are free to edit the code cell to change or delete the code. |
+| Code option button | ![](images/Screenshot%202024-08-21%20at%2015.06.03.png) | These two icons on the right-hand side will reset the code (if you changed it), or allow you to copy the contents to the clipboard.                                                                                                   |
+
+Lastly, a part you can't see here: the output. If there is any output from the code cell (such as the result of a calculation), it will be displayed directly below the code cell. If the code produces an error or a warning, these will also be displayed here. This output will look different depending on what the code in the cell is set to produce - it could be a number, a dataframe, or a full visualisation.
+
+#### Running code
+
+See what happens if you run the code cell above. This code cell contains the code `1 + 1`, which simply adds together these two numbers and displays the answer as the output.
+
+**Try it yourself:** Change the code in the cell above and run it again - try and guess what other basic operations a coding language you can do. If you get an error, you can always reset or refresh the page.
+
+When you're finished, you can click the link underneath here and to the right to go to the next chapter, or you can use the sidebar on the left.

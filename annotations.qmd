@@ -1,0 +1,186 @@
+---
+title: "Annotations and Highlights"
+---
+
+```{webr-r}
+#| context: setup
+library(readr)
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+
+url <- "https://raw.githubusercontent.com/jennybc/gapminder/refs/heads/main/data-raw/04_gap-merged.tsv"
+download.file(url, "gapminder_df.csv")
+
+gapminder_df =  read_tsv('gapminder_df.csv') |> filter(continent!= 'FSU')
+
+df <- gapminder_df |>
+  filter(year == 2007) |>
+  mutate(pop_millions = pop/1000000)|>
+  filter(continent == 'Europe')
+
+```
+
+## Drawing readers to the data in your chart
+
+The chart above might be a faithful representation of the data, but it doesn't really tell a story.
+
+To do this, we'll draw viewers' attention to particular parts of the data using a few techniques. These use a cognitive process known as 'pre-attentive processing', meaning we are drawn to certain visual elements before others. Highlighting using color and annotations are ways to use this to our advantage.
+
+## Adding annotations using annotate()
+
+Another way to add annotations to your text is using the layer `annotate()`. annotate allows you to add geoms directly to your plot, but instead of taking positions from your data, you specify them directly.
+
+For annotate, you specify the name of the geom (a short version, so geom_rect becomes simply rect). Then you will directly specify the position coordinates and any other aesthetics. The most useful geom types here are the graphical 'primitives', such as `rect`, `polygon`, and `segment`, as well as `text`.
+
+### Text
+
+You can use annotate() to manually add informative labels to your charts.
+
+It's usually useful to have an arrow along with text, pointing to something in the visualisation. Let's walk through doing this using the following chart, which charts life expectancy and GDP per capita, limited to the continent of Europe:
+
+```{webr-r}
+df |> 
+  ggplot(aes(x = lifeExp, y =gdpPercap, size = pop_millions))  + 
+  geom_point() + 
+  labs(title = "GDP and Life\nExpectancy") + scale_size_area()
+```
+
+#### Adding a text annotation
+
+We want to add the text Netherlands and an arrow pointing to the relevant point.
+
+First we'll put a text annotation somewhere in the large empty space of the chart. The Netherlands is towards the top right of the plot so the line intersecting about 73 on the x axis and 45000 on the y axis would be a good place to put the text.
+
+```{webr-r}
+df |> 
+  ggplot(aes(x = lifeExp, y =gdpPercap, size = pop_millions, color = continent))  + 
+  geom_point() + 
+  labs(title = "GDP and Life\nExpectancy",
+       x = NULL) + 
+  annotate(geom = 'text', x = 76, y = 45000, label = "Netherlands")
+```
+
+#### Add a line
+
+Next we want a curved line with an arrow running from just underneath the text to the middle of the point. To do this, look at the data and find the relevant variables to use as a starting point.The lifeExp (our x axis) for Netherlands is 79.762 and dfpPercap (y axis) is 36797.
+
+```{webr-r}
+df |> 
+  ggplot(aes(x = lifeExp, y =gdpPercap, size = pop_millions, color = continent))  + 
+  geom_point() + 
+  labs(title = "GDP and Life\nExpectancy",
+       x = NULL) + 
+  annotate(geom = 'text', x = 76, y = 45000, label = "Netherlands") +  
+  annotate(geom = 'curve', x = 76, y = 44000, xend = 79.76, yend = 36797, 
+           arrow = arrow(type = 'closed', length = unit(2, 'mm')))
+
+```
+
+#### Drawing an arrow()
+
+Finally we can specify an arrow with a special arrow() function. Pay attention here because the arrow syntax is a little unintuitive. We can specify an arrow type, for instance 'closed' and a length. However the length is not a simple number but a 'unit' object, where we need to put the value within the function unit() and specify a unit, such as 'mm'. You can also specify the arrow `angle` as a number between 0 and 90.
+
+```{webr-r}
+
+df |> 
+  ggplot(aes(x = lifeExp, y =gdpPercap, size = pop_millions, color = continent))  + 
+  geom_point() + 
+  labs(title = "GDP and Life\nExpectancy",
+       x = NULL) + 
+  annotate(geom = 'text', x = 76, y = 45000, label = "Netherlands") +  
+  annotate(geom = 'curve', x = 76, y = 44000, xend = 79.76, yend = 36797, 
+           arrow = arrow(type = 'closed', length = unit(2, 'mm')))
+
+```
+
+**Try it yourself:** Add a label, line, and arrow pointing to the United States. Run the first cell to get the relevant values as a starting point. 
+
+```{webr-r}
+
+ df |> filter(country == "United States")
+
+```
+
+Now add the text, curve, and arrow to the chart:
+
+```{webr-r}
+ df |> 
+  ggplot(aes(x = lifeExp, y =gdpPercap, size = pop_millions, color = continent))  + 
+  geom_point() 
+```
+
+### other geoms with annotate()
+
+annotate() allows us to specify any of the geoms available, but besides `text`, the most useful ones are those which we didn't use for data visualisation directly: `segment`, `rectangle`, and `curve`. You can then specify the usual aesthetics of those geoms such as color, linetype, alpha and so forth.
+
+#### Lines
+
+Add a line to your plot using 'segment'. For a vertical line set the x and xend to the desired value. To draw the line the whole way across the plot set y to 0 and yend to Inf (infinite).
+
+```{webr-r}
+
+gapminder_df |> 
+  filter(country %in% c('Netherlands', 'France', 'Ireland', 'Germany', 'Spain')) |>
+  ggplot(aes(x = year, y =gdpPercap, color = country))  + 
+  geom_line() + 
+  labs(title = "GDP and Life\nExpectancy",
+       x = NULL) + 
+  annotate(geom = 'segment', x = 1982, xend = 1982, y = 0, yend = Inf, linetype = 'dashed')
+```
+
+::: callout-tip
+There's actually a separate layer, geom_vline(), which you can use instead.
+
+```{webr-r}
+gapminder_df |> 
+  filter(country %in% c('Netherlands', 'France', 'Ireland', 'Germany', 'Spain')) |>
+  ggplot(aes(x = year, y =gdpPercap, color = country))  + 
+  geom_line() + 
+  labs(title = "GDP and Life\nExpectancy",
+       x = NULL) +
+  geom_vline(xintercept = 1982)
+```
+:::
+
+#### Rectangles
+
+```{webr-r}
+gapminder_df |> 
+  filter(country %in% c('Netherlands', 'France', 'Ireland', 'Germany', 'Spain')) |>
+  ggplot(aes(x = year, y =gdpPercap, color = country))  + 
+  geom_line() + 
+  labs(title = "GDP and Life\nExpectancy",
+       x = NULL) + 
+  annotate(geom = 'rect', xmin = 1960, xmax = 1980, ymin = 0, ymax = Inf, alpha = .5, linetype = 'dashed', color = 'black')
+```
+
+**Try it yourself:** Create an annotated area which highlights the early nineties recession between 1990 and 1993. Draw a label and an arrow for it. Set a color, alpha and one other aesthetic value.
+
+### Highlighting using color
+
+One effective method to draw attention to certain elements is to highlight using colours. This can be done fairly easily using our existing toolset. The set of steps are as follows:
+
+1.  Start with your basic chart. Perhaps change colors or transparency to make the majority of the data 'fade' into the background.
+
+2.  Next create new datasets containing only the data you wish to highlight.
+
+3.  Add these as layers to your existing chart
+
+4.  Change the colors of these new elements
+
+```{webr-r}
+
+df_highlight = df %>% filter(country %in% c('Ireland', "Netherlands", "France"))
+
+df |> 
+  ggplot(aes(x = lifeExp, y =gdpPercap, size = pop_millions))  + 
+  geom_point(color = 'gray50', alpha = .8) + 
+  geom_point(data = df_highlight, color = 'red') + 
+  labs(title = "GDP and Life\nExpectancy",
+       x = NULL) + 
+  annotate(geom = 'text', x = 76, y = 45000, label = "Netherlands") +  
+  annotate(geom = 'curve', x = 76, y = 44000, xend = 79.76, yend = 36797, 
+           arrow = arrow(type = 'closed', length = unit(2, 'mm')))
+
+```

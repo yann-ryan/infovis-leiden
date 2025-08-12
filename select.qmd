@@ -1,0 +1,156 @@
+---
+title: "Subsetting columns"
+---
+
+### Using select() to subset columns
+
+A very common task when working with dataframes is to remove or keep only desired columns. In R, we can do this with the verb `select()`. Within the `select()` function, we first enter the dataframe name, and then the instructions on what to select.
+
+There are lots of different instructions we can give to the `select()` function to select our desired columns.
+
+#### Selecting by name
+
+One simple way to select columns is by the column names. After specifying the dataset, simply enter each column you want to keep, separated by a comma. To select the `Age` and `Sex` columns from the `titanic_df` dataset, use the below code.
+
+```{webr-r}
+#| context: setup
+
+library(dplyr)
+library(readr)
+
+url <- "https://raw.githubusercontent.com/yann-ryan/infovis-course/master/titanic_df_full.csv"
+download.file(url, "titanic_df.csv")
+
+titanic_df =  read_csv('titanic_df.csv')
+
+```
+
+```{webr-r}
+#| df-print: paged
+
+select(titanic_df, age, sex)
+```
+
+**Try it yourself:** Select the `Pclass` and `Name` columns from the titanic_df dataset.
+
+```{webr-r}
+
+```
+
+#### Deselecting
+
+We can also remove (deselect) columns, using a minus (-) sign:
+
+To select everything except the Age column, do the following:
+
+```{webr-r}
+select(titanic_df, -age) 
+```
+
+**Try it yourself:** below, select everything except the `Pclass` column.
+
+```{webr-r}
+
+```
+
+#### Selecting by position
+
+You can also select columns by their position. Enter the positions as numbers, separated by a comma. This selects column 1 and 5:
+
+```{webr-r}
+select(titanic_df, 1,5) 
+```
+
+### Exercises:
+
+Edit this code cell to select the Name, Age, and Sex columns in the titanic_df dataframe, by position.
+
+```{webr-r}
+
+```
+
+Deselect the fifth column in the `titanic_df` dataframe.
+
+```{webr-r}
+
+```
+
+### Select a range
+
+You can also select a range of columns using a colon (:). The below command selects columns 1 through to 5:
+
+```{webr-r}
+select(titanic_df, 1:5) 
+```
+
+### Combine select instructions
+
+You can also combine multiple select instructions. This will select the first to the third columns, and the eighth column:
+
+```{webr-r}
+select(titanic_df, 1:3, 8) 
+```
+
+::: callout-note
+## Differences between R and Python
+
+If you have programmed with Python before, this method of selecting using two colon-separated numbers is similar to something called **list slicing**. There are two important differences. First, Python starts counting from zero, not 1, and second, using a range like this in Python results in everything up to but *excluding* the end number. So in Python, this range would be the second, third, fourth, and fifth numbers in the sequence.
+:::
+
+### Tidyselect functions
+
+You can also select columns using more complicated methods. There are a g roup of 'tidyselect' helpers to select columns based on more complicated criteria. The most useful are:
+
+-   starts_with()
+
+-   ends_with()
+
+-   contains()
+
+First, starts_with() will look for and any columns which starts with some chosen text. It works as the following:
+
+```{webr-r}
+select(titanic_df, starts_with("s")) 
+```
+
+**Try it yourself:** In the cell below write a select function which using starts_with() which selects the `PassengerID` and `Parch` columns, but **not** the `Pclass` column.
+
+```{webr-r}
+
+```
+
+ends_with() works in a similar way, selecting columns which end with chosen characters:
+
+```{webr-r}
+select(titanic_df, ends_with("s")) 
+```
+
+**Try it yourself:** In the cell below, write a select function that selects the Age, Fare, and Name columns.
+
+```{webr-r}
+
+```
+
+Lastly, contains() will select any columns which contain a given pattern of letters:
+
+```{webr-r}
+select(titanic_df, contains("ar")) 
+```
+
+::: {.callout-tip collapse="true"}
+## Expand to learn how to rename columns
+
+To rename columns, we can use the `rename()` function with the syntax `rename(dataset, new_name = old_name)`. For example, to rename the `Name` column to `passenger_names` in the Titanic dataframe, we can use:
+
+```{webr-r}
+rename(titanic_df, passenger_name = Name) 
+```
+
+If you want to, you can rename *and* select columns in one go. To do this use the same syntax as rename, except use the function `select()`. The following will select the `Name` and `Pclass` columns, and rename them:
+
+```{webr-r}
+select(titanic_df, passenger_name = Name, passenger_class = Pclass)
+```
+
+However, note that nothing will actually change in the original dataset until you save it as an object in your environment, which will look at when we move to Posit cloud.
+:::

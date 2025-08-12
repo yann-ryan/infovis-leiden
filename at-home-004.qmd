@@ -1,0 +1,65 @@
+---
+title: "Home Exercises"
+format: 
+   html:
+     df-print: paged
+---
+
+## Instructions
+
+The at-home exercises should be completed using Posit cloud, Home Exercise 5. Create a new .Rmd file (use File -\> New File -\> R Notebook.
+
+I advise saving the new file straight away. Because you'll submit this file as an assignment, use a standardised name: lastname_firstname5. Regularly re-save the file.
+
+When you have finished the exercise (or part of it), 'knit' the file. Export the .Rmd and the html as a .zip file, and upload this to the assignment area.
+
+### Task
+
+Load the Bellevue Almshouse dataset we used a few weeks ago, which can be found in this project files tab. Load the Tidyverse library
+
+Create a series of charts using ggplot2, visualising the following aspects of the data. In most cases, you'll need to prepare the data by filtering and/or summarising. Create each one in a separate code cell.
+
+-   The number of male and female individuals. First filter out any missing or ambiguous data.
+
+-   The ten most frequent diseases (look back to previous weeks for this one)
+
+-   The ten most frequent female first names.
+
+-   The distribution of the values for age, for male and female gender categories.
+
+-   Create a line chart visualising the number of individuals admitted per week.
+
+::: callout-tip
+The function `floor_date(unit = 'week')` will take a full date and round it down to the start of the week (starting on Sunday, because it's American). So for example, running floor_date on today's date and tomorrow's date (2024-10-07 and 2024-10-08) would give 2024-10-06 for both.
+
+Try creating a new column with the 'floored' dates, and then summarise using these as groups.
+:::
+
+-   Do the same except using months instead of weeks, and visualise male and females separately.
+
+-   Use a similar approach to make a scatterplot, but set the colors of the points to gender
+
+**Final challenge:**
+
+You've been asked to visualise the professions in the dataset, as a bar chart. Let's take a look at a summary of this data first (this is not live code):
+
+```{r}
+#| warning: false
+#| message: false
+
+library(dplyr)
+library(readr)
+
+bellevue_dataset = read_csv('bellevue_almshouse_modified.csv')
+
+bellevue_dataset |>
+  group_by(profession) |>
+  summarise(n = n()) |>
+  arrange(desc(n))
+  
+
+```
+
+As you can see, there are far too many professions listed to visualise as individual bars. How would you solve this? Try to think of a solution to this - you could use another visualisation method, or re-organise/rename the data to have a pragmatic solution.
+
+If you can't code the solution, you can simply write a description of what you would like to do, and we can try to solve it in the class!

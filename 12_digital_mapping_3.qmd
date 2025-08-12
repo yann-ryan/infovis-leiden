@@ -1,0 +1,59 @@
+---
+title: "Digital Mapping 3"
+---
+
+### Learning objectives
+
+Make a map from a dataset
+
+Make a points map
+
+Adjust it using scales etc. for colour and boundaries.
+
+Bonus - make an interactive map
+
+This week we are going to make a slightly different type of map: a points or dot map. We saw some examples of these [two weeks ago](https://dsh.lucdh.nl/dsh/infovis/digital-mapping-1.html#points-map).
+
+The main difference is that instead of matching place names up to shapes, this time, we will map individual points based on sets of coordinates.
+
+In some ways, this is easier than the choropleth map we made earlier.
+
+To recall, to make a choropleth map, we needed to find a base map of relevant shapes (such as the municipalities of the Netherlands, or countries of the world), as well as a dataset with some data about those named places, and use left_join to merge the two together, before drawing the map.
+
+A points map has a slightly different process. Rather than having names of regions, to make a points map, we will need coordinates, pointing to a specific point on the earth's surface.
+
+### Latitude and Longitude
+
+These take the form of two numbers, specifying latitude and longitude. Latitude measures the north-south position of a point on the surface of the earth, ranging from +90°(North Pole) to -90°(South Pole), with the equator at 0°. Longitude measures the east-west position. 0°is found in a line running through Greenwich, in London, known as the prime meridian.
+
+![Diagram of latitude (left-hand side) and longitude. Source: Wikipedia](https://upload.wikimedia.org/wikipedia/commons/2/2f/Latitude_and_Longitude_of_the_Earth_nl.svg)
+
+Coordinates can be expressed either in decimal (the latitude for Leiden is `52.160114` and the longitude is `4.497010`) or degrees/minutes/seconds (DMS notation). In DMS notation, the latitude for Leiden is `52° 9' 36.4104'' N` and the longitude is `4° 29' 49.2360'' E`.
+
+In decimal, points to the south of the equator and to the west of the prime meridian are given negative numbers (the coordinates for Buenos Aires are `-34.603722, -58.381592` in decimal).
+
+In DMS, points are specified whether they are East/West/North/South of the prime meridian and equator, making Buenos Aires `34° 36' 13.3992'' S` and `58° 22' 53.7312'' W`. In all of our cases, we'll use decimal notation.
+
+## Getting Points for Maps
+
+There are many ways to get sets of points to map. In some cases, you might be given the coordinates alongside the data itself. In many other cases, you might just have a city, village, or address name with no coordinates. In this case, you'll have to find coordinates for these places.
+
+### Manual Method
+
+If you have a small number of well-known, modern places (a list of capital cities, for example), you might just want to look them up on Wikipedia. Each place should have a hyperlink with a set of coordinates, given in degrees/minutes/seconds. If you click on this link you'll land on a page which also contains the decimal notation, which can be copied into a spreadsheet, for example.
+
+### Gazetteers
+
+If you have a large number of places, maybe including some which are more obscure, are historical, or in several languages, you could use a gazetteer. A gazetteer is like a geographical dictionary: it contains names of places, and usually some kind of reference to their position on earth.
+
+Perhaps the most well-known gazetteer is [Geonames](https://www.geonames.org/), which contains coordinates and other information for about 12 million place names. Gazetteers are often made with specialist subjects in mind, for example the [Pleiades](https://pleiades.stoa.org/) gazetteer of ancient places, or the [World Historical Gazetteer](https://whgazetteer.org/).
+
+Most gazetteers allow you to download the entire underlying dataset, which can be useful to link your dataset of place names to the relevant coordinates.
+
+Gazetteers can be quite complex, because of the huge variety in the way places are given names, particularly over time, and because there are often multiple places with the same name. Places can also be named differently in different cultures and languages. Particularly if you want to automatically link places to coordinates, you'll need to proceed with caution, and check your results manually afterwards.
+
+### Geocoding service
+
+Another way to find coordinates for a list of places is to use a geocoding service. These are resources which allow you to enter or upload a list of place names or addresses, which are then looked up using a geocoding API, and the coordinates are returned. This is particularly useful if you have a fairly large dataset of places, and if they are modern addresses. An advantage of a geocoding service is that they will usually take a full address into account, which is not always the case with a gazetteer. In this way, they can distinguish between Dublin, Ireland, and Dublin, Ohio.
+
+These tools are usually commercial services which allow you to use them for free with some restrictions. One example of a web service is [Geoapify](https://www.geoapify.com/tools/geocoding-online). You can also use services in certain versions of QGIS and ArcGIS.

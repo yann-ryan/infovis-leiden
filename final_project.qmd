@@ -1,0 +1,45 @@
+---
+title: "Final Project"
+---
+
+## Assignment task
+
+Make a 'visual essay' on a humanties-based topic of your choice, incorporating visualisations, code, and text, as well as an accompanying report.
+
+## Details
+
+-   It should take the form of an Rmarkdown document, knitted html file and report.
+
+-   Include in a .zip all the data (where possible) as well as the code used, and the report.
+
+-   It should have:
+
+    -   At least four separate visualisations, and no more than 8, unless checked with me beforehand!
+
+    -   At least one of which is a map.
+
+    -   At least one of which is interactive (i.e., a single interactive map covers it).
+
+### Visual essay
+
+-   The knitted visual essay should hide the code and be well formatted with section headings, image captions, and references. You can optionally use images, e.g. photographs, or even embed Youtube videos. The text of your visual essay should appeal to a particular audience: it could be academics in your discipline, the general public, colleagues in an NGO or think tank, etc.
+
+-   Include alt-text and give consideration to colour-vision deficiency.
+
+-   Your visualisations should, as far as possible, stand alone - assume they will be taken out of context and shared on social media. How can they still convey your message?
+
+-   Give some details on your process but keep it appropriate to the chosen audience, leaving some to the separate report. For example, you will probably want to include details on the data and the processing steps taken in a general sense, but not every single code step.
+
+### Report
+
+A separate report should:
+
+-   Identify your audience and how this has affected your choice of topic, visualisations, and text.
+
+-   Give the motivation behind your essay
+
+-   Explain coding steps and visualisation choices
+
+-   Outline your own journey in data visualisation: what strengths and weaknesses does it have? What challenges did you face? What did you learn, and what would you do differently if you were starting again?
+
+You can submit this as another Markdown document, within the same Markdown but clearly marked as the report, or s a separate Word or pdf.

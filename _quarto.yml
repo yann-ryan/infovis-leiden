@@ -1,0 +1,122 @@
+project:
+  type: book
+
+book:
+  title: "Information Visualization and the Humanities: Course Book"
+  author: "Yann Ryan"
+  date: "2024-09-01"
+  sidebar:
+    logo: Designer.jpeg
+  chapters:
+    - index.qmd
+    - part: "Introduction to R"
+      chapters:
+        - 2_r_intro.qmd
+        - basics.qmd
+        - practise.qmd
+        - 1_rmarkdown.qmd
+        - at-home-000.qmd
+    - part: "Data Analysis 1"
+      chapters:
+        - 3_data_analysis_1.qmd
+        - select.qmd
+        - slice.qmd
+        - arrange.qmd
+        - pipes.qmd
+        - at-home-001.qmd
+    - part: "Data Analysis 2"
+      chapters:
+        - filter.qmd
+        - regex.qmd
+        - mutate.qmd
+        - summarise.qmd
+        - at-home-002.qmd
+    - part: "Data Analysis 3"
+      chapters:
+        - grouping.qmd
+        - joins.qmd
+        - at-home-003.qmd
+    - part: "Data Visualisation 1"
+      chapters:
+        - 7_data_visualisation_1.qmd
+        - ggplot2.qmd
+        - chart_types.qmd
+        - at-home-004.qmd
+    - part: "Data Visualisation 2"
+      chapters: 
+        - 8_data_visualisation_2.qmd
+        - gestalt.qmd
+        - scales.qmd
+        - position.qmd
+        - date_scales.qmd
+        - colour.qmd
+        - at-home-005.qmd
+    - part: "Data Visualisation 3"
+      chapters:
+        - 9_data_visualisation_3.qmd
+        - titles.qmd
+        - themes.qmd
+        - annotations.qmd
+    - part: "Data Visualisation 4"
+      chapters:
+        - fair.qmd
+        - accessibility.qmd
+        - at-home-006.qmd
+    - part: "Digital Mapping 1"
+      chapters:
+      #  - 10_digital_mapping_1.qmd
+        - digital_mapping.qmd
+       # - maps_in_r.qmd
+        - basemaps.qmd
+        - visualising.qmd
+    #     - map_scales.qmd
+    #     - features.qmd
+        - at-home-007.qmd
+    - part: "Digital Mapping 2"
+      chapters: 
+        - full_map.qmd
+        - interactives.qmd
+    # - part: "Digital Mapping 3"
+    #   chapters:
+    #     - 12_digital_mapping_3.qmd
+    #     - points_map.qmd
+    # - part: "Advanced Chart Design and markdown reports"
+    #   chapters: 
+    #     - 13_design.qmd
+    #     - titles.qmd
+    #     - themes.qmd
+    #     - annotations.qmd
+    # - part: "Bonus: Interactivity"
+    #   chapters:
+    #     - plotly.qmd
+    #     - tmap.qmd
+  appendices:
+    - extra_exercises.qmd
+    - data.qmd
+    - final_project.qmd
+    - mcpherson_final_project.qmd
+    - Hogewoning_FinalProject.qmd
+    - Polakowska-FinalProject.qmd
+      
+
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo
+    number-sections: true
+    number-depth: 1
+  pdf:
+    documentclass: scrreprt
+
+filters: 
+  - webr
+webr:
+  packages: ['ggplot2', 'dplyr', 'stringr', 'tidyr', 'sf', 'rnaturalearth', 'rnaturalearthdata', 'usmapdata', 'plotly']
+  render-df: gt-interactive
+editor: visual
+
+execute:
+  cache: true
+

@@ -1,0 +1,211 @@
+---
+title: "Women in Ancient Papyri"
+output: html_document
+---
+
+#### *Female voice and presence in written text through the centuries*
+
+An important source for the private lives of women in many aspects are papyri. Unlike manuscripts, their content is written in the time itself and not only very popular or important literary works and texts are preserved. Papyri from Egypt consist mostly out of documentary texts and personal letters. This is why it is a good source for the private daily life for middle to upper class citizens. Papyri teach us things about the relation was between certain family members, how people spend their time, societal norms et cetera. However, here too women seem to be underrepresented in two ways. It is still more obscure to us how women spend their time, what their role was in society and what they think. Most documents and letters are written by men about other men. I will try to illustrate this point with some visualisations. At the same time I am going to map how the representation of women changes over time and how it varies in different regions. I want to analyse if there are certain timeframes or regions where women did have more of a voice and were talked about more.
+
+```{r include=FALSE}
+# installs libraries
+#install.packages("sf")
+#install.packages("tidyverse")
+#install.packages("rnaturalearth")
+#install.packages("rnaturalearthdata")
+#install.packages("tmap")
+#install.packages("patchwork")
+```
+
+```{r include=FALSE}
+# loads libraries
+library(sf)
+library(tidyverse)
+library(rnaturalearth)
+library(tmap)
+library(patchwork)
+
+# creates worldmap dataframe
+worldmap = ne_countries(scale = 'medium', returnclass = 'sf')
+```
+
+```{r include=FALSE}
+# loads the dataset
+person_data = read_delim('namesfemalemale.csv', delim = ';')
+writers = read_delim('writers2.csv', delim = ';')
+region_data = read_delim('regionswithcoordinates.csv', delim = ';')
+# allregion_data = read_delim('ALLregionswithcoordinates.csv', delim = ';')
+```
+
+### About the Data
+
+I will be talking about women visibility in this time period based on data from Trismegistos. It is a website that has data on thousands of papyri. For the women names data I have used their page (<https://www.trismegistos.org/ref/>) with tables on the people mentioned in papyrological material where it shows how many male, female, unisex, unknown and total names have been found in papyri per selected century. Here you can also filter how many female, male and total names have been found in a certain region. Unfortunately this did not include coordinates, so I had to look this up myself per region (I got most from the Trismegistos geo data and some from Pleiades). I have included the central coordinates over a longer period, but this variates a little over time for some regions, so it is possibly not representative for each century.
+
+The writer data is found on another page on the website (<https://www.trismegistos.org/authors/>). Here again it shows per selected century the number of women, men and total writers. So that is the information that I copied and used for the visualisations.
+
+### Time perspective
+
+As I only had easy access to the data per century, it is not possible to say anything about specific events that could have caused peaks or dips in female visibility in written sources, so I have decided to look at the data over the three main periods between 400 BC and 600 AD: The Ptolemaic period (332 -- 30 BC), the Roman period (30 BC -- 284 AD) and the Byzantine period (284 to 640 AD).
+
+```{r include=FALSE}
+# extra columns with the proportion of female authors and names
+person_data2 = person_data %>%
+  mutate(proportion_female = female/total)
+writers2 = writers %>%
+  mutate(proportion_female = female/total)
+```
+
+```{r include=FALSE}
+# plot with proportion of female names over time
+name_plot = ggplot(data = person_data2, aes(x = begindate)) +
+  # plots data as line with points
+  geom_line(aes(y = proportion_female), color = "maroon", linewidth = 1.5) +
+  geom_point(aes(y = proportion_female), color = "maroon", size = 3.0) +
+  
+  # lines for the separate periods
+  geom_vline(xintercept = -323, linetype = 'dashed') +
+  geom_vline(xintercept = 30, linetype = 'dashed') +
+  geom_vline(xintercept = 284, linetype = 'dashed') +
+ 
+  # scale adjustments
+  scale_x_continuous(limits = c(-400, 500), breaks = c(-400, -300, -200, -100, 0, 100, 200, 300, 400, 500), labels = c("4th BC", "3rd BC", "2nd BC", "1st BC", "1st AD", "2nd AD", "3rd AD", "4th AD", "5th AD", "6th AD")) +
+  scale_y_continuous(limits = c(0.1, 0.25), breaks = c(0.10, 0.15, 0.20, 0.25), labels = c(10, 15, 20, 25)) +
+  
+  # titles and aesthetics
+  labs(caption = "Data from https://www.trismegistos.org/authors/ and https://www.trismegistos.org/ref/",
+       x = NULL,
+       y = "Female Names %") +
+  theme_minimal() +
+  theme(plot.title = element_text(size = 18, face = "bold"))
+```
+
+```{r include=FALSE}
+# plot with proportion of female authors over time
+author_plot = ggplot(data = writers2, aes(x = date_start)) +
+  # plots data as line with points
+  geom_line(aes(y = proportion_female), color = "maroon", size = 1.5) +
+  geom_point(aes(y = proportion_female), color = "maroon", size = 3.0) +
+  
+  # lines for the separate periods
+  geom_vline(xintercept = -323, linetype = 'dashed') +
+  geom_vline(xintercept = 30, linetype = 'dashed') +
+  geom_vline(xintercept = 284, linetype = 'dashed') +
+  
+  # added text
+  annotate('text', x = -150, y = 0.070, label = 'Ptolemaean', size = 4) +
+  annotate('text', x = 160, y = 0.070, label = 'Roman', size = 4) +
+  annotate('text', x = 415, y = 0.070, label = 'Byzantine', size = 4) +
+  
+  # scale adjustments
+  scale_x_continuous(limits = c(-400, 500), breaks = c(-400, -300, -200, -100, 0, 100, 200, 300, 400, 500), labels = c("4th BC", "3rd BC", "2nd BC", "1st BC", "1st AD", "2nd AD", "3rd AD", "4th AD", "5th AD", "6th AD")) +
+  scale_y_continuous(limits = c(0.0, 0.075), breaks = c(0.025, 0.05), labels = c(2.5, 5)) +
+  # titles and aesthetics
+  labs(title = "Female Authors and Names in Papyri", 
+       subtitle = "4th century BC - 6th century AD",
+       x = NULL,
+       y = "Female Authors %") +
+  theme_minimal() +
+  theme(plot.title = element_text(size = 18, face = "bold"))
+```
+
+```{r echo=FALSE, warning=FALSE}
+# !!! the code in this code cell was written with the help of ChatGPT
+combined_plot = author_plot / name_plot
+combined_plot
+```
+
+The overall low percentages show that women were especially limited to actively spread their own opinion and voice through writing. The reason for this was probably because it was more common for men to know how to write and women were discouraged from participating in activities that required writing. Both lines start with a downward trend in the Ptolemaic period that about halfway start to go upwards. It is possible that positive social-cultural influences and an increase of wealth encouraged women to be active as writers and encouraged people to include more involvement of women in other social matters. It is possible that Egypt was influenced by more inclusive societal norms when they had more communication with the Romans. After a while both categories go downwards again. This can be linked to political and economic decline and uncertainty, which gave less room to individuality, social inclusivity and intellectual development for women.
+
+In the following visualisation I have incorporated some spatial elements to see how the proportion of female names differs in various regions of Egypt.
+
+```{r include=FALSE}
+# creates column with proportion and excludes data with count lower than 9
+region_data2 = region_data %>%
+  mutate(prop_fem = female_count/total_count) %>%
+  filter(total_count > 20)
+
+# creates new column for the points with the coordinates
+coord_data = st_as_sf(region_data2, coords = c("longitude", "latitude"), crs = 4326, na.fail = FALSE)
+```
+
+```{r echo=FALSE}
+# makes sure categorical column in certain order !!! Next 3 code lines written by ChatGPT
+desired_order = c("4th BC", "3rd BC", "2nd BC", "1st BC", "1st AD", "2nd AD", "3rd AD", "4th AD", "5th AD", "6th AD")
+coord_data$century <- factor(coord_data$century, levels = desired_order)
+
+# plots proportion of female names from 4th century BC to 6th century AD
+ggplot() + 
+  geom_sf(data = worldmap, fill = 'white', color = 'white') + 
+  geom_sf(data = coord_data, aes(size = prop_fem), alpha = 0.2, color = 'maroon') +
+  scale_size_continuous(range = c(0.5, 13), breaks = c(0.0, 0.05, 0.1, 0.15, 0.2, 0.25), labels = c(0, 5, 10, 15, 20, 25)) +
+  facet_wrap(~century, ncol = 5) +
+  coord_sf(xlim = c(28.3, 34.2), ylim = c(24, 31.7)) +
+  theme_void() +
+  labs(title = "Female Names in Ancient Papyri",
+       caption = "Data from https://www.trismegistos.org/ref/",
+       size = '\t%') +
+  theme(panel.background = element_rect(fill = 'lavender'),
+        panel.border = element_rect(fill = NA),
+        plot.title = element_text(size = 16, face = 'bold')) 
+```
+
+While it is harder to see in which century the overall proportion is the highest, it is easier to see how the proportion of female names in papyri change in different parts of Egypt. Disappointingly it does not seem to change too much. Regions that have smaller circles in a century with a lower proportion, seem to increase with a higher proportion, but still stay on the smaller side, as do the bigger circles.
+
+### Regional perspective
+
+Now let us move on to a fully regional view of female visibility. First I wanted to show the skewed proportion of attestated male and female names.
+
+```{r message=FALSE, warning=FALSE, include=FALSE}
+# adds point coordinates
+coord_data1 = st_as_sf(region_data, coords = c("longitude", "latitude"), crs = 4326, na.fail = FALSE)
+
+# groups data per region, first for female names, then for the total
+female_names = coord_data1 %>%
+  filter(century %in% c("4th BC", "3rd BC", "2nd BC", "1st BC", "1st AD", "2nd AD", "3rd AD", "4th AD", "5th AD", "6th AD")) %>%
+  group_by(region) %>%
+  summarise(no_female_names = sum(female_count))
+total_names = coord_data1 %>%
+  filter(century %in% c("4th BC", "3rd BC", "2nd BC", "1st BC", "1st AD", "2nd AD", "3rd AD", "4th AD", "5th AD", "6th AD")) %>%
+  group_by(region) %>%
+  summarise(no_total_names = sum(total_count))
+
+# sets tmap to view mode
+tmap_mode("view")
+```
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+# interactive map that shows the total number of names attestated in papyri in that nome and the number of female names
+tm_basemap('Esri.WorldImagery') +
+  tm_shape(total_names) +
+  tm_dots(size = "no_total_names", alpha = 0.5, col = 'maroon', border.col = 'maroon', size.max = 41952) +
+  tm_shape(female_names) + 
+  tm_dots(size = "no_female_names", alpha = 0.7, col = 'white', border.col = 'white', size.max = 41952) +
+  tm_layout(title = "Female Representation in Ancient Papyri per Region")
+```
+
+The interactive map gives the ability to look at individual places that seem to either have a higher or lower female proportion than average. At the same time, by including the actual numbers instead of a percentage, it is possible to see which regions have more texts and are thus more statistical weight.
+
+### Conclusion
+
+Papyri have proven to be an invaluable lens into the daily lives, family dynamics and societal roles of women in ancient Egypt. These visualisations have shown some light on the written presence of women in ancient Egypt during the Ptolemaic, Roman and Byzantine periods. I have tried to explain on a superficial level how the complex relationship between politic, culture and economy can explain some anomalous visual results. However most factors I have named as possible explanations for changes or differences are speculations and need more research and deeper historical analyses to confirm them. The most important thing I have tried to show is how time and region can have an influence on the presence women have and what remains of them compared to men after a few thousand years. Unfortunately the patriarchal ancient society has made the women voice mostly lost to us. It underscores the importance of trying to find out more about women's personal lives and thoughts to get a more inclusive image of this time.
+
+### Sources
+
+Report
+
+-   Pestman. *New Papyrological Primer.* BRILL, 1994.
+-   Vliet, Joep van der, Brian Paul Muhs, and A. Egberts, eds. *Perspectives on Panopolis: An Egyptian Town from Alexander the Great to the Arab Conquest.* Leiden, Netherlands: Brill, 2002.
+
+Data
+
+-   <https://www.trismegistos.org/ref/>
+-   <https://www.trismegistos.org/authors/>
+
+Coordinates
+
+-   <https://pleiades.stoa.org/home>
+-   <https://www.trismegistos.org/geo/index.php>
+
+Help with coding (where specified)
+
+-   <https://chat.openai.com/>

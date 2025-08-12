@@ -1,0 +1,94 @@
+---
+title: "Practice the basics"
+---
+
+## Arithmetic and Variables
+
+1. Add together 100 and 150. Save this as a variable (choose your own name). 
+
+```{webr-r}
+
+```
+
+2. Subtract 50 from this variable. Save this as a new variable.
+
+```{webr-r}
+
+```
+
+3. Print the value of the second variable:
+
+```{webr-r}
+
+```
+
+
+4. In a single cell, multiply the second variable by the first one, and then divide it by 2:
+
+```{webr-r}
+
+```
+
+5. Create a variable, called `x`, and set it to a numeric value:
+
+```{webr-r}
+
+```
+
+6. Change the value of `x` to 500
+
+```{webr-r}
+
+```
+
+7. Print the value of `x`:
+
+```{webr-r}
+
+```
+
+## Strings
+
+8. Create a string (choose the name of the object yourself), containing the name of the student nearest to you.
+
+```{webr-r}
+
+```
+
+
+9. Print this string:
+
+```{webr-r}
+
+```
+
+10. Calculate how many characters are in this string:
+
+```{webr-r}
+
+```
+
+
+## Vectors
+
+11. In one cell, create two vectors: first, a character vector containing the first names of the three students closest to you. Second, a numeric vector containing the years of birth of these three students. 
+
+```{webr-r}
+
+
+```
+
+## Comparisons
+
+12. Check if 100 multiplied by 5 is equal to 50 multiplied by 10:
+
+```{webr-r}
+
+```
+
+13. Using the vector of student names you created above, check if any of the elements in the vector are equal to the string `"Yann"`. 
+
+```{webr-r}
+
+```
+

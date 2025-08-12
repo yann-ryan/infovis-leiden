@@ -1,0 +1,196 @@
+---
+title: "Titles and Labels"
+---
+
+## Communicating better with visualisations
+
+Adding titles, labels and annotations greatly increases the readability of your charts. This is dependent on context, too. It's not usually required or recommended to add a chart title in a visualisation in an academic book or article, but a chart in a report, blog post, or piece of data journalism usually benefits from a title.
+
+A good principle is to try to make your chart stand on its own without further explanation, as far as possible. Even if your visualisation is embedded within a report, readers often skip to the chart first without looking at the underlying context. And charts often get separated from their context if they are shared on social media, for example.
+
+For a chart to stand alone, consider adding the following:
+
+-   An eye-catching title, which explains the 'headline' of your chart.
+
+-   A subtitle, with further explanation
+
+-   A caption, which gives other relevant information, particularly the data source, or any necessary caveats to the data.
+
+-   Relevant labels for the axes and legends
+
+-   Annotations pointing out key findings.
+
+Be a little bit careful with this last point: it depends on the context. Dry, scientific publications probably don't expect 'editorialising' through annotations or labels, but in the context of a blog post or newspaper article, they can be useful.
+
+## Adding labels with the labs() function
+
+There are many ways to add labels to your charts. The simplest is by adding `labs()` as a layer to your ggplot chart, using `+`. `labs()` allows you to specify titles and captions for your charts, **as well as the label for the axis or legend of any of your aesthetics**.
+
+Within the parentheses of the `labs()` layer, you can specify the arguments `title =`, `subtitle =`, `caption =`, as well as any aesthetic in your plot, for example, `x =`, `y =`, `fill =` and so forth.
+
+Make sure to include the text of your label within quotation marks. If you would like to spread your title across multiple lines, you can specify a line break by adding the code `/n` within your title.
+
+```{webr-r}
+#| context: setup
+library(readr)
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+
+url <- "https://raw.githubusercontent.com/jennybc/gapminder/refs/heads/main/data-raw/04_gap-merged.tsv"
+download.file(url, "gapminder_df.csv")
+
+gapminder_df =  read_tsv('gapminder_df.csv') |> filter(continent!= 'FSU')
+
+```
+
+As an example, let's reuse a dataset from the colour chapter. What aesthetics are specified in this chart?
+
+```{webr-r}
+
+df <- gapminder_df |>
+  filter(year == 2007) |>
+  mutate(pop_millions = pop/1000000)
+
+```
+
+```{webr-r}
+
+df |> 
+  ggplot(aes(x = lifeExp, y =gdpPercap,size = pop_millions, color = continent))  + 
+  geom_point()
+
+```
+
+### Titles, subtitles, and captions.
+
+To add a `title`, `subtitle`, or `caption`, add within the `labs()` parenthesis, followed by the text you wish to add in quotation marks.
+
+```{webr-r}
+
+df |> 
+  ggplot(aes(x = lifeExp, y =gdpPercap,size = pop_millions, color = continent))  + 
+  geom_point() + 
+  labs(title = "GDP and Life\nExpectancy")
+
+```
+
+**Try it yourself:** add a subtitle with the year (2007) and a caption specifying the source of the data: https://www.gapminder.org/data/.
+
+```{webr-r}
+
+```
+
+::: callout-tip
+You can force ggplot to create a new line by adding `\n` to your text, for example `"GDP and Life\nExpectancy"`. This is useful if you have longer titles which would otherwise overrun the width of the plot, because ggplot does not resize the text automatically.
+:::
+
+### Labelling aesthetics
+
+To recap the last chapter, when you specify an aesthetic, such as `x`/`y`, `color` and so forth, ggplot2 automatically creates a scale, which is visualised by either an axis or a legend. By default, ggplot takes the axis and legend labels directly from the column names. `labs()` allows you to override these labels. Simply specify the aesthetic and the new label:
+
+```{webr-r}
+
+df |> 
+  ggplot(aes(x = lifeExp, y =gdpPercap, size = pop_millions, color = continent))  + 
+  geom_point() + 
+  labs(title = "GDP and Life\nExpectancy",
+       x = "Life Expectancy")
+
+```
+
+::: callout-tip
+If you are likely to have a lot of arguments within a function, like here, it can make it more readable to put each on a new line, after the comma.
+:::
+
+**Try it yourself:** Copy the plot above and change the y axis to "GDP per Capita", and the size legend to "Population in Millions". Put part of the size legend label on a new line.
+
+```{webr-r}
+
+```
+
+You can change the label for any aesthetic you specify in your chart. You can also remove a label completely by setting it to NULL, e.g.
+
+```{webr-r}
+
+df |> 
+  ggplot(aes(x = lifeExp, y =gdpPercap, size = pop_millions, color = continent))  + 
+  geom_point() + 
+  labs(title = "GDP and Life\nExpectancy",
+       x = NULL)
+
+```
+
+This can be a good idea in some cases where the label is obvious, for example when it displays the year.
+
+## Geom text
+
+There are a few ways you can add labels to your charts themselves. One is to add text as an aesthetic using geom_text(). Another is to add annotations directly using another layer: annotate().
+
+Starting with the first, using geom_text. Geom_text will add text to your chart based on x and y positions, plus an extra label argument specifying which column it should take labels from.
+
+```{webr-r}
+df |> 
+  ggplot(aes(x = lifeExp, y =gdpPercap, size = pop_millions, color = continent))  + 
+  geom_point() + 
+  labs(title = "GDP and Life\nExpectancy",
+       x = NULL)
+```
+
+In cases like this, plotting all the names will result in an unreadable chart. One way to plot a small number of chosen labels is to create a new filtered dataset, and add this as the `data =` argument to `geom_text()`.
+
+```{webr-r}
+
+df_text = df %>% filter(country %in% c('Ireland', 'Netherlands'))
+
+df |> 
+  ggplot(aes(x = lifeExp, y =gdpPercap, size = pop_millions, color = continent))  + 
+  geom_point() + 
+  geom_text(data = df_text, aes(label = country), size = 4) + 
+  labs(title = "GDP and Life\nExpectancy",
+       x = NULL)
+
+```
+
+### Working with text.
+
+Sometimes, we'll want to make changes to the labels using the data. We can do this using stringr and paste functions. Within the paste function, enter each column separated by a comma. You can add text within quotation marks, also separated by commas.
+
+The function `paste()` allows us to paste together text from several columns. For example, we could make a new column containing the country and GDP:
+
+```{webr-r}
+
+df_text = df |>
+  filter(country %in% c('Ireland', 'Iceland')) |> 
+  mutate(country_gdp = paste(country, " (", round(gdpPercap), ")", sep = ''))
+
+df |> 
+  ggplot(aes(x = lifeExp, y =gdpPercap, size = pop_millions, color = continent))  + 
+  geom_point() + 
+  geom_text(data = df_text, aes(label = country_gdp), size = 4, color = 'black') + 
+  labs(title = "GDP and Life\nExpectancy",
+       x = NULL)
+
+```
+
+Question: Can you fix the chart so the writing is not covered? (think back to the use of scales).
+
+```{webr-r}
+
+```
+
+::: callout-hint
+It can also be useful to make changes to the text in other ways. the `stringr` package has some functions which will allow you to make changes to the formatting of the text before you plot it.
+
+-   str_trunc will shorten the text to a fixed length, useful for overly long labels. Set the number of characters with the `width =` argument.
+-   `str_to_lower`, `str_to_upper`, and `str_to_title` will change the text to lower case, upper case, and title case (where the first letter of each word is upper case) respectively.
+-   `str_extract` and `str_remove` allow you to extract or remove parts of a text column based on regular expressions.
+:::
+
+**Try it yourself:** copy the code for the previous chart. Choose 5 countries to label, make them all upper case, and truncate the text to at most 10 letters. Paste together the country and continent names, with a comma in between.
+
+```{webr-r}
+
+
+
+```

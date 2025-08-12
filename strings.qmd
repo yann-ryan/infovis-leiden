@@ -1,0 +1,13 @@
+---
+title: "Working with strings"
+---
+
+str_to_upper
+
+str_to_lower
+
+str_split
+
+str_detect
+
+str_extract

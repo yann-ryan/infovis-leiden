@@ -1,0 +1,78 @@
+---
+title: "Subsetting rows"
+---
+
+```{webr-r}
+#| context: setup
+
+library(dplyr)
+library(readr)
+
+url <- "https://raw.githubusercontent.com/yann-ryan/infovis-course/master/titanic_df_full.csv"
+download.file(url, "titanic_df.csv")
+
+titanic_df =  read_csv('titanic_df.csv')
+
+```
+
+### Selecting (subsetting) data by rows
+
+This is another very common function we need to do on datasets, for example to remove incorrect data, or to work with only a portion of a dataset. If we want to subset rows by some variable in the data, we use another method, **filter**, which we'll learn later.
+
+Selecting rows of a dataset can be done with the verb `slice()`. Unlike columns, rows generally do not have names, so we mostly select them numerically, by position. Similarly to `select()`, `slice()` first expects the dataframe, and after that the specific instructions on what to keep or remove. For example, to select the first and fifth rows of the `titanic_df` dataframe:
+
+```{webr-r}
+
+slice(titanic_df, 1,5) 
+```
+
+Try it yourself: below, select the 20th and 50th rows of the dataframe.
+
+```{webr-r}
+
+```
+
+As with `select()`, we can choose a range using a colon (using glimpse here allows us to see the new size of the dataframe):
+
+```{webr-r}
+
+slice(titanic_df, 1:10) 
+```
+
+**Try it yourself:**
+
+Select the first 50 rows, and everything *except* the 100th row. Functions often work in similar ways, especially if they are from the same suite (the Tidyverse), so you should be able to figure out how this works from our work on `select()`.
+
+```{webr-r}
+
+```
+
+### slice_min and slice_max
+
+There are also some helpful variations of `slice()`. The two most common are `slice_min()` and `slice_max()`. These select a chosen number of rows based on some numerical variable (a column) in your data.
+
+In this function, we use what are called 'arguments'. These are further instructions, or parameters, which we pass to a function in order to specify what it should do. For `slice_max()`, we have to tell it which column to use to get the maximum values with the argument `order_by`, and how many rows to give with the argument `n`.
+
+For example, to select the ten youngest passengers in the dataset, we could use the following:
+
+```{webr-r}
+slice_min(titanic_df, order_by = age, n = 10)
+```
+
+::: callout-tip
+Another useful `slice_` function is `slice_sample()`, which picks a random sample of your data.
+:::
+
+**Try it yourself:** Use a slice\_ function to find the five **oldest** passengers (look at how we used `select()` on the previous page to figure out how to do this).
+
+```{webr-r}
+
+```
+
+`slice_max()` works in the same way, but in reverse:
+
+```{webr-r}
+
+slice_max(titanic_df, order_by = age, n = 10)
+
+```

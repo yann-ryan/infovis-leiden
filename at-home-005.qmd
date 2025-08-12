@@ -1,0 +1,43 @@
+---
+title: "Home Exercises"
+---
+
+Take the movie dialogue datasets from last week and do the following:
+
+1.  Using the metadata dataset, chart the average gross per year using an appropriate geom.
+
+    a.  Using scales (i.e. don't filter the dataset first), limit the chart x axis to the years 1990 - 2000
+
+    b.  Set the axis labels on this chart to display every two years (1990, 1992, etc.)
+
+    c.  Set the color of the geom of the chart to something other than the default.
+
+2.  Create a bar graph of the gross takings for each movie in the Star Wars franchise.
+
+    a.  Reorder the chart going from the highest to the lowest takings
+
+    b.  Flip the chart so that the movie names are on the vertical axis.
+
+    c.  (optional to practice previous week again) Give the bars a black outline, set a custom fill colour, and decrease the transparency slightly.
+
+3.  Import the Nobel Prize winners 'Laureates' dataset.
+
+    a.  Create a bar chart charting the number of winners from each continent per year.
+
+    b.  Change the palette for the fill of the bars to 'Dark2'.
+
+    c.  Set the major breaks on the y axis to every 20 and the minor breaks to every 5.
+
+4.  Import the Titanic dataset and do the following:
+
+    a.  calculate the average fare paid for each embarking location, and draw it as a bar chart.
+
+    b.  Change the default scale to a gradient starting with the colour `aquamarine` and ending with the colour `deepskyblue`.
+
+    c.  Reverse the legend bar and set the height to 10 cm.
+
+5.  (slightly more challenging). Last week we looked at gender in the IMDB dataset. Can you create a chart which investigates which genres became more or less equal over time? Limit your investigations to a sensible number of the top genres to help with visualisation, or group the genres together into 6 or 7 categories. Once you're done, change 5 scale elements.
+
+::: callout-tip
+The genres in the IMDB genre dataset list up to three genres for each movie, separated by a comma. This isn't very helpful for data analysis or visualisation - let's assume it would be better to treat each movie as having separate observations for each genre listed. One way to do this is by using some new functions: `separate()` and `pivot_longer()`. You may also need to clean the results slightly using `str_trim()`.
+:::

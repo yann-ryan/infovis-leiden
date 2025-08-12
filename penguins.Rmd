@@ -1,0 +1,43 @@
+---
+title: "Untitled"
+author: "Yann Ryan"
+date: "2024-11-05"
+output: html_document
+---
+
+```{r}
+library(tidyverse) 
+library(palmerpenguins)  
+
+penguins = palmerpenguins::penguins  
+```
+
+
+```{r fig.alt="A Scatterplot plotting the bill length and flipper length of the Penguins dataset. This shows that there is a correlation between the two. The data comes from the Penguins R package."}
+
+ggplot(data = penguins, aes(x = bill_length_mm, y = flipper_length_mm, color = species)) +    
+  geom_point(size = 3) + 
+  theme_bw() 
+
+
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.

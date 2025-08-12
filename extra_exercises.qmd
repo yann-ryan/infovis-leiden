@@ -1,0 +1,7 @@
+---
+title: "Links to extra practice exercises"
+---
+
+Exercises 1: https://yann-ryan.github.io/infovis-course/tidyverse_exercises.html
+
+Exercises 2: https://yann-ryan.github.io/infovis-course/ggplot_exercises.html
