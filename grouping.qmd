@@ -1,5 +1,7 @@
 ---
 title: "Grouping"
+webr:
+  packages: ['dplyr', 'readr']
 ---
 
 ```{webr-r}

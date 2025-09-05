@@ -1,5 +1,7 @@
 ---
 title: "Pattern matching with str_detect"
+webr:
+  packages: ['dplyr', 'readr', 'stringr']
 ---
 
 ::: callout-warning

@@ -1,5 +1,7 @@
 ---
 title: "Changing columns with mutate"
+webr:
+  packages: ['dplyr', 'readr']
 ---
 
 ```{webr-r}

@@ -1,5 +1,7 @@
 ---
 title: "More chart types"
+webr:
+  packages: ['dplyr', 'readr', 'ggplot2']
 ---
 
 ```{webr-r}

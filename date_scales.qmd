@@ -1,8 +1,8 @@
 ---
 title: "Date scales"
+webr:
+  packages: ['dplyr', 'readr', 'ggplot2', 'tidyr']
 ---
-
-
 
 ## Dates
 
@@ -66,4 +66,3 @@ df |> ggplot() +
 ```
 
 The full list of labels is available [here](https://ggplot2-book.org/scales-position#sec-date-labels).
-

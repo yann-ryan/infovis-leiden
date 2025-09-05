@@ -1,5 +1,7 @@
 ---
 title: "Filtering data"
+webr:
+  packages: ['dplyr', 'readr']
 ---
 
 ```{webr-r}

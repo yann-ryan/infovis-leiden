@@ -1,5 +1,7 @@
 ---
 title: "The pipe operator"
+webr:
+  packages: ['dplyr', 'readr']
 ---
 
 ```{webr-r}

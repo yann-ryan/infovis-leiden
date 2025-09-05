@@ -1,5 +1,7 @@
 ---
 title: "Summarising"
+webr:
+  packages: ['dplyr', 'readr']
 ---
 
 ```{webr-r}

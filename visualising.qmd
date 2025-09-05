@@ -1,5 +1,7 @@
 ---
 title: "Wrangling and visualising map data"
+webr:
+  packages: ['dplyr', 'readr', 'ggplot2', 'tidyr', 'rnaturalearth', 'sf']
 ---
 
 ```{webr-r}

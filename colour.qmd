@@ -1,5 +1,7 @@
 ---
 title: "Colour and size scales"
+webr:
+  packages: ['dplyr', 'readr', 'ggplot2', 'tidyr']
 ---
 
 ```{webr-r}

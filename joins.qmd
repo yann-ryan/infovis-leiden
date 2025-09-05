@@ -1,5 +1,7 @@
 ---
 title: "Joins"
+webr:
+  packages: ['dplyr', 'readr']
 ---
 
 ```{webr-r}

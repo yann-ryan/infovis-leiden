@@ -1,5 +1,7 @@
 ---
 title: "Subsetting rows"
+webr:
+  packages: ['dplyr', 'readr']
 ---
 
 ```{webr-r}

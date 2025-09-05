@@ -1,5 +1,7 @@
 ---
 title: "Position scales"
+webr:
+  packages: ['dplyr', 'readr', 'ggplot2', 'tidyr']
 ---
 
 ## Position scales

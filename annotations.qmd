@@ -1,5 +1,7 @@
 ---
 title: "Annotations and Highlights"
+webr:
+  packages: ['dplyr', 'readr', 'ggplot2', 'tidyr']
 ---
 
 ```{webr-r}
@@ -94,7 +96,7 @@ df |>
 
 ```
 
-**Try it yourself:** Add a label, line, and arrow pointing to the United States. Run the first cell to get the relevant values as a starting point. 
+**Try it yourself:** Add a label, line, and arrow pointing to the United States. Run the first cell to get the relevant values as a starting point.
 
 ```{webr-r}
 

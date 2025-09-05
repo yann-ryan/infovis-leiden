@@ -1,5 +1,7 @@
 ---
 title: "Using ggplot2"
+webr:
+  packages: ['dplyr', 'readr', 'ggplot2']
 ---
 
 So, that's the basic theory behind how data visualisations work - we simply map aspects of our data to chosen aesthetics, which must at least include positions - generally at least x and y dimensions.

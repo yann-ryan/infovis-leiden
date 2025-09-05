@@ -1,10 +1,10 @@
 # Course Overview {.unnumbered}
 
-Welcome! You're probably here because you are taking the course *Information Visualization and the Humanities,* taking place in Semester 1, 2024-2025, at Leiden University. It's part of the minor in Digital Humanities. The course instructor is Dr. Yann Ryan.
+Welcome! You're probably here because you are taking the course *Information Visualization and the Humanities,* taking place in Semester 1, 2025-2026, at Leiden University. It's part of the minor in Digital Humanities. The course instructor is Dr. Yann Ryan.
 
-This e-book will serve as the course website. The menu on the left side lists the chapters, one for each week of the course. More will appear as the course progresses. The menu on the right contains the table of contents for this particular chapter, so you can skip to different sections.
+This e-book will serve as the course website. The menu on the left side lists the chapters, one for each week of the course. More will appear as the course progresses. The menu on the right contains the table of contents for this particular chapter, so you can skip to different sections. There's a search function just below the title on the left, which students have found very useful when they want to find some code we've discussed and use it later on in an assignment.
 
-You'll also need to familiarise yourself with the course [Brightspace area](https://brightspace.universiteitleiden.nl/d2l/home/322838), where I'll put further information and you'll submit assignments.
+You'll also need to familiarise yourself with the course [Brightspace area](https://brightspace.universiteitleiden.nl/d2l/home/402636), where I'll put further information and you'll submit assignments.
 
 ## What do we mean by 'information visualisation'?
 
@@ -114,7 +114,7 @@ Your final and most important piece of work will be a *Markdown report:* a publi
 
 ### Information Visualisation...
 
-Most importantly, you'll learn the basic principles of information visualization, and put them into practice using a platform called R (more on that below). R is widely used by, for example, data journalists at publications like *The Economist* and the *Financial Times.*
+Most importantly, you'll learn the basic principles of information visualization, and put them into practice using a platform called R (more on that below). R is widely used by, for example, data journalists at the BBC, and in publications like *The Economist* and the *Financial Times.*
 
 Using a language like R or python instead of Excel or a simple application for visualising data has many advantages. For one, it's much easier to work with large datasets. You want to analyse huge datasets of movies like [these ones](https://datasets.imdbws.com/), with 11 millions rows of data? It'll take a split second in R. A second advantage is that everything you make can be reproducible, meaning your visualisations and analyses can be scientifically checked and verified.
 
@@ -132,45 +132,47 @@ Just as importantly, you'll learn how to critique data visualisations and design
 
 This will be a 'doing' course: you'll spend most of your self-study time completing at-home exercises and assignments. There will be two compulsory readings to get a background on some of the wider themes of the course, which we will discuss in class. The two pieces we'll read are:
 
--   D'Ignazio, C. and Klein, L. (2020) '2. Collect, Analyze, Imagine, Teach', in *Data Feminism*. Available at: https://data-feminism.mitpress.mit.edu/pub/ei7cogfn (read before the class of the 11th November)
+-   D’Ignazio, C., & Klein, L. (2020). 2. Collect, Analyze, Imagine, Teach. In Data Feminism. Retrieved from https://data-feminism.mitpress.mit.edu/pub/ei7cogfn
 
--   Drucker, J., 2011. Humanities Approaches to Graphical Display. *Digital Humanities Quarterly*, 005(1). Available at https://www.digitalhumanities.org/dhq/vol/5/1/000091/000091.html (read before the class of 9th December)
+-   D’Ignazio, C., & Klein, L. (2020). 3. On Rational, Scientific, Objective Viewpoints from Mythical, Imaginary, Impossible Standpoints. In Data Feminism. Retrieved from https://data-feminism.mitpress.mit.edu/pub/5evfe9yd
 
 There will also be some weekly recommended reading if you would like to dig deeper into topics on your own time. You can find it near the end of this page.
 
 ## Schedule
 
-Below is the course schedule. In the first couple of weeks, you'll learn how to do the very basics using the coding language R. This will be followed by three weeks focusing on data analysis, then two blocks of three: first, data visualisation, and second, digital mapping. We'll wrap things up with a week on creating polished, publishable data vis.
+Below is the course schedule. In the first couple of weeks, you'll learn how to do the very basics using the coding language R. This will be followed by three weeks focusing on data analysis, then two blocks of three: first, data visualisation, and second, digital mapping. We'll wrap things up with a week on creating polished, publishable data visualisations, and how to make your charts and maps interactive.
 
-+----------+------------+---------------------------------+-------------------------------------------------------------------------------------------------+-----------------------------------------------+
-| **Week** | **Date**   | **Topic**                       | **Topic**                                                                                       | **Assignment**                                |
-+----------+------------+---------------------------------+-------------------------------------------------------------------------------------------------+-----------------------------------------------+
-| 1        | 2024-09-09 | Introductions                   |                                                                                                 |                                               |
-+----------+------------+---------------------------------+-------------------------------------------------------------------------------------------------+-----------------------------------------------+
-| 2        | 2024-09-16 | Design and datavis fundamentals |                                                                                                 |                                               |
-+----------+------------+---------------------------------+-------------------------------------------------------------------------------------------------+-----------------------------------------------+
-| 3        | 2024-09-23 | Introduction to R               | How to use R and Posit cloud                                                                    | Assignment 1 (datavis critique) due           |
-+----------+------------+---------------------------------+-------------------------------------------------------------------------------------------------+-----------------------------------------------+
-| 4        | 2024-09-30 | Data analysis 1                 | Working with dataframes. Selecting and subsetting data.                                         |                                               |
-+----------+------------+---------------------------------+-------------------------------------------------------------------------------------------------+-----------------------------------------------+
-| 5        | 2024-10-07 | Data analysis 2                 | Filtering and changing data                                                                     |                                               |
-+----------+------------+---------------------------------+-------------------------------------------------------------------------------------------------+-----------------------------------------------+
-| 6        | 2024-10-14 | Data analysis 3                 | Summarising and grouping data                                                                   |                                               |
-+----------+------------+---------------------------------+-------------------------------------------------------------------------------------------------+-----------------------------------------------+
-| 7        | 2024-10-21 | Data visualisation 1            | Getting started with R and ggplot2.                                                             |                                               |
-+----------+------------+---------------------------------+-------------------------------------------------------------------------------------------------+-----------------------------------------------+
-| 8        | 2024-11-04 | Data visualisation 2            | Data visualisation accessibility considerations                                                 | Assignment 2 (create a datavis) due           |
-+----------+------------+---------------------------------+-------------------------------------------------------------------------------------------------+-----------------------------------------------+
-| 9        | 2024-11-11 | Data visualisation 3            | Visualisation, datafication and ethics; course recap so far and catch up. Intro to maps if time | Read assigned paper before class.             |
-+----------+------------+---------------------------------+-------------------------------------------------------------------------------------------------+-----------------------------------------------+
-| 10       | 2024-11-18 | Digital mapping 1               | Working with R as a GIS. Creating base maps.                                                    |                                               |
-+----------+------------+---------------------------------+-------------------------------------------------------------------------------------------------+-----------------------------------------------+
-| 11       | 2024-11-25 | Digital mapping 2               | Importing shapefiles and mapping external data                                                  |                                               |
-+----------+------------+---------------------------------+-------------------------------------------------------------------------------------------------+-----------------------------------------------+
-| 12       | 2024-12-02 | Digital mapping 3               | Using QGIS                                                                                      | Assignment 3 (create a map visualisation) due |
-+----------+------------+---------------------------------+-------------------------------------------------------------------------------------------------+-----------------------------------------------+
-| 13       | 2024-12-09 | Finishing touches               | Designing publishable visualisations and working with R Markdown.                               | Read assigned paper before class.             |
-+----------+------------+---------------------------------+-------------------------------------------------------------------------------------------------+-----------------------------------------------+
++----------+------------+----------------------+---------------------------------------------------------+----------------------------------------------------------------+
+| **Week** | **Date**   | **Topic**            | **Topic**                                               | **Assignment**                                                 |
++----------+------------+----------------------+---------------------------------------------------------+----------------------------------------------------------------+
+| 1        | 2025-09-08 | Introductions        | Tour of the course book                                 |                                                                |
++----------+------------+----------------------+---------------------------------------------------------+----------------------------------------------------------------+
+| 2        | 2025-09-15 | Introduction to R    | How to use R and Posit cloud                            |                                                                |
++----------+------------+----------------------+---------------------------------------------------------+----------------------------------------------------------------+
+| 3        | 2025-09-22 | Data analysis 1      | Working with dataframes. Selecting and subsetting data. | Discussion of reading 1.                                       |
++----------+------------+----------------------+---------------------------------------------------------+----------------------------------------------------------------+
+| 4        | 2025-09-29 | Data analysis 2      | Filtering and changing data                             |                                                                |
++----------+------------+----------------------+---------------------------------------------------------+----------------------------------------------------------------+
+| 5        | 2025-10-06 | Data analysis 3      | Summarising and grouping data                           |                                                                |
++----------+------------+----------------------+---------------------------------------------------------+----------------------------------------------------------------+
+| 6        | 2025-10-13 | Data visualisation 1 | Getting started with R and ggplot2.                     |                                                                |
++----------+------------+----------------------+---------------------------------------------------------+----------------------------------------------------------------+
+| 7        | 2025-10-20 | Data visualisation 2 | Scales and legends                                      |                                                                |
++----------+------------+----------------------+---------------------------------------------------------+----------------------------------------------------------------+
+| 8        | 2025-11-03 | Data visualisation 3 | Annotations and themes                                  |                                                                |
++----------+------------+----------------------+---------------------------------------------------------+----------------------------------------------------------------+
+| 9        | 2025-11-10 | Data visualisation 4 | Ethics, reproducibility, and accessibility              | Assignment 1 (create a datavis) due. Discussion of reading 2.  |
++----------+------------+----------------------+---------------------------------------------------------+----------------------------------------------------------------+
+| 10       | 2025-11-17 | Digital mapping 1    | Working with R as a GIS. Creating base maps.            |                                                                |
++----------+------------+----------------------+---------------------------------------------------------+----------------------------------------------------------------+
+| 11       | 2025-11-24 | Digital mapping 2    | Importing shapefiles and mapping external data          |                                                                |
++----------+------------+----------------------+---------------------------------------------------------+----------------------------------------------------------------+
+| 12       | 2025-12-01 | Digital mapping 3    | The tmap package                                        |                                                                |
++----------+------------+----------------------+---------------------------------------------------------+----------------------------------------------------------------+
+| 13       | 2025-12-08 | Publication          | R Markdown and Interactivity                            | Assignment 2 (create a map visualisation) due.                 |
++----------+------------+----------------------+---------------------------------------------------------+----------------------------------------------------------------+
+|          | 2026-14-01 |                      |                                                         | Final project due                                              |
++----------+------------+----------------------+---------------------------------------------------------+----------------------------------------------------------------+
 
 : Course Schedule {tbl-colwidths="\[10,25,65\]" .striped}
 
@@ -206,9 +208,7 @@ Total course load 5 EC x 28 hours = 140 hours:
 
 -   Course readings and coding practice (34 hours)
 
--   Assignment(s): (35 hours)
-
--   Peer Feedback: (5 hours)
+-   Assignment(s): (40 hours)
 
 -   Final project/paper: (40 hours)
 
@@ -216,7 +216,15 @@ Total course load 5 EC x 28 hours = 140 hours:
 
 -   Assignments: 40 percent
 
+    -   Assignment 1 (data visualisation): 20%
+
+    -   Assignment 2 (digital map): 20%
+
 -   Class Participation & Peer Feedback: 20 percent
+
+    -   General class participation: 10%
+
+    -   Weekly home exercises: 10%
 
 -   Final project: 40 percent
 
@@ -272,7 +280,7 @@ This course will be very practical and your self-study time will be mostly spent
 
 **Attendance** is required. If you know you will need to miss a class, please indicate this at least two weeks prior. If you know beforehand you will have to miss three or more classes, you cannot take this course. If you miss a class due to sickness or other unforeseen circumstances, please notify me without delay.
 
-Class **participation** is part of your final grade. Participation is evaluated both on attendance and on the quality of feedback given to the work of other students. Aside from participation being part of your grade, I really **appreciate your** **input**. If you think you have something to ask, please speak up: there *are* no stupid questions, but there are a lot of lost opportunities for information exchange and learning. This field is full of exciting new ideas and developments and it is impossible to be aware of them all. So, if you can share information on an idea, article, project, or tool that is of you value to you, please do!
+Class **participation** is part of your final grade. Aside from participation being part of your grade, I really **appreciate your** **input**. If you think you have something to ask, please speak up: there *are* no stupid questions, but there are a lot of lost opportunities for information exchange and learning. This field is full of exciting new ideas and developments and it is impossible to be aware of them all. So, if you can share information on an idea, article, project, or tool that is of you value to you, please do!
 
 If you need to speak to me, I'm happy to arrange a meeting to discuss any issues or problems you encounter on the course. Ideally, send a request a week in advance, via email.
 
@@ -280,12 +288,8 @@ If you need to speak to me, I'm happy to arrange a meeting to discuss any issues
 
 ### Use of Chatbots for assignments
 
-GPT-based chatbots such as ChatGPT or Google Bard are not banned outright but should be used with extreme caution. Due to the nature of this course, chatbot-generated text is unlikely to be of much use as you will be responding to your own visual work and that of your peers.
+Generative language models or chatbots are clearly very useful tools and could probably provide code for most of this course with ease. You will likely use them throughout your studies and career. However, they are of little use if you don't understand the absolute fundamentals of programming and computational thinking, which this course aims to teach.
 
-You can make use of Chatbots for help with coding, however you must make it very clear that you have done so with the following steps:
-
--   Make it clear in your code, using comments, which parts were generated using a chatbot.
-
--   Include the entire prompt used as an appendix to your assignment.
+Therefore, the use of chatbots for assignments on this course is specifically forbidden. It is much better to attempt and fail rather than submit something created by a chatbot which you don't understand. Throughout the course, I will ask you to explain your submitted code line by line. If it looks likely to have been created by a chatbot, the chances of being asked will rise significantly!
 
 ## 

@@ -1,5 +1,7 @@
 ---
 title: "Working with Shapefiles"
+webr:
+  packages: ['rnaturalearth']
 ---
 
 ## What is a shapefile?

@@ -1,5 +1,7 @@
 ---
 title: "Chart Themes"
+webr:
+  packages: ['dplyr', 'readr', 'ggplot2', 'tidyr']
 ---
 
 ```{webr-r}

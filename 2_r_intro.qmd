@@ -23,14 +23,6 @@ By the end of this section of the book, you should:
     -   Do the same but with vectors
 -   Know what data types are
 
-### What if I get stuck?
-
-It's OK! Take your orange post-it, and place it on the back of your computer. I'll come around to help as soon as possible.
-
-If you've finished everything, put up your green post-it. I'll give you some advanced exercises to complete.
-
-Remove this and explain how the code in the book works - or keep it an option if the interactive version doesn't work.
-
 ## Working with this book.
 
 Each week we'll demonstrate and practise some basics by running code directly in your browser, in this book. You can see the content and structure of the book in the sidebar on the left-hand side. Each week has a 'part' (this week is 'Introduction to R', and each part has a number of chapters, which you can identify because they are numbered. You can switch to a new part of the book by clicking in the sidebar, or you can use the link at the bottom of each page to go to the next chapter.
@@ -53,11 +45,11 @@ If you see the 'Installing package...' or 'Loading package...' message, this mea
 
 The code cell itself has a few features:
 
-| Feature            | Image                                                   | Description                                                                                                                                                                                                                           |
-|--------------------|---------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Run Code button    | ![](images/Screenshot%202024-08-21%20at%2015.04.17.png) | Pressing this will run, or execute, the code in the cell.                                                                                                                                                                             |
+| Feature | Image | Description |
+|------------------------|------------------------|------------------------|
+| Run Code button | ![](images/Screenshot%202024-08-21%20at%2015.04.17.png) | Pressing this will run, or execute, the code in the cell. |
 | The code input box | ![](images/Screenshot%202024-08-26%20at%2017.07.20.png) | The main part of the code cell is where you will find (and type) code. The number 1 here is a line identifier and is not part of the code. Important to note is that you are free to edit the code cell to change or delete the code. |
-| Code option button | ![](images/Screenshot%202024-08-21%20at%2015.06.03.png) | These two icons on the right-hand side will reset the code (if you changed it), or allow you to copy the contents to the clipboard.                                                                                                   |
+| Code option button | ![](images/Screenshot%202024-08-21%20at%2015.06.03.png) | These two icons on the right-hand side will reset the code (if you changed it), or allow you to copy the contents to the clipboard. |
 
 Lastly, a part you can't see here: the output. If there is any output from the code cell (such as the result of a calculation), it will be displayed directly below the code cell. If the code produces an error or a warning, these will also be displayed here. This output will look different depending on what the code in the cell is set to produce - it could be a number, a dataframe, or a full visualisation.
 
