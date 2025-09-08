@@ -51,6 +51,33 @@ If you try to write separate mathematical instructions (or any separate code) on
 
 ```
 
+## Errors, and Editing code
+
+### Errors
+
+The code above is a good way to demonstrate two more features of coding in R in the manner. First, instead of printing a result, the code above printed some text in red directly below the code cell. This is an indication that the code has not run and has instead given an **error**. Red text can also mean **warnings** or **messages**.
+
+-   Errors are the most severe; they indicate that there is no way for code to run.
+
+-   Warnings fall somewhat in between errors and message, and typically indicate that something has gone wrong but the code has been able to at least partially recover.
+
+-   Messages are the mildest; they are way of informing users that some action has been performed on their behalf.
+
+Errors will be preceded by the text `Error:`, Warnings by the text `Warning:`, and messages by nothing.
+
+### Editing
+
+To fix this error, we'll need to edit the code in the cell. To do this, simply treat it as text in a regular text-editing application such as notepad. Place the cursor inside to type, you can put text on a new line using the return key, and you can copy, cut, and paste in and out of the cell.
+
+**Try it yourself:** Copy and paste the code in the previous cell to the empty one below. Insert the cursor between the two operations and make a new line. Change the second multiplication sign to divide.
+
+```{webr-r}
+
+
+
+
+```
+
 ::: {.callout-note collapse="true"}
 ## More on the order of operations, if you're interested
 
@@ -81,7 +108,7 @@ Run the code above and see how it differs!
 
 A variable is simply a value stored in a programming language's memory, which can be changed. A variable needs to have a name and a value. These variables are often assigned or changed by a user.
 
-To assign a variable in R, use the command `->`. You can also use `=`, but not in all situations, so it's better to use `<-`.
+To assign a variable in R, use the command `<-`. You can also use `=`, but not in all situations, so it's better to use `<-`.
 
 To the left of this command, enter the variable name. On the right hand side, enter the value.
 
