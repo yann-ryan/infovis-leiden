@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>1&nbsp; Introduction to R – Information Visualization and the Humanities: Course Book</title>
+<title>6&nbsp; Data Analysis 1 – Information Visualization and the Humanities: Course Book</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,7 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -30,8 +50,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./basics.html" rel="next">
-<link href="./index.html" rel="prev">
+<link href="./select.html" rel="next">
+<link href="./at-home-000.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -337,7 +357,7 @@ body.reveal.quarto-dark div.qwebr-console-area {
 // Document level settings ----
 
 // Determine if we need to install R packages
-globalThis.qwebrInstallRPackagesList = [''];
+globalThis.qwebrInstallRPackagesList = ['dplyr', 'readr', 'DT'];
 
 // Specify possible locations to search for the repository
 globalThis.qwebrPackageRepoURLS = ['https://repo.r-wasm.org/'];
@@ -359,7 +379,7 @@ globalThis.qwebrCustomizedWebROptions = {
 };
 
 // Store cell data
-globalThis.qwebrCellDetails = [{"code":"1 + 1","id":1,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-1","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}}];
+globalThis.qwebrCellDetails = [{"code":"library(dplyr)\nlibrary(readr)\nlibrary(DT)\n\nurl <- \"https://raw.githubusercontent.com/yann-ryan/infovis-course/master/titanic_df_full.csv\"\ndownload.file(url, \"titanic_df.csv\")\n\ntitanic_df =  read_csv('titanic_df.csv')","id":1,"options":{"autorun":"true","classes":"","comment":"","context":"setup","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-1","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"titanic_df","id":2,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-2","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"","id":3,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-3","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"","id":4,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-4","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}}];
 
 </script>
 <script type="module">
@@ -1569,7 +1589,7 @@ globalThis.qwebrExecuteCode = async function (
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./2_r_intro.html">Introduction to R</a></li><li class="breadcrumb-item"><a href="./2_r_intro.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to R</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./3_data_analysis_1.html">Data Analysis 1</a></li><li class="breadcrumb-item"><a href="./3_data_analysis_1.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data Analysis 1</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -1614,7 +1634,7 @@ globalThis.qwebrExecuteCode = async function (
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2_r_intro.html" class="sidebar-item-text sidebar-link active">
+  <a href="./2_r_intro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to R</span></span></a>
   </div>
 </li>
@@ -1655,7 +1675,7 @@ globalThis.qwebrExecuteCode = async function (
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./3_data_analysis_1.html" class="sidebar-item-text sidebar-link">
+  <a href="./3_data_analysis_1.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data Analysis 1</span></span></a>
   </div>
 </li>
@@ -1701,11 +1721,18 @@ globalThis.qwebrExecuteCode = async function (
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#class-objectives" id="toc-class-objectives" class="nav-link active" data-scroll-target="#class-objectives">Class Objectives</a>
+  <li><a href="#learning-objectives-for-this-section" id="toc-learning-objectives-for-this-section" class="nav-link active" data-scroll-target="#learning-objectives-for-this-section">Learning objectives for this section:</a></li>
+  <li><a href="#dataframes" id="toc-dataframes" class="nav-link" data-scroll-target="#dataframes">Dataframes</a>
   <ul class="collapse">
-  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning Objectives</a></li>
+  <li><a href="#the-titanic-dataset" id="toc-the-titanic-dataset" class="nav-link" data-scroll-target="#the-titanic-dataset">The Titanic Dataset</a></li>
   </ul></li>
-  <li><a href="#working-with-this-book." id="toc-working-with-this-book." class="nav-link" data-scroll-target="#working-with-this-book.">Working with this book.</a></li>
+  <li><a href="#tidyverse" id="toc-tidyverse" class="nav-link" data-scroll-target="#tidyverse">Tidyverse</a></li>
+  <li><a href="#functions" id="toc-functions" class="nav-link" data-scroll-target="#functions">Functions</a>
+  <ul class="collapse">
+  <li><a href="#function-names" id="toc-function-names" class="nav-link" data-scroll-target="#function-names">Function names</a></li>
+  <li><a href="#function-arguments" id="toc-function-arguments" class="nav-link" data-scroll-target="#function-arguments">Function arguments</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises:</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -1996,9 +2023,9 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 }
 </script>
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./2_r_intro.html">Introduction to R</a></li><li class="breadcrumb-item"><a href="./2_r_intro.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to R</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./3_data_analysis_1.html">Data Analysis 1</a></li><li class="breadcrumb-item"><a href="./3_data_analysis_1.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data Analysis 1</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to R</span></h1>
+<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data Analysis 1</span></h1>
 </div>
 
 
@@ -2015,31 +2042,117 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </header>
 
 
-<section id="class-objectives" class="level2">
-<h2 class="anchored" data-anchor-id="class-objectives">Class Objectives</h2>
-<p>This week, we’re going to get used to the environment we’ll use for creating the visualisations for this course. By the end of today, you should be comfortable with the interface, and able to use R, load packages, and do some basic manipulations of dataframes.</p>
-<section id="learning-objectives" class="level3">
-<h3 class="anchored" data-anchor-id="learning-objectives">Learning Objectives</h3>
-<p>By the end of this section of the book, you should:</p>
+<section id="learning-objectives-for-this-section" class="level3">
+<h3 class="anchored" data-anchor-id="learning-objectives-for-this-section">Learning objectives for this section:</h3>
 <ul>
-<li>Know what a variable is</li>
-<li>Know what data types are</li>
-<li>Know what a dataframe and a vector is</li>
-<li>Practise making vectors</li>
-<li>Know how to do basic arithmetic with R</li>
-<li>Know how to check conditions:
+<li>Know what a dataframe is and how one looks in this book</li>
+<li>Know how to run a function on a dataframe</li>
+<li>How to explore and adjust rows and columns in a dataframe:
 <ul>
-<li>Equals (numbers and text), greater than, less than, greater than or equal to</li>
-<li>Do the same but with vectors</li>
+<li>select</li>
+<li>slice</li>
+<li>rename</li>
 </ul></li>
-<li>Know what data types are</li>
+<li>Arrange columns
+<ul>
+<li>ascending and descending</li>
+<li>multiple columns</li>
+</ul></li>
+<li>Write better code using the pipe</li>
 </ul>
 </section>
+<section id="dataframes" class="level2">
+<h2 class="anchored" data-anchor-id="dataframes">Dataframes</h2>
+<p>One of the data types that we can work with in R is a <strong>dataframe</strong>. This in a object with rows and columns, like a spreadsheet in Microsoft Excel or Google Sheets.</p>
+<p>Almost all structured data comes in this form, and for the rest of the course the datasets we’ll work with will all be dataframes. Later, you’ll learn how to import dataframes from your computer or online sources. For now, we’ll work with a dataframe which has been loaded into the memory of the programming language in this book.</p>
+<p>Remember in the previous week we could create variables, such as <code>x = 5</code> or <code>y = 10</code>? We could also call these objects (in our code’s memory x is an <em>object</em> with the value 5). A dataframe can also be stored with a name and manipulated as an object.</p>
+<p>Usually, you need to load dataframes from external sources, such as a spreadsheet file, or from a file online, or by web scraping, and so forth. In this book environment, there is already a dataframe with the name <code>titanic_df</code>. The object <code>titanic_df</code> is a spreadsheet-like object containing one row for each passenger on the Titanic. The columns in this object contain information about the passengers, such as their name, age, passenger class and so forth.</p>
+<div id="qwebr-insertion-location-1"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>The simplest way to look at a dataframe or any other object is to enter it in a code cell and run the code, just as we did with simper variables like numbers or vectors. Try it by running the code below:</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Refreshing the page will reset everything and get rid of the output, if you want to start again.</p>
+</div>
+</div>
+<div id="qwebr-insertion-location-2"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>It’s worth familiarising yourself with how a dataframe looks when you print it in the book like this, because it will help to understand the results of your actions. When you work with Posit cloud and RStudio, the interface is specially set up for viewing dataframes, where they will be easier to read, like in spreadsheet software such as Excel.</p>
+<ul>
+<li><p>The first line is <code># A tibble: 1,309 x 11</code> describes the dataset. A ‘tibble’ is just another name for a dataframe. This dataframe has 1,309 rows and 11 columns</p></li>
+<li><p>Next is <code>survived pclass name     sex      age sibsp parch ticket  fare cabin embarked</code>. These are the names of each of the columns in the dataset - which are also known as variables.</p></li>
+<li><p>The next row <code>&lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;    &lt;chr&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;</code> contains the ‘types’ of each of the columns. We’ll talk more about that later.</p></li>
+<li><p>The next 10 rows are a preview of the first 10 rows of the dataframe. You can see that the text in each column is often truncated so that most columns can be displayed at once.</p></li>
+<li><p>The final line <code># ℹ 1,299 more rows</code> is pretty self-explanatory: there are a further 1,299 rows not shown.</p></li>
+</ul>
+<section id="the-titanic-dataset" class="level3">
+<h3 class="anchored" data-anchor-id="the-titanic-dataset">The Titanic Dataset</h3>
+<p>It’s good to understand a bit more about the dataset which we’ll use quite a lot for examples, exercises and visualisations over the next few weeks. You can find out more about the dataset here: https://www.openml.org/search?type=data&amp;sort=runs&amp;id=40945&amp;status=active. It contains information on 1,309 passengers who sailed on the titanic, such as their age, sex, and the fare paid. The column names are the following:</p>
+<ul>
+<li><p>survived: either 1 or 0, indicating whether the passenger survived or not.</p></li>
+<li><p>pclass: either 1, 2, or 3, listing the passenger class</p></li>
+<li><p>name: the full name of the passenger</p></li>
+<li><p>sex: the sex of the passenger, either male or female</p></li>
+<li><p>age: the age of the passenger, sometimes given with decimals</p></li>
+<li><p>sibsp: the number of siblings or spouses on the same ticket</p></li>
+<li><p>parch: the number of parents or children on the same ticket</p></li>
+<li><p>ticket: the unique ticket number (like an order number)</p></li>
+<li><p>fare: the fare paid (for the entire ticket)</p></li>
+<li><p>cabin: the cabin number</p></li>
+<li><p>embarked: where the passenger got on the ship, either Southampton (S), Cherbourg (C), or Queenstown (Q). Queenstown is in Ireland and is now known as Cobh.</p></li>
+</ul>
+<p>Each individual is a separate row in the dataset, but the ticket numbers are often repeated. This is because one ticket could cover multiple people, for example a family. The fare given is for the ticket as a whole.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This Titanic dataset is famously used for many data science lessons and challenges. We will use it extensively the next few weeks because it has some attributes which make it very useful for teaching data analysis. You should also think critically about it: as with all datasets, the information and insights derived from it should be taken with a grain of salt. For an interesting analysis of the problems around using a dataset like this for data science/machine learning, see <span class="citation" data-cites="machine2018"><span>“Machine Learning: The DL on ML”</span> (<a href="#ref-machine2018" role="doc-biblioref">2018</a>)</span>.</p>
+</div>
+</div>
 </section>
-<section id="working-with-this-book." class="level2">
-<h2 class="anchored" data-anchor-id="working-with-this-book.">Working with this book.</h2>
-<p>Each week we’ll demonstrate and practise some basics by running code directly in your browser, in this book. You can see the content and structure of the book in the sidebar on the left-hand side. Each week has a ‘part’ (this week is ‘Introduction to R’, and each part has a number of chapters, which you can identify because they are numbered. You can switch to a new part of the book by clicking in the sidebar, or you can use the link at the bottom of each page to go to the next chapter.</p>
-<p>For the first few weeks, we’ll learn the basics through live code cells which are embedded in the book itself, and running in your browser. Later, we’ll switch to an IDE (Integrated Development Environment) which will give us a ‘real world’ system to practice in.</p>
+</section>
+<section id="tidyverse" class="level2">
+<h2 class="anchored" data-anchor-id="tidyverse">Tidyverse</h2>
+<p>Most of the work in this course will use a set of packages developed for R called the ‘tidyverse’. These enhance and improve a large range of R functions with a more intuitive syntax, particularly for working with dataframes and for visualisation. The Tidyverse is really a ‘family’ of individual packages for sorting, filtering and plotting data frames. Almost all of the functions we use from now on will come from this family.</p>
+</section>
+<section id="functions" class="level2">
+<h2 class="anchored" data-anchor-id="functions">Functions</h2>
+<p>The way we’ll do operations on dataframes is to use <em>functions</em> on them. A function is a pre-made piece of code which does a particular task on a piece of data. The task might be an algorithm or mathematical process, and the data might be something as simple as a number, or it could be a dataframe, which we will be mostly working with here. You have already used the <code>print()</code> and <code>nchar()</code> functions, in the previous week.</p>
+<p>When we manipulate dataframes, or create visualisations, we will almost always use one or more of these functions (you can also write your own, but we won’t cover that on this course). It’s important to understand how to use a function in R for this course.</p>
+<section id="function-names" class="level3">
+<h3 class="anchored" data-anchor-id="function-names">Function names</h3>
+<p>A function in R is stored as a single ‘string’ (a sequence of characters with no spaces) followed by an open and closed set of brackets. A function called ‘function’ will look like this in R: <code>function()</code>.</p>
+<p>Most of the functions we work with will have logical-sounding names, usually verbs. For example, the function to filter a dataset is called <code>filter()</code>, and the function to select certain columns is called <code>select()</code>.</p>
+</section>
+<section id="function-arguments" class="level3">
+<h3 class="anchored" data-anchor-id="function-arguments">Function arguments</h3>
+<p>Some functions work entirely within themselves and don’t need any further information, but usually, we’ll need to supply at least a few things to make a function work. The elements that we supply to the function are called ‘arguments’. Each argument in a function is placed within the brackets of the function, and each one must be separated by a comma.</p>
+<p>Typically, the functions we use will make a change to a dataframe (such as filter or select). For these kinds of functions, we usually need to supply at least two things:</p>
+<ul>
+<li><p>The dataframe to be worked on</p></li>
+<li><p>The further instructions on what the function should do specifically to the dataframe.</p></li>
+</ul>
+<p>Sometimes, we will also need to set <em>parameters</em> (basically options), which are more specific instructions on how the function should act.</p>
+<p>It’s good to familiarise yourself with how a function looks and how you can use them. This is a typical example:</p>
+<p><img src="images/clipboard-4008031323.png" class="img-fluid"></p>
+<p>Different functions will need different instructions, depending on what they do. The code above runs the filter() function on the dataset <code>titanic_df</code>, with the instruction that the data in the <code>Age</code> column should equal 50.</p>
+<p>Here is another example:</p>
+<p><img src="images/clipboard-2921478978.png" class="img-fluid"></p>
+<p>Here, we use the function <code>slice_max</code> on the dataframe <code>titanic_df</code> (we’ll learn what this does later). This time we have to set two parameters. Parameters have specific names and we set their values using an single equal sign. Here, we have to set the <code>order_by</code> parameter, which we have set to the column <code>Age</code>, and we have to set the <code>n</code> parameter, which we set to <code>10</code>.</p>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -2050,56 +2163,26 @@ Warning
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Code written in a browser like this will not be saved if you close or refresh the page. Only use it for practising the basics!</p>
+<p>Notice in the first function we used <code>Age == 50</code>, and in the second function we used <code>order_by = Age</code>? This is because they mean different things. In R, a double equal sign (<code>==</code>) means ‘check if this is equal to’. A single equal sign (<code>=</code>) means ‘set this to the value of’.</p>
+<p>When setting the value of a parameter, we always use a single equal sign. Using the wrong one is an easy mistake to make and can be good to check when troubleshooting!</p>
 </div>
 </div>
-<p>You can identify these ‘live’ code cells as they look like this:</p>
-<div id="qwebr-insertion-location-1"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>If you see the ‘Installing package…’ or ‘Loading package…’ message, this means that the programming language is doing some work behind the scenes to get everything working. When it’s finished, it will be replaced by a ‘Run Code’ button.</p>
-<section id="features-of-the-code-cell" class="level4">
-<h4 class="anchored" data-anchor-id="features-of-the-code-cell">Features of the code cell</h4>
-<p>The code cell itself has a few features:</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Feature</th>
-<th>Image</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Run Code button</td>
-<td><img src="images/Screenshot 2024-08-21 at 15.04.17.png" class="img-fluid"></td>
-<td>Pressing this will run, or execute, the code in the cell.</td>
-</tr>
-<tr class="even">
-<td>The code input box</td>
-<td><img src="images/Screenshot 2024-08-26 at 17.07.20.png" class="img-fluid"></td>
-<td>The main part of the code cell is where you will find (and type) code. The number 1 here is a line identifier and is not part of the code. Important to note is that you are free to edit the code cell to change or delete the code.</td>
-</tr>
-<tr class="odd">
-<td>Code option button</td>
-<td><img src="images/Screenshot 2024-08-21 at 15.06.03.png" class="img-fluid"></td>
-<td>These two icons on the right-hand side will reset the code (if you changed it), or allow you to copy the contents to the clipboard.</td>
-</tr>
-</tbody>
-</table>
-<p>Lastly, a part you can’t see here: the output. If there is any output from the code cell (such as the result of a calculation), it will be displayed directly below the code cell. If the code produces an error or a warning, these will also be displayed here. This output will look different depending on what the code in the cell is set to produce - it could be a number, a dataframe, or a full visualisation.</p>
 </section>
-<section id="running-code" class="level4">
-<h4 class="anchored" data-anchor-id="running-code">Running code</h4>
-<p>See what happens if you run the code cell above. This code cell contains the code <code>1 + 1</code>, which simply adds together these two numbers and displays the answer as the output.</p>
-<p><strong>Try it yourself:</strong> Change the code in the cell above and run it again - try and guess what other basic operations a coding language you can do. If you get an error, you can always reset or refresh the page.</p>
-<p>When you’re finished, you can click the link underneath here and to the right to go to the next chapter, or you can use the sidebar on the left.</p>
+<section id="exercises" class="level3">
+<h3 class="anchored" data-anchor-id="exercises">Exercises:</h3>
+<p>Run the <code>summary()</code> function on the <code>titanic_df</code> dataset. <code>summary()</code> prints summary statistics on each column of the dataframe.</p>
+<div id="qwebr-insertion-location-3"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>Use summary again, but this time set the argument or parameter <code>digits</code> to equal <code>3</code>. This optional parameter specifies the number of digits after the decimal point which should be shown.</p>
+<div id="qwebr-insertion-location-4"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-machine2018" class="csl-entry" role="listitem">
+<span>“Machine Learning: The DL on ML.”</span> 2018. In, 87–120. The MIT Press. <a href="https://doi.org/10.7551/mitpress/11022.003.0010">https://doi.org/10.7551/mitpress/11022.003.0010</a>.
+</div>
+</div>
 </section>
 </section>
 
@@ -2505,13 +2588,13 @@ Warning
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./index.html" class="pagination-link" aria-label="Course Overview">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Course Overview</span>
+      <a href="./at-home-000.html" class="pagination-link" aria-label="Home exercises">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Home exercises</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./basics.html" class="pagination-link" aria-label="R Basics">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">R Basics</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./select.html" class="pagination-link" aria-label="Subsetting columns">
+        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Subsetting columns</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -17,14 +17,14 @@ book:
         - practise.qmd
         - 1_rmarkdown.qmd
         - at-home-000.qmd
- #    - part: "Data Analysis 1"
- #      chapters:
- #        - 3_data_analysis_1.qmd
- #        - select.qmd
- #        - slice.qmd
- #        - arrange.qmd
- #        - pipes.qmd
- #        - at-home-001.qmd
+    - part: "Data Analysis 1"
+      chapters:
+        - 3_data_analysis_1.qmd
+        - select.qmd
+        - slice.qmd
+        - arrange.qmd
+        - pipes.qmd
+        - at-home-001.qmd
  #    - part: "Data Analysis 2"
  #      chapters:
  #        - filter.qmd

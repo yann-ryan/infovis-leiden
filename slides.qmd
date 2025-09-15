@@ -1,5 +1,5 @@
 ---
-title: "Week 3 Infovis"
+title: "Week 2 Infovis"
 format: revealjs
 filters:
   - webr
@@ -7,15 +7,7 @@ filters:
 
 ## While you're waiting...
 
--   Visit posit.cloud and sign up for a free account.
-
-## Data critiques
-
-![](Screenshot%202024-09-23%20at%2012.39.30.png)
-
-## Data critiques
-
-![](Screenshot%202024-09-23%20at%2012.41.27.png)
+-   Join the Posit.cloud environment if you haven't already
 
 ## Class Objectives
 
@@ -23,51 +15,11 @@ filters:
 -   Understand the very basics of how R works: arithmetic and vectors
 -   Know how to use Posit cloud and RStudio to submit assignments
 
-## Grading
-
--   Data critique assignment (10%)
--   Weekly exercises (10% in total, any submission gets full marks)
--   Data visualisation assignment (10%)
--   Map visualisation assignment (10%)
--   Class participation (10%)
--   Peer feedback (10%)
--   Final project (40%)
-
 ## Post-its
 
 -   Green: I've finished
 
 -   Orange: I'd like help
-
-## Working with structured data
-
--   Structured data is data in rows and columns (a bit simplified but will do as a definition for this course)
--   Most data except language and images
--   Used in the humanities: cultural metadata (e.g. information about archives or collections), historical databases, social data
-
-## Why code/R?
-
--   Fast (process millions of records in an instant)
--   Reproducible (scientifically sound)
--   Really good transferable skill
--   Extendable: packages for getting datasets, doing advanced analysis, scraping data from the web and so forth.
-
-## Note:
-
--   Graded assignments will not test your coding skills specifically
--   Your code does not have to be complicated, just get the job done!
-
-## Reading
-
--   A 'doing' course
--   Two assigned readings - one chapter and one paper
--   Recommended weekly reading on course website
-
-## I also highly recommend the rest of this book!
-
-![](datafeminism.jpeg)
-
--   Open access at https://data-feminism.mitpress.mit.edu/
 
 ## Code in this book
 

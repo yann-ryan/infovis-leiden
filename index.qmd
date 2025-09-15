@@ -142,37 +142,23 @@ There will also be some weekly recommended reading if you would like to dig deep
 
 Below is the course schedule. In the first couple of weeks, you'll learn how to do the very basics using the coding language R. This will be followed by three weeks focusing on data analysis, then two blocks of three: first, data visualisation, and second, digital mapping. We'll wrap things up with a week on creating polished, publishable data visualisations, and how to make your charts and maps interactive.
 
-+----------+------------+----------------------+---------------------------------------------------------+---------------------------------------------------------------+
-| **Week** | **Date**   | **Topic**            | **Topic**                                               | **Assignment**                                                |
-+----------+------------+----------------------+---------------------------------------------------------+---------------------------------------------------------------+
-| 1        | 2025-09-08 | Introductions        | Tour of the course book                                 |                                                               |
-+----------+------------+----------------------+---------------------------------------------------------+---------------------------------------------------------------+
-| 2        | 2025-09-15 | Introduction to R    | How to use R and Posit cloud                            |                                                               |
-+----------+------------+----------------------+---------------------------------------------------------+---------------------------------------------------------------+
-| 3        | 2025-09-22 | Data analysis 1      | Working with dataframes. Selecting and subsetting data. | Discussion of reading 1.                                      |
-+----------+------------+----------------------+---------------------------------------------------------+---------------------------------------------------------------+
-| 4        | 2025-09-29 | Data analysis 2      | Filtering and changing data                             |                                                               |
-+----------+------------+----------------------+---------------------------------------------------------+---------------------------------------------------------------+
-| 5        | 2025-10-06 | Data analysis 3      | Summarising and grouping data                           |                                                               |
-+----------+------------+----------------------+---------------------------------------------------------+---------------------------------------------------------------+
-| 6        | 2025-10-13 | Data visualisation 1 | Getting started with R and ggplot2.                     |                                                               |
-+----------+------------+----------------------+---------------------------------------------------------+---------------------------------------------------------------+
-| 7        | 2025-10-20 | Data visualisation 2 | Scales and legends                                      |                                                               |
-+----------+------------+----------------------+---------------------------------------------------------+---------------------------------------------------------------+
-| 8        | 2025-11-03 | Data visualisation 3 | Annotations and themes                                  |                                                               |
-+----------+------------+----------------------+---------------------------------------------------------+---------------------------------------------------------------+
-| 9        | 2025-11-10 | Data visualisation 4 | Ethics, reproducibility, and accessibility              | Assignment 1 (create a datavis) due. Discussion of reading 2. |
-+----------+------------+----------------------+---------------------------------------------------------+---------------------------------------------------------------+
-| 10       | 2025-11-17 | Digital mapping 1    | Working with R as a GIS. Creating base maps.            |                                                               |
-+----------+------------+----------------------+---------------------------------------------------------+---------------------------------------------------------------+
-| 11       | 2025-11-24 | Digital mapping 2    | Importing shapefiles and mapping external data          |                                                               |
-+----------+------------+----------------------+---------------------------------------------------------+---------------------------------------------------------------+
-| 12       | 2025-12-01 | Digital mapping 3    | The tmap package                                        |                                                               |
-+----------+------------+----------------------+---------------------------------------------------------+---------------------------------------------------------------+
-| 13       | 2025-12-08 | Publication          | R Markdown and Interactivity                            | Assignment 2 (create a map visualisation) due.                |
-+----------+------------+----------------------+---------------------------------------------------------+---------------------------------------------------------------+
-|          | 2026-14-01 |                      |                                                         | Final project due                                             |
-+----------+------------+----------------------+---------------------------------------------------------+---------------------------------------------------------------+
+|  |  |  |  |  |
+|----|----|----|----|----|
+| **Week** | **Date** | **Topic** | **Topic** | **Assignment** |
+| 1 | 2025-09-08 | Introductions | Tour of the course book |  |
+| 2 | 2025-09-15 | Introduction to R | How to use R and Posit cloud |  |
+| 3 | 2025-09-22 | Data analysis 1 | Working with dataframes. Selecting and subsetting data. | Discussion of reading 1. |
+| 4 | 2025-09-29 | Data analysis 2 | Filtering and changing data |  |
+| 5 | 2025-10-06 | Data analysis 3 | Summarising and grouping data |  |
+| 6 | 2025-10-13 | Data visualisation 1 | Getting started with R and ggplot2. |  |
+| 7 | 2025-10-20 | Data visualisation 2 | Scales and legends |  |
+| 8 | 2025-11-03 | Data visualisation 3 | Annotations and themes |  |
+| 9 | 2025-11-10 | Data visualisation 4 | Ethics, reproducibility, and accessibility | Assignment 1 (create a datavis) due. Discussion of reading 2. |
+| 10 | 2025-11-17 | Digital mapping 1 | Working with R as a GIS. Creating base maps. |  |
+| 11 | 2025-11-24 | Digital mapping 2 | Importing shapefiles and mapping external data |  |
+| 12 | 2025-12-01 | Digital mapping 3 | The tmap package |  |
+| 13 | 2025-12-08 | Publication | R Markdown and Interactivity | Assignment 2 (create a map visualisation) due. |
+|  | 2026-14-01 |  |  | Final project due |
 
 : Course Schedule {tbl-colwidths="\[10,25,65\]" .striped}
 

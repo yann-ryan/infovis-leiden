@@ -4,7 +4,7 @@ title: "Home exercises"
 
 ## Instructions
 
-The at-home exercises should be completed using Posit cloud, in the workspace project 'Home exercise 2'. Create a new .Rmd file (use File -\> New File -\> R Notebook. Delete the existing boilerplate text in the markdown file, underneath the title part.
+The at-home exercises should be completed using Posit cloud, in the workspace project 'Home exercise 2'. Create a new .Rmd file (use File -\> New File -\> R Markdown. Delete the existing boilerplate text in the markdown file, underneath the title part.
 
 It's best to save the new file straight away. Because you'll submit this file as an assignment, use a standardised name: \[lastname\]\[firstname\]\[week number\]. Regularly re-save the file.
 

@@ -36,7 +36,7 @@ Click on the invite link posted on Brightspace. Once you have signed up, click o
 
 ![](images/Screenshot%202023-08-25%20at%2012.49.30.png)
 
-Once you have switched, you'll see a list of assignments and projects. At the moment, there is just one for this week. Click the start button for 'Week 1: Introduction'.
+Once you have switched, you'll see a list of assignments and projects. At the moment, there is just one for this week. Click the start button for 'Week 2: Introduction'.
 
 ![](images/Screenshot%202023-08-25%20at%2012.50.09.png)
 
@@ -80,19 +80,21 @@ We'll worry more about code next week, but for now, let's just get used to creat
 
 ### Create a new markdown file
 
-Click file -\> new file -\> R notebook.
+Click file -\> new file -\> R Markdown
 
-![](images/Screenshot%202023-08-25%20at%2012.51.20.png)
+![](images/clipboard-2685726258.png)
 
-This will open a markdown notebook in the top-left pane. If asked to install packages, just click yes, and wait a little longer.
+If asked to install packages, just click yes, and wait a little longer.
 
-A notebook will now be open in your screen. This is where you can type text and code.
+You'll get a pop-up with some options, as there are several types of markdown documents you can make. The defaults are OK; you don't need to change anything, so just click OK. You can add a title here if you like, but it is easy to do later.
+
+![](images/clipboard-1063416582.png)
 
 At the moment, there is some sample text and code in the document.
 
 At the top of the document is some formatted text which looks like this:
 
-![](images/Screenshot%202023-08-25%20at%2012.53.35.png)
+![](images/clipboard-1021983002.png)
 
 This is called a yaml header. It contains information about your document, and it needs to remain here for the notebook to work. You can use this yaml header to edit the title of your report: just edit the text within the quotation marks which now reads 'R Notebook'.
 

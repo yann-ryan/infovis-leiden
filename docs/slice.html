@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>1&nbsp; Introduction to R – Information Visualization and the Humanities: Course Book</title>
+<title>8&nbsp; Subsetting rows – Information Visualization and the Humanities: Course Book</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./basics.html" rel="next">
-<link href="./index.html" rel="prev">
+<link href="./arrange.html" rel="next">
+<link href="./select.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -337,7 +337,7 @@ body.reveal.quarto-dark div.qwebr-console-area {
 // Document level settings ----
 
 // Determine if we need to install R packages
-globalThis.qwebrInstallRPackagesList = [''];
+globalThis.qwebrInstallRPackagesList = ['dplyr', 'readr'];
 
 // Specify possible locations to search for the repository
 globalThis.qwebrPackageRepoURLS = ['https://repo.r-wasm.org/'];
@@ -359,7 +359,7 @@ globalThis.qwebrCustomizedWebROptions = {
 };
 
 // Store cell data
-globalThis.qwebrCellDetails = [{"code":"1 + 1","id":1,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-1","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}}];
+globalThis.qwebrCellDetails = [{"code":"library(dplyr)\nlibrary(readr)\n\nurl <- \"https://raw.githubusercontent.com/yann-ryan/infovis-course/master/titanic_df_full.csv\"\ndownload.file(url, \"titanic_df.csv\")\n\ntitanic_df =  read_csv('titanic_df.csv')","id":1,"options":{"autorun":"true","classes":"","comment":"","context":"setup","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-1","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"slice(titanic_df, 1,5) ","id":2,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-2","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"","id":3,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-3","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"slice(titanic_df, 1:10) ","id":4,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-4","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"","id":5,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-5","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"slice_min(titanic_df, order_by = age, n = 10)","id":6,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-6","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"","id":7,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-7","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"slice_max(titanic_df, order_by = age, n = 10)","id":8,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-8","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}}];
 
 </script>
 <script type="module">
@@ -1569,7 +1569,7 @@ globalThis.qwebrExecuteCode = async function (
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./2_r_intro.html">Introduction to R</a></li><li class="breadcrumb-item"><a href="./2_r_intro.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to R</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./3_data_analysis_1.html">Data Analysis 1</a></li><li class="breadcrumb-item"><a href="./slice.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Subsetting rows</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -1614,7 +1614,7 @@ globalThis.qwebrExecuteCode = async function (
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2_r_intro.html" class="sidebar-item-text sidebar-link active">
+  <a href="./2_r_intro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to R</span></span></a>
   </div>
 </li>
@@ -1667,7 +1667,7 @@ globalThis.qwebrExecuteCode = async function (
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./slice.html" class="sidebar-item-text sidebar-link">
+  <a href="./slice.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Subsetting rows</span></span></a>
   </div>
 </li>
@@ -1701,11 +1701,8 @@ globalThis.qwebrExecuteCode = async function (
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#class-objectives" id="toc-class-objectives" class="nav-link active" data-scroll-target="#class-objectives">Class Objectives</a>
-  <ul class="collapse">
-  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning Objectives</a></li>
-  </ul></li>
-  <li><a href="#working-with-this-book." id="toc-working-with-this-book." class="nav-link" data-scroll-target="#working-with-this-book.">Working with this book.</a></li>
+  <li><a href="#selecting-subsetting-data-by-rows" id="toc-selecting-subsetting-data-by-rows" class="nav-link active" data-scroll-target="#selecting-subsetting-data-by-rows">Selecting (subsetting) data by rows</a></li>
+  <li><a href="#slice_min-and-slice_max" id="toc-slice_min-and-slice_max" class="nav-link" data-scroll-target="#slice_min-and-slice_max">slice_min and slice_max</a></li>
   </ul>
 </nav>
     </div>
@@ -1996,9 +1993,9 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 }
 </script>
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./2_r_intro.html">Introduction to R</a></li><li class="breadcrumb-item"><a href="./2_r_intro.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to R</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./3_data_analysis_1.html">Data Analysis 1</a></li><li class="breadcrumb-item"><a href="./slice.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Subsetting rows</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to R</span></h1>
+<h1 class="title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Subsetting rows</span></h1>
 </div>
 
 
@@ -2015,92 +2012,53 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </header>
 
 
-<section id="class-objectives" class="level2">
-<h2 class="anchored" data-anchor-id="class-objectives">Class Objectives</h2>
-<p>This week, we’re going to get used to the environment we’ll use for creating the visualisations for this course. By the end of today, you should be comfortable with the interface, and able to use R, load packages, and do some basic manipulations of dataframes.</p>
-<section id="learning-objectives" class="level3">
-<h3 class="anchored" data-anchor-id="learning-objectives">Learning Objectives</h3>
-<p>By the end of this section of the book, you should:</p>
-<ul>
-<li>Know what a variable is</li>
-<li>Know what data types are</li>
-<li>Know what a dataframe and a vector is</li>
-<li>Practise making vectors</li>
-<li>Know how to do basic arithmetic with R</li>
-<li>Know how to check conditions:
-<ul>
-<li>Equals (numbers and text), greater than, less than, greater than or equal to</li>
-<li>Do the same but with vectors</li>
-</ul></li>
-<li>Know what data types are</li>
-</ul>
+<div id="qwebr-insertion-location-1"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<section id="selecting-subsetting-data-by-rows" class="level3">
+<h3 class="anchored" data-anchor-id="selecting-subsetting-data-by-rows">Selecting (subsetting) data by rows</h3>
+<p>This is another very common function we need to do on datasets, for example to remove incorrect data, or to work with only a portion of a dataset. If we want to subset rows by some variable in the data, we use another method, <strong>filter</strong>, which we’ll learn later.</p>
+<p>Selecting rows of a dataset can be done with the verb <code>slice()</code>. Unlike columns, rows generally do not have names, so we mostly select them numerically, by position. Similarly to <code>select()</code>, <code>slice()</code> first expects the dataframe, and after that the specific instructions on what to keep or remove. For example, to select the first and fifth rows of the <code>titanic_df</code> dataframe:</p>
+<div id="qwebr-insertion-location-2"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>Try it yourself: below, select the 20th and 50th rows of the dataframe.</p>
+<div id="qwebr-insertion-location-3"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>As with <code>select()</code>, we can choose a range using a colon (using glimpse here allows us to see the new size of the dataframe):</p>
+<div id="qwebr-insertion-location-4"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p><strong>Try it yourself:</strong></p>
+<p>Select the first 50 rows, and everything <em>except</em> the 100th row. Functions often work in similar ways, especially if they are from the same suite (the Tidyverse), so you should be able to figure out how this works from our work on <code>select()</code>.</p>
+<div id="qwebr-insertion-location-5"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </section>
-</section>
-<section id="working-with-this-book." class="level2">
-<h2 class="anchored" data-anchor-id="working-with-this-book.">Working with this book.</h2>
-<p>Each week we’ll demonstrate and practise some basics by running code directly in your browser, in this book. You can see the content and structure of the book in the sidebar on the left-hand side. Each week has a ‘part’ (this week is ‘Introduction to R’, and each part has a number of chapters, which you can identify because they are numbered. You can switch to a new part of the book by clicking in the sidebar, or you can use the link at the bottom of each page to go to the next chapter.</p>
-<p>For the first few weeks, we’ll learn the basics through live code cells which are embedded in the book itself, and running in your browser. Later, we’ll switch to an IDE (Integrated Development Environment) which will give us a ‘real world’ system to practice in.</p>
-<div class="callout callout-style-default callout-warning callout-titled">
+<section id="slice_min-and-slice_max" class="level3">
+<h3 class="anchored" data-anchor-id="slice_min-and-slice_max">slice_min and slice_max</h3>
+<p>There are also some helpful variations of <code>slice()</code>. The two most common are <code>slice_min()</code> and <code>slice_max()</code>. These select a chosen number of rows based on some numerical variable (a column) in your data.</p>
+<p>In this function, we use what are called ‘arguments’. These are further instructions, or parameters, which we pass to a function in order to specify what it should do. For <code>slice_max()</code>, we have to tell it which column to use to get the maximum values with the argument <code>order_by</code>, and how many rows to give with the argument <code>n</code>.</p>
+<p>For example, to select the ten youngest passengers in the dataset, we could use the following:</p>
+<div id="qwebr-insertion-location-6"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Warning
+Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Code written in a browser like this will not be saved if you close or refresh the page. Only use it for practising the basics!</p>
+<p>Another useful <code>slice_</code> function is <code>slice_sample()</code>, which picks a random sample of your data.</p>
 </div>
 </div>
-<p>You can identify these ‘live’ code cells as they look like this:</p>
-<div id="qwebr-insertion-location-1"></div>
+<p><strong>Try it yourself:</strong> Use a slice_ function to find the five <strong>oldest</strong> passengers (look at how we used <code>select()</code> on the previous page to figure out how to do this).</p>
+<div id="qwebr-insertion-location-7"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>If you see the ‘Installing package…’ or ‘Loading package…’ message, this means that the programming language is doing some work behind the scenes to get everything working. When it’s finished, it will be replaced by a ‘Run Code’ button.</p>
-<section id="features-of-the-code-cell" class="level4">
-<h4 class="anchored" data-anchor-id="features-of-the-code-cell">Features of the code cell</h4>
-<p>The code cell itself has a few features:</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Feature</th>
-<th>Image</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Run Code button</td>
-<td><img src="images/Screenshot 2024-08-21 at 15.04.17.png" class="img-fluid"></td>
-<td>Pressing this will run, or execute, the code in the cell.</td>
-</tr>
-<tr class="even">
-<td>The code input box</td>
-<td><img src="images/Screenshot 2024-08-26 at 17.07.20.png" class="img-fluid"></td>
-<td>The main part of the code cell is where you will find (and type) code. The number 1 here is a line identifier and is not part of the code. Important to note is that you are free to edit the code cell to change or delete the code.</td>
-</tr>
-<tr class="odd">
-<td>Code option button</td>
-<td><img src="images/Screenshot 2024-08-21 at 15.06.03.png" class="img-fluid"></td>
-<td>These two icons on the right-hand side will reset the code (if you changed it), or allow you to copy the contents to the clipboard.</td>
-</tr>
-</tbody>
-</table>
-<p>Lastly, a part you can’t see here: the output. If there is any output from the code cell (such as the result of a calculation), it will be displayed directly below the code cell. If the code produces an error or a warning, these will also be displayed here. This output will look different depending on what the code in the cell is set to produce - it could be a number, a dataframe, or a full visualisation.</p>
-</section>
-<section id="running-code" class="level4">
-<h4 class="anchored" data-anchor-id="running-code">Running code</h4>
-<p>See what happens if you run the code cell above. This code cell contains the code <code>1 + 1</code>, which simply adds together these two numbers and displays the answer as the output.</p>
-<p><strong>Try it yourself:</strong> Change the code in the cell above and run it again - try and guess what other basic operations a coding language you can do. If you get an error, you can always reset or refresh the page.</p>
-<p>When you’re finished, you can click the link underneath here and to the right to go to the next chapter, or you can use the sidebar on the left.</p>
+<p><code>slice_max()</code> works in the same way, but in reverse:</p>
+<div id="qwebr-insertion-location-8"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -2505,13 +2463,13 @@ Warning
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./index.html" class="pagination-link" aria-label="Course Overview">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Course Overview</span>
+      <a href="./select.html" class="pagination-link" aria-label="Subsetting columns">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Subsetting columns</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./basics.html" class="pagination-link" aria-label="R Basics">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">R Basics</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./arrange.html" class="pagination-link" aria-label="Ordering and sorting dataframes">
+        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Ordering and sorting dataframes</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

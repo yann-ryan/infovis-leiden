@@ -46,7 +46,7 @@ If you see the 'Installing package...' or 'Loading package...' message, this mea
 The code cell itself has a few features:
 
 | Feature | Image | Description |
-|------------------------|------------------------|------------------------|
+|----|----|----|
 | Run Code button | ![](images/Screenshot%202024-08-21%20at%2015.04.17.png) | Pressing this will run, or execute, the code in the cell. |
 | The code input box | ![](images/Screenshot%202024-08-26%20at%2017.07.20.png) | The main part of the code cell is where you will find (and type) code. The number 1 here is a line identifier and is not part of the code. Important to note is that you are free to edit the code cell to change or delete the code. |
 | Code option button | ![](images/Screenshot%202024-08-21%20at%2015.06.03.png) | These two icons on the right-hand side will reset the code (if you changed it), or allow you to copy the contents to the clipboard. |

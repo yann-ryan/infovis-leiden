@@ -4,7 +4,7 @@ title: "Home exercises"
 
 ## Instructions
 
-The at-home exercises should be completed using Posit cloud. Log in to your Posit account and open the project `Exercise 1`. Create a new .Rmd file (use File -\> New File -\> R Notebook.
+The at-home exercises should be completed using Posit cloud. Log in to your Posit account and open the project `Home Exercise 1`. Create a new .Rmd file (use File -\> New File -\> R Markdown.
 
 I advise saving the new file straight away. Because you'll submit this file as an assignment, use a standardised name: exercise_1_lastname_firstname. Regularly re-save the file.
 
@@ -12,30 +12,21 @@ When you have finished the exercise (or part of it), 'knit' the file. Export the
 
 ### Exercise 1: work with variables and mathematical operations
 
-
-
-
-
-
 <div>
 
-<div style="float: left; position: relative; top: 0px; padding: 30px;">
+::: {style="float: left; position: relative; top: 0px; padding: 30px;"}
+![Illustration of book sizes. Found [here](https://www.heathermollauthor.com/post/austen-and-folios-quartos-and-octavos)](images/book_sizes.jpg){width="210"}
+:::
 
-![Illustration of book sizes. Found    [here](https://www.heathermollauthor.com/post/austen-and-folios-quartos-and-octavos) ](images/book_sizes.jpg){width="210"}
-</div>
-  
 You're working on a book history project, and you're interested in finding out more about the most-used book formats. When books were still made by hand (up until the beginning of the nineteenth century), books were made by printing on a standard sized sheet of paper and then folding the paper a number of times to make the pages. This process determined the different sizes, or formats, of books.
 
-
 The largest size (a single fold) was called *folio*, followed by *quarto*, *octavo*, and *duodecimo*. (you might have heard of the [Shakespeare 'first folio'](https://www.folger.edu/explore/shakespeare-in-print/first-folio/), which is so named because it was the first time Shakespeare was published in folio format - individual plays had previously been [published as quarto](https://www.folger.edu/explore/shakespeare-in-print/diy-quarto/)).
-
 
 </div>
 
 <div>
 
 ::: callout-note
-
 ## Why does this matter?
 
 In the study of the book (bibliography), determing the format is important: folio-sized books were reserved for important and expensive publications which were meant to last. In a real-world example, we could do this on a large dataset of information from a book catalogue, to look for patterns and changes over time. In that case, we would usually do a similar calculation, but over a whole column of numbers.
@@ -43,7 +34,7 @@ In the study of the book (bibliography), determing the format is important: foli
 
 </div>
 
-#### Steps  
+#### Steps
 
 1.  In a first code cell, create two variables, called `book_height` and `book_width`. Set each to a number: make up some realistic values for book height and width in milimetres.
 
