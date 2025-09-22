@@ -14,26 +14,26 @@ If you can't knit the file because of an error, either comment out the code whic
 
 ## At home exercises
 
-You can find a copy of the Titanic dataset as a csv in the project folder.
+You can find the Goodreads dataset as a csv in the project folder. This is a dataset of the 11,000 most popular books taken from the review site Goodreads.com, and includes author information, plus the amount and average rating for each. There is also a genre column which comes from the tags users have added. Note that originally, the dataset had multiple genres for each book. To simplify things for this class, I have only kept the first one. 
 
 Use summarise and all the previously-learned functions to do the following:
 
 -   Load the `tidyverse` library
--   Read the dataset `titanic_df_full.csv` into your environment, and save it as an object with the name `titanic_df`. (see the previous week's home exercises to see how to do this and the previous step).
--   Filter the dataset to include only male passengers who travelled on a ticket worth over 100 pounds.
--   Filter the dataset so it includes all passengers who were children (those under 18) *or* who embarked at Cherbourg (C).
--   Filter the dataset to include only passengers who had a second or third class ticket, *and* *they* *also* embarked at Queenstown (Q).
--   Create a new column, and calculate the age in months for each passenger.
--   Summarise the data to calculate the average number of siblings or spouses (`sibsp` column) per passenger. Before you do this, remove passengers with no siblings or spouses.
+-   Read the dataset `Goodreads_books_with_genres.csv` into your environment, and save it as an object with the name `goodreads_df`. (see the previous week's home exercises to see how to do this and the previous step).
+-   Filter the dataset to include only books which received a rating of over 4.5.
+-   Filter the dataset so it includes all books *not* written in English, *or* over 500 pages.
+-   Filter the dataset to find all the books by your favourite (at least of those listed hear) author. 
+-   Create a new column, and calculate the ratio of ratings to text reviews for each book. What kind of books have a large number of ratings but relatively few text reviews? Why do you think this is the case?
+-   Filter to include only books written in 2004. 
+
 
 ### Filter combined with str_detect (optional)
 
--   Find all passengers whose family name starts with the letters Ca.
+-   Find all the books written in English (as above but using str_detect)
 
--   Find all the Swedish passengers (names that end in `sson`).
+-   Find all the Swedish authors (names that end in `sson`).
 
--   Find all the married female passengers who travelled alone.
+-   Find all the books where Isaac Asimov is listed as an author. 
 
--   Were there any female doctors on board? Find them.
+-   Find all books published by a Penguin imprint (classics, UK, etc. )
 
--   Write a Regular Expressions pattern to match as many common Dutch family names as you can.

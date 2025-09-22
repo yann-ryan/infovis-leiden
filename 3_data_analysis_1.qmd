@@ -65,7 +65,7 @@ It's worth familiarising yourself with how a dataframe looks when you print it i
 
 ### The Titanic Dataset
 
-It's good to understand a bit more about the dataset which we'll use quite a lot for examples, exercises and visualisations over the next few weeks. You can find out more about the dataset here: https://www.openml.org/search?type=data&sort=runs&id=40945&status=active. It contains information on 1,309 passengers who sailed on the titanic, such as their age, sex, and the fare paid. The column names are the following:
+It's good to understand a bit more about the dataset which we'll use quite a lot for examples, exercises and visualisations over the next few weeks. You can find out more about the dataset [here](https://www.openml.org/search?type=data&sort=runs&id=40945&status=active). It contains information on 1,309 passengers who sailed on the titanic, such as their age, sex, and the fare paid. The column names are the following:
 
 -   survived: either 1 or 0, indicating whether the passenger survived or not.
 

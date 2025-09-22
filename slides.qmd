@@ -8,6 +8,7 @@ filters:
 ## While you're waiting...
 
 -   Join the Posit.cloud environment if you haven't already
+-   Take a green and red sticky note
 
 ## Class Objectives
 
@@ -126,6 +127,17 @@ You can use `+`, `-`, `*` and `/` to add, subtract, multiple, and divide, respec
 
 ```
 
+## Try it yourself:
+
+Copy and paste the code in the previous cell to the empty one below. Insert the cursor between the two operations and make a new line. Change the second multiplication sign to divide.
+
+```{webr-r}
+
+
+
+
+```
+
 ## Order of operations
 
 ```{webr-r}
@@ -136,7 +148,7 @@ Run the code above and see how it differs!
 
 ## Assigning variables
 
-To assign a variable in R, use the command `->`. You can also use `=`, but not in all situations, so it's better to use `<-`.
+To assign a variable in R, use the command `<-`. You can also use `=`, but not in all situations, so it's better to use `<-`.
 
 To the left of this command, enter the variable name. On the right hand side, enter the value.
 
@@ -405,7 +417,7 @@ Here, we ask R to return either TRUE or FALSE, depending on whether each element
 
 # Vectors
 
-## 11. In one cell, create two vectors: first, a character vector containing the first names of the three students closest to you. Second, a numeric vector containing the years of birth of these three students.
+## 11. In one cell, create two vectors: first, a character vector containing the first names of the three students nearest to you. Second, a numeric vector containing the years of birth of these three students.
 
 ```{webr-r}
 

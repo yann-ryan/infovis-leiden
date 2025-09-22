@@ -25,13 +25,13 @@ book:
         - arrange.qmd
         - pipes.qmd
         - at-home-001.qmd
- #    - part: "Data Analysis 2"
- #      chapters:
- #        - filter.qmd
- #        - regex.qmd
- #        - mutate.qmd
- #        - summarise.qmd
- #        - at-home-002.qmd
+    - part: "Data Analysis 2"
+      chapters:
+        - filter.qmd
+        - regex.qmd
+        - mutate.qmd
+        - summarise.qmd
+        - at-home-002.qmd
  #    - part: "Data Analysis 3"
  #      chapters:
  #        - grouping.qmd

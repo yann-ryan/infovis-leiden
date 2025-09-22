@@ -5,6 +5,23 @@ filters:
   - webr
 ---
 
+## Starting exercise
+
+-   Pick a neighbourhood you know well (where you live, work, study, etc)
+-   What would you map, and why?
+-   Sketch out:
+    -   Data you would collect
+    -   How you would visualise it
+    -   Who is affected
+    -   The story/narrative of the map
+
+## Questions:
+
+-   Does this challenge any power structures?
+-   What assumptions are made or challenged?
+-   Who benefits from this data being collected?
+-   Are there any ethical issues to this data being collected.
+
 ```{webr-r}
 #| context: setup
 
@@ -16,6 +33,8 @@ url <- "https://raw.githubusercontent.com/yann-ryan/infovis-course/master/titani
 download.file(url, "titanic_df.csv")
 
 titanic_df =  read_csv('titanic_df.csv')
+
+titanic_df = titanic_df |> mutate(fare = as.character(fare))
 
 ```
 
@@ -34,9 +53,9 @@ titanic_df =  read_csv('titanic_df.csv')
 
 ## Dataframes
 
-One of the data types that we can work with in R is a **dataframe**. This in a object with rows and columns, like a spreadsheet in Microsoft Excel or Google Sheets.
-
-Remember in the previous week we could create variables, such as `x = 5` or `y = 10`? We could also call these objects (in our code's memory x is an *object* with the value 5). A dataframe can also be stored with a name and manipulated as an object.
+-   This in a object with rows and columns
+-   like a spreadsheet in Microsoft Excel or Google Sheets.
+-   A dataframe can also be stored with a name and manipulated as an object
 
 ## Printed dataframe output
 
@@ -54,30 +73,6 @@ Remember in the previous week we could create variables, such as `x = 5` or `y =
 
 -   The next 10 rows are a preview of the first 10 rows of the dataframe. You can see that the text in each column is often truncated so that most columns can be displayed at once.
 
-## The Titanic Dataset {.smaller}
-
--   **survived**: either 1 or 0, indicating whether the passenger survived or not.
-
--   **pclass**: either 1, 2, or 3, listing the passenger class
-
--   **name**: the full name of the passenger
-
--   **sex**: the sex of the passenger, either male or female
-
--   **age**: the age of the passenger, sometimes given with decimals
-
--   **sibsp**: the number of siblings or spouses on the same ticket
-
--   **parch**: the number of parents or children on the same ticket
-
--   **ticket**: the unique ticket number (like an order number)
-
--   **fare**: the fare paid (for the entire ticket)
-
--   **cabin**: the cabin number
-
--   **embarked**: where the passenger got on the ship, either Southampton (S), Cherbourg (C), or Queenstown (Q). Queenstown is in Ireland and is now known as Cobh.
-
 ## Functions
 
 -   A function in R is stored as a single 'string' (a sequence of characters with no spaces) followed by an open and closed set of brackets. A function called 'function' will look like this in R: `function()`.
@@ -92,11 +87,11 @@ Typically, the functions we use will make a change to a dataframe (such as filte
 
 ## Functions
 
-![](images/clipboard-4008031323.png)
+![](images/clipboard-4008031323.png){width="200"}
 
 ## Functions
 
-![](images/clipboard-2921478978.png)
+![](images/clipboard-2921478978.png){width="200"}
 
 # Exercises
 
@@ -116,199 +111,57 @@ Use summary again, but this time set the argument or parameter digits to equal 3
 
 ```
 
-# Select
+## Select
 
-## Selecting by name
+-   use `select()` to choose columns of a dataframe.
+-   By name (`select(titanic_df, age)`)
+-   By position (`select(titanic_df, 5)`)
+-   Tidyselect (`starts_with`, `ends_with`, `contains`)
+-   Select everything but using `-`
 
-One simple way to select columns is by the column names. After specifying the dataset, simply enter each column you want to keep, separated by a comma. To select the `Age` and `Sex` columns from the `titanic_df` dataset, use the below code.
+## Rename 
 
-```{webr-r}
-select(titanic_df, age, sex)
-```
+-   Rename using `rename(titanic_df, new_name = old_name)`
+-   Or select and rename at the same time using `select(titanic_df, new_name = old_name)`
 
-## Try it yourself:
 
-Select the `Pclass` and `Name` columns from the titanic_df dataset.
+## Exercises
 
-```{webr-r}
-
-```
-
-## Deselecting
-
-We can also remove (deselect) columns, using a minus (-) sign:
-
-To select everything except the Age column, do the following:
-
-```{webr-r}
-select(titanic_df, -age) 
-```
-
-## **Try it yourself:**
-
-Below, select everything except the `Pclass` column.
+Edit this code cell to select the name, age, and sex columns in the titanic_df dataframe, by position.
 
 ```{webr-r}
 
 ```
 
-## Selecting by position
+## 2
 
-You can also select columns by their position. Enter the positions as numbers, separated by a comma. This selects column 1 and 5:
-
-```{webr-r}
-select(titanic_df, 1,5) 
-```
-
-# Exercises:
-
-## Edit this code cell to select the Name, Age, and Sex columns in the titanic_df dataframe, by position.
+Deselect the fifth column in the `titanic_df` dataframe.
 
 ```{webr-r}
 
 ```
 
-## Deselect the fifth column in the `titanic_df` dataframe.
+## 3
+
+Select all columns which start with "p":
 
 ```{webr-r}
 
 ```
 
-## Select a range
+## 4
 
-You can also select a range of columns using a colon (:). The below command selects columns 1 through to 5:
+Select all columns with end in "e":
 
-```{webr-r}
-select(titanic_df, 1:5) 
-```
-
-## Combine select instructions
-
-You can also combine multiple select instructions. This will select the first to the third columns, and the eighth column:
-
-```{webr-r}
-select(titanic_df, 1:3, 8) 
-```
-
-## Tidyselect functions
-
-You can also select columns using more complicated methods. There are a g roup of 'tidyselect' helpers to select columns based on more complicated criteria. The most useful are:
-
--   starts_with()
-
--   ends_with()
-
--   contains()
-
-## starts_with()
-
-First, starts_with() will look for and any columns which starts with some chosen text. It works as the following:
-
-```{webr-r}
-select(titanic_df, starts_with("s")) 
-```
-
-## **Try it yourself:**
-
-In the cell below write a select function which using starts_with() which selects the `PassengerID` and `Parch` columns, but **not** the `Pclass` column.
-
-```{webr-r}
+```{r}
 
 ```
 
-## ends_with()
+## 5
 
-ends_with() works in a similar way, selecting columns which end with chosen characters:
+Select the pclass column, and rename it 'passenger_class'. Select the name column and rename it 'passenger_name'
 
-```{webr-r}
-select(titanic_df, ends_with("s")) 
-```
-
-## **Try it yourself:**
-
-In the cell below, write a select function that selects the Age, Fare, and Name columns.
-
-```{webr-r}
-
-```
-
-## contains()
-
-Lastly, contains() will select any columns which contain a given pattern of letters:
-
-```{webr-r}
-select(titanic_df, contains("ar")) 
-```
-
-## Renaming columns
-
-To rename columns, we can use the `rename()` function with the syntax `rename(dataset, new_name = old_name)`. For example, to rename the `Name` column to `passenger_names` in the Titanic dataframe, we can use:
-
-```{webr-r}
-rename(titanic_df, passenger_name = Name) 
-```
-
-## Rename and select
-
-If you want to, you can rename *and* select columns in one go. To do this use the same syntax as rename, except use the function `select()`. The following will select the `Name` and `Pclass` columns, and rename them:
-
-```{webr-r}
-select(titanic_df, passenger_name = Name, passenger_class = Pclass)
-```
-
-However, note that nothing will actually change in the original dataset until you save it as an object in your environment, which will look at when we move to Posit cloud.
-
-# Selecting (subsetting) data by rows
-
-## the slice() function
-
--   Selecting rows of a dataset can be done with the verb `slice()`.
-
--   Unlike columns, rows generally do not have names, so we mostly select them numerically, by position.
-
-```{webr-r}
-
-slice(titanic_df, 1,5) 
-```
-
-## Try it yourself:
-
-Below, select the 20th and 50th rows of the dataframe.
-
-```{webr-r}
-
-```
-
-## Select a range
-
-As with `select()`, we can choose a range using a colon:
-
-```{webr-r}
-
-slice(titanic_df, 1:10) 
-```
-
-## **Try it yourself:**
-
-Select the first 50 rows, and everything *except* the 100th row. Functions often work in similar ways, especially if they are from the same suite (the Tidyverse), so you should be able to figure out how this works from our work on `select()`.
-
-```{webr-r}
-
-```
-
-## slice_min and slice_max
-
-There are also some helpful variations of `slice()`. The two most common are `slice_min()` and `slice_max()`. These select a chosen number of rows based on some numerical variable (a column) in your data.
-
-To select the ten youngest passengers in the dataset, we could use the following:
-
-```{webr-r}
-slice_min(titanic_df, order_by = age, n = 10)
-```
-
-## **Try it yourself:**
-
-Use a slice\_ function to find the five **oldest** passengers.
+Slice to include only the first 100 rows.
 
 ```{webr-r}
 
@@ -356,7 +209,7 @@ arrange(titanic_df, sex, -age)
 
 ## Exercise
 
-Sort by the `Fare` column. What is unusual about this and why? How do you think you could fix it? (Hint: use `glimpse()` to look at the data types)
+Sort by the `fare` column. What is unusual about this and why? How do you think you could fix it? (Hint: use `glimpse()` to look at the data types)
 
 ```{webr-r}
 
@@ -442,21 +295,3 @@ What class were they in?
 ```{webr-r}
 
 ```
-
-# Data visualisation critique
-
-## Mapping data to aesthetics
-
-![](Screenshot%202024-09-30%20at%2014.07.31.png)
-
-## Exercise
-
--   In pairs, try to describe your data visualisation in one minute or less
--   What *aesthetics* are mapped to what *data*?
--   What is the overall argument of the visualisation? What is the point of it?
-
-## For next week
-
--   Book section 'Data Analysis 2'
-
--   Try the home exercises, submit to 'Week 5 home exercise'
