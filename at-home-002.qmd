@@ -14,17 +14,21 @@ If you can't knit the file because of an error, either comment out the code whic
 
 ## At home exercises
 
-You can find the Goodreads dataset as a csv in the project folder. This is a dataset of the 11,000 most popular books taken from the review site Goodreads.com, and includes author information, plus the amount and average rating for each. There is also a genre column which comes from the tags users have added. Note that originally, the dataset had multiple genres for each book. To simplify things for this class, I have only kept the first one. 
+You can find the Goodreads dataset as a csv in the project folder. This is a dataset of the 11,000 most popular books taken from the review site Goodreads.com, and includes author information, plus the amount and average rating for each. 
 
-Use summarise and all the previously-learned functions to do the following:
+There is also a genre column which comes from the tags users have added. Note that originally, the dataset had multiple genres for each book. To simplify things for this class, I have only kept the first one. 
+
+Use summarise, group_by(), and all the previously-learned functions to do the following:
 
 -   Load the `tidyverse` library
 -   Read the dataset `Goodreads_books_with_genres.csv` into your environment, and save it as an object with the name `goodreads_df`. (see the previous week's home exercises to see how to do this and the previous step).
--   Filter the dataset to include only books which received a rating of over 4.5.
--   Filter the dataset so it includes all books *not* written in English, *or* over 500 pages.
--   Filter the dataset to find all the books by your favourite (at least of those listed hear) author. 
+-   Filter the dataset to include only books with the genre Science Fiction (note the capital letters) which received a rating of over 4.5.
+-   Filter the dataset so it includes either of these conditions: either *not* written in English, *or* over 500 pages.
 -   Create a new column, and calculate the ratio of ratings to text reviews for each book. What kind of books have a large number of ratings but relatively few text reviews? Why do you think this is the case?
--   Filter to include only books written in 2004. 
+-   Filter to include only books written in 2004. Arrange this list in order of publication date first, and then publisher. Keep only the title, author, and publication date. 
+-   More of a challenge: Which author has the highest average rating? Before you calculate this, we need to make it a bit more meaningful by wrangling the dataset a bit, so our result isn't skewed by authors with one book and a tiny number of 5 star ratings. First, keep only books with at least 100 ratings, and then authors with at least 3 of such books. Calculate the average (or mean) rating for each author. Arrange this list in descending order of the average rating. 
+
+
 
 
 ### Filter combined with str_detect (optional)
@@ -33,7 +37,9 @@ Use summarise and all the previously-learned functions to do the following:
 
 -   Find all the Swedish authors (names that end in `sson`).
 
--   Find all the books where Isaac Asimov is listed as an author. 
+-   Find all the books where Isaac Asimov is listed as an author, even where other authors are listed at the same time. 
 
 -   Find all books published by a Penguin imprint (classics, UK, etc. )
+
+-   Find all books with numbers in the title. 
 

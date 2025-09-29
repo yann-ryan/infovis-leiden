@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>16&nbsp; Home exercises – Information Visualization and the Humanities: Course Book</title>
+<title>17&nbsp; Home exercises – Information Visualization and the Humanities: Course Book</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,7 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./summarise.html" rel="prev">
+<link href="./grouping.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -81,7 +81,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./filter.html">Data Analysis 2</a></li><li class="breadcrumb-item"><a href="./at-home-002.html"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Home exercises</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./filter.html">Data Analysis 2</a></li><li class="breadcrumb-item"><a href="./at-home-002.html"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Home exercises</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -238,8 +238,14 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./grouping.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Grouping</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./at-home-002.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Home exercises</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Home exercises</span></span></a>
   </div>
 </li>
       </ul>
@@ -265,9 +271,9 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./filter.html">Data Analysis 2</a></li><li class="breadcrumb-item"><a href="./at-home-002.html"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Home exercises</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./filter.html">Data Analysis 2</a></li><li class="breadcrumb-item"><a href="./at-home-002.html"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Home exercises</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Home exercises</span></h1>
+<h1 class="title"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Home exercises</span></h1>
 </div>
 
 
@@ -293,25 +299,26 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="at-home-exercises" class="level2">
 <h2 class="anchored" data-anchor-id="at-home-exercises">At home exercises</h2>
-<p>You can find a copy of the Titanic dataset as a csv in the project folder.</p>
-<p>Use summarise and all the previously-learned functions to do the following:</p>
+<p>You can find the Goodreads dataset as a csv in the project folder. This is a dataset of the 11,000 most popular books taken from the review site Goodreads.com, and includes author information, plus the amount and average rating for each.</p>
+<p>There is also a genre column which comes from the tags users have added. Note that originally, the dataset had multiple genres for each book. To simplify things for this class, I have only kept the first one.</p>
+<p>Use summarise, group_by(), and all the previously-learned functions to do the following:</p>
 <ul>
 <li>Load the <code>tidyverse</code> library</li>
-<li>Read the dataset <code>titanic_df_full.csv</code> into your environment, and save it as an object with the name <code>titanic_df</code>. (see the previous week’s home exercises to see how to do this and the previous step).</li>
-<li>Filter the dataset to include only male passengers who travelled on a ticket worth over 100 pounds.</li>
-<li>Filter the dataset so it includes all passengers who were children (those under 18) <em>or</em> who embarked at Cherbourg (C).</li>
-<li>Filter the dataset to include only passengers who had a second or third class ticket, <em>and</em> <em>they</em> <em>also</em> embarked at Queenstown (Q).</li>
-<li>Create a new column, and calculate the age in months for each passenger.</li>
-<li>Summarise the data to calculate the average number of siblings or spouses (<code>sibsp</code> column) per passenger. Before you do this, remove passengers with no siblings or spouses.</li>
+<li>Read the dataset <code>Goodreads_books_with_genres.csv</code> into your environment, and save it as an object with the name <code>goodreads_df</code>. (see the previous week’s home exercises to see how to do this and the previous step).</li>
+<li>Filter the dataset to include only books with the genre Science Fiction (note the capital letters) which received a rating of over 4.5.</li>
+<li>Filter the dataset so it includes either of these conditions: either <em>not</em> written in English, <em>or</em> over 500 pages.</li>
+<li>Create a new column, and calculate the ratio of ratings to text reviews for each book. What kind of books have a large number of ratings but relatively few text reviews? Why do you think this is the case?</li>
+<li>Filter to include only books written in 2004. Arrange this list in order of publication date first, and then publisher. Keep only the title, author, and publication date.</li>
+<li>More of a challenge: Which author has the highest average rating? Before you calculate this, we need to make it a bit more meaningful by wrangling the dataset a bit, so our result isn’t skewed by authors with one book and a tiny number of 5 star ratings. First, keep only books with at least 100 ratings, and then authors with at least 3 of such books. Calculate the average (or mean) rating for each author. Arrange this list in descending order of the average rating.</li>
 </ul>
 <section id="filter-combined-with-str_detect-optional" class="level3">
 <h3 class="anchored" data-anchor-id="filter-combined-with-str_detect-optional">Filter combined with str_detect (optional)</h3>
 <ul>
-<li><p>Find all passengers whose family name starts with the letters Ca.</p></li>
-<li><p>Find all the Swedish passengers (names that end in <code>sson</code>).</p></li>
-<li><p>Find all the married female passengers who travelled alone.</p></li>
-<li><p>Were there any female doctors on board? Find them.</p></li>
-<li><p>Write a Regular Expressions pattern to match as many common Dutch family names as you can.</p></li>
+<li><p>Find all the books written in English (as above but using str_detect)</p></li>
+<li><p>Find all the Swedish authors (names that end in <code>sson</code>).</p></li>
+<li><p>Find all the books where Isaac Asimov is listed as an author, even where other authors are listed at the same time.</p></li>
+<li><p>Find all books published by a Penguin imprint (classics, UK, etc. )</p></li>
+<li><p>Find all books with numbers in the title.</p></li>
 </ul>
 
 
@@ -720,8 +727,8 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./summarise.html" class="pagination-link" aria-label="Summarising">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Summarising</span></span>
+      <a href="./grouping.html" class="pagination-link" aria-label="Grouping">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Grouping</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

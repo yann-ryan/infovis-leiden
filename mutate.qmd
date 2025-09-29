@@ -1,7 +1,7 @@
 ---
 title: "Changing columns with mutate"
 webr:
-  packages: ['dplyr', 'readr']
+  packages: ['dplyr', 'readr', 'stringr']
 ---
 
 ```{webr-r}
@@ -58,7 +58,7 @@ In this case, we want to create a new column, called 'status'. In this column, w
 ```{webr-r}
 
 titanic_df |> 
-  mutate(status = ifelse(test = age < 18, yes = 'child', no = 'adult'))
+  mutate(status = if_else(age < 18, 'child', 'adult'))
 
 ```
 

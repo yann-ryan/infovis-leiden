@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>9&nbsp; Ordering and sorting dataframes – Information Visualization and the Humanities: Course Book</title>
+<title>16&nbsp; Grouping – Information Visualization and the Humanities: Course Book</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./pipes.html" rel="next">
-<link href="./slice.html" rel="prev">
+<link href="./at-home-002.html" rel="next">
+<link href="./summarise.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -359,7 +359,7 @@ globalThis.qwebrCustomizedWebROptions = {
 };
 
 // Store cell data
-globalThis.qwebrCellDetails = [{"code":"library(dplyr)\nlibrary(readr)\n\nurl <- \"https://raw.githubusercontent.com/yann-ryan/infovis-course/master/titanic_df_full.csv\"\ndownload.file(url, \"titanic_df.csv\")\n\ntitanic_df =  read_csv('titanic_df.csv') |> \n  mutate(fare = as.character(fare))\n","id":1,"options":{"autorun":"true","classes":"","comment":"","context":"setup","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-1","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"arrange(titanic_df, age) ","id":2,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-2","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"arrange(titanic_df, -age) ","id":3,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-3","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"arrange(titanic_df, name) ","id":4,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-4","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"arrange(titanic_df, desc(name)) ","id":5,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-5","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"arrange(titanic_df, sex, -age) ","id":6,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-6","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"","id":7,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-7","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}}];
+globalThis.qwebrCellDetails = [{"code":"library(dplyr)\nlibrary(readr)\n\nurl <- \"https://raw.githubusercontent.com/yann-ryan/infovis-course/master/titanic_df_full.csv\"\ndownload.file(url, \"titanic_df.csv\")\n\ntitanic_df =  read_csv('titanic_df.csv')","id":1,"options":{"autorun":"true","classes":"","comment":"","context":"setup","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-1","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"titanic_df |> \n  group_by(sex) ","id":2,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-2","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"titanic_df |>\n  group_by(sex, pclass) ","id":3,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-3","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"titanic_df |> \n  group_by(sex) |> \n  summarise(total = n())","id":4,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-4","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"titanic_df |> \n  group_by(sex) |> \n  summarise(total = n(), maximum = max(age, na.rm = TRUE)) # calculate the total number and the maximum age for each category.","id":5,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-5","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"","id":6,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-6","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"titanic_new_df |> \n  group_by(pclass) |>\n  slice_max(order_by = age, n = 5)","id":7,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-7","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"titanic_new_df |> \n  group_by(pclass) |>\n  mutate(total_class = n())","id":8,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-8","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"","id":9,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-9","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"","id":10,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-10","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"","id":11,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-11","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"","id":12,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-12","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}}];
 
 </script>
 <script type="module">
@@ -1569,7 +1569,7 @@ globalThis.qwebrExecuteCode = async function (
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./3_data_analysis_1.html">Data Analysis 1</a></li><li class="breadcrumb-item"><a href="./arrange.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Ordering and sorting dataframes</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./filter.html">Data Analysis 2</a></li><li class="breadcrumb-item"><a href="./grouping.html"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Grouping</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -1673,7 +1673,7 @@ globalThis.qwebrExecuteCode = async function (
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./arrange.html" class="sidebar-item-text sidebar-link active">
+  <a href="./arrange.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Ordering and sorting dataframes</span></span></a>
   </div>
 </li>
@@ -1726,7 +1726,7 @@ globalThis.qwebrExecuteCode = async function (
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./grouping.html" class="sidebar-item-text sidebar-link">
+  <a href="./grouping.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Grouping</span></span></a>
   </div>
 </li>
@@ -1748,9 +1748,16 @@ globalThis.qwebrExecuteCode = async function (
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#ordering-data" id="toc-ordering-data" class="nav-link active" data-scroll-target="#ordering-data">Ordering data</a></li>
-  <li><a href="#the-arrange-function" id="toc-the-arrange-function" class="nav-link" data-scroll-target="#the-arrange-function">The arrange() function</a></li>
-  <li><a href="#exercise" id="toc-exercise" class="nav-link" data-scroll-target="#exercise">Exercise</a></li>
+  <li><a href="#exercise" id="toc-exercise" class="nav-link active" data-scroll-target="#exercise">Exercise:</a></li>
+  <li><a href="#grouping-with-other-functions" id="toc-grouping-with-other-functions" class="nav-link" data-scroll-target="#grouping-with-other-functions">Grouping with other functions</a>
+  <ul class="collapse">
+  <li><a href="#grouping-and-slice_" id="toc-grouping-and-slice_" class="nav-link" data-scroll-target="#grouping-and-slice_">Grouping and slice_</a></li>
+  </ul></li>
+  <li><a href="#grouping-and-mutate" id="toc-grouping-and-mutate" class="nav-link" data-scroll-target="#grouping-and-mutate">Grouping and mutate()</a></li>
+  <li><a href="#ungroup" id="toc-ungroup" class="nav-link" data-scroll-target="#ungroup">Ungroup</a>
+  <ul class="collapse">
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises:</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -2041,9 +2048,9 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 }
 </script>
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./3_data_analysis_1.html">Data Analysis 1</a></li><li class="breadcrumb-item"><a href="./arrange.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Ordering and sorting dataframes</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./filter.html">Data Analysis 2</a></li><li class="breadcrumb-item"><a href="./grouping.html"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Grouping</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Ordering and sorting dataframes</span></h1>
+<h1 class="title"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Grouping</span></h1>
 </div>
 
 
@@ -2062,41 +2069,96 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 
 <div id="qwebr-insertion-location-1"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<section id="ordering-data" class="level3">
-<h3 class="anchored" data-anchor-id="ordering-data">Ordering data</h3>
-<p>Another typical task or manipulation we might want to do with our data is to put it in some kind of chosen order. This is particularly useful when doing exploratory data analysis, where we want to find out how the data looks and what interesting properties it might have that we can use for analysis.</p>
-</section>
-<section id="the-arrange-function" class="level3">
-<h3 class="anchored" data-anchor-id="the-arrange-function">The arrange() function</h3>
-<p>We can sort data using the verb <code>arrange()</code>. As with <code>select()</code> and <code>slice()</code>, the first element in the function will be the dataset, then followed by the column or columns we want to sort the data by. For example, this will sort the titanic_df dataframe by the column Age:</p>
+<p>In most cases when doing data analysis or visualisation, we will have a ‘raw’ dataset, such as the passenger names on the Titanic. But we can’t visualise that directly: it needs to be summarised into interesting or insightful ways. For example, we don’t usually visualise each individual passenger, but we might want to visualise a count of male and female passengers.</p>
+<p>To count using attributes like this, we use a concept called <em>grouping</em>. Grouping means that we combine the data together based on some variable (column). Once this is done, certain functions will be carried out on each group separately, rather than the whole dataset.</p>
+<p>To do this in R, we use a function called group_by(). A simple example is that we could group the <code>titanic_df</code> by the <code>sex</code> column:</p>
 <div id="qwebr-insertion-location-2"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>Sorting is ascending by default, but you can specify descending by using a minus sign before the column you want to sort by:</p>
+<p>The only different here is that the dataframe shows that the data has been divided into groups based on the sex variable. The [2] after it shows that there are two groups: male and female.</p>
+<p>We can also group by multiple variables. This will group the dataset by both sex and pclass:</p>
 <div id="qwebr-insertion-location-3"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>What happens if you sort by a character column instead of a numeric column?</p>
+<p>Now we see that the data has been divided into 6 groups in total: first class males, first class females, second class males, second class female, and so forth. If we run a relevant function on this, it will calculate separately for each of the six groups.</p>
+<p>The usefulness of this is because technically speaking, the verb we learned on the previous page, <strong>summarise(), calculates a summary for <em>each group in a dataset</em></strong>, meaning we can use it to understand and analyse the data from different perspectives. For example, we can calculate the total number of male and female passengers by first grouping by the sex variable, and then using summarise with the n() function from the previous page. This will make a new dataset with a column called ‘total’, displaying the total for each group:</p>
 <div id="qwebr-insertion-location-4"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>If we want to use reverse order in a character column, we need to wrap the column in another verb, <code>desc()</code>.</p>
+<p>There are lots of other functions that work with groups and summarise. Here is a list of the most useful:</p>
+<ul>
+<li><p>Center: <a href="https://rdrr.io/r/base/mean.html"><code>mean()</code></a>, <a href="https://rdrr.io/r/stats/median.html"><code>median()</code></a></p></li>
+<li><p>Spread: <a href="https://rdrr.io/r/stats/sd.html"><code>sd()</code></a>, <a href="https://rdrr.io/r/stats/IQR.html"><code>IQR()</code></a>, <a href="https://rdrr.io/r/stats/mad.html"><code>mad()</code></a></p></li>
+<li><p>Range: <a href="https://rdrr.io/r/base/Extremes.html"><code>min()</code></a>, <a href="https://rdrr.io/r/base/Extremes.html"><code>max()</code></a>,</p></li>
+<li><p>Position: <a href="https://dplyr.tidyverse.org/reference/nth.html"><code>first()</code></a>, <a href="https://dplyr.tidyverse.org/reference/nth.html"><code>last()</code></a>, <a href="https://dplyr.tidyverse.org/reference/nth.html"><code>nth()</code></a>,</p></li>
+<li><p>Count: <a href="https://dplyr.tidyverse.org/reference/context.html"><code>n()</code></a>, <a href="https://dplyr.tidyverse.org/reference/n_distinct.html"><code>n_distinct()</code></a></p></li>
+<li><p>Logical: <a href="https://rdrr.io/r/base/any.html"><code>any()</code></a>, <a href="https://rdrr.io/r/base/all.html"><code>all()</code></a></p></li>
+</ul>
+<p>You can also calculate multiple summaries in a single function:</p>
 <div id="qwebr-insertion-location-5"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>Look at the result of the name column now. I’ve included 20 rows rather than the usual 5. Do you notice anything strange? Why is van Melkebeke or del Carlo put before Zimmerman?</p>
-<p>The sorting method used by <code>arrange()</code> thinks that lowercase letters should be considered before uppercase ones. This is something which we would need to fix if we were working properly with the data, for instance by converting everything to lowercase before sorting.</p>
-<p>You can sort by multiple things. Before you run the code, what do you think the following does?</p>
+<section id="exercise" class="level3">
+<h3 class="anchored" data-anchor-id="exercise">Exercise:</h3>
+<p>Create a summary of the data containing the the average age of male and female passengers - call the new summary column ‘average_age’.</p>
 <div id="qwebr-insertion-location-6"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </section>
-<section id="exercise" class="level3">
-<h3 class="anchored" data-anchor-id="exercise">Exercise</h3>
-<p>Sort by the <code>Fare</code> column. What is unusual about this and why? How do you think you could fix it? (Hint: use <code>glimpse()</code> to look at the data types)</p>
+<section id="grouping-with-other-functions" class="level2">
+<h2 class="anchored" data-anchor-id="grouping-with-other-functions">Grouping with other functions</h2>
+<section id="grouping-and-slice_" class="level3">
+<h3 class="anchored" data-anchor-id="grouping-and-slice_">Grouping and slice_</h3>
+<p>Other functions we have come across also work with groups. For instance, we can find the five oldest passengers for each passenger class by first using <code>group_by()</code>, and then using <code>slice_max()</code>:</p>
 <div id="qwebr-insertion-location-7"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>See that the result is a dataframe containing 15 rows, 5 for each of the passenger classes?</p>
+<p>You can also use <code>slice_min()</code> in much the same way.</p>
+</section>
+</section>
+<section id="grouping-and-mutate" class="level2">
+<h2 class="anchored" data-anchor-id="grouping-and-mutate">Grouping and mutate()</h2>
+<p>You can also use group_by with mutate(). In this case, it will add the total for each group as a new column, and not remove anything else.</p>
+<div id="qwebr-insertion-location-8"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+</section>
+<section id="ungroup" class="level2">
+<h2 class="anchored" data-anchor-id="ungroup">Ungroup</h2>
+<p>Sometimes you’ll want to do something in groups and then remove them afterwards because they give unwanted effects. You can do this using the verb <code>ungroup()</code>.</p>
+<section id="exercises" class="level3">
+<h3 class="anchored" data-anchor-id="exercises">Exercises:</h3>
 <ul>
-<li><p>Use <code>arrange()</code> to find the 5 oldest male passengers.</p></li>
-<li><p>Use a <code>slice_</code> function to find the 20 youngest passengers, and put them in alphabetical order.</p></li>
+<li>Calculate the total number of passengers by both sex and pclass</li>
 </ul>
+<div id="qwebr-insertion-location-9"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<ul>
+<li><p>The Embarked column indicates where the passengers got onto the ship. The code is C = Cherbourg, Q = Queenstown (Cobh in Ireland today), S = Southampton.</p></li>
+<li><p>How many passengers got on at each location?</p></li>
+</ul>
+<div id="qwebr-insertion-location-10"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<ul>
+<li>What was the average fare paid for each location?</li>
+</ul>
+<div id="qwebr-insertion-location-11"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>Create a new column, containing the total number which embarked from that person’s location.</p>
+<div id="qwebr-insertion-location-12"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>Who are the five youngest male and female passengers who embarked at each location?</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Save some typing by using count()
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>count(embarked) is the same as using group_by(embarked) |&gt; summarise(n = n()).</p>
+<p>count(embarked, wt = fare) is the same as using group_by(embarked) |&gt; summarise(n = sum(fare, na.rm = TRUE))</p>
+</div>
+</div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -2501,13 +2563,13 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./slice.html" class="pagination-link" aria-label="Subsetting rows">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Subsetting rows</span></span>
+      <a href="./summarise.html" class="pagination-link" aria-label="Summarising">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Summarising</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./pipes.html" class="pagination-link" aria-label="The pipe operator">
-        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">The pipe operator</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./at-home-002.html" class="pagination-link" aria-label="Home exercises">
+        <span class="nav-page-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Home exercises</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

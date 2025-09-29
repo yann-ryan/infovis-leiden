@@ -456,7 +456,7 @@
     "href": "at-home-001.html#exercises",
     "title": "11  Home exercises",
     "section": "Exercises",
-    "text": "Exercises\nFor this exercise, you’ll be working with the file bellevue_almshouse_modified.csv, which you can find in the folder. This dataset contains information on Irish-born immigrants admitted to the Bellevue Almshouse in the 1840s. This dataset was transcribed from the almshouse’s own admissions records by Anelise Shrout. For more information about this dataset, see The Almshouse Records. The copy here is taken from the version used by Melanie Walsh as part of the course Introduction to Cultural Analytics & Python.\nThe first step is to load the necessary packages and read the dataset into the RStudio environment, which we didn’t cover in class.\nYou can do that by copying the following code into a new cell in your R Markdown file. This cell should always be the first one in your document.\n\nlibrary(tidyverse)\n\nbellevue_dataset &lt;- read_csv('bellevue_almshouse_modified.csv')\n\nThe first line library(tidyverse) loads all the necessary packages we’ll use throughout the course. The second line will create a new dataframe in your environment called bellevue_dataset, loading it from a spreadsheet file called bellevue_almshouse_modified.csv.\nFor each exercise, write the objective followed by the code in one or multiple code cells. Use the commands we’ve learned so far, plus the pipe operator, to do the following:\n\nRead the dataset into the project environment.\nPrint a preview of the dataset using one of the methods we’ve looked at in the course.\nRemove the children column.\nRename the last_name column to family_name.\nWho are the five oldest men in the dataset?\nSort the dataset first by gender, and then by age.\nSort the full dataset in descending order of the arrival date (e.g. the most recent are first).\nWhat is the first name and last name of the five oldest women in the dataset?",
+    "text": "Exercises\nFor this exercise, you’ll be working with the file bellevue_almshouse_modified.csv, which you can find in the folder. This dataset contains information on Irish-born immigrants admitted to the Bellevue Almshouse in the 1840s. This dataset was transcribed from the almshouse’s own admissions records by Anelise Shrout. For more information about this dataset, see The Almshouse Records. The copy here is taken from the version used by Melanie Walsh as part of the course Introduction to Cultural Analytics & Python.\nThe first step is to load the necessary packages and read the dataset into the RStudio environment, which we didn’t cover in class.\nYou can do that by copying the following code into a new cell in your R Markdown file. This cell should always be the first one in your document.\n\nlibrary(tidyverse)\n\nbellevue_dataset &lt;- read_csv('bellevue_almshouse_modified.csv')\n\nThe first line library(tidyverse) loads all the necessary packages we’ll use throughout the course. The second line will create a new dataframe in your environment called bellevue_dataset, loading it from a spreadsheet file called bellevue_almshouse_modified.csv.\n\nProblems with Knitting?\nWhen you knit the HTML file, unlike using ‘run code’ in the .Rmd file, it will try to print all the rows of the dataframe to the document, which will likely freeze your workspace. To get around this you have a number of different options:\n\nSave the result as a new dataframe, e.g. sorted_df or oldest_women_df.\nPrint only the first few lines of the result, using the pipe and slice(1:10)\n\n\n\nExercises\nFor each exercise, write the objective followed by the code in one or multiple code cells. Use the commands we’ve learned so far, plus the pipe operator, to do the following:\n\nRead the dataset into the project environment.\nPrint a preview of the first 10 rows of the dataset using one of the methods we’ve looked at in the course. (hint, use slice()\nRemove the children column, and then print the first 10 rows of the dataset\nRename the last_name column to family_name, and then print the first 10 rows of the dataset.\nWho are the five oldest men in the dataset?\nSort the dataset first by gender, and then by age. Print the first 10 rows.\nSort the full dataset in descending order of the arrival date (e.g. the most recent are first). Print the first 10 rows.\nWhat is the first name and last name of the five oldest women in the dataset? If you do this using arrange(), print only the first 10 rows.",
     "crumbs": [
       "Data Analysis 1",
       "<span class='chapter-number'>11</span>  <span class='chapter-title'>Home exercises</span>"
@@ -522,32 +522,76 @@
     "href": "summarise.html#exercises",
     "title": "15  Summarising",
     "section": "Exercises:",
-    "text": "Exercises:\nWhat is the average age of all the passengers? Average can be calculated using a function called mean().\nWhat is the maximum Fare paid? You can use the function max() for this.",
+    "text": "Exercises:\nWhat is the average age of all the passengers? Average can be calculated using a function called mean().\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nWhat is the maximum Fare paid? You can use the function max() for this.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
     "crumbs": [
       "Data Analysis 2",
       "<span class='chapter-number'>15</span>  <span class='chapter-title'>Summarising</span>"
     ]
   },
   {
+    "objectID": "grouping.html",
+    "href": "grouping.html",
+    "title": "16  Grouping",
+    "section": "",
+    "text": "Exercise:\nIn most cases when doing data analysis or visualisation, we will have a ‘raw’ dataset, such as the passenger names on the Titanic. But we can’t visualise that directly: it needs to be summarised into interesting or insightful ways. For example, we don’t usually visualise each individual passenger, but we might want to visualise a count of male and female passengers.\nTo count using attributes like this, we use a concept called grouping. Grouping means that we combine the data together based on some variable (column). Once this is done, certain functions will be carried out on each group separately, rather than the whole dataset.\nTo do this in R, we use a function called group_by(). A simple example is that we could group the titanic_df by the sex column:\nThe only different here is that the dataframe shows that the data has been divided into groups based on the sex variable. The [2] after it shows that there are two groups: male and female.\nWe can also group by multiple variables. This will group the dataset by both sex and pclass:\nNow we see that the data has been divided into 6 groups in total: first class males, first class females, second class males, second class female, and so forth. If we run a relevant function on this, it will calculate separately for each of the six groups.\nThe usefulness of this is because technically speaking, the verb we learned on the previous page, summarise(), calculates a summary for each group in a dataset, meaning we can use it to understand and analyse the data from different perspectives. For example, we can calculate the total number of male and female passengers by first grouping by the sex variable, and then using summarise with the n() function from the previous page. This will make a new dataset with a column called ‘total’, displaying the total for each group:\nThere are lots of other functions that work with groups and summarise. Here is a list of the most useful:\nYou can also calculate multiple summaries in a single function:\nCreate a summary of the data containing the the average age of male and female passengers - call the new summary column ‘average_age’.",
+    "crumbs": [
+      "Data Analysis 2",
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Grouping</span>"
+    ]
+  },
+  {
+    "objectID": "grouping.html#grouping-with-other-functions",
+    "href": "grouping.html#grouping-with-other-functions",
+    "title": "16  Grouping",
+    "section": "Grouping with other functions",
+    "text": "Grouping with other functions\n\nGrouping and slice_\nOther functions we have come across also work with groups. For instance, we can find the five oldest passengers for each passenger class by first using group_by(), and then using slice_max():\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nSee that the result is a dataframe containing 15 rows, 5 for each of the passenger classes?\nYou can also use slice_min() in much the same way.",
+    "crumbs": [
+      "Data Analysis 2",
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Grouping</span>"
+    ]
+  },
+  {
+    "objectID": "grouping.html#grouping-and-mutate",
+    "href": "grouping.html#grouping-and-mutate",
+    "title": "16  Grouping",
+    "section": "Grouping and mutate()",
+    "text": "Grouping and mutate()\nYou can also use group_by with mutate(). In this case, it will add the total for each group as a new column, and not remove anything else.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Data Analysis 2",
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Grouping</span>"
+    ]
+  },
+  {
+    "objectID": "grouping.html#ungroup",
+    "href": "grouping.html#ungroup",
+    "title": "16  Grouping",
+    "section": "Ungroup",
+    "text": "Ungroup\nSometimes you’ll want to do something in groups and then remove them afterwards because they give unwanted effects. You can do this using the verb ungroup().\n\nExercises:\n\nCalculate the total number of passengers by both sex and pclass\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nThe Embarked column indicates where the passengers got onto the ship. The code is C = Cherbourg, Q = Queenstown (Cobh in Ireland today), S = Southampton.\nHow many passengers got on at each location?\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nWhat was the average fare paid for each location?\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nCreate a new column, containing the total number which embarked from that person’s location.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nWho are the five youngest male and female passengers who embarked at each location?\n\n\n\n\n\n\nSave some typing by using count()\n\n\n\ncount(embarked) is the same as using group_by(embarked) |&gt; summarise(n = n()).\ncount(embarked, wt = fare) is the same as using group_by(embarked) |&gt; summarise(n = sum(fare, na.rm = TRUE))",
+    "crumbs": [
+      "Data Analysis 2",
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Grouping</span>"
+    ]
+  },
+  {
     "objectID": "at-home-002.html",
     "href": "at-home-002.html",
-    "title": "16  Home exercises",
+    "title": "17  Home exercises",
     "section": "",
     "text": "Instructions\nThe at-home exercises should be completed using Posit cloud. Open the new assignment ‘Home Exercise 3’. Create a new .Rmd file (use File -&gt; New File -&gt; R Notebook.\nI advise saving the new file straight away. Because you’ll submit this file as an assignment, use a standardised name: lastname_firstname3. Regularly re-save the file.\nWhen you have finished the exercise (or part of it), ‘knit’ the file. Export the .Rmd and the html as a .zip file, and upload this to the assignment area.\nIf you can’t knit the file because of an error, either comment out the code which doesn’t work using #, or just submit the .Rmd file on its own.",
     "crumbs": [
       "Data Analysis 2",
-      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Home exercises</span>"
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Home exercises</span>"
     ]
   },
   {
     "objectID": "at-home-002.html#at-home-exercises",
     "href": "at-home-002.html#at-home-exercises",
-    "title": "16  Home exercises",
+    "title": "17  Home exercises",
     "section": "At home exercises",
-    "text": "At home exercises\nYou can find a copy of the Titanic dataset as a csv in the project folder.\nUse summarise and all the previously-learned functions to do the following:\n\nLoad the tidyverse library\nRead the dataset titanic_df_full.csv into your environment, and save it as an object with the name titanic_df. (see the previous week’s home exercises to see how to do this and the previous step).\nFilter the dataset to include only male passengers who travelled on a ticket worth over 100 pounds.\nFilter the dataset so it includes all passengers who were children (those under 18) or who embarked at Cherbourg (C).\nFilter the dataset to include only passengers who had a second or third class ticket, and they also embarked at Queenstown (Q).\nCreate a new column, and calculate the age in months for each passenger.\nSummarise the data to calculate the average number of siblings or spouses (sibsp column) per passenger. Before you do this, remove passengers with no siblings or spouses.\n\n\nFilter combined with str_detect (optional)\n\nFind all passengers whose family name starts with the letters Ca.\nFind all the Swedish passengers (names that end in sson).\nFind all the married female passengers who travelled alone.\nWere there any female doctors on board? Find them.\nWrite a Regular Expressions pattern to match as many common Dutch family names as you can.",
+    "text": "At home exercises\nYou can find the Goodreads dataset as a csv in the project folder. This is a dataset of the 11,000 most popular books taken from the review site Goodreads.com, and includes author information, plus the amount and average rating for each.\nThere is also a genre column which comes from the tags users have added. Note that originally, the dataset had multiple genres for each book. To simplify things for this class, I have only kept the first one.\nUse summarise, group_by(), and all the previously-learned functions to do the following:\n\nLoad the tidyverse library\nRead the dataset Goodreads_books_with_genres.csv into your environment, and save it as an object with the name goodreads_df. (see the previous week’s home exercises to see how to do this and the previous step).\nFilter the dataset to include only books with the genre Science Fiction (note the capital letters) which received a rating of over 4.5.\nFilter the dataset so it includes either of these conditions: either not written in English, or over 500 pages.\nCreate a new column, and calculate the ratio of ratings to text reviews for each book. What kind of books have a large number of ratings but relatively few text reviews? Why do you think this is the case?\nFilter to include only books written in 2004. Arrange this list in order of publication date first, and then publisher. Keep only the title, author, and publication date.\nMore of a challenge: Which author has the highest average rating? Before you calculate this, we need to make it a bit more meaningful by wrangling the dataset a bit, so our result isn’t skewed by authors with one book and a tiny number of 5 star ratings. First, keep only books with at least 100 ratings, and then authors with at least 3 of such books. Calculate the average (or mean) rating for each author. Arrange this list in descending order of the average rating.\n\n\nFilter combined with str_detect (optional)\n\nFind all the books written in English (as above but using str_detect)\nFind all the Swedish authors (names that end in sson).\nFind all the books where Isaac Asimov is listed as an author, even where other authors are listed at the same time.\nFind all books published by a Penguin imprint (classics, UK, etc. )\nFind all books with numbers in the title.",
     "crumbs": [
       "Data Analysis 2",
-      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Home exercises</span>"
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Home exercises</span>"
     ]
   }
 ]

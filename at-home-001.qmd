@@ -29,20 +29,30 @@ bellevue_dataset <- read_csv('bellevue_almshouse_modified.csv')
 
 The first line `library(tidyverse)` loads all the necessary packages we'll use throughout the course. The second line will create a new dataframe in your environment called `bellevue_dataset`, loading it from a spreadsheet file called `bellevue_almshouse_modified.csv`.
 
+### Problems with Knitting?
+
+When you knit the HTML file, unlike using 'run code' in the .Rmd file, it will try to print all the rows of the dataframe to the document, which will likely freeze your workspace. To get around this you have a number of different options:
+
+-   Save the result as a new dataframe, e.g. sorted_df or oldest_women_df.
+
+-   Print only the first few lines of the result, using the pipe and slice(1:10)
+
+### Exercises
+
 For each exercise, write the objective followed by the code in one or multiple code cells. Use the commands we've learned so far, plus the pipe operator, to do the following:
 
 -   Read the dataset into the project environment.
 
--   Print a preview of the dataset using one of the methods we've looked at in the course.
+-   Print a preview of the first 10 rows of the dataset using one of the methods we've looked at in the course. (hint, use slice()
 
--   Remove the `children` column.
+-   Remove the `children` column, and then print the first 10 rows of the dataset
 
--   Rename the `last_name` column to `family_name`.
+-   Rename the `last_name` column to `family_name`, and then print the first 10 rows of the dataset.
 
 -   Who are the five oldest men in the dataset?
 
--   Sort the dataset first by gender, and then by age.
+-   Sort the dataset first by gender, and then by age. Print the first 10 rows.
 
--   Sort the full dataset in descending order of the arrival date (e.g. the most recent are first).
+-   Sort the full dataset in descending order of the arrival date (e.g. the most recent are first). Print the first 10 rows.
 
--   What is the first name and last name of the five oldest women in the dataset?
+    What is the first name and last name of the five oldest women in the dataset? If you do this using arrange(), print only the first 10 rows.

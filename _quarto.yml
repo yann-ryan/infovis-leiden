@@ -31,10 +31,10 @@ book:
         - regex.qmd
         - mutate.qmd
         - summarise.qmd
+        - grouping.qmd
         - at-home-002.qmd
  #    - part: "Data Analysis 3"
  #      chapters:
- #        - grouping.qmd
  #        - joins.qmd
  #        - at-home-003.qmd
  #    - part: "Data Visualisation 1"

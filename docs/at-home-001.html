@@ -274,8 +274,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./grouping.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Grouping</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./at-home-002.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Home exercises</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Home exercises</span></span></a>
   </div>
 </li>
       </ul>
@@ -291,7 +297,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#instructions" id="toc-instructions" class="nav-link active" data-scroll-target="#instructions">Instructions</a></li>
-  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises</a>
+  <ul class="collapse">
+  <li><a href="#problems-with-knitting" id="toc-problems-with-knitting" class="nav-link" data-scroll-target="#problems-with-knitting">Problems with Knitting?</a></li>
+  <li><a href="#exercises-1" id="toc-exercises-1" class="nav-link" data-scroll-target="#exercises-1">Exercises</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -334,19 +344,30 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>bellevue_dataset <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">'bellevue_almshouse_modified.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The first line <code>library(tidyverse)</code> loads all the necessary packages we’ll use throughout the course. The second line will create a new dataframe in your environment called <code>bellevue_dataset</code>, loading it from a spreadsheet file called <code>bellevue_almshouse_modified.csv</code>.</p>
+<section id="problems-with-knitting" class="level3">
+<h3 class="anchored" data-anchor-id="problems-with-knitting">Problems with Knitting?</h3>
+<p>When you knit the HTML file, unlike using ‘run code’ in the .Rmd file, it will try to print all the rows of the dataframe to the document, which will likely freeze your workspace. To get around this you have a number of different options:</p>
+<ul>
+<li><p>Save the result as a new dataframe, e.g.&nbsp;sorted_df or oldest_women_df.</p></li>
+<li><p>Print only the first few lines of the result, using the pipe and slice(1:10)</p></li>
+</ul>
+</section>
+<section id="exercises-1" class="level3">
+<h3 class="anchored" data-anchor-id="exercises-1">Exercises</h3>
 <p>For each exercise, write the objective followed by the code in one or multiple code cells. Use the commands we’ve learned so far, plus the pipe operator, to do the following:</p>
 <ul>
 <li><p>Read the dataset into the project environment.</p></li>
-<li><p>Print a preview of the dataset using one of the methods we’ve looked at in the course.</p></li>
-<li><p>Remove the <code>children</code> column.</p></li>
-<li><p>Rename the <code>last_name</code> column to <code>family_name</code>.</p></li>
+<li><p>Print a preview of the first 10 rows of the dataset using one of the methods we’ve looked at in the course. (hint, use slice()</p></li>
+<li><p>Remove the <code>children</code> column, and then print the first 10 rows of the dataset</p></li>
+<li><p>Rename the <code>last_name</code> column to <code>family_name</code>, and then print the first 10 rows of the dataset.</p></li>
 <li><p>Who are the five oldest men in the dataset?</p></li>
-<li><p>Sort the dataset first by gender, and then by age.</p></li>
-<li><p>Sort the full dataset in descending order of the arrival date (e.g.&nbsp;the most recent are first).</p></li>
-<li><p>What is the first name and last name of the five oldest women in the dataset?</p></li>
+<li><p>Sort the dataset first by gender, and then by age. Print the first 10 rows.</p></li>
+<li><p>Sort the full dataset in descending order of the arrival date (e.g.&nbsp;the most recent are first). Print the first 10 rows.</p>
+<p>What is the first name and last name of the five oldest women in the dataset? If you do this using arrange(), print only the first 10 rows.</p></li>
 </ul>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

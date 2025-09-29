@@ -1,5 +1,6 @@
 ---
-title: "Week 4 Infovis"
+title: "Information Vizualisation and the Humanities"
+subtitle: "Week 3"
 format: revealjs
 filters:
   - webr

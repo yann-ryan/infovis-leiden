@@ -40,7 +40,7 @@ Notice that as well as putting the Fare column within the brackets of the sum() 
 
 ```{webr-r}
 titanic_df |> 
-  summarise(n = sum(fare, na.rm = FALSE))
+  summarise(n = sum(fare, na.rm = TRUE))
 ```
 
 Here is a list of some of the most useful summarise functions:
@@ -69,4 +69,13 @@ tally(Fare) is the same as writing summarise(n = sum(Fare, na.rm = TRUE))
 
 What is the *average* age of all the passengers? Average can be calculated using a function called mean().
 
+```{webr-r}
+titanic_df |> 
+```
+
+
 What is the maximum Fare paid? You can use the function max() for this.
+
+```{webr-r}
+titanic_df |> 
+```
