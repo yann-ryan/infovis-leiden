@@ -308,7 +308,11 @@ ul.task-list li input[type="checkbox"] {
 <li>Filter the dataset to include only books with the genre Science Fiction (note the capital letters) which received a rating of over 4.5.</li>
 <li>Filter the dataset so it includes either of these conditions: either <em>not</em> written in English, <em>or</em> over 500 pages.</li>
 <li>Create a new column, and calculate the ratio of ratings to text reviews for each book. What kind of books have a large number of ratings but relatively few text reviews? Why do you think this is the case?</li>
-<li>Filter to include only books written in 2004. Arrange this list in order of publication date first, and then publisher. Keep only the title, author, and publication date.</li>
+<li>Filter to include only books written in 2004. Arrange this list in order of publication date first, and then publisher. Keep only the title, author, and publication date. There are two ways of doing this:
+<ul>
+<li>1, Use the <code>str_detect()</code> function described in the optional section in the book to filter to include entries in the publication_date column which <em>end</em> in the text <code>2004.</code></li>
+<li>2, Extract the year from the publication_date column. The cleanest way to do this is to first convert it to a date format the computer can read, using a function called <code>mdy()</code>. You can write over the existing publication column using <code>mutate(publication_date = mdy(publication_date))</code>. Next, you can extract the year from this date using a function called <code>year()</code>. Create a new column called <code>year</code> using mutate(), where you will apply the function year() to the publication date column. Now you can filter this new column to retain only rows where the value is 2004.</li>
+</ul></li>
 <li>More of a challenge: Which author has the highest average rating? Before you calculate this, we need to make it a bit more meaningful by wrangling the dataset a bit, so our result isn’t skewed by authors with one book and a tiny number of 5 star ratings. First, keep only books with at least 100 ratings, and then authors with at least 3 of such books. Calculate the average (or mean) rating for each author. Arrange this list in descending order of the average rating.</li>
 </ul>
 <section id="filter-combined-with-str_detect-optional" class="level3">
