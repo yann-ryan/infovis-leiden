@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>14&nbsp; Changing columns with mutate – Information Visualization and the Humanities: Course Book</title>
+<title>19&nbsp; Tidying data with pivot_longer() – Information Visualization and the Humanities: Course Book</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./summarise.html" rel="next">
-<link href="./regex.html" rel="prev">
+<link href="./challenge.html" rel="next">
+<link href="./joins.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -337,7 +337,7 @@ body.reveal.quarto-dark div.qwebr-console-area {
 // Document level settings ----
 
 // Determine if we need to install R packages
-globalThis.qwebrInstallRPackagesList = ['dplyr', 'readr', 'stringr'];
+globalThis.qwebrInstallRPackagesList = ['dplyr', 'readr'];
 
 // Specify possible locations to search for the repository
 globalThis.qwebrPackageRepoURLS = ['https://repo.r-wasm.org/'];
@@ -359,7 +359,7 @@ globalThis.qwebrCustomizedWebROptions = {
 };
 
 // Store cell data
-globalThis.qwebrCellDetails = [{"code":"library(dplyr)\nlibrary(readr)\n\nurl <- \"https://raw.githubusercontent.com/yann-ryan/infovis-course/master/titanic_df_full.csv\"\ndownload.file(url, \"titanic_df.csv\")\n\ntitanic_df =  read_csv('titanic_df.csv')","id":1,"options":{"autorun":"true","classes":"","comment":"","context":"setup","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-1","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"titanic_df |> \n  mutate(price_today = fare * 78.17 ) |>\n  select(name, fare, price_today)","id":2,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-2","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"titanic_df |> \n  mutate(age_in_years = round(age)) |> \n  select(name, age, age_in_years)","id":3,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-3","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"titanic_df |> \n  mutate(status = if_else(age < 18, 'child', 'adult'))","id":4,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-4","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"titanic_df |> \n  mutate(status = \n           case_when(\n            age <13 ~ \"child\",\n            age >12 & age <20 ~ \"teenager\",\n            age>20 ~ \"adult\"\n           ))","id":5,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-5","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"","id":6,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-6","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"","id":7,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-7","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"","id":8,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-8","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}}];
+globalThis.qwebrCellDetails = [{"code":"library(dplyr)\nlibrary(readr)\n\nurl <- \"https://vincentarelbundock.github.io/Rdatasets/csv/gapminder/gapminder.csv\"\ndownload.file(url, \"gapminder.csv\")\n\ngapminder_df =  read_csv('gapminder.csv')\n\ngapminder_population =  gapminder_df |> filter(continent == 'Europe') |> select(country, year, pop) |> pivot_wider(names_from = year, values_from = pop)\n","id":1,"options":{"autorun":"true","classes":"","comment":"","context":"setup","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-1","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"gapminder_population","id":2,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-2","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"gapminder_population |>\n  pivot_longer(cols = 2:13, names_to = 'year', values_to ='population')","id":3,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-3","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}}];
 
 </script>
 <script type="module">
@@ -1569,7 +1569,7 @@ globalThis.qwebrExecuteCode = async function (
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./filter.html">Data Analysis 2</a></li><li class="breadcrumb-item"><a href="./mutate.html"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Changing columns with mutate</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./joins.html">Data Analysis 3</a></li><li class="breadcrumb-item"><a href="./tidy.html"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Tidying data with pivot_longer()</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -1714,7 +1714,7 @@ globalThis.qwebrExecuteCode = async function (
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./mutate.html" class="sidebar-item-text sidebar-link active">
+  <a href="./mutate.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Changing columns with mutate</span></span></a>
   </div>
 </li>
@@ -1755,7 +1755,7 @@ globalThis.qwebrExecuteCode = async function (
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./tidy.html" class="sidebar-item-text sidebar-link">
+  <a href="./tidy.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Tidying data with pivot_longer()</span></span></a>
   </div>
 </li>
@@ -1783,9 +1783,13 @@ globalThis.qwebrExecuteCode = async function (
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#using-existing-functions" id="toc-using-existing-functions" class="nav-link active" data-scroll-target="#using-existing-functions">Using existing functions</a></li>
-  <li><a href="#if_else-and-case_when" id="toc-if_else-and-case_when" class="nav-link" data-scroll-target="#if_else-and-case_when">if_else and case_when</a></li>
-  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises:</a></li>
+  <li><a href="#reshaping-data" id="toc-reshaping-data" class="nav-link active" data-scroll-target="#reshaping-data">Reshaping data</a>
+  <ul class="collapse">
+  <li><a href="#data-terminology" id="toc-data-terminology" class="nav-link" data-scroll-target="#data-terminology">Data terminology</a></li>
+  <li><a href="#wide-and-long-data" id="toc-wide-and-long-data" class="nav-link" data-scroll-target="#wide-and-long-data">Wide and long data</a></li>
+  </ul></li>
+  <li><a href="#tidy-data" id="toc-tidy-data" class="nav-link" data-scroll-target="#tidy-data">Tidy data</a></li>
+  <li><a href="#pivot_longer" id="toc-pivot_longer" class="nav-link" data-scroll-target="#pivot_longer">pivot_longer()</a></li>
   </ul>
 </nav>
     </div>
@@ -2076,9 +2080,9 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 }
 </script>
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./filter.html">Data Analysis 2</a></li><li class="breadcrumb-item"><a href="./mutate.html"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Changing columns with mutate</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./joins.html">Data Analysis 3</a></li><li class="breadcrumb-item"><a href="./tidy.html"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Tidying data with pivot_longer()</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Changing columns with mutate</span></h1>
+<h1 class="title"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Tidying data with pivot_longer()</span></h1>
 </div>
 
 
@@ -2097,54 +2101,59 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 
 <div id="qwebr-insertion-location-1"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/bd4ae264-ae51-4d18-bd60-7a058ab42fba.png" class="img-fluid figure-img" alt="Cartoon of cute fuzzy monsters dressed up as different X-men characters, working together to add a new column to an existing data frame. Stylized title text reads &quot;dplyr::mutate - add columns, keep existing.&quot;" width="600"></p>
-<figcaption>Source: https://allisonhorst.com/r-packages-functions</figcaption>
-</figure>
-</div>
-<p>There are many situations when we might want to add new columns to a dataframe by doing a calculation on existing columns.</p>
-<p>As a simple example in our Titanic dataset, imagine you wanted to calculate (and visualise) the ticket fares in today’s value. Assuming the fare is in British pounds, we could look up the value of single pound in (around) 1912, and use this to calculate how much it would cost in today’s currency.</p>
-<p>According to the <a href="https://www.nationalarchives.gov.uk/currency-converter/">National Archives Currency Converter</a>, 1 pound in 1910 is worth 78.17 today. Therefore, we can calculate the value by multiplying a value in the fare column by 78.17.</p>
-<p>We can do this on the entire Fare column using another verb, called <code>mutate</code>. This verb will create a new column in the dataset, based on our instructions. This could be anything from a simple formula (multiply the value by 78.17) to very complex formulas or algorithms.</p>
-<p>Similar to filter(), we use mutate() by first providing the dataset, followed by the pipe, then the verb mutate and within the brackets, we enter the new column name and an equal sign, followed by the instructions. In this case, the instructions are to take the Fare column and multiply it by 78.17, using <code>*</code>.</p>
+<section id="reshaping-data" class="level2">
+<h2 class="anchored" data-anchor-id="reshaping-data">Reshaping data</h2>
+<p>The final function we’ll learn in this section on data science is called pivot_longer(). The use of this might seem a bit abstract at first, but I hope it is something you will find very useful in the long run, because it will allow you to apply your data wrangling skills to a much wider pool of datasets.</p>
+<section id="data-terminology" class="level3">
+<h3 class="anchored" data-anchor-id="data-terminology">Data terminology</h3>
+<p>To understand what it does, we need to back up a little bit. First of all, a bit of terminology about datasets:</p>
+<ul>
+<li><strong>variables</strong> can be thought of as the label of a fact, such as eye colour, hair colour, city of birth, and so forth.</li>
+<li><strong>observations</strong> are individual instances of that fact, usually a single thing recorded about something. For example, you could record my eye colour and the observation would be ‘The eye colour of Yann Ryan is…’</li>
+<li><strong>Values</strong> are the actual measurements for that fact: in this case, the value for this observation would be blue.</li>
+</ul>
+</section>
+<section id="wide-and-long-data" class="level3">
+<h3 class="anchored" data-anchor-id="wide-and-long-data">Wide and long data</h3>
+<p>Tabular datasets can usually be described in one of two formats: <strong>wide</strong> or <strong>long</strong>.</p>
+<ul>
+<li>Wide datasets are where observations can be in columns. For example, if you had a dataset of a group of employment rates and the value for 2017 is in one column, the value for 2018 in the next, and so forth.</li>
+</ul>
+<p><img src="images/clipboard-1211627945.png" class="img-fluid"></p>
+<ul>
+<li>Long datasets are where each observation is in a separate row, like this:</li>
+</ul>
+<p><img src="images/clipboard-1693020634.png" class="img-fluid"></p>
+<p>In this case, each individual fact (for example, ‘the employment rate of Belgium in 2017’) has a separate row.</p>
+<p>Recording data in this second method is desirable for data analysis (the first is more useful when looking at a table in a spreadsheet programme), as it makes it much easier to work with. Data in this format is also known as tidy.</p>
+</section>
+</section>
+<section id="tidy-data" class="level2">
+<h2 class="anchored" data-anchor-id="tidy-data">Tidy data</h2>
+<p>Tidy data is data where:</p>
+<ul>
+<li><p>Each variable is in its own column.</p></li>
+<li><p>Each observation is in its own row</p></li>
+<li><p>Each value is in its own cell.</p></li>
+</ul>
+<p>As an example of a ‘wide’ dataset, there is a dataset called <code>gapminder_population</code> loaded into memory. View it by running the cell below:</p>
 <div id="qwebr-insertion-location-2"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>If you look at the output of the code above, you’ll see a new column, called ‘price_today’, containing the new price.</p>
-<section id="using-existing-functions" class="level3">
-<h3 class="anchored" data-anchor-id="using-existing-functions">Using existing functions</h3>
-<p>You can also use existing functions with mutate. In our dataset, the age is given in decimal, but you want to round to the nearest whole number. There is a simple function in R called <code>round()</code> which will do this.</p>
-<p>Write code to create a new column called <code>age_in_years</code> with <code>mutate()</code>. Use the <code>round()</code> function on the <code>Age</code> column, like this:</p>
+<p>This dataset contains population records for countries in Europe. You can see that each country is a separate row, and each year is a separate column. This is not tidy data, because each year is actually a separate observation, and should in its own row.</p>
+</section>
+<section id="pivot_longer" class="level2">
+<h2 class="anchored" data-anchor-id="pivot_longer">pivot_longer()</h2>
+<p>To reshape this to the more useful format, we can use a new function called <code>pivot_longer()</code>. This takes a dataset and a specified set of columns, and reshapes them so that each of these columns now have their own row, repeating the information where needed.</p>
+<p>The function has a number of important arguments:</p>
+<ul>
+<li>The dataset to use (or one passed from the pipe)</li>
+<li><code>cols</code> which lists the columns to reshape. The columns can be selected using the same methods as the <code>select()</code> function, meaning they can be selected by position, name, and so forth.</li>
+<li><code>names_to</code>: what you would like to call the column containing the new variable.</li>
+<li><code>values_to</code>: what you would like to call the new values.</li>
+</ul>
 <div id="qwebr-insertion-location-3"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-</section>
-<section id="if_else-and-case_when" class="level3">
-<h3 class="anchored" data-anchor-id="if_else-and-case_when">if_else and case_when</h3>
-<p>A useful way of using mutate() is to create a new column which is different depending on some conditions. Lets say you want to create a bar chart counting the adult and child passengers on the titanic separately. Currently, there is no column containing this information. However, we could make one using the age column and a function called <code>if_else</code>. Using <code>if_else</code> within <code>mutate()</code> will create a new column containing different information depending on your condition.</p>
-<p>In this case, we want to create a new column, called ‘status’. In this column, we want to enter ‘child’ if the number in the age column is less than 18, and otherwise we want to enter ‘adult’. This is done like this:</p>
-<div id="qwebr-insertion-location-4"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>You can use <code>case_when()</code> where you have more complicated scenarios. An example is this:</p>
-<div id="qwebr-insertion-location-5"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-</section>
-<section id="exercises" class="level3">
-<h3 class="anchored" data-anchor-id="exercises">Exercises:</h3>
-<ul>
-<li>You’ve just been told that the Age in the dataset was calculated incorrectly - it was underestimated by five years. Create a new column in the dataset called corrected_age, with the new value.</li>
-</ul>
-<div id="qwebr-insertion-location-6"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<ul>
-<li>Use the Age (or age_in_years) column to calculate the approximate year of birth for passengers (the Titanic sank in 1912. You can use <code>round()</code> on your new column, or you can leave it as a decimal.</li>
-</ul>
-<div id="qwebr-insertion-location-7"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<ul>
-<li>Who paid the highest fare, and what was it in today’s money? Use the methods you learned in the previous pages to select the name and fare in today’s money of the highest-paying passenger.</li>
-</ul>
-<div id="qwebr-insertion-location-8"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>See the shape of the data? It now contains far more rows, one for each observation (the population for a given country in a particular year).</p>
 
 
 </section>
@@ -2551,13 +2560,13 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./regex.html" class="pagination-link" aria-label="Pattern matching with str_detect">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Pattern matching with str_detect</span></span>
+      <a href="./joins.html" class="pagination-link" aria-label="Joins">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Joins</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./summarise.html" class="pagination-link" aria-label="Summarising">
-        <span class="nav-page-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Summarising</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./challenge.html" class="pagination-link" aria-label="Data challenge">
+        <span class="nav-page-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Data challenge</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

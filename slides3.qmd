@@ -23,17 +23,15 @@ titanic_df =  read_csv('titanic_df.csv')
 
 ```
 
-
-
 ## Recap
 
 -   `filter()`, followed by dataset (or the other way around if using the pipe)
 -   Conditions for the filter: usually column name followed by comparison, followed by value
--   Multiple conditions can be set with `&` or `|`. 
+-   Multiple conditions can be set with `&` or `|`.
 
 ## Exercise
 
--   Filter to include only male passengers under the age of 50. 
+-   Filter to include only male passengers under the age of 50.
 
 ```{webr-r}
 titanic_df |> 
@@ -42,7 +40,7 @@ titanic_df |>
 
 ## Exercise
 
--   Filter to include 3rd class passengers who survived. 
+-   Filter to include 3rd class passengers who survived.
 
 ```{webr-r}
 titanic_df |> 
@@ -51,7 +49,7 @@ titanic_df |>
 
 ## Exercise
 
--   Filter to include passengers who embarked in the location 'S' or 'Q', and were in first class. 
+-   Filter to include passengers who embarked in the location 'S' or 'Q', and were in first class.
 
 ```{webr-r}
 titanic_df |> 
@@ -64,17 +62,16 @@ titanic_df |>
 
 ## Recap
 
--   `mutate()` creates a new column in a dataframe, based on our instructions. 
+-   `mutate()` creates a new column in a dataframe, based on our instructions.
 -   The instruction can be arithmetic (add the values of two columns together, or multiple one by a fixed value)
--   Or can be another function, e.g. `round()`. 
--   We can also use `if_else()` or `case_when()` to add different values depending on certain conditions. 
+-   Or can be another function, e.g. `round()`.
+-   We can also use `if_else()` or `case_when()` to add different values depending on certain conditions.
 
 ## Exercise
 
--   The column `fare` contains the total price of a ticket, which can be a whole family. Create a column which contains the price per person. 
+-   The column `fare` contains the total price of a ticket, which can be a whole family. Create a column which contains the price per person.
 
--   Hint: the `sibsp` and `parch` columns contain the number of siblings/spouses and number of parents/children travelling with that person. It's probably easiest to use multiple mutate() functions to create intermediate columns. 
-
+-   Hint: the `sibsp` and `parch` columns contain the number of siblings/spouses and number of parents/children travelling with that person. It's probably easiest to use multiple mutate() functions to create intermediate columns.
 
 ```{webr-r}
 titanic_df |> 
@@ -83,20 +80,19 @@ titanic_df |>
 
 ## Exercise
 
--   Use a new function, `str_trunc()` to truncate the name field to 10 characters. Inside str_trunc you should specify the column you want to use, and the number of characters. 
+-   Use a new function, `str_trunc()` to truncate the name field to 10 characters. Inside str_trunc you should specify the column you want to use, and the number of characters.
 
 ```{webr-r}
 titanic_df |> 
   
 ```
-
 
 # Summarise
 
 ## What is summarise()?
 
--   The function `summarise()` takes all the rows in your dataframe and produces a desired summary. 
--   Similar to `mutate()`: first the column, followed by the desired action. 
+-   The function `summarise()` takes all the rows in your dataframe and produces a desired summary.
+-   Similar to `mutate()`: first the column, followed by the desired action.
 
 ## Count the number of rows
 
@@ -131,7 +127,7 @@ titanic_df |>
 
 ## Exercise
 
--   What is the average age of all the passengers? 
+-   What is the average age of all the passengers?
 
 ```{webr-r}
 titanic_df |> 
@@ -144,7 +140,6 @@ titanic_df |>
 ```{webr-r}
 titanic_df |> 
 ```
-
 
 # Grouping
 

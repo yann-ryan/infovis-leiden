@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>4&nbsp; R-Studio and using R Markdown – Information Visualization and the Humanities: Course Book</title>
+<title>20&nbsp; Data challenge – Information Visualization and the Humanities: Course Book</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,41 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -65,8 +30,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./at-home-000.html" rel="next">
-<link href="./practise.html" rel="prev">
+<link href="./at-home-003.html" rel="next">
+<link href="./tidy.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -117,7 +82,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./2_r_intro.html">Introduction to R</a></li><li class="breadcrumb-item"><a href="./1_rmarkdown.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">R-Studio and using R Markdown</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./joins.html">Data Analysis 3</a></li><li class="breadcrumb-item"><a href="./challenge.html"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Data challenge</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -180,7 +145,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./1_rmarkdown.html" class="sidebar-item-text sidebar-link active">
+  <a href="./1_rmarkdown.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">R-Studio and using R Markdown</span></span></a>
   </div>
 </li>
@@ -309,7 +274,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./challenge.html" class="sidebar-item-text sidebar-link">
+  <a href="./challenge.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Data challenge</span></span></a>
   </div>
 </li>
@@ -326,41 +291,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#r-and-r-studio" id="toc-r-and-r-studio" class="nav-link active" data-scroll-target="#r-and-r-studio">R and R-Studio</a></li>
-  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning Objectives</a>
-  <ul class="collapse">
-  <li><a href="#logging-into-posit-cloud-and-opening-a-notebook." id="toc-logging-into-posit-cloud-and-opening-a-notebook." class="nav-link" data-scroll-target="#logging-into-posit-cloud-and-opening-a-notebook.">Logging into Posit Cloud and opening a notebook.</a></li>
-  </ul></li>
-  <li><a href="#your-derived-workspace" id="toc-your-derived-workspace" class="nav-link" data-scroll-target="#your-derived-workspace">Your Derived Workspace</a></li>
-  <li><a href="#r-markdown-and-knitting-a-document" id="toc-r-markdown-and-knitting-a-document" class="nav-link" data-scroll-target="#r-markdown-and-knitting-a-document">R Markdown and ‘Knitting’ a Document</a>
-  <ul class="collapse">
-  <li><a href="#create-a-new-markdown-file" id="toc-create-a-new-markdown-file" class="nav-link" data-scroll-target="#create-a-new-markdown-file">Create a new markdown file</a></li>
-  <li><a href="#type-some-text" id="toc-type-some-text" class="nav-link" data-scroll-target="#type-some-text">Type some text</a></li>
-  <li><a href="#save-the-file" id="toc-save-the-file" class="nav-link" data-scroll-target="#save-the-file">Save the file</a></li>
-  <li><a href="#knit-the-document" id="toc-knit-the-document" class="nav-link" data-scroll-target="#knit-the-document">Knit the document</a></li>
-  <li><a href="#download-and-save-the-file" id="toc-download-and-save-the-file" class="nav-link" data-scroll-target="#download-and-save-the-file">Download and save the file</a></li>
-  <li><a href="#upload-to-brightspace" id="toc-upload-to-brightspace" class="nav-link" data-scroll-target="#upload-to-brightspace">Upload to Brightspace</a></li>
-  </ul></li>
-  <li><a href="#adding-code" id="toc-adding-code" class="nav-link" data-scroll-target="#adding-code">Adding Code</a></li>
-  <li><a href="#adding-files" id="toc-adding-files" class="nav-link" data-scroll-target="#adding-files">Adding files</a></li>
-  <li><a href="#environment" id="toc-environment" class="nav-link" data-scroll-target="#environment">Environment</a></li>
-  <li><a href="#reading-in-external-data" id="toc-reading-in-external-data" class="nav-link" data-scroll-target="#reading-in-external-data">Reading in external data</a></li>
-  <li><a href="#learning-objectives-1" id="toc-learning-objectives-1" class="nav-link" data-scroll-target="#learning-objectives-1">Learning Objectives</a></li>
-  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"></a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./2_r_intro.html">Introduction to R</a></li><li class="breadcrumb-item"><a href="./1_rmarkdown.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">R-Studio and using R Markdown</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./joins.html">Data Analysis 3</a></li><li class="breadcrumb-item"><a href="./challenge.html"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Data challenge</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">R-Studio and using R Markdown</span></h1>
+<h1 class="title"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Data challenge</span></h1>
 </div>
 
 
@@ -377,191 +316,42 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="r-and-r-studio" class="level2">
-<h2 class="anchored" data-anchor-id="r-and-r-studio">R and R-Studio</h2>
-<p>Up until now, we have been using R in a very simplified manner, directly in this book. For the at home exercises, and later on in the course, we’ll use something called R-Studio: an interface designed to make R easier to work with (known as an IDE).</p>
-<p>For this course, the data, files, and interface are all already set up for you in a workspace on a service called ‘Posit cloud’. Later on, you may want to install R and R-Studio on your local machine. See <a href="https://posit.co/download/rstudio-desktop/">here</a> for instructions on how to do this. The software is completely free and open-source.</p>
-</section>
-<section id="learning-objectives" class="level2">
-<h2 class="anchored" data-anchor-id="learning-objectives">Learning Objectives</h2>
+<p>For this data challenge, I’ll ask you to work with a real-world cultural dataset, which is in need of some data cleaning.</p>
+<p>You’re asked to carry out the whole process, from start to finish, including importing the raw data file and exporting the result.</p>
+<p>The dataset is a record of performances and attendances at performing arts venues in the Netherlands, from 1999 to 2023. It’s a good example of the kinds of things you’ll often need to do to datasets in order to make them useable for visualisation and analysis. You can find the dataset here: click on Original Dataset on the left hand side, and then click on Download CSV.</p>
+<p>Do the following in the Posit cloud workspace.</p>
+<p>Upload the dataset from your computer to Posit cloud.</p>
+<p>Import the dataset to your environment with a suitable name.</p>
+<p>Take a look at the dataset.</p>
 <ul>
-<li><p>Here is what you should understand by the end of today:</p></li>
-<li><p>Open a Posit account and create a new notebook</p></li>
-<li><p>Understand what an IDE is and how to code in it</p></li>
-<li><p>Know how to create a code cell and how to write plain text in your notebook</p></li>
-<li><p>Write some basic markdown</p></li>
-<li><p>Export (knit) a file and download it to your local machine.</p></li>
+<li><p>It has a large number of columns, and one row per year and per region. The other columns contain various information about performance numbers and attendance numbers. The attendance numbers are in units of 1000s of people.</p></li>
+<li><p>The Periods column has some extra text after the year.</p></li>
+<li><p>The regions contains all the various regional divisions, meaning it has rows for the Netherlands for a whole, one for larger regions, and one for provinces.</p></li>
 </ul>
-<section id="logging-into-posit-cloud-and-opening-a-notebook." class="level3">
-<h3 class="anchored" data-anchor-id="logging-into-posit-cloud-and-opening-a-notebook.">Logging into Posit Cloud and opening a notebook.</h3>
-<p>The first step is the create an account with Posit cloud. This is a service which will allow you to load R remotely, so you can complete this practical sessions for this course (you can also use R and R studio on your local machine if you use it already).</p>
-<p><img src="images/Screenshot 2023-08-25 at 12.36.55.png" class="img-fluid"></p>
-<p>Sign up to Posit cloud with an email address here: <a href="https://posit.cloud/plans" class="uri">https://posit.cloud/plans</a></p>
-<p>Click on ‘Learn more’ under the Free plan, and then ‘Sign up’.</p>
-<p>Click on the invite link posted on Brightspace. Once you have signed up, click on the ‘burger’ icon to the left of ‘Your Workspace’ to open a sidebar, which will allow you to switch to the correct workspace ‘Information Visualisation and the Humanities’:</p>
-<p><img src="images/Screenshot 2023-08-25 at 12.49.30.png" class="img-fluid"></p>
-<p>Once you have switched, you’ll see a list of assignments and projects. At the moment, there is just one for this week. Click the start button for ‘Week 2: Introduction’.</p>
-<p><img src="images/Screenshot 2023-08-25 at 12.50.09.png" class="img-fluid"></p>
-<p>This will load, and you should shortly be greeted with the Rstudio interface – this is an environment for creating and editing R code.</p>
-<p><img src="images/Screenshot 2024-08-28 at 14.41.18.png" class="img-fluid"></p>
-<p>R-Studio is divided into four different sections, or <em>panes</em>. Each of these also has multiple tabs. Starting from the top-left (numbered 1):</p>
-<ol type="1">
-<li><p>The source editor. Here is where you can edit R files such as RMarkdown or scripts.</p></li>
-<li><p>The environment pane will display any objects you create or import here, along with basic information on their type and size.</p></li>
-<li><p>This pane has a number of tabs. The default is files, which will show all the files in the current folder. You can use this to import or export additional files to R-Studio from your local machine.</p></li>
-<li><p>The console allows you to type and execute R commands directly: do this by typing here and pressing return.</p></li>
-</ol>
-<p>All four of these panes are important and worth it’s worth exploring more of the buttons and menu items. Throughout this course, you’ll complete exercises by using the source editor to edit notebooks. As you execute code in these notebooks, you’ll see objects pop into the environment pane. The console can be useful to test code that you don’t want to keep in a document. Lastly, getting to know how to use and navigate the directory structure using the files pane is essential.</p>
-<p>You can play around with the R-Studio interface. Don’t worry about breaking anything, but you should regularly save your work.</p>
-</section>
-</section>
-<section id="your-derived-workspace" class="level2">
-<h2 class="anchored" data-anchor-id="your-derived-workspace">Your Derived Workspace</h2>
-<p>You can return to the workspace overview by clicking on the sidebar and on the ‘Information Visualization[…]’ menu item again.</p>
-<p>If you do this, you’ll see that there are now <em>two</em> workspace items. This is because when you started the workspace, it created a ‘derived’ version - meaning it has created a unique copy for you to work with, without changing the original one.</p>
-<p>You can delete this version, copy it, or export a copy to your local machine. When you want to resume your work, you should open this copy. <strong>Please note that as the instructor, I can see and edit all the derived workspaces.</strong></p>
-<p><img src="images/Screenshot 2023-08-28 at 13.48.01.png" class="img-fluid"></p>
-</section>
-<section id="r-markdown-and-knitting-a-document" class="level2">
-<h2 class="anchored" data-anchor-id="r-markdown-and-knitting-a-document">R Markdown and ‘Knitting’ a Document</h2>
-<p>There are several ways to create and execute code within R studio, such as creating scripts or typing into the console (the bottom-left pane).</p>
-<p>However, in this course, we’ll exclusively use one method: R Markdown notebooks.</p>
-<p>These are special documents which can include code and text. Text is written using a simple format called Markdown, and code goes into special ‘cells’ within the document. Once you’re finished, you’ll tell R studio to execute all the code in the document and render it as an html file. This process is called ‘knitting’.</p>
-<p>We’ll worry more about code next week, but for now, let’s just get used to creating R Markdown files, knitting them, and downloading them to your local machine so they can be sent as assignments.</p>
-<section id="create-a-new-markdown-file" class="level3">
-<h3 class="anchored" data-anchor-id="create-a-new-markdown-file">Create a new markdown file</h3>
-<p>Click file -&gt; new file -&gt; R Markdown</p>
-<p><img src="images/clipboard-2685726258.png" class="img-fluid"></p>
-<p>If asked to install packages, just click yes, and wait a little longer.</p>
-<p>You’ll get a pop-up with some options, as there are several types of markdown documents you can make. The defaults are OK; you don’t need to change anything, so just click OK. You can add a title here if you like, but it is easy to do later.</p>
-<p><img src="images/clipboard-1063416582.png" class="img-fluid"></p>
-<p>At the moment, there is some sample text and code in the document.</p>
-<p>At the top of the document is some formatted text which looks like this:</p>
-<p><img src="images/clipboard-1021983002.png" class="img-fluid"></p>
-<p>This is called a yaml header. It contains information about your document, and it needs to remain here for the notebook to work. You can use this yaml header to edit the title of your report: just edit the text within the quotation marks which now reads ‘R Notebook’.</p>
-<p>You should delete the rest of the text in the document: highlight and delete the rest of the contents of the notebook, using delete/backspace.</p>
-</section>
-<section id="type-some-text" class="level3">
-<h3 class="anchored" data-anchor-id="type-some-text">Type some text</h3>
-<p>Type some text. There are two ways of doing this. You can use the source editor, which is the default view. You can switch between Source and Visual using the button above.</p>
-<p><img src="images/Screenshot 2023-08-25 at 12.55.20.png" class="img-fluid"></p>
-<p>In the source editor, use markdown. This is a very simple coding language used to render text on the internet. There are codes for bold, italics, headings. You can add images etc. You can switch between the two at any time.</p>
-<p><img src="images/Screenshot 2023-08-25 at 12.56.52.png" class="img-fluid"></p>
-<p>In the visual editor, use the menu items to format your text. For example bold, italics, headings. You can use the drop-down menu to add images, tables, and so forth, as you would with word processor software such as Word or Google docs.</p>
-<p><img src="images/Screenshot 2023-08-25 at 12.56.33.png" class="img-fluid"></p>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Warning
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Be careful when switching between the Source and Visual editors, as this is an easy way to get weird formatting errors. A common example of this is accidentally adding the markdown code for a title (e.g <code>##</code>) in the Visual mode instead of the Source mode.</p>
-</div>
-</div>
-</section>
-<section id="save-the-file" class="level3">
-<h3 class="anchored" data-anchor-id="save-the-file">Save the file</h3>
-<p>In order to render/knit the file, it needs to be saved first.</p>
-<p>Click file, save, and give it a name.</p>
-<p><img src="images/Screenshot 2023-08-25 at 12.57.40.png" class="img-fluid"></p>
-<section id="naming-conventions." class="level4">
-<h4 class="anchored" data-anchor-id="naming-conventions.">Naming conventions.</h4>
-<p>In this course, you will be required to use good naming conventions. Save the file with an appropriate name which communicates the most important information about the file: who created it, and what it contains.</p>
-<p>Once you have done this, you’ll see a new .Rmd file appear in the file browser, in the bottom-right pane:</p>
-<p><img src="images/Screenshot 2023-08-25 at 12.58.28.png" class="img-fluid"></p>
-</section>
-</section>
-<section id="knit-the-document" class="level3">
-<h3 class="anchored" data-anchor-id="knit-the-document">Knit the document</h3>
-<p>Now, we’ll render the document. When a document is rendered, it restarts the R engine, runs through the code, and outputs the document. In this case, it will be very quick, as we haven’t written any code.</p>
-<p>Click the drop-down where it currently says ‘Preview’, and then ‘render HTML’. This will create a new file in your folder.</p>
-<p><img src="images/Screenshot 2023-08-25 at 12.59.37.png" class="img-fluid"></p>
-<p>The knitted html file will preview in a new window. You can close this.</p>
-<p>More importantly, there are now a total of three additional files in the file browser:</p>
-<p><img src="images/Screenshot 2023-08-25 at 13.00.52.png" class="img-fluid" width="600"></p>
+<p>The basic cleaning steps are to:</p>
 <ul>
-<li><p>The file ending in .html is the knitted output of the markdown.</p></li>
-<li><p>The file ending in .Rmd is the ‘source code’ of the final file.</p></li>
-<li><p>The file ending in nb.html is created for making a quick preview, and can be ignored.</p></li>
+<li><p>Filter the dataset to include only the PV level regional codes.</p></li>
+<li><p>Adjust the Periods column so it contains only the year, as a number. This should be recognised as a number by R.</p></li>
+<li><p>Remove the column NumberOfOrganisation_1 and TotalAttendance_13 columns, as these are not needed.</p></li>
 </ul>
-</section>
-<section id="download-and-save-the-file" class="level3">
-<h3 class="anchored" data-anchor-id="download-and-save-the-file">Download and save the file</h3>
-<p>To submit R Markdown files as assignments in Brightspace, you’ll need to download both the html output and the ‘raw’ markdown file to your local machine, and turn them both into a .zip file first.</p>
-<p>Click on the checkbox for both the html and the .Rmd file.</p>
-<p>Click on the ‘More’ dropdown menu, and then ‘Export’</p>
-<p><img src="images/Screenshot 2023-08-25 at 13.02.31.png" class="img-fluid" width="600"></p>
-<p>If you have correctly selected more than one file, Posit cloud will automatically create a .zip file and download it. Save it with a sensible name, and then you can upload this zip directly to Brightspace.</p>
-<p><strong>This is the format we will use for every assignment, so it’s worth getting the hang of it!</strong></p>
-</section>
-<section id="upload-to-brightspace" class="level3">
-<h3 class="anchored" data-anchor-id="upload-to-brightspace">Upload to Brightspace</h3>
-<p>Upload the .zip file to Brightspace in the assignment area.</p>
-</section>
-</section>
-<section id="adding-code" class="level2">
-<h2 class="anchored" data-anchor-id="adding-code">Adding Code</h2>
-<p>To add a code block, use the menu items.</p>
-<p><img src="images/Screenshot 2023-08-25 at 13.05.07.png" class="img-fluid" width="600"></p>
-<p>This will add a shaded area to your markdown file, called a ‘code cell’.</p>
-<p><img src="images/Screenshot 2023-08-25 at 13.05.31.png" class="img-fluid" width="600"></p>
-<p>Add the simple code, 1 + 1. This will simply tell R to add these two numbers together.</p>
-<p>First, execute the code from the cell, without knitting the document. Click on the green triangle in the top-right of the code cell. You’ll see that the output (2) appears below the cell.</p>
-<p><img src="images/Screenshot 2023-08-25 at 13.07.20.png" class="img-fluid" width="600"></p>
-<p>This is the code output. This output can be anything that we make in code, such as a visualisation. This is what makes R markdown such a great tool creating data visualisation reports. We can easily write up text and findings, and publish them alongside code results, tables, visualisations, even interactive maps.</p>
-<p>Next, render/knit the document as in the last step. The document will knit again. Look at the html file, and you’ll see that the code is displayed, and the code result - the output - is displayed underneath.</p>
-</section>
-<section id="adding-files" class="level2">
-<h2 class="anchored" data-anchor-id="adding-files">Adding files</h2>
-<p>The last thing we’ll do is practise adding files to the Rstudio area. Most times, you’ll need to upload files to your workspace in order to work with them. First, you’ll up load them to the workspace, and second, you’ll read them into R.</p>
-<p>You could also upload other files, for example if your final project markdown includes some images not generated by code.</p>
-<p>We’ll practice this by downloading a file from Brightspace, and uploading it to Posit Cloud. This file can be found under the ‘Files’ area on the course site. Download the file ‘box_office’ to your local machine first.</p>
-<p>To upload a file to Posit cloud, look at the file manager in the bottom-right pane. Click on ‘Upload’, and then browse to the file on your computer, and click OK. You’ll see the file appear in the file browser in a moment.</p>
-<p><img src="images/Screenshot 2023-08-28 at 13.39.27.png" class="img-fluid"></p>
-</section>
-<section id="environment" class="level2">
-<h2 class="anchored" data-anchor-id="environment">Environment</h2>
-<p>Every time we create an object like this, it will appear within RStudio’s environment. This means it has been saved in memory as an object which can be used for other purposes. When we close RStudio, the environment disappears.</p>
-<p>You can see the objects in the environment in the top-right corner (the screenshot below will only show in the book version):</p>
-<p><img src="images/Screenshot 2023-09-05 at 15.26.02.png" class="img-fluid"></p>
-<p>Here you’ll see everything we’ve created, and a preview of what it contains. It’s divided into <code>Data</code> and <code>Values</code>. Values are the simple things we have created. We can see that x, for example, is a single number: 4. <code>amount</code> is a vector of numbers.</p>
-<p>Data contains any dataframes we have created. We can see we have created one, called <code>fruit_data</code>. We can also click on the <code>fruit_data</code> object to open it:</p>
-<p><img src="images/Screenshot 2023-09-05 at 15.26.17.png" class="img-fluid"></p>
-<p>Clicking on it will open a view of the dataframe in the top-left pane. You’ll see it looks much like a spreadsheet with rows and columns. This can be very useful to see how your data looks and how it has been imported.</p>
-<p>You can close this tab or switch back to the .Rmd file to continue.</p>
-</section>
-<section id="reading-in-external-data" class="level2">
-<h2 class="anchored" data-anchor-id="reading-in-external-data">Reading in external data</h2>
-<p>Most of the time, you’ll be working with external data sources. These most commonly come in the form of comma separated values (.csv) or tab separated values (.tsv). The tidyverse commands to read these are <code>read_csv()</code> and <code>read_tsv</code>. You can also use <code>read_delim()</code>, and specify the type of delimited using <code>delim = ','</code> or <code>delim = '/t</code>. The path to the file is given as a string to the argument <code>file=</code>.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">=</span> <span class="fu">read_csv</span>(<span class="at">file =</span> <span class="st">'top_movie.csv'</span>) <span class="co"># Read a .csv file as a network, specify the path to the file here.</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Notice that each column has a data type beside it, either <chr> for text or <dbl> for numbers. This is important if you want to sort or run calculations on the data.</dbl></chr></p>
-<p>Advanced: <code>str_¥</code></p>
-</section>
-<section id="learning-objectives-1" class="level2">
-<h2 class="anchored" data-anchor-id="learning-objectives-1">Learning Objectives</h2>
-<p>Before moving on, take a look and see if you are confident with all of the following learning objectives.</p>
-<p>(the checkboxes are just for your own use, they won’t save if you leave or refresh the page)</p>
-<ul class="task-list">
-<li><p><label><input type="checkbox">Open a Posit account and create a new notebook</label></p></li>
-<li><p><label><input type="checkbox">Understand what an IDE is and how to code in it</label></p></li>
-<li><p><label><input type="checkbox">Know how to create a code cell and how to write plain text in your notebook</label></p></li>
-<li><p><label><input type="checkbox">Write some basic markdown</label></p></li>
-<li><p><label><input type="checkbox">Export (knit) a file and download it to your local machine.</label></p></li>
+<p>To make this dataset tidy, we need to do a number of things:</p>
+<ul>
+<li><p>Make two separate tables, one for attendance and one for performance, because these are two separate things. <strong>You’ll need to assign them names so they are saved in the environment.</strong></p></li>
+<li><p>Use pivot_longer with each dataset so that you have a performance_type or attendance_type column, containing the type, with the value in a separate column.</p></li>
 </ul>
-</section>
-<section id="section" class="level2">
-<h2 class="anchored" data-anchor-id="section"></h2>
+<p>Some final steps before exporting:</p>
+<ul>
+<li><p>Multiply the attendance values by 1000 to get the correct numbers.</p></li>
+<li><p>Finally, join the region_codes dataset (available in the workspace) to your datasets, so that the full region name is added.</p></li>
+<li><p>Export the data as a csv using the function <code>write_csv()</code>.</p></li>
+</ul>
+<p>Finally, use the data…</p>
+<ul>
+<li>Get the average attendance for each performance type for each region.</li>
+<li>Calculate the total number of performances per region.</li>
+</ul>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -965,13 +755,13 @@ Warning
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./practise.html" class="pagination-link" aria-label="Practice the basics">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Practice the basics</span></span>
+      <a href="./tidy.html" class="pagination-link" aria-label="Tidying data with pivot_longer()">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Tidying data with pivot_longer()</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./at-home-000.html" class="pagination-link" aria-label="Home exercises">
-        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Home exercises</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./at-home-003.html" class="pagination-link" aria-label="Home exercises">
+        <span class="nav-page-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Home exercises</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

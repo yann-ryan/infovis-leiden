@@ -33,10 +33,12 @@ book:
         - summarise.qmd
         - grouping.qmd
         - at-home-002.qmd
- #    - part: "Data Analysis 3"
- #      chapters:
- #        - joins.qmd
- #        - at-home-003.qmd
+    - part: "Data Analysis 3"
+      chapters:
+        - joins.qmd
+        - tidy.qmd
+        - challenge.qmd
+        - at-home-003.qmd
  #    - part: "Data Visualisation 1"
  #      chapters:
  #        - 7_data_visualisation_1.qmd

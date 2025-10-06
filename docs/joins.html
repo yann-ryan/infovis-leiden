@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>14&nbsp; Changing columns with mutate – Information Visualization and the Humanities: Course Book</title>
+<title>18&nbsp; Joins – Information Visualization and the Humanities: Course Book</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./summarise.html" rel="next">
-<link href="./regex.html" rel="prev">
+<link href="./tidy.html" rel="next">
+<link href="./at-home-002.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -337,7 +337,7 @@ body.reveal.quarto-dark div.qwebr-console-area {
 // Document level settings ----
 
 // Determine if we need to install R packages
-globalThis.qwebrInstallRPackagesList = ['dplyr', 'readr', 'stringr'];
+globalThis.qwebrInstallRPackagesList = ['dplyr', 'readr'];
 
 // Specify possible locations to search for the repository
 globalThis.qwebrPackageRepoURLS = ['https://repo.r-wasm.org/'];
@@ -359,7 +359,7 @@ globalThis.qwebrCustomizedWebROptions = {
 };
 
 // Store cell data
-globalThis.qwebrCellDetails = [{"code":"library(dplyr)\nlibrary(readr)\n\nurl <- \"https://raw.githubusercontent.com/yann-ryan/infovis-course/master/titanic_df_full.csv\"\ndownload.file(url, \"titanic_df.csv\")\n\ntitanic_df =  read_csv('titanic_df.csv')","id":1,"options":{"autorun":"true","classes":"","comment":"","context":"setup","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-1","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"titanic_df |> \n  mutate(price_today = fare * 78.17 ) |>\n  select(name, fare, price_today)","id":2,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-2","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"titanic_df |> \n  mutate(age_in_years = round(age)) |> \n  select(name, age, age_in_years)","id":3,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-3","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"titanic_df |> \n  mutate(status = if_else(age < 18, 'child', 'adult'))","id":4,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-4","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"titanic_df |> \n  mutate(status = \n           case_when(\n            age <13 ~ \"child\",\n            age >12 & age <20 ~ \"teenager\",\n            age>20 ~ \"adult\"\n           ))","id":5,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-5","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"","id":6,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-6","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"","id":7,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-7","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"","id":8,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-8","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}}];
+globalThis.qwebrCellDetails = [{"code":"library(dplyr)\nlibrary(readr)\n\nurl <- \"https://raw.githubusercontent.com/yann-ryan/infovis-course/master/titanic_df_full.csv\"\ndownload.file(url, \"titanic_df.csv\")\n\ntitanic_df =  read_csv('titanic_df.csv')\n\nlocations_df = tribble(\n  ~code, ~location_name, ~country,  ~lat, ~lng,\n  \"Q\",   \"Queenstown\", \"Ireland\", 51.85, -8.29,\n  \"S\",   \"Southampton\", \"United Kingdom\", 50.9, -1.4,\n  \"C\",   \"Cherbourg\", \"France\", 49.63, -1.62\n)","id":1,"options":{"autorun":"true","classes":"","comment":"","context":"setup","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-1","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"locations_df","id":2,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-2","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"titanic_df |>\n  left_join(locations_df, by = c('embarked' = 'code'))","id":3,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-3","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"","id":4,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-4","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}}];
 
 </script>
 <script type="module">
@@ -1569,7 +1569,7 @@ globalThis.qwebrExecuteCode = async function (
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./filter.html">Data Analysis 2</a></li><li class="breadcrumb-item"><a href="./mutate.html"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Changing columns with mutate</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./joins.html">Data Analysis 3</a></li><li class="breadcrumb-item"><a href="./joins.html"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Joins</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -1714,7 +1714,7 @@ globalThis.qwebrExecuteCode = async function (
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./mutate.html" class="sidebar-item-text sidebar-link active">
+  <a href="./mutate.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Changing columns with mutate</span></span></a>
   </div>
 </li>
@@ -1749,7 +1749,7 @@ globalThis.qwebrExecuteCode = async function (
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./joins.html" class="sidebar-item-text sidebar-link">
+  <a href="./joins.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Joins</span></span></a>
   </div>
 </li>
@@ -1783,9 +1783,8 @@ globalThis.qwebrExecuteCode = async function (
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#using-existing-functions" id="toc-using-existing-functions" class="nav-link active" data-scroll-target="#using-existing-functions">Using existing functions</a></li>
-  <li><a href="#if_else-and-case_when" id="toc-if_else-and-case_when" class="nav-link" data-scroll-target="#if_else-and-case_when">if_else and case_when</a></li>
-  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises:</a></li>
+  <li><a href="#left_join-inner_join-anti_join" id="toc-left_join-inner_join-anti_join" class="nav-link active" data-scroll-target="#left_join-inner_join-anti_join">left_join(), inner_join(), anti_join()</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises</a></li>
   </ul>
 </nav>
     </div>
@@ -2076,9 +2075,9 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 }
 </script>
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./filter.html">Data Analysis 2</a></li><li class="breadcrumb-item"><a href="./mutate.html"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Changing columns with mutate</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./joins.html">Data Analysis 3</a></li><li class="breadcrumb-item"><a href="./joins.html"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Joins</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Changing columns with mutate</span></h1>
+<h1 class="title"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Joins</span></h1>
 </div>
 
 
@@ -2097,53 +2096,42 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 
 <div id="qwebr-insertion-location-1"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/bd4ae264-ae51-4d18-bd60-7a058ab42fba.png" class="img-fluid figure-img" alt="Cartoon of cute fuzzy monsters dressed up as different X-men characters, working together to add a new column to an existing data frame. Stylized title text reads &quot;dplyr::mutate - add columns, keep existing.&quot;" width="600"></p>
-<figcaption>Source: https://allisonhorst.com/r-packages-functions</figcaption>
-</figure>
-</div>
-<p>There are many situations when we might want to add new columns to a dataframe by doing a calculation on existing columns.</p>
-<p>As a simple example in our Titanic dataset, imagine you wanted to calculate (and visualise) the ticket fares in today’s value. Assuming the fare is in British pounds, we could look up the value of single pound in (around) 1912, and use this to calculate how much it would cost in today’s currency.</p>
-<p>According to the <a href="https://www.nationalarchives.gov.uk/currency-converter/">National Archives Currency Converter</a>, 1 pound in 1910 is worth 78.17 today. Therefore, we can calculate the value by multiplying a value in the fare column by 78.17.</p>
-<p>We can do this on the entire Fare column using another verb, called <code>mutate</code>. This verb will create a new column in the dataset, based on our instructions. This could be anything from a simple formula (multiply the value by 78.17) to very complex formulas or algorithms.</p>
-<p>Similar to filter(), we use mutate() by first providing the dataset, followed by the pipe, then the verb mutate and within the brackets, we enter the new column name and an equal sign, followed by the instructions. In this case, the instructions are to take the Fare column and multiply it by 78.17, using <code>*</code>.</p>
+<section id="left_join-inner_join-anti_join" class="level3">
+<h3 class="anchored" data-anchor-id="left_join-inner_join-anti_join">left_join(), inner_join(), anti_join()</h3>
+<p>Another set of commands we’ll use quite often in this course are the <code>join()</code> ‘family’. Joins are a very powerful but simple way of selecting certain subsets of data, and adding information from multiple tables together.</p>
+<p>Remember the titanic dataset had a column ‘embarked’, which contained either Q, S or C, which told where the passenger got on?</p>
+<p>Let’s say we wanted to display the full name of the embarking location, plus some other information. We have another dataset, called locations_df, which contains the code and the equivalent full name, plus the country name and coordinates of the location. You can see what this looks like by running the cell below:</p>
 <div id="qwebr-insertion-location-2"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>If you look at the output of the code above, you’ll see a new column, called ‘price_today’, containing the new price.</p>
-<section id="using-existing-functions" class="level3">
-<h3 class="anchored" data-anchor-id="using-existing-functions">Using existing functions</h3>
-<p>You can also use existing functions with mutate. In our dataset, the age is given in decimal, but you want to round to the nearest whole number. There is a simple function in R called <code>round()</code> which will do this.</p>
-<p>Write code to create a new column called <code>age_in_years</code> with <code>mutate()</code>. Use the <code>round()</code> function on the <code>Age</code> column, like this:</p>
+<p>We can combine these two tables of information, so that they are merged, or joined together - the result will be that the correct extra information for each place code will be added to the titanic_df data.</p>
+<p>This is done using a set of functions called joins.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Joining, or using relational data, is a really fundamental concept to many programming languages and data models. Excel has a similar feature which they call <em>pivot tables</em>. Even if you never use R or make a visualisation again, understanding the principles behind this is incredibly useful if you ever work with data in your future career.</p>
+</div>
+</div>
+<p>In R, we can do these joins using the functions <code>left_join()</code>, <code>right_join()</code> and <code>inner_join()</code>. These are variations on the same thing, and they differ by the way that they merge the two datasets together.</p>
+<p><img src="Picture 1.png" class="img-fluid"></p>
+<p>Joins need a common <strong>key</strong>, a column which allows the join to match the data tables up. It’s important that these are unique (a person’s name makes a bad key by itself, for example, because it’s likely more than one person will share the same name). Usually, we use codes as the join keys. If the columns containing the join keys have different names (as ours do), specify them using the syntax below:</p>
 <div id="qwebr-insertion-location-3"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<p>The join function is a bit complex, so it’s worth looking at what it is doing.</p>
+<p><img src="images/clipboard-934570963.png" class="img-fluid"></p>
 </section>
-<section id="if_else-and-case_when" class="level3">
-<h3 class="anchored" data-anchor-id="if_else-and-case_when">if_else and case_when</h3>
-<p>A useful way of using mutate() is to create a new column which is different depending on some conditions. Lets say you want to create a bar chart counting the adult and child passengers on the titanic separately. Currently, there is no column containing this information. However, we could make one using the age column and a function called <code>if_else</code>. Using <code>if_else</code> within <code>mutate()</code> will create a new column containing different information depending on your condition.</p>
-<p>In this case, we want to create a new column, called ‘status’. In this column, we want to enter ‘child’ if the number in the age column is less than 18, and otherwise we want to enter ‘adult’. This is done like this:</p>
+<section id="exercises" class="level2">
+<h2 class="anchored" data-anchor-id="exercises">Exercises</h2>
+<ul>
+<li>Calculate the number of men and women which embarked from each country, first merging the new table with the existing one.</li>
+</ul>
 <div id="qwebr-insertion-location-4"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>You can use <code>case_when()</code> where you have more complicated scenarios. An example is this:</p>
-<div id="qwebr-insertion-location-5"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-</section>
-<section id="exercises" class="level3">
-<h3 class="anchored" data-anchor-id="exercises">Exercises:</h3>
-<ul>
-<li>You’ve just been told that the Age in the dataset was calculated incorrectly - it was underestimated by five years. Create a new column in the dataset called corrected_age, with the new value.</li>
-</ul>
-<div id="qwebr-insertion-location-6"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<ul>
-<li>Use the Age (or age_in_years) column to calculate the approximate year of birth for passengers (the Titanic sank in 1912. You can use <code>round()</code> on your new column, or you can leave it as a decimal.</li>
-</ul>
-<div id="qwebr-insertion-location-7"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<ul>
-<li>Who paid the highest fare, and what was it in today’s money? Use the methods you learned in the previous pages to select the name and fare in today’s money of the highest-paying passenger.</li>
-</ul>
-<div id="qwebr-insertion-location-8"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 
 
@@ -2551,13 +2539,13 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./regex.html" class="pagination-link" aria-label="Pattern matching with str_detect">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Pattern matching with str_detect</span></span>
+      <a href="./at-home-002.html" class="pagination-link" aria-label="Home exercises">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Home exercises</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./summarise.html" class="pagination-link" aria-label="Summarising">
-        <span class="nav-page-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Summarising</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./tidy.html" class="pagination-link" aria-label="Tidying data with pivot_longer()">
+        <span class="nav-page-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Tidying data with pivot_longer()</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
