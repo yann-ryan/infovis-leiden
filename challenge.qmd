@@ -6,7 +6,7 @@ For this data challenge, I'll ask you to work with a real-world cultural dataset
 
 You're asked to carry out the whole process, from start to finish, including importing the raw data file and exporting the result.
 
-The dataset is a record of performances and attendances at performing arts venues in the Netherlands, from 1999 to 2023. It's a good example of the kinds of things you'll often need to do to datasets in order to make them useable for visualisation and analysis. You can find the dataset here: click on Original Dataset on the left hand side, and then click on Download CSV.
+The dataset is a record of performances and attendances at performing arts venues in the Netherlands, from 1999 to 2023. It's a good example of the kinds of things you'll often need to do to datasets in order to make them useable for visualisation and analysis. You can find the dataset [here](https://opendata.cbs.nl/statline/#/CBS/en/dataset/70077eng/table?ts=1759748419232). click on Original Dataset on the left hand side, and then click on Download CSV.
 
 Do the following in the Posit cloud workspace.
 
@@ -44,8 +44,7 @@ Some final steps before exporting:
 
 -   Export the data as a csv using the function `write_csv()`.
 
-
 Finally, use the data...
 
--   Get the average attendance for each performance type for each region. 
--   Calculate the total number of performances per region. 
+-   Get the average attendance for each performance type for each region.
+-   Calculate the total number of performances per region.
