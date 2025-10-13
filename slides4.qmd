@@ -31,9 +31,9 @@ Mapping data to visual elements allows us to exploit this
 
 ## Mapping data to aesthetics
 
--   Data visualisation can be summed up as a process of mapping *data* to *aesthetics*.
--   Geometries: basic geometric shapes such as lines, points, circles, polygons
--   Aesthetics: features of those shapes
+-   Data visualisation can be summed up as a process of mapping ***data*** to the ***aesthetics*** of certain geometries.
+-   **Geometries**: basic geometric shapes such as lines, points, circles, polygons
+-   **Aesthetics**: features of those shapes
 
 ## Aesthetics
 

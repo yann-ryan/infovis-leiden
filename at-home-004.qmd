@@ -19,15 +19,19 @@ Load the Bellevue Almshouse dataset we used a few weeks ago, which can be found 
 
 Create a series of charts using ggplot2, visualising the following aspects of the data. In most cases, you'll need to prepare the data by filtering and/or summarising. Create each one in a separate code cell.
 
--   The number of male and female individuals. First filter out any missing or ambiguous data.
+-   A bar chart of the number of male and female individuals. First filter out any missing or ambiguous data.
 
--   The ten most frequent diseases (look back to previous weeks for this one)
+-   A bar chart of the ten most frequent diseases on the x axis, and the count of each on the y axis (look back to previous weeks for this one). Filter out NA values first.
 
--   The ten most frequent female first names.
+::: callout-tip
+To filter out NA values, the function is.na checks if a value is NA or not. So, `filter(!is.na(disease))`will keep any rows where the value is *not* NA. 
+:::
 
--   The distribution of the values for age, for male and female gender categories.
+-   A bar chart of the ten most frequent female first names on the y axis and the count of each on the x axis.
 
--   Create a line chart visualising the number of individuals admitted per week.
+-   Using `geom_histogram()`, chart the distribution of the values for age, for male and female gender categories.
+
+-   Create a line chart visualising the number of individuals admitted per week, with the week on the x axis and the count on the y axis.
 
 ::: callout-tip
 The function `floor_date(unit = 'week')` will take a full date and round it down to the start of the week (starting on Sunday, because it's American). So for example, running floor_date on today's date and tomorrow's date (2024-10-07 and 2024-10-08) would give 2024-10-06 for both.
@@ -36,8 +40,6 @@ Try creating a new column with the 'floored' dates, and then summarise using the
 :::
 
 -   Do the same except using months instead of weeks, and visualise male and females separately.
-
--   Use a similar approach to make a scatterplot, but set the colors of the points to gender
 
 **Final challenge:**
 

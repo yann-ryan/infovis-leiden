@@ -1,7 +1,7 @@
 ---
 title: "More chart types"
 webr:
-  packages: ['dplyr', 'readr', 'ggplot2']
+  packages: ['dplyr', 'readr', 'ggplot2', 'tidyr']
 ---
 
 ```{webr-r}
@@ -226,7 +226,7 @@ To set the colours for these countries individually we can use a custom colour s
 
 Linetype can be set using a set of codes. Here are the main ones:
 
-![](ggplot2-line-type-line-type-1.png.crdownload){width="400"}
+![](images/clipboard-1922473990.png)
 
 ```{webr-r}
 gapminder_df |> 
