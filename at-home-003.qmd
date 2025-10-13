@@ -26,30 +26,31 @@ This can be done using a `join` command. You'll also need a key, in this case, t
 
 -   Create a subset of this data, including only Star Wars movies.
 
--   Make a summary of the average number of words for men and women per year (back with the full dataset now)
+-   Make a new dataframe containing three columns: the year, the sum of female dialogue lines, and the sum of male dialogue lines.
 
--   Make a new column. This column should contain the value 'more male' if there is more male than female dialogue, and 'more female' if there is more female dialogue. If it has the exact same, it should read 'equal'.
-
--   Summarise the data to count how many movies had more male and how many had more female dialogue (or equal), for each year.
-
--   Make a new dataset. This should have a row for each movie, and a column counting the total number of words for each gender.
 
 ::: callout-tip
-This is a slightly trickier challenge and will need some techniques we haven't covered in class. One way to do this is to make two separate datasets first (think about what these should contain), and merge them together, and then use the comparisons from the previous week.
+This is a slightly trickier challenge and will need some techniques we haven't covered in class. One way to do this is to make two separate datasets first (think about what these should contain), and merge them together.
 
 You'll need to do the following which we haven't covered:
 
 -   First, use `full_join()` instead of `left_join()`, to make sure your merge includes all the movies, including ones with no male or no female lines.
 
 -   Second, when you do the merge, you will have some rows with an NA for number of words. If you use filter, these lines will be dropped instead of treated as the movie containing no (zero) words of dialogue for that gender. To have these work correctly, you can replace these NAs with 0s. You can do that with the following `mutate()` command: `mutate(name_of_column_with_count_of_lines = replace_na(name_of_column_with_count_of_lines, 0))`. Don't worry if you can't get this to work!
+
 :::
+
+-   Make a new column in this dataframe. This column should contain the value 'more male' if there is more male than female dialogue, and 'more female' if there is more female dialogue. If it has the exact same, it should read 'equal'. (HINT: look for the function `case_when()` from  a previous week)
+
+-   Make another new dataframe. This should have a row for each movie, and a column counting the total number of words for each gender.
+
 
 -   Import the third file in your folder, `imdb_genre`. Join this to your new processed dataset (HINT: the imdb genre dataset doesn't have the script IDs, but has an IMDB ID instead. You'll need to first join the metadata file to your dataset of male and female lines, and take a look to see which column of that will let you join to the IMDB IDs).
 
 -   Calculate which genre has the highest proportion\* for each gender.
 
--   You can calculate the proportion with a fairly simple mutate formula, if you have the individual totals for male and female.
+    -   You can calculate the proportion with a fairly simple formula in `mutate()`, if you have the individual totals for male and female.
 
 -   Return to your Star Wars subset. How do these movies compare to the dataset as a whole, in terms of proportion and male and female dialogue?
 
--   More challenging: can you make the same dataframe (one row per movie, then a proportion of male and female in separate columns), without needing to make new dataframes and use joins? It can be done with a combination of `group_by`, `ungroup`, `summarise`, `mutate` and a new function, `pivot_wider`.
+-   Extra challenge: can you make the same dataframe (one row per movie, then a proportion of male and female in separate columns), without needing to make new dataframes and use joins? It can be done with a combination of `group_by`, `ungroup`, `summarise`, `mutate` and a new function, `pivot_wider`.

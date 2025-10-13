@@ -30,6 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./7_data_visualisation_1.html" rel="next">
 <link href="./challenge.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -285,6 +286,41 @@ ul.task-list li input[type="checkbox"] {
 </li>
       </ul>
   </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Data Visualisation 1</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./7_data_visualisation_1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Data Visualisation Basics</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ggplot2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Using ggplot2</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chart_types.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">More chart types</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./at-home-004.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Home Exercises</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -338,10 +374,7 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li><p>First, merge together the two files using a join, so that all the metadata information is found alongside the dialogue information. Save this as a new object.</p></li>
 <li><p>Create a subset of this data, including only Star Wars movies.</p></li>
-<li><p>Make a summary of the average number of words for men and women per year (back with the full dataset now)</p></li>
-<li><p>Make a new column. This column should contain the value ‘more male’ if there is more male than female dialogue, and ‘more female’ if there is more female dialogue. If it has the exact same, it should read ‘equal’.</p></li>
-<li><p>Summarise the data to count how many movies had more male and how many had more female dialogue (or equal), for each year.</p></li>
-<li><p>Make a new dataset. This should have a row for each movie, and a column counting the total number of words for each gender.</p></li>
+<li><p>Make a new dataframe containing three columns: the year, the sum of female dialogue lines, and the sum of male dialogue lines.</p></li>
 </ul>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -353,7 +386,7 @@ Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>This is a slightly trickier challenge and will need some techniques we haven’t covered in class. One way to do this is to make two separate datasets first (think about what these should contain), and merge them together, and then use the comparisons from the previous week.</p>
+<p>This is a slightly trickier challenge and will need some techniques we haven’t covered in class. One way to do this is to make two separate datasets first (think about what these should contain), and merge them together.</p>
 <p>You’ll need to do the following which we haven’t covered:</p>
 <ul>
 <li><p>First, use <code>full_join()</code> instead of <code>left_join()</code>, to make sure your merge includes all the movies, including ones with no male or no female lines.</p></li>
@@ -362,11 +395,15 @@ Tip
 </div>
 </div>
 <ul>
+<li><p>Make a new column in this dataframe. This column should contain the value ‘more male’ if there is more male than female dialogue, and ‘more female’ if there is more female dialogue. If it has the exact same, it should read ‘equal’. (HINT: look for the function <code>case_when()</code> from a previous week)</p></li>
+<li><p>Make another new dataframe. This should have a row for each movie, and a column counting the total number of words for each gender.</p></li>
 <li><p>Import the third file in your folder, <code>imdb_genre</code>. Join this to your new processed dataset (HINT: the imdb genre dataset doesn’t have the script IDs, but has an IMDB ID instead. You’ll need to first join the metadata file to your dataset of male and female lines, and take a look to see which column of that will let you join to the IMDB IDs).</p></li>
-<li><p>Calculate which genre has the highest proportion* for each gender.</p></li>
-<li><p>You can calculate the proportion with a fairly simple mutate formula, if you have the individual totals for male and female.</p></li>
+<li><p>Calculate which genre has the highest proportion* for each gender.</p>
+<ul>
+<li>You can calculate the proportion with a fairly simple formula in <code>mutate()</code>, if you have the individual totals for male and female.</li>
+</ul></li>
 <li><p>Return to your Star Wars subset. How do these movies compare to the dataset as a whole, in terms of proportion and male and female dialogue?</p></li>
-<li><p>More challenging: can you make the same dataframe (one row per movie, then a proportion of male and female in separate columns), without needing to make new dataframes and use joins? It can be done with a combination of <code>group_by</code>, <code>ungroup</code>, <code>summarise</code>, <code>mutate</code> and a new function, <code>pivot_wider</code>.</p></li>
+<li><p>Extra challenge: can you make the same dataframe (one row per movie, then a proportion of male and female in separate columns), without needing to make new dataframes and use joins? It can be done with a combination of <code>group_by</code>, <code>ungroup</code>, <code>summarise</code>, <code>mutate</code> and a new function, <code>pivot_wider</code>.</p></li>
 </ul>
 
 
@@ -779,6 +816,9 @@ Tip
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./7_data_visualisation_1.html" class="pagination-link" aria-label="Data Visualisation Basics">
+        <span class="nav-page-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Data Visualisation Basics</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->

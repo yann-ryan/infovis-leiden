@@ -39,12 +39,12 @@ book:
         - tidy.qmd
         - challenge.qmd
         - at-home-003.qmd
- #    - part: "Data Visualisation 1"
- #      chapters:
- #        - 7_data_visualisation_1.qmd
- #        - ggplot2.qmd
- #        - chart_types.qmd
- #        - at-home-004.qmd
+    - part: "Data Visualisation 1"
+      chapters:
+        - 7_data_visualisation_1.qmd
+        - ggplot2.qmd
+        - chart_types.qmd
+        - at-home-004.qmd
  #    - part: "Data Visualisation 2"
  #      chapters: 
  #        - 8_data_visualisation_2.qmd
