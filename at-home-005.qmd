@@ -2,9 +2,17 @@
 title: "Home Exercises"
 ---
 
-Take the movie dialogue datasets from last week and do the following:
+## Instructions
 
-1.  Using the metadata dataset, chart the average gross per year using an appropriate geom.
+The at-home exercises should be completed using Posit cloud, Home Exercise 6. Create a new .Rmd file (use File -\> New File -\> R Markdown.
+
+I advise saving the new file straight away. Because you'll submit this file as an assignment, use a standardised name: lastname_firstname5. Regularly re-save the file.
+
+When you have finished the exercise (or part of it), 'knit' the file. Export the .Rmd and the html as a .zip file, and upload this to the assignment area.
+
+## Task
+
+1.  Using the metadata dataset from the movie dialogue dataset, and chart the average gross per year using an appropriate geom.
 
     a.  Using scales (i.e. don't filter the dataset first), limit the chart x axis to the years 1990 - 2000
 

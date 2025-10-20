@@ -32,13 +32,13 @@ gapminder_df
 
 ```
 
-### Controlling aesthetics
+## Controlling aesthetics
 
 To draw other chart types, we replace the geometry `geom_col` with others. In some cases, we will also change or add aesthetics.
 
 Each chart type is followed by examples of the typical aesthetics which can be used with that geometry.
 
-### Where should this code be placed?
+## Where should this code be placed?
 
 As we learned in the previous section, we can place an aesthetic either within `aes()` or outside it:
 
@@ -48,7 +48,7 @@ As we learned in the previous section, we can place an aesthetic either within `
 
 For each aesthetic, there is an example where the aesthetic is placed within the `aes()` and outside it, to show the difference.
 
-### Geom_point()
+## Geom_point()
 
 `geom_point()` places points on a 2D plane. It requires at least `x` and `y` coordinates within the `aes()`. The result is often called a 'scatterplot' or sometimes a 'bubble chart'.
 
@@ -60,6 +60,8 @@ ggplot(aes(x = lifeExp, y = gdpPercap)) +
   geom_point()
 
 ```
+
+### Key aesthetics
 
 #### Size
 
@@ -171,11 +173,11 @@ ggplot(aes(x = lifeExp, y = gdpPercap, size = pop, fill = continent), color = 'b
 ```
 :::
 
-### Use
+#### Use
 
 Scatterplots are often used to show relationships between variables, like the obvious link between GDP and life expectancy shown here.
 
-### Geom_line
+## Geom_line
 
 geom_line will draw a line between points in numerical order.
 
@@ -193,6 +195,10 @@ Draw a similar plot, for a country in the dataset of your choice.
 ```{webr-r}
 
 ```
+
+
+### Key aesthetics 
+
 
 #### Colour
 
@@ -242,11 +248,11 @@ gapminder_df |>
   geom_line()
 ```
 
-### Use
+#### Use
 
 Line graphs are usually used to show something changing over time. Because a line is drawn connecting each data point to the next one, we assume that one follows another in a logical sequence.
 
-### Multiple geoms
+## Multiple geoms
 
 You can stack multiple geoms on top of each other, just add them using another `+`:
 
@@ -262,11 +268,16 @@ gapminder_df |>
 
 Draw a chart combining a bar and a line plot, using the data fields of your choice.
 
-### geom_area()
+```{webr-r}
+
+
+```
+
+# Other geoms
 
 ## Statistical chart types
 
-#### geom_histogram
+### geom_histogram
 
 A histogram is a chart which plots the *distribution* of a set of values as a series of bars. Each bar represents a 'bin' or range of values, with the height of the bar indicating how many of the values are within that bin.
 
@@ -359,6 +370,6 @@ gapminder_df |>
 
 Note that geom_segment needs `xend` and `yend`, as well as `x` and `y`. These shapes often have different required aesthetics.
 
-### Add-ons
+## Add-ons
 
 Another way to get the chart type you want is to install additional packages which use the same 'grammar of graphics' to extend ggplot. You can make animated plots using `gganimate`, networks using `ggraph`. Later in the course we will create maps with a geom called `geom_sf`. There are hundreds of these add-ons, which you can browse [here](https://exts.ggplot2.tidyverse.org/gallery/).

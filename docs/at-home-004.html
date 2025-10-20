@@ -65,6 +65,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./8_data_visualisation_2.html" rel="next">
 <link href="./chart_types.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -359,6 +360,59 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
       </ul>
   </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
+ <span class="menu-text">Data Visualisation 2</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./8_data_visualisation_2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">More Data Visualisation</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./gestalt.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Gestalt Principles</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./scales.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Chart scales</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./position.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Position scales</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./date_scales.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Date scales</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./colour.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Colour and size scales</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./at-home-005.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Home Exercises</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -400,12 +454,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="instructions" class="level2">
 <h2 class="anchored" data-anchor-id="instructions">Instructions</h2>
-<p>The at-home exercises should be completed using Posit cloud, Home Exercise 5. Create a new .Rmd file (use File -&gt; New File -&gt; R Notebook.</p>
+<p>The at-home exercises should be completed using Posit cloud, Home Exercise 5. Create a new .Rmd file (use File -&gt; New File -&gt; R Markdown.</p>
 <p>I advise saving the new file straight away. Because you’ll submit this file as an assignment, use a standardised name: lastname_firstname5. Regularly re-save the file.</p>
 <p>When you have finished the exercise (or part of it), ‘knit’ the file. Export the .Rmd and the html as a .zip file, and upload this to the assignment area.</p>
 <section id="task" class="level3">
 <h3 class="anchored" data-anchor-id="task">Task</h3>
-<p>Load the Bellevue Almshouse dataset we used a few weeks ago, which can be found in this project files tab. Load the Tidyverse library</p>
+<p>Load the Bellevue Almshouse dataset we used a few weeks ago, which can be found in this project files tab. Load the Tidyverse library.</p>
 <p>Create a series of charts using ggplot2, visualising the following aspects of the data. In most cases, you’ll need to prepare the data by filtering and/or summarising. Create each one in a separate code cell.</p>
 <ul>
 <li><p>A bar chart of the number of male and female individuals. First filter out any missing or ambiguous data.</p></li>
@@ -439,7 +493,7 @@ Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>The function <code>floor_date(unit = 'week')</code> will take a full date and round it down to the start of the week (starting on Sunday, because it’s American). So for example, running floor_date on today’s date and tomorrow’s date (2024-10-07 and 2024-10-08) would give 2024-10-06 for both.</p>
+<p>The function <code>floor_date(unit = 'week')</code> will take a full date and round it down to the start of the week (starting on Sunday, because it’s American). So for example, running floor_date on today’s date and tomorrow’s date (2025-10-13 and 2025-10-14) would give 2025-10-12 for both.</p>
 <p>Try creating a new column with the ‘floored’ dates, and then summarise using these as groups.</p>
 </div>
 </div>
@@ -880,6 +934,9 @@ Tip
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./8_data_visualisation_2.html" class="pagination-link" aria-label="More Data Visualisation">
+        <span class="nav-page-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">More Data Visualisation</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->

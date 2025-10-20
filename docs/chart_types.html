@@ -359,7 +359,7 @@ globalThis.qwebrCustomizedWebROptions = {
 };
 
 // Store cell data
-globalThis.qwebrCellDetails = [{"code":"library(readr)\n\n\nurl <- \"https://raw.githubusercontent.com/yann-ryan/infovis-course/master/titanic_df_full.csv\"\ndownload.file(url, \"titanic_df.csv\")\n\ntitanic_df =  read_csv('titanic_df.csv')\n\n\nurl <- \"https://raw.githubusercontent.com/jennybc/gapminder/refs/heads/main/data-raw/04_gap-merged.tsv\"\ndownload.file(url, \"gapminder_df.csv\")\n\ngapminder_df =  read_tsv('gapminder_df.csv') |> filter(continent!= 'FSU')","id":1,"options":{"autorun":"true","classes":"","comment":"","context":"setup","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-1","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"gapminder_df","id":2,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-2","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"gapminder_df |>\n  filter(year == 2007) |>\nggplot(aes(x = lifeExp, y = gdpPercap)) + \n  geom_point()","id":3,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-3","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"gapminder_df |>\n  filter(year == 2007) |>\nggplot(aes(x = lifeExp, y = gdpPercap)) + \n  geom_point(size = 5)","id":4,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-4","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"gapminder_df |>\n  filter(year == 2007) |>\nggplot(aes(x = lifeExp, y = gdpPercap, size = pop)) + \n  geom_point()","id":5,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-5","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"","id":6,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-6","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"gapminder_df |>\n  filter(year == 2007) |>\nggplot(aes(x = lifeExp, y = gdpPercap, size = pop)) + \n  geom_point(color = 'red')\n","id":7,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-7","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"gapminder_df |>\n  filter(year == 2007) |>\nggplot(aes(x = lifeExp, y = gdpPercap, size = pop,color = continent)) + \n  geom_point()\n","id":8,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-8","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"","id":9,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-9","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"gapminder_df |>\n  filter(year == 2007) |>\nggplot(aes(x = lifeExp, y = gdpPercap, size = pop,color = continent)) + \n  geom_point(alpha = .5)","id":10,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-10","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"gapminder_df |>\n  filter(year == 2007) |>\nggplot(aes(x = lifeExp, y = gdpPercap, size = pop)) + \n  geom_point(shape = 2)","id":11,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-11","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"gapminder_df |>\n  filter(year == 2002) |>\nggplot(aes(x = lifeExp, y = gdpPercap, size = pop,shape = continent)) + \n  geom_point()","id":12,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-12","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"gapminder_df |>\n  filter(year == 2002) |>\nggplot(aes(x = lifeExp, y = gdpPercap, size = pop, fill = continent), color = 'black') + \n  geom_point(shape = 21)","id":13,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-13","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"gapminder_df |> \n  filter(country == 'Netherlands') |>\n  ggplot(aes(x = year, y = lifeExp)) + \n  geom_line()","id":14,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-14","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"","id":15,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-15","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"gapminder_df |> \n  filter(country == 'Netherlands') |>\n  ggplot(aes(x = year, y = gdpPercap)) + \n  geom_line(color = 'forestgreen')","id":16,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-16","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"gapminder_df |> \n  filter(country %in% c('Netherlands', 'France', 'Germany', 'Spain', 'United Kingdom')) |>\n  ggplot(aes(x = year, y = gdpPercap, color = country)) + \n  geom_line()","id":17,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-17","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"gapminder_df |> \n  filter(country == 'Netherlands') |>\n  ggplot(aes(x = year, y = gdpPercap)) + \n  geom_line(linetype = 'dashed')","id":18,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-18","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"gapminder_df |> \n  filter(country %in% c('Netherlands', 'France', 'Germany', 'Spain', 'United Kingdom')) |>\n  ggplot(aes(x = year, y = gdpPercap, linetype = country)) + \n  geom_line()","id":19,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-19","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"gapminder_df |> \n  filter(country == 'Netherlands') |>\n  ggplot(aes(x = year, y = lifeExp)) + \n  geom_line() + \n  geom_point()","id":20,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-20","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"gapminder_df |> \n  filter(year == 2007) |>\n  ggplot(aes(x = gdpPercap)) + geom_histogram()","id":21,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-21","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"gapminder_df |> \n  filter(year == 2007) |>\n  ggplot(aes(x = gdpPercap)) + \n  geom_histogram(binwidth = 3000)","id":22,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-22","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"gapminder_df |> \n  filter(year == 2007) |>\n  ggplot(aes(x = gdpPercap)) + \n  geom_density( )","id":23,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-23","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"gapminder_df |> \n  filter(year == 2007) |> \n  filter(!is.na(pop)) |>\n  ggplot(aes(x = continent, y = lifeExp, group = continent)) + \n  geom_boxplot()","id":24,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-24","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"gapminder_df |> filter(year == 2007) |>\n  filter(country %in% c('Netherlands', 'France', 'Germany', 'Spain', 'United Kingdom')) |>\n  ggplot(aes(x = country, y = gdpPercap)) + \n  geom_col() +\n  geom_text(aes(y =gdpPercap  + 2000, label = round(gdpPercap)))","id":25,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-25","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"gapminder_df |> \n  filter(year %in% c(2002, 2007)) |>\n  filter(country %in% c('Netherlands', 'France', \"Germany\", \"Italy\", \"Belgium\")) |>\n  count(year, country, wt = gdpPercap) |> \n  pivot_wider(names_from = year, values_from = n)  |>\n  ggplot(aes(x = country, xend = country, y = `2002`, yend = `2007`)) + \n  geom_segment() +\n  geom_point(size=3) +\n  geom_point(aes(y = `2007`), size=3)+\n  coord_flip()","id":26,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-26","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}}];
+globalThis.qwebrCellDetails = [{"code":"library(readr)\n\n\nurl <- \"https://raw.githubusercontent.com/yann-ryan/infovis-course/master/titanic_df_full.csv\"\ndownload.file(url, \"titanic_df.csv\")\n\ntitanic_df =  read_csv('titanic_df.csv')\n\n\nurl <- \"https://raw.githubusercontent.com/jennybc/gapminder/refs/heads/main/data-raw/04_gap-merged.tsv\"\ndownload.file(url, \"gapminder_df.csv\")\n\ngapminder_df =  read_tsv('gapminder_df.csv') |> filter(continent!= 'FSU')","id":1,"options":{"autorun":"true","classes":"","comment":"","context":"setup","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-1","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"gapminder_df","id":2,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-2","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"gapminder_df |>\n  filter(year == 2007) |>\nggplot(aes(x = lifeExp, y = gdpPercap)) + \n  geom_point()","id":3,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-3","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"gapminder_df |>\n  filter(year == 2007) |>\nggplot(aes(x = lifeExp, y = gdpPercap)) + \n  geom_point(size = 5)","id":4,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-4","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"gapminder_df |>\n  filter(year == 2007) |>\nggplot(aes(x = lifeExp, y = gdpPercap, size = pop)) + \n  geom_point()","id":5,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-5","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"","id":6,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-6","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"gapminder_df |>\n  filter(year == 2007) |>\nggplot(aes(x = lifeExp, y = gdpPercap, size = pop)) + \n  geom_point(color = 'red')\n","id":7,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-7","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"gapminder_df |>\n  filter(year == 2007) |>\nggplot(aes(x = lifeExp, y = gdpPercap, size = pop,color = continent)) + \n  geom_point()\n","id":8,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-8","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"","id":9,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-9","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"gapminder_df |>\n  filter(year == 2007) |>\nggplot(aes(x = lifeExp, y = gdpPercap, size = pop,color = continent)) + \n  geom_point(alpha = .5)","id":10,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-10","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"gapminder_df |>\n  filter(year == 2007) |>\nggplot(aes(x = lifeExp, y = gdpPercap, size = pop)) + \n  geom_point(shape = 2)","id":11,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-11","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"gapminder_df |>\n  filter(year == 2002) |>\nggplot(aes(x = lifeExp, y = gdpPercap, size = pop,shape = continent)) + \n  geom_point()","id":12,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-12","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"gapminder_df |>\n  filter(year == 2002) |>\nggplot(aes(x = lifeExp, y = gdpPercap, size = pop, fill = continent), color = 'black') + \n  geom_point(shape = 21)","id":13,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-13","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"gapminder_df |> \n  filter(country == 'Netherlands') |>\n  ggplot(aes(x = year, y = lifeExp)) + \n  geom_line()","id":14,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-14","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"","id":15,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-15","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"gapminder_df |> \n  filter(country == 'Netherlands') |>\n  ggplot(aes(x = year, y = gdpPercap)) + \n  geom_line(color = 'forestgreen')","id":16,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-16","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"gapminder_df |> \n  filter(country %in% c('Netherlands', 'France', 'Germany', 'Spain', 'United Kingdom')) |>\n  ggplot(aes(x = year, y = gdpPercap, color = country)) + \n  geom_line()","id":17,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-17","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"gapminder_df |> \n  filter(country == 'Netherlands') |>\n  ggplot(aes(x = year, y = gdpPercap)) + \n  geom_line(linetype = 'dashed')","id":18,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-18","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"gapminder_df |> \n  filter(country %in% c('Netherlands', 'France', 'Germany', 'Spain', 'United Kingdom')) |>\n  ggplot(aes(x = year, y = gdpPercap, linetype = country)) + \n  geom_line()","id":19,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-19","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"gapminder_df |> \n  filter(country == 'Netherlands') |>\n  ggplot(aes(x = year, y = lifeExp)) + \n  geom_line() + \n  geom_point()","id":20,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-20","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"","id":21,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-21","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"gapminder_df |> \n  filter(year == 2007) |>\n  ggplot(aes(x = gdpPercap)) + geom_histogram()","id":22,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-22","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"gapminder_df |> \n  filter(year == 2007) |>\n  ggplot(aes(x = gdpPercap)) + \n  geom_histogram(binwidth = 3000)","id":23,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-23","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"gapminder_df |> \n  filter(year == 2007) |>\n  ggplot(aes(x = gdpPercap)) + \n  geom_density( )","id":24,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-24","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"gapminder_df |> \n  filter(year == 2007) |> \n  filter(!is.na(pop)) |>\n  ggplot(aes(x = continent, y = lifeExp, group = continent)) + \n  geom_boxplot()","id":25,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-25","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"gapminder_df |> filter(year == 2007) |>\n  filter(country %in% c('Netherlands', 'France', 'Germany', 'Spain', 'United Kingdom')) |>\n  ggplot(aes(x = country, y = gdpPercap)) + \n  geom_col() +\n  geom_text(aes(y =gdpPercap  + 2000, label = round(gdpPercap)))","id":26,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-26","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"gapminder_df |> \n  filter(year %in% c(2002, 2007)) |>\n  filter(country %in% c('Netherlands', 'France', \"Germany\", \"Italy\", \"Belgium\")) |>\n  count(year, country, wt = gdpPercap) |> \n  pivot_wider(names_from = year, values_from = n)  |>\n  ggplot(aes(x = country, xend = country, y = `2002`, yend = `2007`)) + \n  geom_segment() +\n  geom_point(size=3) +\n  geom_point(aes(y = `2007`), size=3)+\n  coord_flip()","id":27,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-27","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}}];
 
 </script>
 <script type="module">
@@ -1808,6 +1808,59 @@ globalThis.qwebrExecuteCode = async function (
 </li>
       </ul>
   </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
+ <span class="menu-text">Data Visualisation 2</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./8_data_visualisation_2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">More Data Visualisation</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./gestalt.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Gestalt Principles</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./scales.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Chart scales</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./position.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Position scales</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./date_scales.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Date scales</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./colour.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Colour and size scales</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./at-home-005.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Home Exercises</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -1818,24 +1871,29 @@ globalThis.qwebrExecuteCode = async function (
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#what-other-charts-can-we-make" id="toc-what-other-charts-can-we-make" class="nav-link active" data-scroll-target="#what-other-charts-can-we-make">What other charts can we make?</a>
-  <ul class="collapse">
+  <li><a href="#what-other-charts-can-we-make" id="toc-what-other-charts-can-we-make" class="nav-link active" data-scroll-target="#what-other-charts-can-we-make">What other charts can we make?</a></li>
   <li><a href="#controlling-aesthetics" id="toc-controlling-aesthetics" class="nav-link" data-scroll-target="#controlling-aesthetics">Controlling aesthetics</a></li>
   <li><a href="#where-should-this-code-be-placed" id="toc-where-should-this-code-be-placed" class="nav-link" data-scroll-target="#where-should-this-code-be-placed">Where should this code be placed?</a></li>
-  <li><a href="#geom_point" id="toc-geom_point" class="nav-link" data-scroll-target="#geom_point">Geom_point()</a></li>
+  <li><a href="#geom_point" id="toc-geom_point" class="nav-link" data-scroll-target="#geom_point">Geom_point()</a>
+  <ul class="collapse">
+  <li><a href="#key-aesthetics" id="toc-key-aesthetics" class="nav-link" data-scroll-target="#key-aesthetics">Key aesthetics</a></li>
   </ul></li>
   <li><a href="#more-on-shapes" id="toc-more-on-shapes" class="nav-link" data-scroll-target="#more-on-shapes">More on shapes</a></li>
-  <li><a href="#use" id="toc-use" class="nav-link" data-scroll-target="#use">Use</a></li>
-  <li><a href="#geom_line" id="toc-geom_line" class="nav-link" data-scroll-target="#geom_line">Geom_line</a></li>
-  <li><a href="#use-1" id="toc-use-1" class="nav-link" data-scroll-target="#use-1">Use</a></li>
+  <li><a href="#geom_line" id="toc-geom_line" class="nav-link" data-scroll-target="#geom_line">Geom_line</a>
+  <ul class="collapse">
+  <li><a href="#key-aesthetics-1" id="toc-key-aesthetics-1" class="nav-link" data-scroll-target="#key-aesthetics-1">Key aesthetics</a></li>
+  </ul></li>
   <li><a href="#multiple-geoms" id="toc-multiple-geoms" class="nav-link" data-scroll-target="#multiple-geoms">Multiple geoms</a></li>
-  <li><a href="#geom_area" id="toc-geom_area" class="nav-link" data-scroll-target="#geom_area">geom_area()</a></li>
+  <li><a href="#other-geoms" id="toc-other-geoms" class="nav-link" data-scroll-target="#other-geoms"><span class="header-section-number">25</span> Other geoms</a>
+  <ul class="collapse">
   <li><a href="#statistical-chart-types" id="toc-statistical-chart-types" class="nav-link" data-scroll-target="#statistical-chart-types">Statistical chart types</a>
   <ul class="collapse">
+  <li><a href="#geom_histogram" id="toc-geom_histogram" class="nav-link" data-scroll-target="#geom_histogram">geom_histogram</a></li>
   <li><a href="#geom_density" id="toc-geom_density" class="nav-link" data-scroll-target="#geom_density">geom_density</a></li>
   <li><a href="#geom_boxplot" id="toc-geom_boxplot" class="nav-link" data-scroll-target="#geom_boxplot">geom_boxplot</a></li>
   <li><a href="#special-case-geom_text" id="toc-special-case-geom_text" class="nav-link" data-scroll-target="#special-case-geom_text">Special case: geom_text</a></li>
   <li><a href="#shapes-geom_polygon-geom_segment-geom_rect" id="toc-shapes-geom_polygon-geom_segment-geom_rect" class="nav-link" data-scroll-target="#shapes-geom_polygon-geom_segment-geom_rect">Shapes: geom_polygon, geom_segment, geom_rect</a></li>
+  </ul></li>
   <li><a href="#add-ons" id="toc-add-ons" class="nav-link" data-scroll-target="#add-ons">Add-ons</a></li>
   </ul></li>
   </ul>
@@ -2154,13 +2212,14 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <p>To demonstrate the basic range of charts we can create, we’ll use the Gapminder dataset, containing information about countries including GDP per capita, population size, and life expectancy, over time.</p>
 <div id="qwebr-insertion-location-2"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<section id="controlling-aesthetics" class="level3">
-<h3 class="anchored" data-anchor-id="controlling-aesthetics">Controlling aesthetics</h3>
+</section>
+<section id="controlling-aesthetics" class="level2">
+<h2 class="anchored" data-anchor-id="controlling-aesthetics">Controlling aesthetics</h2>
 <p>To draw other chart types, we replace the geometry <code>geom_col</code> with others. In some cases, we will also change or add aesthetics.</p>
 <p>Each chart type is followed by examples of the typical aesthetics which can be used with that geometry.</p>
 </section>
-<section id="where-should-this-code-be-placed" class="level3">
-<h3 class="anchored" data-anchor-id="where-should-this-code-be-placed">Where should this code be placed?</h3>
+<section id="where-should-this-code-be-placed" class="level2">
+<h2 class="anchored" data-anchor-id="where-should-this-code-be-placed">Where should this code be placed?</h2>
 <p>As we learned in the previous section, we can place an aesthetic either within <code>aes()</code> or outside it:</p>
 <ul>
 <li><p>When we specify an aesthetic <em>within</em> <code>aes()</code>, we ask for variables from our dataset to be mapped to it. It is best to include the aes() within the <code>ggplot()</code> function, though it can also be placed within the <code>geom_</code> function.</p></li>
@@ -2168,11 +2227,13 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </ul>
 <p>For each aesthetic, there is an example where the aesthetic is placed within the <code>aes()</code> and outside it, to show the difference.</p>
 </section>
-<section id="geom_point" class="level3">
-<h3 class="anchored" data-anchor-id="geom_point">Geom_point()</h3>
+<section id="geom_point" class="level2">
+<h2 class="anchored" data-anchor-id="geom_point">Geom_point()</h2>
 <p><code>geom_point()</code> places points on a 2D plane. It requires at least <code>x</code> and <code>y</code> coordinates within the <code>aes()</code>. The result is often called a ‘scatterplot’ or sometimes a ‘bubble chart’.</p>
 <div id="qwebr-insertion-location-3"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<section id="key-aesthetics" class="level3">
+<h3 class="anchored" data-anchor-id="key-aesthetics">Key aesthetics</h3>
 <section id="size" class="level4">
 <h4 class="anchored" data-anchor-id="size">Size</h4>
 <p>We can optionally set the <code>size</code> variable.</p>
@@ -2221,12 +2282,12 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <div id="qwebr-insertion-location-13"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </section>
-<section id="use" class="level3">
-<h3 class="anchored" data-anchor-id="use">Use</h3>
+<section id="use" class="level4">
+<h4 class="anchored" data-anchor-id="use">Use</h4>
 <p>Scatterplots are often used to show relationships between variables, like the obvious link between GDP and life expectancy shown here.</p>
 </section>
-<section id="geom_line" class="level3">
-<h3 class="anchored" data-anchor-id="geom_line">Geom_line</h3>
+<section id="geom_line" class="level2">
+<h2 class="anchored" data-anchor-id="geom_line">Geom_line</h2>
 <p>geom_line will draw a line between points in numerical order.</p>
 <div id="qwebr-insertion-location-14"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
@@ -2234,6 +2295,8 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <p>Draw a similar plot, for a country in the dataset of your choice.</p>
 <div id="qwebr-insertion-location-15"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<section id="key-aesthetics-1" class="level3">
+<h3 class="anchored" data-anchor-id="key-aesthetics-1">Key aesthetics</h3>
 <section id="colour-1" class="level4">
 <h4 class="anchored" data-anchor-id="colour-1">Colour</h4>
 <p>You can set line color:</p>
@@ -2278,45 +2341,47 @@ Note
 <div id="qwebr-insertion-location-19"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </section>
-</section>
-<section id="use-1" class="level3">
-<h3 class="anchored" data-anchor-id="use-1">Use</h3>
+<section id="use-1" class="level4">
+<h4 class="anchored" data-anchor-id="use-1">Use</h4>
 <p>Line graphs are usually used to show something changing over time. Because a line is drawn connecting each data point to the next one, we assume that one follows another in a logical sequence.</p>
 </section>
-<section id="multiple-geoms" class="level3">
-<h3 class="anchored" data-anchor-id="multiple-geoms">Multiple geoms</h3>
+</section>
+</section>
+<section id="multiple-geoms" class="level2">
+<h2 class="anchored" data-anchor-id="multiple-geoms">Multiple geoms</h2>
 <p>You can stack multiple geoms on top of each other, just add them using another <code>+</code>:</p>
 <div id="qwebr-insertion-location-20"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <p><strong>Try it yourself:</strong></p>
 <p>Draw a chart combining a bar and a line plot, using the data fields of your choice.</p>
+<div id="qwebr-insertion-location-21"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </section>
-<section id="geom_area" class="level3">
-<h3 class="anchored" data-anchor-id="geom_area">geom_area()</h3>
-</section>
+<section id="other-geoms" class="level1" data-number="25">
+<h1 data-number="25"><span class="header-section-number">25</span> Other geoms</h1>
 <section id="statistical-chart-types" class="level2">
 <h2 class="anchored" data-anchor-id="statistical-chart-types">Statistical chart types</h2>
-<section id="geom_histogram" class="level4">
-<h4 class="anchored" data-anchor-id="geom_histogram">geom_histogram</h4>
+<section id="geom_histogram" class="level3">
+<h3 class="anchored" data-anchor-id="geom_histogram">geom_histogram</h3>
 <p>A histogram is a chart which plots the <em>distribution</em> of a set of values as a series of bars. Each bar represents a ‘bin’ or range of values, with the height of the bar indicating how many of the values are within that bin.</p>
 <p>We could use it to plot the distribution of the GDP per capita in 2007, for example:</p>
-<div id="qwebr-insertion-location-21"></div>
+<div id="qwebr-insertion-location-22"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <p>The code for a histogram looks a little different than usual. We only set the <code>x</code> variable - the y position will be automatically calculated when it does the statistical transformation.</p>
 <p>Second, you’ll notice a message: <code>stat_bin()</code> using <code>bins = 30</code>. Pick better value with <code>binwidth</code> underneath the plot. Ggplot automatically divides the data into 30 equal-sized bins by default, but this is often not the clearest way to represent the distribution. We can choose either another number of bins with the argument <code>bins =</code>, or choose how big each range should be with the code <code>binwidth =</code>.</p>
-<div id="qwebr-insertion-location-22"></div>
+<div id="qwebr-insertion-location-23"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </section>
 <section id="geom_density" class="level3">
 <h3 class="anchored" data-anchor-id="geom_density">geom_density</h3>
 <p>Another way to show distributions of values is using geom_density:</p>
-<div id="qwebr-insertion-location-23"></div>
+<div id="qwebr-insertion-location-24"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </section>
 <section id="geom_boxplot" class="level3">
 <h3 class="anchored" data-anchor-id="geom_boxplot">geom_boxplot</h3>
 <p>geom_boxplot shows distributions:</p>
-<div id="qwebr-insertion-location-24"></div>
+<div id="qwebr-insertion-location-25"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <p>A boxplot visualises the distribution of numbers (in this case, the life expectancies of countries by continent). The middle line is the average (the mean). The upper and lower ends of the box are the 25th and 75 percentiles, and the dots (if any), show outliers.</p>
 <p>This particular plot shows that in 2007, Europe had the highest average, and not many countries much lower or higher than the average (the distribution), whereas Africa had a much lower average, with a higher distribution.</p>
@@ -2326,19 +2391,20 @@ Note
 <h3 class="anchored" data-anchor-id="special-case-geom_text">Special case: geom_text</h3>
 <p>Geom_text will actually add the text from a column to a visualisation. This is useful if we want to label the chart itself with some values (we’ll learn better ways to annotate later in the course).</p>
 <p>geom_text() works like any other geometry, except we must supply it with a <code>label</code> aesthetic:</p>
-<div id="qwebr-insertion-location-25"></div>
+<div id="qwebr-insertion-location-26"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <p>Why have I used <code>+ 2000</code> and <code>round()</code> here?</p>
 </section>
 <section id="shapes-geom_polygon-geom_segment-geom_rect" class="level3">
 <h3 class="anchored" data-anchor-id="shapes-geom_polygon-geom_segment-geom_rect">Shapes: geom_polygon, geom_segment, geom_rect</h3>
 <p>As well as these geoms which create recognisable chart types, it’s also useful to know that you can essentially create almost anything by using ggplot to draw shapes either with data or with absolute values. For example, you can make a ‘lollipop chart’ with a combination of <code>geom_segment</code> and <code>geom_point</code>, such as here to show the change in GDP from 2002 to 2007:</p>
-<div id="qwebr-insertion-location-26"></div>
+<div id="qwebr-insertion-location-27"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 <p>Note that geom_segment needs <code>xend</code> and <code>yend</code>, as well as <code>x</code> and <code>y</code>. These shapes often have different required aesthetics.</p>
 </section>
-<section id="add-ons" class="level3">
-<h3 class="anchored" data-anchor-id="add-ons">Add-ons</h3>
+</section>
+<section id="add-ons" class="level2">
+<h2 class="anchored" data-anchor-id="add-ons">Add-ons</h2>
 <p>Another way to get the chart type you want is to install additional packages which use the same ‘grammar of graphics’ to extend ggplot. You can make animated plots using <code>gganimate</code>, networks using <code>ggraph</code>. Later in the course we will create maps with a geom called <code>geom_sf</code>. There are hundreds of these add-ons, which you can browse <a href="https://exts.ggplot2.tidyverse.org/gallery/">here</a>.</p>
 
 

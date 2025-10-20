@@ -1,6 +1,9 @@
 ---
 title: "Information Visualisation"
-format: revealjs
+subtitle: "Scales and Gestalt Principles"
+format: 
+  revealjs:
+    scrollable: true
 filters:
   - webr
 ---
@@ -14,7 +17,6 @@ library(gapminder)
 
 gapminder_df =  gapminder |> filter(continent!= 'FSU')
 
-
 sample_for_bar_chart <- gapminder_df %>% 
   filter(year == 2007) |>
   filter(country %in% c('Netherlands', 'France', 'Germany','Mexico', 'Chile', 'Colombia', 'Bolivia', 'Japan', 'China')) 
@@ -22,139 +24,6 @@ sample_for_bar_chart <- gapminder_df %>%
 
 ```
 
-## Gestalt Principles {.smaller}
-
--   Gestalt principles were developed from the late 1800s and could be considered part of the discipline of psychology and philosophy. 
--   Gestalt principles are related to **perception:** the basic theory is that we perceive visual forms as a whole, rather than each part separately.
--   In other words, we simplify our visual stimuli in order to make sense of what we are seeing, and the wider world.
--   The developers of Gestalt boiled this down to a series of principles, which they say govern how we do this simplifcation. 
--   The data visusalisation types and default settings we use naturally use these principles - we don't need to actively think about them most of the time.
-
-## Principles
-
-
-![](gestalt.png){width="1000"}
-
-## Proximity
-
-When objects are placed close together, our mind intuitively infers a connection between them.
-
-
-```{r}
-#| echo: false
-#| message: false
-#| warning: false
-
-library(palmerpenguins)
-library(tidyverse)
-
-palmerpenguins::penguins %>% 
-  ggplot() + geom_point(aes(x = bill_length_mm, y = flipper_length_mm))
-```
-
-
-## Similarity
-
-This principle states that objects which are a similar (or the same) size, shape or colour will be perceived as part of the same group.
-
-```{r}
-#| echo: false
-#| message: false
-#| warning: false
-palmerpenguins::penguins %>% 
-  ggplot() + geom_point(aes(x = bill_length_mm, y = flipper_length_mm, color = species))
-```
-
-## Enclosure
-
-This principle says that objects within the same border will be perceived as a group. Again, this can be exploited in data visualisation to highlight groups within our data.
-
-```{r}
-#| echo: false
-#| message: false
-#| warning: false
-palmerpenguins::penguins %>% 
-  ggplot(aes(x = bill_length_mm, y = flipper_length_mm, group = species)) + 
-  geom_point() + 
-  ggforce::geom_mark_hull(concavity = 3)
-```
-
-
-## Closure
-
-Closure is the principle that we tend to 'close' unfinished objects to make them whole.
-
-```{r}
-#| echo: false
-#| message: false
-#| warning: false
-
-gapminder_df =  read_tsv('gapminder_df.csv') |> filter(continent!= 'FSU')
-
-gapminder_df |>
-  filter(country == 'Netherlands') |>
-  count(year, wt = gdpPercap) |>
-  ggplot() + 
-  geom_line(aes(x = year, y = n), linetype = 'dashed') + 
-  labs(title = "GDP Per Capita", subtitle = "Netherlands, 1952 - 2007") + theme_bw()
-
-
-```
-
-## Continuity
-
-This principle states that we naturally try to organise objects when they are placed one after another.
-
-```{r}
-#| echo: false
-#| message: false
-#| warning: false
-
-gapminder_df |>
-  filter(country %in% c('Netherlands', 'France', "Germany", "Italy", "Belgium")) |>
-  count(year, country, wt = lifeExp) |>
-  ggplot() + 
-  geom_line(aes(x = year, y = n, color = country)) + 
-  labs(title = "Life Expectancy", subtitle = "Select Countries, 1952 - 2007") + theme_bw()
-
-```
-
-
-## Connection
-
-This principle states that if objects are connected, we perceive them as a unified entity.
-
-```{r}
-#| echo: false
-#| message: false
-#| warning: false
-
-
-gapminder_df |> filter(year %in% c(2002, 2007)) |>
-  filter(country %in% c('Netherlands', 'France', "Germany", "Italy", "Belgium")) |>
-  count(year, country, wt = gdpPercap) %>% pivot_wider(names_from = year, values_from = n)  %>% 
-  ggplot(aes(x = country, xend = country, y = `2002`, yend = `2007`)) + 
-  geom_segment( color="grey", linetype = 'dashed') +
-  geom_point(color=rgb(0.2,0.7,0.1,0.5), size=3 ) +
-  geom_point(aes(y = `2007`), color=rgb(0.7,0.2,0.1,0.5), size=3 )+
-  coord_flip()+
-  theme_bw() +
-  theme(
-    legend.position = "none",
-  ) + 
-  labs(title = "Change in GDP per Capita", subtitle = "2002 to 2007")
-
-```
-
-## Exercise
-
-Take the chart you did in the critique.
-
-Prepare to explain it to the group for 2 minutes (you can just use what you wrote in the essay) Mention one of each of the following, and point out whether you think they are effective or appropriate:
-
--   A geometry
--   An aesthetic
--   A gestalt principle
 
 ## Scales
 
@@ -167,19 +36,20 @@ ggplot(aes(x = lifeExp, y = gdpPercap, size = pop,color = continent)) +
   geom_point()
 ```
 
-
 ## Scales
 
--   The process by which this happens involve **scales**. 
--   **Scales** are the next 'layer' in our ggplot object. 
+-   The process by which this happens involve **scales**.
+-   **Scales** are the next 'layer' in our ggplot object.
 
 ![](layers.png){width="500"}
 
-
 ## Scales
--   Scales **control the mapping from data to aesthetics**. 
+
+-   Scales **control the mapping from data to aesthetics**.
 -   Data visualisations cannot work without scales, so ggplot2 will automatically add them to your plots
 -   Knowing how to control these and the various options they have available will allow you to have much more control over the look of your visualisations.
+
+## Scales  
 
 ```{webr-r}
 gapminder_df |>
@@ -190,12 +60,14 @@ ggplot(aes(x = lifeExp, y = gdpPercap, size = pop,color = continent)) +
 
 ## Adding or changing scales:
 
-- Add the appropriate scale name after `+` to your ggplot object. Specify options within parentheses.
-- Scales are named scale_{aesthetic name}_{scale name}, e.g. `scale_color_gradient2`
+-   Add the appropriate scale name after `+` to your ggplot object. Specify options within parentheses.
+-   Scales are named scale\_{aesthetic name}\_{scale name}, e.g. `scale_color_gradient2`
 
-# Position scales
+## Position scales
 
 -   The most common position scales are `scale_x_continuous` and `scale_y_continuous`, which simply map linearly from a data value to a location on the plot.
+
+## Position scales
 
 ```{webr-r}
 
@@ -217,6 +89,8 @@ gapminder_df |>
 
 To change the limits, add `limits =` followed by the start and end point of the limit you want, within a vector using `c()`, as in the example below:
 
+## Limits
+
 ```{webr-r}
 gapminder_df |>
   filter(country == "Netherlands") |>
@@ -235,8 +109,10 @@ Set the limits of the y axis to 10000 and 50000
 
 ## Breaks
 
--   Breaks control which axis ticks, lines and labels are shown. 
+-   Breaks control which axis ticks, lines and labels are shown.
 -   Ggplot picks defaults according to the data but you can override them.
+
+## Breaks
 
 ```{webr-r}
 gapminder_df |>
@@ -247,7 +123,7 @@ gapminder_df |>
                      breaks = c(1980, 1990, 2000)) 
 ```
 
-## Try it yourself 
+## Try it yourself
 
 Set the breaks for the y axis to every 5000 instead of 10000
 
@@ -267,7 +143,7 @@ gapminder_df |>
   geom_col() 
 ```
 
-## Discrete 
+## Discrete
 
 ```{webr-r}
 
@@ -311,8 +187,7 @@ sample_for_bar_chart |>
 
 ## Create a scale from a palette
 
-Use `scale_color_distiller` to specify that ggplot should take a particular palette and distribute the values evenly along it. 
-
+Use `scale_color_distiller` to specify that ggplot should take a particular palette and distribute the values evenly along it.
 
 ```{webr-r}
 sample_for_bar_chart |> 
@@ -328,7 +203,6 @@ Change the palette of this chart to 'Greens':
 ```{webr-r}
 
 ```
-
 
 ## Create your own continuous scale
 
@@ -376,6 +250,11 @@ sample_for_bar_chart |>
   scale_fill_brewer(palette = 'Set2')
 ```
 
+## Try it yourself
+
+-   Change the chart above:
+-   Use `scale_fill_brewer()` to another palette. Go to https://colorbrewer2.org/ and choose one from the 'qualitative' options. 
+
 ## Fully manual scales
 
 Finally, with discrete scales you can simply pick your own set of colours, using `scale_fill_manual`:
@@ -411,3 +290,204 @@ gapminder_df |>
   geom_point() + 
   scale_size_area(max_size = 10)
 ```
+
+
+## Adjusting the legend
+
+As with position scales, we can set limits and breaks. In this case, we'll see the change in the legend primarily.
+
+To set the limit, specify within the scale_x\_ or scale_y function you are using. In this, any values outside the limits will be coloured by a default NA value, in this case grey.
+
+```{webr-r}
+sample_for_bar_chart |> 
+  ggplot(aes(x = country, y = gdpPercap, fill = lifeExp)) +
+  geom_col() + 
+  scale_fill_continuous(limits = c(70,100))
+```
+
+## Set the breaks using the below:
+
+```{webr-r}
+sample_for_bar_chart |> 
+  ggplot(aes(x = country, y = gdpPercap, fill = lifeExp)) +
+  geom_col() + 
+  scale_fill_continuous(breaks = c(50:80))
+```
+
+## Adjusting the legend
+
+You can make changes to the legend in other ways, using the `guides()` layer. This allows you to customise the legend to look exactly how you would like it. 
+
+Within the guides() layer, you specify the scale you want to work with (e.g. the fill scale), and then the type of guide  you would like to use, using `guide_`. The options are `guide_colorbar()`, `guide_legend()`, `guide_bins()` and `guide_colorsteps()`
+
+## Adjusting the legend
+
+```{webr-r}
+sample_for_bar_chart |> 
+  ggplot(aes(x = country, y = gdpPercap, fill = lifeExp)) +
+  geom_col()  + 
+  guides(fill = guide_colorbar(reverse = TRUE))
+
+
+```
+
+## Adjusting the legend
+
+-   Use `barheight` to set the height of the legend (you can use barwidth to set the width):
+
+```{webr-r}
+sample_for_bar_chart |> 
+  ggplot(aes(x = country, y = gdpPercap, fill = lifeExp)) +
+  geom_col() + 
+  guides(fill = guide_colourbar(barheight = unit(8, "cm")))
+
+
+```
+
+Change from vertical to horizontal:
+
+```{webr-r}
+sample_for_bar_chart |> 
+  ggplot(aes(x = country, y = gdpPercap, fill = lifeExp)) +
+  geom_col() + 
+  guides(fill = guide_colourbar(direction = "horizontal"))
+```
+
+## Try it yourself:
+
+-   Recreate the chart above. 
+-   Change the guide to `guide_legend()`.
+-   Use the option nrow to specify it should be in two rows. 
+-   Use the option `position` to position the legend on the `left`
+
+
+# Gestalt Principles
+
+## Gestalt Principles {.smaller}
+
+-   Gestalt principles were developed from the late 1800s and could be considered part of the discipline of psychology and philosophy.
+-   Gestalt principles are related to **perception:** the basic theory is that we perceive visual forms as a whole, rather than each part separately.
+-   In other words, we simplify our visual stimuli in order to make sense of what we are seeing, and the wider world.
+-   The developers of Gestalt boiled this down to a series of principles, which they say govern how we do this simplifcation.
+-   The data visusalisation types and default settings we use naturally use these principles - we don't need to actively think about them most of the time.
+
+## Principles
+
+![](gestalt.png){width="1000"}
+
+## Proximity
+
+When objects are placed close together, our mind intuitively infers a connection between them.
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(palmerpenguins)
+library(tidyverse)
+
+palmerpenguins::penguins %>% 
+  ggplot() + geom_point(aes(x = bill_length_mm, y = flipper_length_mm))
+```
+
+## Similarity
+
+This principle states that objects which are a similar (or the same) size, shape or colour will be perceived as part of the same group.
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+palmerpenguins::penguins %>% 
+  ggplot() + geom_point(aes(x = bill_length_mm, y = flipper_length_mm, color = species))
+```
+
+## Enclosure
+
+This principle says that objects within the same border will be perceived as a group. Again, this can be exploited in data visualisation to highlight groups within our data.
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+palmerpenguins::penguins %>% 
+  ggplot(aes(x = bill_length_mm, y = flipper_length_mm, group = species)) + 
+  geom_point() + 
+  ggforce::geom_mark_hull(concavity = 3)
+```
+
+## Closure
+
+Closure is the principle that we tend to 'close' unfinished objects to make them whole.
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+gapminder_df =  read_tsv('gapminder_df.csv') |> filter(continent!= 'FSU')
+
+gapminder_df |>
+  filter(country == 'Netherlands') |>
+  count(year, wt = gdpPercap) |>
+  ggplot() + 
+  geom_line(aes(x = year, y = n), linetype = 'dashed') + 
+  labs(title = "GDP Per Capita", subtitle = "Netherlands, 1952 - 2007") + theme_bw()
+
+
+```
+
+## Continuity
+
+This principle states that we naturally try to organise objects when they are placed one after another.
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+gapminder_df |>
+  filter(country %in% c('Netherlands', 'France', "Germany", "Italy", "Belgium")) |>
+  count(year, country, wt = lifeExp) |>
+  ggplot() + 
+  geom_line(aes(x = year, y = n, color = country)) + 
+  labs(title = "Life Expectancy", subtitle = "Select Countries, 1952 - 2007") + theme_bw()
+
+```
+
+## Connection
+
+This principle states that if objects are connected, we perceive them as a unified entity.
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+
+gapminder_df |> filter(year %in% c(2002, 2007)) |>
+  filter(country %in% c('Netherlands', 'France', "Germany", "Italy", "Belgium")) |>
+  count(year, country, wt = gdpPercap) %>% pivot_wider(names_from = year, values_from = n)  %>% 
+  ggplot(aes(x = country, xend = country, y = `2002`, yend = `2007`)) + 
+  geom_segment( color="grey", linetype = 'dashed') +
+  geom_point(color=rgb(0.2,0.7,0.1,0.5), size=3 ) +
+  geom_point(aes(y = `2007`), color=rgb(0.7,0.2,0.1,0.5), size=3 )+
+  coord_flip()+
+  theme_bw() +
+  theme(
+    legend.position = "none",
+  ) + 
+  labs(title = "Change in GDP per Capita", subtitle = "2002 to 2007")
+
+```
+
+## Exercise
+
+Find the chart you posted to the forum in the first week.
+
+In pairs, choose one of your two visualisations and prepare to speak about it using the technical language of the 'grammar of graphics'. Mention one of each of the following, and point out whether you think they are effective or appropriate:
+
+-   A geometry
+-   An aesthetic and how (roughly) they are mapped using scales. 
+-   A gestalt principle

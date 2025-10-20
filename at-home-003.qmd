@@ -4,7 +4,7 @@ title: "Home exercises"
 
 ## Instructions
 
-The at-home exercises should be completed using Posit cloud, Home Exercise 4. Create a new .Rmd file (use File -\> New File -\> R Notebook.
+The at-home exercises should be completed using Posit cloud, Home Exercise 4. Create a new .Rmd file (use File -\> New File -\> R Markdown.
 
 I advise saving the new file straight away. Because you'll submit this file as an assignment, use a standardised name: lastname_firstname4. Regularly re-save the file.
 
@@ -28,7 +28,6 @@ This can be done using a `join` command. You'll also need a key, in this case, t
 
 -   Make a new dataframe containing three columns: the year, the sum of female dialogue lines, and the sum of male dialogue lines.
 
-
 ::: callout-tip
 This is a slightly trickier challenge and will need some techniques we haven't covered in class. One way to do this is to make two separate datasets first (think about what these should contain), and merge them together.
 
@@ -37,13 +36,11 @@ You'll need to do the following which we haven't covered:
 -   First, use `full_join()` instead of `left_join()`, to make sure your merge includes all the movies, including ones with no male or no female lines.
 
 -   Second, when you do the merge, you will have some rows with an NA for number of words. If you use filter, these lines will be dropped instead of treated as the movie containing no (zero) words of dialogue for that gender. To have these work correctly, you can replace these NAs with 0s. You can do that with the following `mutate()` command: `mutate(name_of_column_with_count_of_lines = replace_na(name_of_column_with_count_of_lines, 0))`. Don't worry if you can't get this to work!
-
 :::
 
--   Make a new column in this dataframe. This column should contain the value 'more male' if there is more male than female dialogue, and 'more female' if there is more female dialogue. If it has the exact same, it should read 'equal'. (HINT: look for the function `case_when()` from  a previous week)
+-   Make a new column in this dataframe. This column should contain the value 'more male' if there is more male than female dialogue, and 'more female' if there is more female dialogue. If it has the exact same, it should read 'equal'. (HINT: look for the function `case_when()` from a previous week)
 
 -   Make another new dataframe. This should have a row for each movie, and a column counting the total number of words for each gender.
-
 
 -   Import the third file in your folder, `imdb_genre`. Join this to your new processed dataset (HINT: the imdb genre dataset doesn't have the script IDs, but has an IMDB ID instead. You'll need to first join the metadata file to your dataset of male and female lines, and take a look to see which column of that will let you join to the IMDB IDs).
 

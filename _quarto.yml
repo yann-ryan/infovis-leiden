@@ -45,15 +45,15 @@ book:
         - ggplot2.qmd
         - chart_types.qmd
         - at-home-004.qmd
-    # - part: "Data Visualisation 2"
-    #   chapters:
-    #     - 8_data_visualisation_2.qmd
-    #     - gestalt.qmd
-    #     - scales.qmd
-    #     - position.qmd
-    #     - date_scales.qmd
-    #     - colour.qmd
-    #     - at-home-005.qmd
+    - part: "Data Visualisation 2"
+      chapters:
+        - 8_data_visualisation_2.qmd
+        - gestalt.qmd
+        - scales.qmd
+        - position.qmd
+        - date_scales.qmd
+        - colour.qmd
+        - at-home-005.qmd
  #    - part: "Data Visualisation 3"
  #      chapters:
  #        - 9_data_visualisation_3.qmd

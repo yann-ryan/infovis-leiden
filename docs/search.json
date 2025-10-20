@@ -577,7 +577,7 @@
     "href": "at-home-002.html",
     "title": "17  Home exercises",
     "section": "",
-    "text": "Instructions\nThe at-home exercises should be completed using Posit cloud. Open the new assignment ‘Home Exercise 3’. Create a new .Rmd file (use File -&gt; New File -&gt; R Notebook.\nI advise saving the new file straight away. Because you’ll submit this file as an assignment, use a standardised name: lastname_firstname3. Regularly re-save the file.\nWhen you have finished the exercise (or part of it), ‘knit’ the file. Export the .Rmd and the html as a .zip file, and upload this to the assignment area.\nIf you can’t knit the file because of an error, either comment out the code which doesn’t work using #, or just submit the .Rmd file on its own.",
+    "text": "Instructions\nThe at-home exercises should be completed using Posit cloud. Open the new assignment ‘Home Exercise 3’. Create a new .Rmd file (use File -&gt; New File -&gt; R Markdown.\nI advise saving the new file straight away. Because you’ll submit this file as an assignment, use a standardised name: lastname_firstname3. Regularly re-save the file.\nWhen you have finished the exercise (or part of it), ‘knit’ the file. Export the .Rmd and the html as a .zip file, and upload this to the assignment area.\nIf you can’t knit the file because of an error, either comment out the code which doesn’t work using #, or just submit the .Rmd file on its own.",
     "crumbs": [
       "Data Analysis 2",
       "<span class='chapter-number'>17</span>  <span class='chapter-title'>Home exercises</span>"
@@ -676,7 +676,7 @@
     "href": "at-home-003.html",
     "title": "21  Home exercises",
     "section": "",
-    "text": "Instructions\nThe at-home exercises should be completed using Posit cloud, Home Exercise 4. Create a new .Rmd file (use File -&gt; New File -&gt; R Notebook.\nI advise saving the new file straight away. Because you’ll submit this file as an assignment, use a standardised name: lastname_firstname4. Regularly re-save the file.\nWhen you have finished the exercise (or part of it), ‘knit’ the file. Export the .Rmd and the html as a .zip file, and upload this to the assignment area.",
+    "text": "Instructions\nThe at-home exercises should be completed using Posit cloud, Home Exercise 4. Create a new .Rmd file (use File -&gt; New File -&gt; R Markdown.\nI advise saving the new file straight away. Because you’ll submit this file as an assignment, use a standardised name: lastname_firstname4. Regularly re-save the file.\nWhen you have finished the exercise (or part of it), ‘knit’ the file. Export the .Rmd and the html as a .zip file, and upload this to the assignment area.",
     "crumbs": [
       "Data Analysis 3",
       "<span class='chapter-number'>21</span>  <span class='chapter-title'>Home exercises</span>"
@@ -786,7 +786,40 @@
     "href": "chart_types.html#what-other-charts-can-we-make",
     "title": "24  More chart types",
     "section": "",
-    "text": "Please enable JavaScript to experience the dynamic code cell content on this page.\n\nControlling aesthetics\nTo draw other chart types, we replace the geometry geom_col with others. In some cases, we will also change or add aesthetics.\nEach chart type is followed by examples of the typical aesthetics which can be used with that geometry.\n\n\nWhere should this code be placed?\nAs we learned in the previous section, we can place an aesthetic either within aes() or outside it:\n\nWhen we specify an aesthetic within aes(), we ask for variables from our dataset to be mapped to it. It is best to include the aes() within the ggplot() function, though it can also be placed within the geom_ function.\nWhen we specify an aesthetic not within an aes(), it is used to map to specific values, such as setting all the points in a chart to blue. When using aesthetics like this, they should always be placed within the geom_ function.\n\nFor each aesthetic, there is an example where the aesthetic is placed within the aes() and outside it, to show the difference.\n\n\nGeom_point()\ngeom_point() places points on a 2D plane. It requires at least x and y coordinates within the aes(). The result is often called a ‘scatterplot’ or sometimes a ‘bubble chart’.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nSize\nWe can optionally set the size variable.\nOutside the aes()\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nTry it yourself: copy and paste the chart below, and set the size variable to 10.\nInside the aes()\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nTry it yourself: make a new version of the plot, for the year 2002. Set the population to the x axis, the life expectancy to the y axis, and the GDP to the size variable.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nColour\nand/or the colour variable:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nTry it yourself: create a plot with the points all the same colour: forestgreen. You need to choose where the aesthetic should go, out of the two examples above!\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nAlpha\nAlpha sets the transparency, a number between 0 and 1:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nShape\nOr the shape. There is a set of numeric codes to select specific shapes. Here is the full set:\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "text": "Please enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Data Visualisation 1",
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>More chart types</span>"
+    ]
+  },
+  {
+    "objectID": "chart_types.html#controlling-aesthetics",
+    "href": "chart_types.html#controlling-aesthetics",
+    "title": "24  More chart types",
+    "section": "Controlling aesthetics",
+    "text": "Controlling aesthetics\nTo draw other chart types, we replace the geometry geom_col with others. In some cases, we will also change or add aesthetics.\nEach chart type is followed by examples of the typical aesthetics which can be used with that geometry.",
+    "crumbs": [
+      "Data Visualisation 1",
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>More chart types</span>"
+    ]
+  },
+  {
+    "objectID": "chart_types.html#where-should-this-code-be-placed",
+    "href": "chart_types.html#where-should-this-code-be-placed",
+    "title": "24  More chart types",
+    "section": "Where should this code be placed?",
+    "text": "Where should this code be placed?\nAs we learned in the previous section, we can place an aesthetic either within aes() or outside it:\n\nWhen we specify an aesthetic within aes(), we ask for variables from our dataset to be mapped to it. It is best to include the aes() within the ggplot() function, though it can also be placed within the geom_ function.\nWhen we specify an aesthetic not within an aes(), it is used to map to specific values, such as setting all the points in a chart to blue. When using aesthetics like this, they should always be placed within the geom_ function.\n\nFor each aesthetic, there is an example where the aesthetic is placed within the aes() and outside it, to show the difference.",
+    "crumbs": [
+      "Data Visualisation 1",
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>More chart types</span>"
+    ]
+  },
+  {
+    "objectID": "chart_types.html#geom_point",
+    "href": "chart_types.html#geom_point",
+    "title": "24  More chart types",
+    "section": "Geom_point()",
+    "text": "Geom_point()\ngeom_point() places points on a 2D plane. It requires at least x and y coordinates within the aes(). The result is often called a ‘scatterplot’ or sometimes a ‘bubble chart’.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nKey aesthetics\n\nSize\nWe can optionally set the size variable.\nOutside the aes()\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nTry it yourself: copy and paste the chart below, and set the size variable to 10.\nInside the aes()\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nTry it yourself: make a new version of the plot, for the year 2002. Set the population to the x axis, the life expectancy to the y axis, and the GDP to the size variable.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nColour\nand/or the colour variable:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nTry it yourself: create a plot with the points all the same colour: forestgreen. You need to choose where the aesthetic should go, out of the two examples above!\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nAlpha\nAlpha sets the transparency, a number between 0 and 1:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nShape\nOr the shape. There is a set of numeric codes to select specific shapes. Here is the full set:\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
     "crumbs": [
       "Data Visualisation 1",
       "<span class='chapter-number'>24</span>  <span class='chapter-title'>More chart types</span>"
@@ -804,11 +837,44 @@
     ]
   },
   {
+    "objectID": "chart_types.html#geom_line",
+    "href": "chart_types.html#geom_line",
+    "title": "24  More chart types",
+    "section": "Geom_line",
+    "text": "Geom_line\ngeom_line will draw a line between points in numerical order.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nTry it yourself:\nDraw a similar plot, for a country in the dataset of your choice.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nKey aesthetics\n\nColour\nYou can set line color:\n\n\n\n\n\n\nTip\n\n\n\nYou can choose from a huge number of colours in your charts. A lot of colours have specific names, which are all listed here. Alternatively, you can choose colours using HEX codes: put # before the code and add it as normal.\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\n\n\n\nNote\n\n\n\nTo set the colours for these countries individually we can use a custom colour scale, which we’ll cover next week.\n\n\nTry it yourself: choose another five countries from the data. Chart the change in population per year, with each country having a different colour.\n\n\nLinetype\nLinetype can be set using a set of codes. Here are the main ones:\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nUse\nLine graphs are usually used to show something changing over time. Because a line is drawn connecting each data point to the next one, we assume that one follows another in a logical sequence.",
+    "crumbs": [
+      "Data Visualisation 1",
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>More chart types</span>"
+    ]
+  },
+  {
+    "objectID": "chart_types.html#multiple-geoms",
+    "href": "chart_types.html#multiple-geoms",
+    "title": "24  More chart types",
+    "section": "Multiple geoms",
+    "text": "Multiple geoms\nYou can stack multiple geoms on top of each other, just add them using another +:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nTry it yourself:\nDraw a chart combining a bar and a line plot, using the data fields of your choice.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Data Visualisation 1",
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>More chart types</span>"
+    ]
+  },
+  {
     "objectID": "chart_types.html#statistical-chart-types",
     "href": "chart_types.html#statistical-chart-types",
     "title": "24  More chart types",
     "section": "Statistical chart types",
-    "text": "Statistical chart types\n\ngeom_histogram\nA histogram is a chart which plots the distribution of a set of values as a series of bars. Each bar represents a ‘bin’ or range of values, with the height of the bar indicating how many of the values are within that bin.\nWe could use it to plot the distribution of the GDP per capita in 2007, for example:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nThe code for a histogram looks a little different than usual. We only set the x variable - the y position will be automatically calculated when it does the statistical transformation.\nSecond, you’ll notice a message: stat_bin() using bins = 30. Pick better value with binwidth underneath the plot. Ggplot automatically divides the data into 30 equal-sized bins by default, but this is often not the clearest way to represent the distribution. We can choose either another number of bins with the argument bins =, or choose how big each range should be with the code binwidth =.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\ngeom_density\nAnother way to show distributions of values is using geom_density:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\ngeom_boxplot\ngeom_boxplot shows distributions:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nA boxplot visualises the distribution of numbers (in this case, the life expectancies of countries by continent). The middle line is the average (the mean). The upper and lower ends of the box are the 25th and 75 percentiles, and the dots (if any), show outliers.\nThis particular plot shows that in 2007, Europe had the highest average, and not many countries much lower or higher than the average (the distribution), whereas Africa had a much lower average, with a higher distribution.\ngeom_boxplot has many attributes which can be changed, determining how the statistics are visualised. You can see these by typing ?geom_boxplot in the console.\n\n\nSpecial case: geom_text\nGeom_text will actually add the text from a column to a visualisation. This is useful if we want to label the chart itself with some values (we’ll learn better ways to annotate later in the course).\ngeom_text() works like any other geometry, except we must supply it with a label aesthetic:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nWhy have I used + 2000 and round() here?\n\n\nShapes: geom_polygon, geom_segment, geom_rect\nAs well as these geoms which create recognisable chart types, it’s also useful to know that you can essentially create almost anything by using ggplot to draw shapes either with data or with absolute values. For example, you can make a ‘lollipop chart’ with a combination of geom_segment and geom_point, such as here to show the change in GDP from 2002 to 2007:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nNote that geom_segment needs xend and yend, as well as x and y. These shapes often have different required aesthetics.\n\n\nAdd-ons\nAnother way to get the chart type you want is to install additional packages which use the same ‘grammar of graphics’ to extend ggplot. You can make animated plots using gganimate, networks using ggraph. Later in the course we will create maps with a geom called geom_sf. There are hundreds of these add-ons, which you can browse here.",
+    "text": "Statistical chart types\n\ngeom_histogram\nA histogram is a chart which plots the distribution of a set of values as a series of bars. Each bar represents a ‘bin’ or range of values, with the height of the bar indicating how many of the values are within that bin.\nWe could use it to plot the distribution of the GDP per capita in 2007, for example:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nThe code for a histogram looks a little different than usual. We only set the x variable - the y position will be automatically calculated when it does the statistical transformation.\nSecond, you’ll notice a message: stat_bin() using bins = 30. Pick better value with binwidth underneath the plot. Ggplot automatically divides the data into 30 equal-sized bins by default, but this is often not the clearest way to represent the distribution. We can choose either another number of bins with the argument bins =, or choose how big each range should be with the code binwidth =.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\ngeom_density\nAnother way to show distributions of values is using geom_density:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\ngeom_boxplot\ngeom_boxplot shows distributions:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nA boxplot visualises the distribution of numbers (in this case, the life expectancies of countries by continent). The middle line is the average (the mean). The upper and lower ends of the box are the 25th and 75 percentiles, and the dots (if any), show outliers.\nThis particular plot shows that in 2007, Europe had the highest average, and not many countries much lower or higher than the average (the distribution), whereas Africa had a much lower average, with a higher distribution.\ngeom_boxplot has many attributes which can be changed, determining how the statistics are visualised. You can see these by typing ?geom_boxplot in the console.\n\n\nSpecial case: geom_text\nGeom_text will actually add the text from a column to a visualisation. This is useful if we want to label the chart itself with some values (we’ll learn better ways to annotate later in the course).\ngeom_text() works like any other geometry, except we must supply it with a label aesthetic:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nWhy have I used + 2000 and round() here?\n\n\nShapes: geom_polygon, geom_segment, geom_rect\nAs well as these geoms which create recognisable chart types, it’s also useful to know that you can essentially create almost anything by using ggplot to draw shapes either with data or with absolute values. For example, you can make a ‘lollipop chart’ with a combination of geom_segment and geom_point, such as here to show the change in GDP from 2002 to 2007:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nNote that geom_segment needs xend and yend, as well as x and y. These shapes often have different required aesthetics.",
+    "crumbs": [
+      "Data Visualisation 1",
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>More chart types</span>"
+    ]
+  },
+  {
+    "objectID": "chart_types.html#add-ons",
+    "href": "chart_types.html#add-ons",
+    "title": "24  More chart types",
+    "section": "Add-ons",
+    "text": "Add-ons\nAnother way to get the chart type you want is to install additional packages which use the same ‘grammar of graphics’ to extend ggplot. You can make animated plots using gganimate, networks using ggraph. Later in the course we will create maps with a geom called geom_sf. There are hundreds of these add-ons, which you can browse here.",
     "crumbs": [
       "Data Visualisation 1",
       "<span class='chapter-number'>24</span>  <span class='chapter-title'>More chart types</span>"
@@ -819,7 +885,7 @@
     "href": "at-home-004.html",
     "title": "25  Home Exercises",
     "section": "",
-    "text": "Instructions\nThe at-home exercises should be completed using Posit cloud, Home Exercise 5. Create a new .Rmd file (use File -&gt; New File -&gt; R Notebook.\nI advise saving the new file straight away. Because you’ll submit this file as an assignment, use a standardised name: lastname_firstname5. Regularly re-save the file.\nWhen you have finished the exercise (or part of it), ‘knit’ the file. Export the .Rmd and the html as a .zip file, and upload this to the assignment area.",
+    "text": "Instructions\nThe at-home exercises should be completed using Posit cloud, Home Exercise 5. Create a new .Rmd file (use File -&gt; New File -&gt; R Markdown.\nI advise saving the new file straight away. Because you’ll submit this file as an assignment, use a standardised name: lastname_firstname5. Regularly re-save the file.\nWhen you have finished the exercise (or part of it), ‘knit’ the file. Export the .Rmd and the html as a .zip file, and upload this to the assignment area.",
     "crumbs": [
       "Data Visualisation 1",
       "<span class='chapter-number'>25</span>  <span class='chapter-title'>Home Exercises</span>"
@@ -830,10 +896,208 @@
     "href": "at-home-004.html#instructions",
     "title": "25  Home Exercises",
     "section": "",
-    "text": "Task\nLoad the Bellevue Almshouse dataset we used a few weeks ago, which can be found in this project files tab. Load the Tidyverse library\nCreate a series of charts using ggplot2, visualising the following aspects of the data. In most cases, you’ll need to prepare the data by filtering and/or summarising. Create each one in a separate code cell.\n\nA bar chart of the number of male and female individuals. First filter out any missing or ambiguous data.\nA bar chart of the ten most frequent diseases on the x axis, and the count of each on the y axis (look back to previous weeks for this one). Filter out NA values first.\n\n\n\n\n\n\n\nTip\n\n\n\nTo filter out NA values, the function is.na checks if a value is NA or not. So, filter(!is.na(disease))will keep any rows where the value is not NA.\n\n\n\nA bar chart of the ten most frequent female first names on the y axis and the count of each on the x axis.\nUsing geom_histogram(), chart the distribution of the values for age, for male and female gender categories.\nCreate a line chart visualising the number of individuals admitted per week, with the week on the x axis and the count on the y axis.\n\n\n\n\n\n\n\nTip\n\n\n\nThe function floor_date(unit = 'week') will take a full date and round it down to the start of the week (starting on Sunday, because it’s American). So for example, running floor_date on today’s date and tomorrow’s date (2024-10-07 and 2024-10-08) would give 2024-10-06 for both.\nTry creating a new column with the ‘floored’ dates, and then summarise using these as groups.\n\n\n\nDo the same except using months instead of weeks, and visualise male and females separately.\n\nFinal challenge:\nYou’ve been asked to visualise the professions in the dataset, as a bar chart. Let’s take a look at a summary of this data first (this is not live code):\n\nlibrary(dplyr)\nlibrary(readr)\n\nbellevue_dataset = read_csv('bellevue_almshouse_modified.csv')\n\nbellevue_dataset |&gt;\n  group_by(profession) |&gt;\n  summarise(n = n()) |&gt;\n  arrange(desc(n))\n\n\n  \n\n\n\nAs you can see, there are far too many professions listed to visualise as individual bars. How would you solve this? Try to think of a solution to this - you could use another visualisation method, or re-organise/rename the data to have a pragmatic solution.\nIf you can’t code the solution, you can simply write a description of what you would like to do, and we can try to solve it in the class!",
+    "text": "Task\nLoad the Bellevue Almshouse dataset we used a few weeks ago, which can be found in this project files tab. Load the Tidyverse library.\nCreate a series of charts using ggplot2, visualising the following aspects of the data. In most cases, you’ll need to prepare the data by filtering and/or summarising. Create each one in a separate code cell.\n\nA bar chart of the number of male and female individuals. First filter out any missing or ambiguous data.\nA bar chart of the ten most frequent diseases on the x axis, and the count of each on the y axis (look back to previous weeks for this one). Filter out NA values first.\n\n\n\n\n\n\n\nTip\n\n\n\nTo filter out NA values, the function is.na checks if a value is NA or not. So, filter(!is.na(disease))will keep any rows where the value is not NA.\n\n\n\nA bar chart of the ten most frequent female first names on the y axis and the count of each on the x axis.\nUsing geom_histogram(), chart the distribution of the values for age, for male and female gender categories.\nCreate a line chart visualising the number of individuals admitted per week, with the week on the x axis and the count on the y axis.\n\n\n\n\n\n\n\nTip\n\n\n\nThe function floor_date(unit = 'week') will take a full date and round it down to the start of the week (starting on Sunday, because it’s American). So for example, running floor_date on today’s date and tomorrow’s date (2025-10-13 and 2025-10-14) would give 2025-10-12 for both.\nTry creating a new column with the ‘floored’ dates, and then summarise using these as groups.\n\n\n\nDo the same except using months instead of weeks, and visualise male and females separately.\n\nFinal challenge:\nYou’ve been asked to visualise the professions in the dataset, as a bar chart. Let’s take a look at a summary of this data first (this is not live code):\n\nlibrary(dplyr)\nlibrary(readr)\n\nbellevue_dataset = read_csv('bellevue_almshouse_modified.csv')\n\nbellevue_dataset |&gt;\n  group_by(profession) |&gt;\n  summarise(n = n()) |&gt;\n  arrange(desc(n))\n\n\n  \n\n\n\nAs you can see, there are far too many professions listed to visualise as individual bars. How would you solve this? Try to think of a solution to this - you could use another visualisation method, or re-organise/rename the data to have a pragmatic solution.\nIf you can’t code the solution, you can simply write a description of what you would like to do, and we can try to solve it in the class!",
     "crumbs": [
       "Data Visualisation 1",
       "<span class='chapter-number'>25</span>  <span class='chapter-title'>Home Exercises</span>"
+    ]
+  },
+  {
+    "objectID": "8_data_visualisation_2.html",
+    "href": "8_data_visualisation_2.html",
+    "title": "26  More Data Visualisation",
+    "section": "",
+    "text": "In this chapter we will look at the next ‘layer’ in a ggplot object: scales We’ll also take a look at one framework by which we can explain how visualisations work to convey information, gestalt principles.",
+    "crumbs": [
+      "Data Visualisation 2",
+      "<span class='chapter-number'>26</span>  <span class='chapter-title'>More Data Visualisation</span>"
+    ]
+  },
+  {
+    "objectID": "gestalt.html",
+    "href": "gestalt.html",
+    "title": "27  Gestalt Principles",
+    "section": "",
+    "text": "Gestalt Principles\nThere are some formal theories or methods which can help with understanding how and why data visualisation works in a broad sense. Two useful frameworks are gestalt principles and pre-attentive attributes\nGestalt principles were developed from the late 1800s and could be considered part of the discipline of psychology and philosophy. Gestalt principles are related to perception: the basic theory is that we perceive visual forms as a whole, rather than each part separately.\nIn other words, we simplify our visual stimuli in order to make sense of what we are seeing, and the wider world.\nThe developers of Gestalt boiled this down to a series of principles, which they say govern how we do this simplifcation. The data visusalisation types and default settings we use naturally use these principles - we don’t need to actively think about them most of the time. However, it’s worth understanding them to have some kind of theory as to why data visualisation works.\nThe principles which apply particularly to data visualisation are:",
+    "crumbs": [
+      "Data Visualisation 2",
+      "<span class='chapter-number'>27</span>  <span class='chapter-title'>Gestalt Principles</span>"
+    ]
+  },
+  {
+    "objectID": "gestalt.html#gestalt-principles",
+    "href": "gestalt.html#gestalt-principles",
+    "title": "27  Gestalt Principles",
+    "section": "",
+    "text": "Proximity\nSimilarity\nEnclosure\nClosure\nContinuity\nConnection\n\n\n\nProximity\nWhen objects are placed close together, our mind intuitively infers a connection between them.\nTake this scatterplot, which visualises the relationship between bill length and flipper size in a dataset of penguin observations.\nSomething we might notice is that there are roughly three clusters of points which are closer together than they are to the other clusters. We intuitively realise that there is some significance to these points being placed close together (in this case, each cluster represents a different species of penguin).\n\n\n\n\n\n\n\n\n\nIn more general terms of design, it can also be useful to think about proximity - different elements of charts should be close together, such as labels and legend.\n\n\nSimilarity\nThis principle states that objects which are a similar (or the same) size, shape or colour will be perceived as part of the same group. This is a very useful way to draw attention to significant groups in our data. If we add colour to the previous example, the distinctiveness of the species is even clearer:\n\n\n\n\n\n\n\n\n\n\n\nEnclosure\nThis principle says that objects within the same border will be perceived as a group. Again, this can be exploited in data visualisation to highlight groups within our data.\n\n\n\n\n\n\n\n\n\nWe’ll learn how to add these kinds of things in a future class.\n\n\nClosure\nClosure is the principle that we tend to ‘close’ unfinished objects to make them whole. This is perhaps not used as much as some of the others in data visualisation, but, for instance, we can think of the way in which we perceive dashed lines as a solid line:\n\n\n\n\n\n\n\n\n\n\n\nContinuity\n\n\n\n\n\n\n\n\n\nThis principle states that we naturally try to organise objects when they are placed one after another. The obvious use of this is in graphs showing change over time. When drawn as lines, we make the natural assumption that the objects (in this case, position on a graph) are in a sequence and are related to each other.\n\n\nConnection\nThis principle states that if objects are connected, we perceive them as a unified entity. This is clearly demonstrated in the chart below: the connection between the first and second points helps to guide us to consider the values together and make comparisons between them.",
+    "crumbs": [
+      "Data Visualisation 2",
+      "<span class='chapter-number'>27</span>  <span class='chapter-title'>Gestalt Principles</span>"
+    ]
+  },
+  {
+    "objectID": "gestalt.html#exercise",
+    "href": "gestalt.html#exercise",
+    "title": "27  Gestalt Principles",
+    "section": "Exercise",
+    "text": "Exercise\nTake the chart you did in the critique.\nPrepare to explain it to the group for 2 minutes (you can just use what you wrote in the essay) Mention one of each of the following, and point out whether you think they are effective or appropriate:\n\nA geometry\nAn aesthetic\nA gestalt principle",
+    "crumbs": [
+      "Data Visualisation 2",
+      "<span class='chapter-number'>27</span>  <span class='chapter-title'>Gestalt Principles</span>"
+    ]
+  },
+  {
+    "objectID": "scales.html",
+    "href": "scales.html",
+    "title": "28  Chart scales",
+    "section": "",
+    "text": "Scales\nBy now, I hope it is clear that when making a visualisation in ggplot, we do so by a process of mapping data to aesthetics. To give a concrete example, when we write x = GDPperCAP, y = lifeExp, color = continent, behind the scences ggplot is taking the values in the columns we give it, and giving them some kind of visual form. In the case of the position (x and y), by default this means that distance on the plot corresponds to equal amounts numerical values. In the case of colour, ggplot2 knows there are five distinct values, and that it should give each a distinct colour.\nThe process by which this happens involve scales. Scales are the next ‘layer’ in our ggplot object. Scales control the mapping from data to aesthetics. Data visualisations cannot work without scales, so ggplot2 will automatically add them to your plots, but knowing how to control these and the various options they have available will allow you to have much more control over the look of your visualisations.\nWe won’t go into the theory of how g gplot2 works with scales in too much detail, but concentrate on some practical code, examples and tips which I think have the most impact on controlling the aspects of your plots you would expect to be able to do.",
+    "crumbs": [
+      "Data Visualisation 2",
+      "<span class='chapter-number'>28</span>  <span class='chapter-title'>Chart scales</span>"
+    ]
+  },
+  {
+    "objectID": "scales.html#scales",
+    "href": "scales.html#scales",
+    "title": "28  Chart scales",
+    "section": "",
+    "text": "Note\n\n\n\nThese scales are communicated to the viewer by means of an axis or a legend, which we’ll cover afterwards.",
+    "crumbs": [
+      "Data Visualisation 2",
+      "<span class='chapter-number'>28</span>  <span class='chapter-title'>Chart scales</span>"
+    ]
+  },
+  {
+    "objectID": "scales.html#aesthetics",
+    "href": "scales.html#aesthetics",
+    "title": "28  Chart scales",
+    "section": "Aesthetics",
+    "text": "Aesthetics\nRecall from last week that we learned about different aesthetics: position, colour, size, shape, linetype, linewidth, and transparency. This chapter on scales will mostly cover position and colour, and to a lesser extent, size. The scales for the other aesthetics are less interesting (you’re less likely to want to change the defaults), so we won’t look at these. But be aware they also have scales which can be overwritten or adjusted.",
+    "crumbs": [
+      "Data Visualisation 2",
+      "<span class='chapter-number'>28</span>  <span class='chapter-title'>Chart scales</span>"
+    ]
+  },
+  {
+    "objectID": "position.html",
+    "href": "position.html",
+    "title": "29  Position scales",
+    "section": "",
+    "text": "Position scales\nScales are added to ggplot2 plots in much the same way as other layers. First a +, followed by the name of the scale. Options are specified within the parentheses of the scale name.\nScales are either continuous or discrete, depending on the data. A bar chart generally contains one continuous variable (a count) and one discrete variable (the different categories, generally one for each bar), whereas a line chart generally has two continuous variables.\nThe most common position scales are scale_x_continuous and scale_y_continuous, which simply map linearly from a data value to a location on the plot. If you plot continuous data on an axis, ggplot will automatically add these to your plot. You only need to specify them explicitly if you want to change any of the default options.\nIn this chart, which we have seen before, ggplot has automatically created continuous scales to represent the years and gdpPercap. Each point is placed in a position based on these scales. These are represented on the chart as the x and y axis, so we know what each position refers to.\nThere are two useful things we can change with the default continuous scale: limits and breaks.\nTo make changes to the default scale, we add scale_x_continuous or scale_y_continuous following a + sign to the plot.",
+    "crumbs": [
+      "Data Visualisation 2",
+      "<span class='chapter-number'>29</span>  <span class='chapter-title'>Position scales</span>"
+    ]
+  },
+  {
+    "objectID": "position.html#position-scales",
+    "href": "position.html#position-scales",
+    "title": "29  Position scales",
+    "section": "",
+    "text": "Please enable JavaScript to experience the dynamic code cell content on this page.\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nLimits specify the limits of the scale - the start and end points of the x and y axes.\nBreaks specify which points and ticks should be drawn on the x and y axes.\n\n\n\nLimits\nTo change the limits, add limits = followed by the start and end point of the limit you want, within a vector using c(), as in the example below:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nYou can see that it has limited the years to 1980 at earliest and 2000 at the latest.\nTry it yourself: set the limits of the y axis to 10000 and 50000\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nBreaks\nBreaks control which axis ticks, lines and labels are shown. Ggplot picks defaults according to the data but you can override them.\nChange the breaks by adding breaks = to the plot, followed by a vector (a list) of the values you want to specify.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nTry it yourself: Set the breaks for the y axis to every 5000 instead of 10000\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\n\n\n\nTip\n\n\n\nIt would quickly get tedious if you wanted to specify a large number of axis ticks. R has a function called seq(), which allows you to create a sequence of numbers according to simple rules. seq() needs a from, to and by argument. For example we could specify that the plot show values every two years by adding the following:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\nMinor breaks\nNote that changing the breaks also changes the vertical lines in the plot. By default, ggplot draws a line for each break, as well as a fainter line in between each break, called minor breaks. You can override the positions for these minor breaks, too.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nYou can also add different labels for your axis, using the ‘labels’ argument:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nTry it yourself: copy the chart above, but change the minor breaks to every 5 years, and the labels for the major breaks to ‘First Year’, ‘Second Year’, and so forth.\n\n\n\nScales with bar charts\nBar charts using geom_col generally have a discrete scale instead of a continuous scale on the x axis. Each bar represents a category rather than a numeric value. The name of this is scale_x_discrete, which is added automatically by ggplot.\n\n\n\n\n\n\nNote\n\n\n\nA bar chart can also have a numeric variable on the x axis, for example if we made the plot above, but with geom_col instead of geom_line. In this case, though it will contain individual discrete bars for each year, ggplot2 will still give it a continuous scale.\n\n\nBy default, this will be ordered alphabetically. Reordering these is a very common data visualisation task. Take the following example:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nIn many cases we would want to reorder the countries by the value on the y axis - so that the highest appear at the top. We can do this not within the scale but by using reorder in the code of the plot itself:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Data Visualisation 2",
+      "<span class='chapter-number'>29</span>  <span class='chapter-title'>Position scales</span>"
+    ]
+  },
+  {
+    "objectID": "position.html#coord_flip",
+    "href": "position.html#coord_flip",
+    "title": "29  Position scales",
+    "section": "Coord_flip()",
+    "text": "Coord_flip()\nA final useful function is coord_flip. This flips the coordinates of a plot, and reverses the position of the x and y axes.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\n\n\n\nNote\n\n\n\nNote that we have removed the desc() so that the highest value is at the top rather than the bottom.\n\n\nThis is particularly useful for a chart with lots of values, because the labels are much easier to read when they are placed along the y-axis - especially if it is going to be viewed online.",
+    "crumbs": [
+      "Data Visualisation 2",
+      "<span class='chapter-number'>29</span>  <span class='chapter-title'>Position scales</span>"
+    ]
+  },
+  {
+    "objectID": "date_scales.html",
+    "href": "date_scales.html",
+    "title": "30  Date scales",
+    "section": "",
+    "text": "Dates\nScales for dates and times are a bit more complicated but worth understanding because they are so widely used in humanities data.\nDates in R are stored as a special Date class. If R has recognised a column in this date format, you can format the axis labels and tick marks in ways which make more sense for dates.\nThe Bellevue Almshouse dataset we used previously stores dates in this class:\nLet’s make a line chart of the date of admission:\nlibrary(tidyverse)\nbellevue_dataset = read_csv('bellevue_almshouse_modified.csv')\n\ndf &lt;- bellevue_dataset |&gt; \n  group_by(date_in) |&gt;\n  summarise(n = n())\n\ndf |&gt; \n  ggplot() + \n  geom_line(aes(x = date_in, y = n))\nggplot picks a set of axis ticks and labels it thinks will work best for this scale. To change these we use the default scale for dates, scale_x_date.\nAs with scale_x_continuous, we can set the minor and major breaks, except we can use more ‘date friendly’ units. Using the date_breaks argument in scale_x_continuous, you can pass any number and date unit to the scale axis. For instance, we could specify that every two months are shown with the following:\ndf |&gt; ggplot() + \n  geom_line(aes(x = date_in, y = n)) + \n  scale_x_date(date_breaks = \"2 months\")",
+    "crumbs": [
+      "Data Visualisation 2",
+      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Date scales</span>"
+    ]
+  },
+  {
+    "objectID": "date_scales.html#dates",
+    "href": "date_scales.html#dates",
+    "title": "30  Date scales",
+    "section": "",
+    "text": "Date minor breaks\nSimililarly, we can set the minor breaks to any date unit, using the argument date_minor_breaks.\n\ndf |&gt; ggplot() + \n  geom_line(aes(x = date_in, y = n)) + \n  scale_x_date(date_breaks = \"2 months\",\n               date_minor_breaks = '1 week')\n\n\n\n\n\n\n\n\n\nLabels\nFinally, you can highly customise the way that dates are labelled in the axis, by passing a set of codes to the argument date_labels. For instance, you can specify that the axis should show the abbreviated month plus the year without the century, with the following:\n\ndf |&gt; ggplot() + \n  geom_line(aes(x = date_in, y = n)) + \n  scale_x_date(date_breaks = \"2 months\",\n               date_labels = \"%b %y\")\n\n\n\n\n\n\n\n\nThe full list of labels is available here.",
+    "crumbs": [
+      "Data Visualisation 2",
+      "<span class='chapter-number'>30</span>  <span class='chapter-title'>Date scales</span>"
+    ]
+  },
+  {
+    "objectID": "colour.html",
+    "href": "colour.html",
+    "title": "31  Colour and size scales",
+    "section": "",
+    "text": "Colour scales with continuous and discrete data\nThe other key scale we will work with are colour scales. As with position, ggplot2 will pick default scales, which we can change if needed. The size scale is also often used, though it is generally less likely you’ll need to make large changes to the scale.\nRemember the data types from last week? How colour is mapped to data, and which scales we can and should choose, is highly dependent on the data type given. Remember too that colour is found either in the colour aesthetic (for example for geom_point) but also in the fill aesthetic (such as the fill colour of a bar chart). Both work in the same way, but use a slightly different scale name.\nMapping categorical data will result in a discrete scale, by default scale_colour_discrete or scale_fill_discrete. With this scale, ggplot will choose colours with the aim of making them as distinct from each other as possible.\nMapping numerical data will result in a continuous scale, by default scale_colour_continuous or scale_fill_continuous. With this scale, ggplot will choose a colour range where one end of the hue or saturation will be mapped to high values and the other end to low values.\nLet’s see how this works by mapping the fill in a bar chart to numerical and categorical data variables. To demonstrate we’ll take the Gapminder dataset from last week and choose a small number of countries:\nThe lifeExp variable is numerical, so if we set it to the fill aesthetic, ggplot2 will pick a continuous scale. The default scale maps high values as light blue and low values as dark blue.\nThe continent variable is categorical, so if we set it to the fill aesthetic, ggplot2 will pick a discrete scale. The default scale depends on the number of categories: up to seven, and ggplot will choose colours spaced as far apart on the colour wheel as possible; more than that, and ggplot will use a rainbow palette.\nNote that in order to communicate how values have been mapped to colours, ggplot automatically includes a legend, which looks different depending on the type of scale used.\nThere are lots of ways to choose different colour scales. In all these cases, the word colour is interchangeable with the word fill within the names of the scales.\nThis is done slightly differently depending on whether it’s a continuous or discrete scale:",
+    "crumbs": [
+      "Data Visualisation 2",
+      "<span class='chapter-number'>31</span>  <span class='chapter-title'>Colour and size scales</span>"
+    ]
+  },
+  {
+    "objectID": "colour.html#colour-scales-with-continuous-and-discrete-data",
+    "href": "colour.html#colour-scales-with-continuous-and-discrete-data",
+    "title": "31  Colour and size scales",
+    "section": "",
+    "text": "Please enable JavaScript to experience the dynamic code cell content on this page.\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\n\nContinuous scales\n\nUse ‘built in’ scales\nOne way to alter the continuous colour scale is to specify a ‘built in’ one, either from ggplot2 or from another package. One example is scale_fill_viridis_c, which is apparently good for perception and takes into account color vision deficiencies:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nCreate a scale from a palette\nUse scale_color_distiller to specify that ggplot should take a particular palette and distribute the values evenly along it. This is the full list of palettes and their codes.\n\nTo use, simply pass one of the codes to the palette = argument of scale_fill_distiller:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nTry it yourself: Change the palette of this chart to ‘Greens’:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nCreate your own continuous scale\nYou can also ‘make your own’ palette. For instance, scale_color_gradient will create a gradient colour scale in between two colours you specify. A large list of R colour names can be found here: https://r-charts.com/colors/\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nAn alternative is to use scale_gradient2(), which allows you to specify 3 colours, a low, mid and high. The function will create a scale similar to above but with a specified midpoint:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\nDiscrete scales\nDiscrete scales can also use ‘built in’ scales. The version of scale_fill_viridis for discrete scales is called scale_fill_viridis_d:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nCreate from a palette\nThe equivalent method for picking a scale from an existing palette is to use scale_fill_brewer. Again, choose a palette from the list supplied above:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nFully manual scales\nFinally, with discrete scales you can simply pick your own set of colours, using scale_fill_manual:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Data Visualisation 2",
+      "<span class='chapter-number'>31</span>  <span class='chapter-title'>Colour and size scales</span>"
+    ]
+  },
+  {
+    "objectID": "colour.html#size-scales",
+    "href": "colour.html#size-scales",
+    "title": "31  Colour and size scales",
+    "section": "Size scales",
+    "text": "Size scales\nThe final scale which is useful to know is size. The most frequent use of the size aesthetic is to set the size of points in a scatterplot to a continuous variable.\nThe size scale is controlled by default by scale_size. This maps values to the area of a point, linearly.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nOn small tip is to replace scale_size with scale_size_area(), which ensure that values of 0 are mapped to zero. You can also set the max_size = argument within this scale to get a range of sizes you are happy with.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Data Visualisation 2",
+      "<span class='chapter-number'>31</span>  <span class='chapter-title'>Colour and size scales</span>"
+    ]
+  },
+  {
+    "objectID": "colour.html#adjusting-the-legend",
+    "href": "colour.html#adjusting-the-legend",
+    "title": "31  Colour and size scales",
+    "section": "Adjusting the legend",
+    "text": "Adjusting the legend\nAs with position scales, we can set limits and breaks. In this case, we’ll see the change in the legend primarily.\nTo set the limit, specify within the scale_x_ or scale_y function you are using. In this, any values outside the limits will be coloured by a default NA value, in this case grey.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nSet the breaks using the below:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nYou can make changes to the legend in other ways, using the guides() function. Here are some examples:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nUse barheight to set the height of the legend (you can use barwidth to set the width):\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nChange from vertical to horizontal:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\n\n\n\nNote\n\n\n\nChanging the position and other visual aspects of the legend is done within themes, which we’ll cover next week.",
+    "crumbs": [
+      "Data Visualisation 2",
+      "<span class='chapter-number'>31</span>  <span class='chapter-title'>Colour and size scales</span>"
+    ]
+  },
+  {
+    "objectID": "at-home-005.html",
+    "href": "at-home-005.html",
+    "title": "32  Home Exercises",
+    "section": "",
+    "text": "Instructions\nThe at-home exercises should be completed using Posit cloud, Home Exercise 6. Create a new .Rmd file (use File -&gt; New File -&gt; R Markdown.\nI advise saving the new file straight away. Because you’ll submit this file as an assignment, use a standardised name: lastname_firstname5. Regularly re-save the file.\nWhen you have finished the exercise (or part of it), ‘knit’ the file. Export the .Rmd and the html as a .zip file, and upload this to the assignment area.",
+    "crumbs": [
+      "Data Visualisation 2",
+      "<span class='chapter-number'>32</span>  <span class='chapter-title'>Home Exercises</span>"
+    ]
+  },
+  {
+    "objectID": "at-home-005.html#task",
+    "href": "at-home-005.html#task",
+    "title": "32  Home Exercises",
+    "section": "Task",
+    "text": "Task\n\nUsing the metadata dataset from the movie dialogue dataset, and chart the average gross per year using an appropriate geom.\n\nUsing scales (i.e. don’t filter the dataset first), limit the chart x axis to the years 1990 - 2000\nSet the axis labels on this chart to display every two years (1990, 1992, etc.)\nSet the color of the geom of the chart to something other than the default.\n\nCreate a bar graph of the gross takings for each movie in the Star Wars franchise.\n\nReorder the chart going from the highest to the lowest takings\nFlip the chart so that the movie names are on the vertical axis.\n(optional to practice previous week again) Give the bars a black outline, set a custom fill colour, and decrease the transparency slightly.\n\nImport the Nobel Prize winners ‘Laureates’ dataset.\n\nCreate a bar chart charting the number of winners from each continent per year.\nChange the palette for the fill of the bars to ‘Dark2’.\nSet the major breaks on the y axis to every 20 and the minor breaks to every 5.\n\nImport the Titanic dataset and do the following:\n\ncalculate the average fare paid for each embarking location, and draw it as a bar chart.\nChange the default scale to a gradient starting with the colour aquamarine and ending with the colour deepskyblue.\nReverse the legend bar and set the height to 10 cm.\n\n(slightly more challenging). Last week we looked at gender in the IMDB dataset. Can you create a chart which investigates which genres became more or less equal over time? Limit your investigations to a sensible number of the top genres to help with visualisation, or group the genres together into 6 or 7 categories. Once you’re done, change 5 scale elements.\n\n\n\n\n\n\n\nTip\n\n\n\nThe genres in the IMDB genre dataset list up to three genres for each movie, separated by a comma. This isn’t very helpful for data analysis or visualisation - let’s assume it would be better to treat each movie as having separate observations for each genre listed. One way to do this is by using some new functions: separate() and pivot_longer(). You may also need to clean the results slightly using str_trim().",
+    "crumbs": [
+      "Data Visualisation 2",
+      "<span class='chapter-number'>32</span>  <span class='chapter-title'>Home Exercises</span>"
     ]
   }
 ]
