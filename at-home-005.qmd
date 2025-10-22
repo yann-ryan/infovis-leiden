@@ -12,23 +12,23 @@ When you have finished the exercise (or part of it), 'knit' the file. Export the
 
 ## Task
 
-1.  Using the metadata dataset from the movie dialogue dataset, and chart the average gross per year using an appropriate geom.
+1.  Using the metadata dataset from the movie dialogue dataset we used previously (`meta_data7.csv`), chart the average gross per year using an appropriate geom.
 
-    a.  Using scales (i.e. don't filter the dataset first), limit the chart x axis to the years 1990 - 2000
+    a.  Limit the x axis of the chart to the years 1990 - 2000. Do this using the scale, and not by filtering the data first.
 
-    b.  Set the axis labels on this chart to display every two years (1990, 1992, etc.)
+    b.  Set the axis labels on your chart to display every two years beginning from 1990 (1990, 1992, etc.)
 
-    c.  Set the color of the geom of the chart to something other than the default.
+    c.  Set the fixed color (not mapped to data) of the geom of the chart to something other than the default. [Here](https://r-charts.com/colors/) is a good list of all the named colors in R. You can also use any hex code using a color picker.
 
 2.  Create a bar graph of the gross takings for each movie in the Star Wars franchise.
 
-    a.  Reorder the chart going from the highest to the lowest takings
+    a.  Reorder the chart going from the highest to the lowest takings (see [this section](https://yann-ryan.github.io/infovis-leiden/position.html#scales-with-bar-charts) in the course book for tips)
 
-    b.  Flip the chart so that the movie names are on the vertical axis.
+    b.  Flip the coordinate of the chart so that the movie names are on the vertical axis.
 
-    c.  (optional to practice previous week again) Give the bars a black outline, set a custom fill colour, and decrease the transparency slightly.
+    c.  (optional) Give the bars a black outline, set a custom fill colour, and decrease the transparency slightly.
 
-3.  Import the Nobel Prize winners 'Laureates' dataset.
+3.  Import the Nobel Prize winners 'Laureates' dataset (`laureates_df.csv`). This dataset contains information on the winners of the Nobel prize, up until 2024.
 
     a.  Create a bar chart charting the number of winners from each continent per year.
 
@@ -36,15 +36,15 @@ When you have finished the exercise (or part of it), 'knit' the file. Export the
 
     c.  Set the major breaks on the y axis to every 20 and the minor breaks to every 5.
 
-4.  Import the Titanic dataset and do the following:
+4.  Import the Titanic dataset (`titanic_df_full.csv`) and do the following:
 
-    a.  calculate the average fare paid for each embarking location, and draw it as a bar chart.
+    a.  Calculate the average fare paid for each embarking location, and draw it as a bar chart, with the embarking location on the x axis and the average fare on the y axis. 
 
-    b.  Change the default scale to a gradient starting with the colour `aquamarine` and ending with the colour `deepskyblue`.
+    b.  Change the default fill scale of the bars to a gradient starting with the colour `aquamarine` and ending with the colour `deepskyblue`.
 
     c.  Reverse the legend bar and set the height to 10 cm.
 
-5.  (slightly more challenging). Last week we looked at gender in the IMDB dataset. Can you create a chart which investigates which genres became more or less equal over time? Limit your investigations to a sensible number of the top genres to help with visualisation, or group the genres together into 6 or 7 categories. Once you're done, change 5 scale elements.
+5.  (optional, slightly more challenging). Last week we looked at gender in the IMDB dataset. Can you create a visualisation which investigates which genres became more or less equal over time? Limit your investigations to a sensible number of the top genres to help with visualisation, or group the genres together into 6 or 7 categories. Once you're done, change 5 scale elements.
 
 ::: callout-tip
 The genres in the IMDB genre dataset list up to three genres for each movie, separated by a comma. This isn't very helpful for data analysis or visualisation - let's assume it would be better to treat each movie as having separate observations for each genre listed. One way to do this is by using some new functions: `separate()` and `pivot_longer()`. You may also need to clean the results slightly using `str_trim()`.
