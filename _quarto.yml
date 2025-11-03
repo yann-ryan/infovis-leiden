@@ -54,12 +54,15 @@ book:
         - date_scales.qmd
         - colour.qmd
         - at-home-005.qmd
- #    - part: "Data Visualisation 3"
- #      chapters:
- #        - 9_data_visualisation_3.qmd
- #        - titles.qmd
- #        - themes.qmd
- #        - annotations.qmd
+    - part: "Data Visualisation 3"
+      chapters:
+        - 9_data_visualisation_3.qmd
+        - titles.qmd
+        - themes.qmd
+        - annotations.qmd
+    - part: "Useful information"
+      chapters:
+        - data.qmd
  #    - part: "Data Visualisation 4"
  #      chapters:
  #        - fair.qmd
@@ -93,9 +96,9 @@ book:
  #    #   chapters:
  #    #     - plotly.qmd
  #    #     - tmap.qmd
- #  appendices:
+  #  appendices:
  #    - extra_exercises.qmd
- #    - data.qmd
+
  #    - final_project.qmd
  #  #  - mcpherson_final_project.qmd
  # #   - Hogewoning_FinalProject.qmd

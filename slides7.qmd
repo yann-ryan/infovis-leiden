@@ -266,7 +266,7 @@ What aesthetics are specified in this chart?
 ```{webr-r}
 
 df |> 
-  ggplot(aes(x = lifeExp, y =gdpPercap,size = pop_millions, color = continent))  + 
+  ggplot(aes(x = lifeExp, y = gdpPercap, size = pop_millions, color = continent))  + 
   geom_point()
 
 ```
@@ -304,6 +304,20 @@ You can change the label for any aesthetic you specify in your chart. You can al
 df |> 
   ggplot(aes(x = lifeExp, y =gdpPercap, size = pop_millions, color = continent))  + 
   geom_point() + 
+  labs(title = "GDP and Life\nExpectancy",
+       x = NULL)
+
+```
+
+## geom_text {.smaller}
+
+```{webr-r}
+
+
+df |> 
+  ggplot(aes(x = lifeExp, y =gdpPercap, size = pop_millions, color = continent))  + 
+  geom_point() + 
+  geom_text(data = df, aes(label = country), size = 4) + 
   labs(title = "GDP and Life\nExpectancy",
        x = NULL)
 
@@ -413,7 +427,7 @@ df |>
 
 ## Full list of element and types {.smaller}
 
-![](images/EXpD8gIWoAAhyRT.jfif)
+![](images/clipboard-2687980329.png)
 
 ## Exercises:
 

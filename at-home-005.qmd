@@ -28,9 +28,9 @@ When you have finished the exercise (or part of it), 'knit' the file. Export the
 
     c.  (optional) Give the bars a black outline, set a custom fill colour, and decrease the transparency slightly.
 
-3.  Import the Nobel Prize winners 'Laureates' dataset (`laureates_df.csv`). This dataset contains information on the winners of the Nobel prize, up until 2024.
+3.  Import the Nobel Prize winners 'Laureates' dataset (`laureates_df.csv`) and the 'Prizes' dataset (`prize_df.csv`). These datasets contain information on the winners of the Nobel prize, up until 2024.
 
-    a.  Create a bar chart charting the number of winners from each continent per year.
+    a.  Create a bar chart charting the number of winners from each continent per year. You'll need to join the two datasets together using the relevant column so that you have the information on the winner continent and the prize date in the same dataframe. 
 
     b.  Change the palette for the fill of the bars to 'Dark2'.
 

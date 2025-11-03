@@ -86,7 +86,7 @@ df |>
 
 Different types of elements need to be specified in different ways, and have different aspects which can be adjusted. Below is a full list of the plot parts and their related element types:
 
-![](images/EXpD8gIWoAAhyRT.jfif)
+![](images/clipboard-2687980329.png)
 
 ## Exercises:
 
