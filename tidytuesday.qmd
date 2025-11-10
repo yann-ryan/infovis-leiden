@@ -1,0 +1,54 @@
+---
+title: "TidyTuesday visualisation challenge"
+---
+
+## Challenge instructions
+
+Download, explore, analyse, and visualise a cultural or humanities dataset from the TidyTuesday repository.
+
+TidyTuesday is a weekly project where a dataset is posted and participants create an analysis and/or visualisation using it. 
+
+## Datasets
+
+All the datasets used on the challenge since 2018 are available to download.
+
+You can see the full list [here](https://github.com/rfordatascience/tidytuesday/blob/main/README.md).
+
+Each dataset has a link to the data, a link to the source, and a sample data article written using it, for inspiration. 
+
+## Get started
+
+The easiest way to download the datasets is using the tidytuesdayR R package. Each one has two simple steps. First, downloading the data. Second, saving the data alone as an object.
+
+I have chosen three good examples to get you started. The links below link to the dataset download page, where you can find out some more information, how to download, plus the source and sample article. 
+
+You can also use any dataset on the site you like, as long as it has, broadly, a humanities or cultural focus. But if you want to do this, choose quickly, as time will fly! 
+
+[Selected British Literary Prizes (1990-2022)](https://github.com/rfordatascience/tidytuesday/blob/main/data/2025/2025-10-28/readme.md)
+
+[Rolling Stone Album Rankings](https://github.com/rfordatascience/tidytuesday/blob/main/data/2024/2024-05-07/readme.md)
+
+[Refugees data](https://github.com/rfordatascience/tidytuesday/blob/main/data/2023/2023-08-22/readme.md)
+
+Open the 'TidyTuesday' workspace area on Posit cloud. 
+
+## Do the challenge
+
+Using the markdown document, load in your chosen dataset. Read the associated information about it through the link above, as well as looking at the actual data in Posit. Look at the column names and types. 
+
+In the markdown document, do your data exploration and visualisation. 
+
+Need help choosing a suitable chart type? Try https://www.data-to-viz.com/
+
+Consider accessibility: choose a suitable color scheme and adjust theme elements so they are readable. 
+
+Add a figure caption and alt-text, using the code chunk options. 
+
+Questions:
+
+-   What is the source of the dataset? Is it easy to find information on it? 
+-   What kinds of questions could be asked with this dataset? 
+-   What ethical considerations are there with this dataset?
+
+
+

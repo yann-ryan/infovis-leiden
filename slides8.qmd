@@ -1,5 +1,5 @@
 ---
-title: "Accessibility in Data Visualisation"
+title: "Doing Data Visualisation Responsibly"
 format: 
   revealjs:
     scrollable: true
@@ -18,6 +18,63 @@ library(palmerpenguins)
 penguins = palmerpenguins::penguins  
 
 ```
+
+## Responsible Data Visualisation
+
+-   Reproducible
+-   Ethical
+-   Accessible
+
+## Reproducible
+
+-   An important concept in the sciences
+-   Others should be able to reproduce the same results with the same data and methods
+-   In practice, this means re-sharing the code and datasets used to make data visualisation
+
+## Reproducible
+
+-   Using our methods this is almost automatic - I (or anyone else) can reproduce your work from your code.
+-   Make sure you include any datasets you use in your projects
+-   If they can't be shared directly, provide a link, to a specific version if applicable
+-   Explain any steps or manipulation done to the data
+
+## Ethical
+
+-   Ethics in data visualization could be thought of as fairly **representing through data and design**.
+
+-   Both by:
+
+-   representing data correctly (not being misleading),
+
+-   not making implicit judgements with design.
+
+## Falsifying data
+
+One obviously unethical way to make data visualisations is by directly falsifying data.
+
+Could be on purpose or by omission: - Adding or removing your own data points before visualisation - Filtering the dataset to better suit a narrative.
+
+## Judgements and bias
+
+Avoid introducing conscious or unconscious bias into our design choices.
+
+Color and shape are particularly important
+
+e.g.'menacing red arrows' to depict refugee and asylum seeker flows.
+
+## Judgements and bias
+
+This visual language is very reminiscent of the way in which we depict invading armies.
+
+![](images/arrows.png)
+
+## Judgements and bias
+
+There are many ways around this, for example using colors with more neutral associations, and, as in a graphic by the Economist a few years back, by replacing arrows with icons of people.
+
+![](images/economist_arrows.png)
+
+Colours:
 
 ## **What does it mean to make our content accessible?**
 
@@ -189,3 +246,19 @@ Don't include this in your alt text, but it should be included somewhere in the 
 *Example: Data from the [USDA](https://data.ers.usda.gov/reports.aspx?ID=17850)*
 
 ## Adding alt-text in R Markdown.
+
+## Mistake: Truncating the scale
+
+![](images/clipboard-4181458671.png)
+
+Forcing a relationship by cherry-picking scales
+
+![](images/clipboard-1354166390.png)
+
+##  Confusing use of colour
+
+![](images/clipboard-3890123984.png)
+
+## Choosing the wrong visualisation method
+
+![](images/clipboard-594471319.png)

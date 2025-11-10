@@ -60,14 +60,15 @@ book:
         - titles.qmd
         - themes.qmd
         - annotations.qmd
+    - part: "Data Visualisation 4"
+      chapters:
+        - fair.qmd
+        - accessibility.qmd
+        - tidytuesday.qmd
+        - at-home-006.qmd
     - part: "Useful information"
       chapters:
         - data.qmd
- #    - part: "Data Visualisation 4"
- #      chapters:
- #        - fair.qmd
- #        - accessibility.qmd
- #        - at-home-006.qmd
  #    - part: "Digital Mapping 1"
  #      chapters:
  #      #  - 10_digital_mapping_1.qmd

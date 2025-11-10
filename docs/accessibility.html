@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>23&nbsp; Using ggplot2 – Information Visualization and the Humanities: Course Book</title>
+<title>38&nbsp; Data Visualisation and Accessibility Considerations – Information Visualization and the Humanities: Course Book</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./chart_types.html" rel="next">
-<link href="./7_data_visualisation_1.html" rel="prev">
+<link href="./tidytuesday.html" rel="next">
+<link href="./fair.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -337,7 +337,7 @@ body.reveal.quarto-dark div.qwebr-console-area {
 // Document level settings ----
 
 // Determine if we need to install R packages
-globalThis.qwebrInstallRPackagesList = ['dplyr', 'readr', 'ggplot2'];
+globalThis.qwebrInstallRPackagesList = [''];
 
 // Specify possible locations to search for the repository
 globalThis.qwebrPackageRepoURLS = ['https://repo.r-wasm.org/'];
@@ -359,7 +359,7 @@ globalThis.qwebrCustomizedWebROptions = {
 };
 
 // Store cell data
-globalThis.qwebrCellDetails = [{"code":"library(readr)\n\n\nurl <- \"https://raw.githubusercontent.com/yann-ryan/infovis-course/master/titanic_df_full.csv\"\ndownload.file(url, \"titanic_df.csv\")\n\ntitanic_df =  read_csv('titanic_df.csv')","id":1,"options":{"autorun":"true","classes":"","comment":"","context":"setup","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-1","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"library(dplyr)\nlibrary(ggplot2)","id":2,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-2","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"df <- titanic_df |>\n  group_by(sex) |>\n  summarise(n = n())\n  \ndf\n  ","id":3,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-3","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"ggplot(data = df, aes(x = sex, y = n)) \n  ","id":4,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-4","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"ggplot(data = df, aes(x = sex, y = n)) + \n  geom_col()","id":5,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-5","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"ggplot(data = df, aes(x = sex, y = n)) + \n  geom_col(fill = 'red')","id":6,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-6","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"","id":7,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-7","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"df2 = titanic_df |>\n  group_by(sex, embarked) |>\n  summarise(n = n())\n\ndf2","id":8,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-8","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"ggplot(data = df2, aes(x = sex, y = n, fill = embarked)) + \n  geom_col()","id":9,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-9","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"","id":10,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-10","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"df3 <- titanic_df |>\n  group_by(embarked) |>\n  summarise(avg_paid = mean(fare, na.rm = TRUE), n = n())","id":11,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-11","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"ggplot(data = df3, aes(x = embarked, y =n, fill = avg_paid)) + \n  geom_col()","id":12,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-12","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}}];
+globalThis.qwebrCellDetails = [{"code":"library(tidyverse) \nlibrary(palmerpenguins)  \n\npenguins = palmerpenguins::penguins  ","id":1,"options":{"autorun":"true","classes":"","comment":"","context":"setup","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-1","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"ggplot(data = penguins, aes(x = bill_length_mm, y = flipper_length_mm, color = body_mass_g)) +    \n  geom_point(size = 3)  ","id":2,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-2","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"df = results_2020 = read_csv('https://raw.githubusercontent.com/fivethirtyeight/election-results/refs/heads/main/election_results_presidential.csv') |> \n  filter(cycle == 2020 & stage == 'general' & candidate_name == 'Joe Biden') |>\n  select(candidate_name, state_abbrev, percent) |> \n  filter(!is.na(state_abbrev))\n\nstates_map = usmapdata::us_map(regions = 'states')\n\nstates_map |>\n  left_join(df, by = c('abbr' = 'state_abbrev')) |>\n  ggplot()  + \n  geom_sf(aes(fill = percent)) + \n  scale_fill_gradient2(low = 'red', mid = 'grey95',  high = 'blue', midpoint = 50) ","id":3,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","error":"false","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-3","message":"false","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"false"}},{"code":"ggplot(data = penguins, aes(x = bill_length_mm, y = flipper_length_mm, color = species)) +    \n  geom_point(size = 3) ","id":4,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-4","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}},{"code":"ggplot(data = penguins, aes(x = bill_length_mm, y = flipper_length_mm, color = species)) +    \n  geom_point(size = 3) + \n  theme_bw() ","id":5,"options":{"autorun":"false","classes":"","comment":"","context":"interactive","dpi":72,"editor-font-scale":"1","editor-max-height":"","editor-quick-suggestions":"false","editor-word-wrap":"true","fig-cap":"","fig-height":5,"fig-width":7,"label":"unnamed-chunk-5","message":"true","out-height":"","out-width":"700px","output":"true","read-only":"false","results":"markup","warning":"true"}}];
 
 </script>
 <script type="module">
@@ -1569,7 +1569,7 @@ globalThis.qwebrExecuteCode = async function (
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./7_data_visualisation_1.html">Data Visualisation 1</a></li><li class="breadcrumb-item"><a href="./ggplot2.html"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Using ggplot2</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./fair.html">Data Visualisation 4</a></li><li class="breadcrumb-item"><a href="./accessibility.html"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title">Data Visualisation and Accessibility Considerations</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -1790,7 +1790,7 @@ globalThis.qwebrExecuteCode = async function (
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ggplot2.html" class="sidebar-item-text sidebar-link active">
+  <a href="./ggplot2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Using ggplot2</span></span></a>
   </div>
 </li>
@@ -1913,7 +1913,7 @@ globalThis.qwebrExecuteCode = async function (
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./accessibility.html" class="sidebar-item-text sidebar-link">
+  <a href="./accessibility.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title">Data Visualisation and Accessibility Considerations</span></span></a>
   </div>
 </li>
@@ -1958,17 +1958,14 @@ globalThis.qwebrExecuteCode = async function (
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#the-ggplot2-package" id="toc-the-ggplot2-package" class="nav-link active" data-scroll-target="#the-ggplot2-package">The ggplot2 package</a>
+  <li><a href="#what-does-it-mean-to-make-our-content-accessible" id="toc-what-does-it-mean-to-make-our-content-accessible" class="nav-link active" data-scroll-target="#what-does-it-mean-to-make-our-content-accessible"><strong>What does it mean to make our content accessible?</strong></a></li>
+  <li><a href="#color-blindness" id="toc-color-blindness" class="nav-link" data-scroll-target="#color-blindness">Color-blindness</a></li>
+  <li><a href="#contrast" id="toc-contrast" class="nav-link" data-scroll-target="#contrast">Contrast</a></li>
+  <li><a href="#making-non-data-elements-accessible" id="toc-making-non-data-elements-accessible" class="nav-link" data-scroll-target="#making-non-data-elements-accessible">Making non-data elements accessible</a></li>
+  <li><a href="#alt-text" id="toc-alt-text" class="nav-link" data-scroll-target="#alt-text">Alt-text</a>
   <ul class="collapse">
-  <li><a href="#the-grammar-of-graphics" id="toc-the-grammar-of-graphics" class="nav-link" data-scroll-target="#the-grammar-of-graphics">The <em>Grammar of Graphics</em></a></li>
-  </ul></li>
-  <li><a href="#demonstration---making-a-bar-chart" id="toc-demonstration---making-a-bar-chart" class="nav-link" data-scroll-target="#demonstration---making-a-bar-chart">Demonstration - making a bar chart</a>
-  <ul class="collapse">
-  <li><a href="#summarising-the-data" id="toc-summarising-the-data" class="nav-link" data-scroll-target="#summarising-the-data">Summarising the data</a></li>
-  <li><a href="#making-a-plot" id="toc-making-a-plot" class="nav-link" data-scroll-target="#making-a-plot">Making a plot</a></li>
-  <li><a href="#adding-other-aesthetics-to-the-chart" id="toc-adding-other-aesthetics-to-the-chart" class="nav-link" data-scroll-target="#adding-other-aesthetics-to-the-chart">Adding other aesthetics to the chart</a></li>
-  <li><a href="#try-it-yourself" id="toc-try-it-yourself" class="nav-link" data-scroll-target="#try-it-yourself">Try it yourself:</a></li>
-  <li><a href="#categorical-vs-continuous-variables" id="toc-categorical-vs-continuous-variables" class="nav-link" data-scroll-target="#categorical-vs-continuous-variables">Categorical vs continuous variables</a></li>
+  <li><a href="#alt-text-defined-from-webaim" id="toc-alt-text-defined-from-webaim" class="nav-link" data-scroll-target="#alt-text-defined-from-webaim"><strong>Alt Text defined from Webaim:</strong></a></li>
+  <li><a href="#adding-alt-text-in-r-markdown." id="toc-adding-alt-text-in-r-markdown." class="nav-link" data-scroll-target="#adding-alt-text-in-r-markdown.">Adding alt-text in R Markdown.</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -2260,9 +2257,9 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 }
 </script>
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./7_data_visualisation_1.html">Data Visualisation 1</a></li><li class="breadcrumb-item"><a href="./ggplot2.html"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Using ggplot2</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./fair.html">Data Visualisation 4</a></li><li class="breadcrumb-item"><a href="./accessibility.html"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title">Data Visualisation and Accessibility Considerations</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Using ggplot2</span></h1>
+<h1 class="title"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title">Data Visualisation and Accessibility Considerations</span></h1>
 </div>
 
 
@@ -2279,132 +2276,131 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </header>
 
 
-<p>So, that’s the basic theory behind how data visualisations work - we simply map aspects of our data to chosen aesthetics, which must at least include positions - generally at least x and y dimensions.</p>
-<section id="the-ggplot2-package" class="level2">
-<h2 class="anchored" data-anchor-id="the-ggplot2-package">The ggplot2 package</h2>
-<p>R has a very widely-used plotting library called <code>ggplot2</code>, and this is what we will use to pass our data to various geometries and aesthetics to make plots. ggplot2 is very customiseable - it will let you create almost anything as long as you can feed it data and tell it what it should draw with it.</p>
 <div id="qwebr-insertion-location-1"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>The basis of all <code>ggplot2</code> visualisations is a function called <code>ggplot()</code>. Think of this as the foundation of your visualisation. You’ll tell the <code>ggplot()</code> function what data it should use and which attributes of that data it should map to specific aesthetics.</p>
-<section id="the-grammar-of-graphics" class="level3">
-<h3 class="anchored" data-anchor-id="the-grammar-of-graphics">The <em>Grammar of Graphics</em></h3>
-<p>This uses a philosophy of visualisation called the ‘grammar of graphics’ (hence the ‘gg’ in the name). Essentially, this encompasses a set of rules by which we can construct visualisations, using a standard set of terms and features. Every type of of visualisation in ggplot uses this same set of grammar rules, making it very easy to make many different chart types with very little extra code.</p>
-<p>It’s best to think of this grammar of graphics in terms of layers. We start with the function <code>ggplot</code>, and then supply a dataset and map this data to <strong>aesthetics</strong> : you tell ggplot how to map your numeric data to different visual features like shapes, size, and colours. The next layer is one or more <strong>geometries</strong>: these are the basic visual shapes like bars, points, and lines which make up data visualisations. Optionally you can supply scales, and other elements like facets.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="https://github.com/allisonhorst/stats-illustrations?tab=readme-ov-file"><img src="images/ggplot2_masterpiece.png" class="img-fluid figure-img" width="500"></a></p>
-<figcaption>By Allison Horst, CC-BY-4.0</figcaption>
+<p><img src="meme-2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="A man walking with his partner turns his head to look at another person, symbolizing a web user’s shift from inaccessible to accessible content. The original partner, representing inaccessible content, is ignored in favor of the accessible option, which is more appealing and inclusive." width="500"></p>
 </figure>
 </div>
+<section id="what-does-it-mean-to-make-our-content-accessible" class="level3">
+<h3 class="anchored" data-anchor-id="what-does-it-mean-to-make-our-content-accessible"><strong>What does it mean to make our content accessible?</strong></h3>
+<p>When making visualizations it is important to take into account accessibility. In this context, <strong>accessibility means making the content more readable and understandable by everyone.</strong></p>
+<p>We should remember that those viewing our content, particularly if it is placed online may have issues with:</p>
+<ul>
+<li><p>Sight</p></li>
+<li><p>Colour perception</p></li>
+<li><p>Motor skills</p></li>
+</ul>
+<p>Some key ways in which we make visualisations <em>less</em> accessible include:</p>
+<ul>
+<li><p>Prioritising the visual experience without consideration for people navigating via screen reader.</p></li>
+<li><p>Color schemes that are not accessible to people who are color blind or have low vision</p></li>
+<li><p>Interactive elements that are not reachable for people navigating via keyboard.</p></li>
+</ul>
 </section>
-</section>
-<section id="demonstration---making-a-bar-chart" class="level2">
-<h2 class="anchored" data-anchor-id="demonstration---making-a-bar-chart">Demonstration - making a bar chart</h2>
-<p>It’s easier to demonstrate how it works. Before you use the package, you’ll need to load it, along with the other packages we use to wrangle the data:</p>
+<section id="color-blindness" class="level3">
+<h3 class="anchored" data-anchor-id="color-blindness">Color-blindness</h3>
+<p>Color blindness (or color vision deficiency, CVD) is the decreased ability to see color or differences in color, specifically hue.</p>
+<p>The most common is less distinction on red-green (deuteranomaly or protanomaly) or blue-yellow (tritanomaly) axis. Red green affects about 8% of males and 0.05% of females.</p>
+<p>In order to understand how colour in data visualisation is perceived by those with CVD, we should think back to the previous week’s lesson on the differences between scales. The three key scales, as you’ll remember, are <strong>sequential</strong> (for continuous data), <strong>categorical</strong> (for text or categories), and <strong>diverging</strong> (which are sequential, but with a ‘midpoint’. These are affected in different ways.</p>
+<section id="sequential-color-scales" class="level4">
+<h4 class="anchored" data-anchor-id="sequential-color-scales">Sequential color scales</h4>
+<p><strong>Sequential color scales</strong> are affected the least, because they are generally made up of a single hue. However, the default blue color scale provided by ggplot is not terribly good for those with general sight impairments - the ‘Viridis’ color palette, which we have used last week, is a good alternative choice as it is easier to distinguish differences. Another option is to apply a gradient scale, running from one distinct colour to another.</p>
+<p><img src="images/sequential_scale.png" class="img-fluid" width="400"></p>
+<p>To make these changes in our code, we’ll need to use the <code>scale_colour_</code> functions. For instance, to specify the gradient colors for a scatter plot, use <code>scale_color_gradient()</code>.</p>
+<p><strong>Try it yourself:</strong> Edit the plot below to use either the ‘Viridis’ continuous scale, or a gradient with two colours of your choice.</p>
 <div id="qwebr-insertion-location-2"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>As an example, let’s draw a simple bar chart using ggplot2. We want to make a simple bar chart from the Titanic dataset we have been using. The workflow looks like this: first we clean and filter the data (if necessary), then we summarise it along the lines which we want, and finally visualise it using ggplot.</p>
-<section id="summarising-the-data" class="level3">
-<h3 class="anchored" data-anchor-id="summarising-the-data">Summarising the data</h3>
-<p>The first step is to produce the summary of the data we would like to visualise. Let’s try something very simple: the total number of male and female passengers. We’ll use <code>group_by()</code> and <code>summarise()</code>, as in the previous lesson:</p>
+</section>
+<section id="diverging-color-scale" class="level4">
+<h4 class="anchored" data-anchor-id="diverging-color-scale">Diverging color scale</h4>
+<p>A special type of gradient is a ‘diverging’ color palette, where third color is used as a midpoint.</p>
+<p>In both these cases, we should be mindful of using problematic color pairs. Red-green diverging, in particular, should be replaced with another color scale.</p>
+<p><img src="images/diverging.png" class="img-fluid" width="450"></p>
+<p><strong>Try it yourself:</strong> How can you make this chart of the US election results in 2020 more accessible?</p>
 <div id="qwebr-insertion-location-3"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>Now we have a dataset with two columns: <code>sex</code>, listing either male or female, and <code>n</code>, containing a count of the total number of each of those passengers. We save this as a new object called <code>df</code>, though if you want you can simply use the ‘pipe’ and pass it along to ggplot.</p>
 </section>
-<section id="making-a-plot" class="level3">
-<h3 class="anchored" data-anchor-id="making-a-plot">Making a plot</h3>
-<p>We can make a plot by building up at least four layers:</p>
-<section id="ggplot" class="level4">
-<h4 class="anchored" data-anchor-id="ggplot">1. ggplot()</h4>
-<p>First, create a new ggplot object with the code <code>ggplot()</code>.</p>
-</section>
-<section id="data" class="level4">
-<h4 class="anchored" data-anchor-id="data">2. Data</h4>
-<p>Next, give it our new summary dataframe to work with, using the argument <code>data = df</code>.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>You can also use the pipe operator and pass your summarised data to ggplot, without saving it as a new object. In that case, you don’t need to use the <code>data =</code> argument. It’s up to you what to do in your own code - I prefer to create a new object if I am using it repeatedly, as here. A good principle in coding is that if you find yourself copying and pasting the same piece of code, there’s probably a better way of doing it!</p>
-</div>
-</div>
-</section>
-<section id="aesthetics" class="level4">
-<h4 class="anchored" data-anchor-id="aesthetics">3. Aesthetics</h4>
-<p>Next we tell ggplot which columns it should use, and which aesthetics it should map these colums to. This is also done by passing the names as parameters to <code>x</code> and <code>y</code>. First, type a comma after the <code>data = df</code> code. Then, insert the code <code>aes()</code>. <strong>This tells ggplot it should interpret anything within these parentheses as aesthetic mappings.</strong> Finally, <em>within</em> the <code>aes()</code>, we’ll add the columns and aesthetics: <code>x = sex, y = n</code>.</p>
-<p>The code for this looks like the following:</p>
+<section id="categorical-color-scales" class="level4">
+<h4 class="anchored" data-anchor-id="categorical-color-scales">Categorical color scales</h4>
+<p>Finally, categorical color schemes (where the data is unordered, usually for categories or text), use a palette of distinct colors specifically chosen to be safe for color vision deficiency. You can find a set of built-in palettes on the <a href="https://colorbrewer2.org/">ColorBrewer website</a>. Select ‘qualitative’ and tick the ‘color-blind safe’ checkbox. The three remaining palettes are ‘Dark2’, ‘Set2’, and ‘Paired’.</p>
+<p><strong>Try it yourself:</strong> To choose a specific palette for a categorical value (such as species, in this case), use <code>scale_color_distiller()</code> and specify the palette from the list of color blind safe above.</p>
 <div id="qwebr-insertion-location-4"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </section>
-<section id="geometry" class="level4">
-<h4 class="anchored" data-anchor-id="geometry">4. Geometry</h4>
-<p>At this point, we have an empty visualisation which specifies the aesthetics which should be mapped. In order to draw the correct geom, or visualisation shape, we need to add it as a layer on top of the ggplot() function.</p>
-<p>In ggplot, a bar chart is created using the geom <code>geom_col()</code>. <code>geom_col()</code>, like all geoms, has a set of aesthetics which must be specified. In this case, we must at least specific the <code>x</code> and <code>y</code> aesthetics. These correspond to the horizontal and vertical position of the bars. When we give these aesthetics to geom_col, it will automatically figure out what to do with them.</p>
-<p>To do this, we add a plus sign (<code>+</code>) followed by the geometry <code>geom_col()</code>, resulting in a simple bar chart:</p>
+</section>
+<section id="contrast" class="level3">
+<h3 class="anchored" data-anchor-id="contrast">Contrast</h3>
+<p>Another important thing to take into account is contrast. Contrast can be defined as the difference in perceived luminance between two colors. Higher contrasts are easier to perceive for everybody, particularly those with sight impairments.</p>
+<p>For example, in comparison to a white background (the most commonly-used colour):</p>
+<p>Pure red has a ratio of 4:1</p>
+<p>Pure green has a ratio of 1.4:1 (very low)</p>
+<p>Pure blue has a ratio of 8.6:1 (quite high).</p>
+<p>Again, think about this when designing color schemes.</p>
+<p>For instance, try not to use colors with a low contrast ratio, particularly against a white background. By default, ggplot2 uses a grey background, but often white is a requirement or desired for design choices.</p>
+<p><strong>Try it yourself:</strong> use scales to pick more suitable colours for the plot below.</p>
 <div id="qwebr-insertion-location-5"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Adding each layer (anything after a + sign) on a new line makes the code easier to read, though it’s not strictly necessary.</p>
-</div>
-</div>
-<p><strong>We’ll learn about the rest of the layers next week.</strong></p>
+</section>
+<section id="making-non-data-elements-accessible" class="level2">
+<h2 class="anchored" data-anchor-id="making-non-data-elements-accessible">Making non-data elements accessible</h2>
+<p>In the previous chapter we learned how to customise ‘non-data elements’ (titles, fonts, backgrounds, axis tick marks and so forth) using themes. Good use of these can also make data visualisations more accessible.</p>
+<p><strong>Some general considerations for themes:</strong></p>
+<ul>
+<li><p>Make the font as large as is suitable for the image</p></li>
+<li><p>Use a sans serif font</p></li>
+<li><p>Use a black or dark grey text for annotations and labels of lines or segments</p></li>
+<li><p>Use a lighter grey for axes labels so the important information stands out – see this <a href="https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts/">colours guidance</a> for more information</p></li>
+<li><p>Only use coloured text when it is essential – if you are using coloured text <a href="https://webaim.org/resources/contrastchecker/">use a contrast checker to make sure your text meets the contrast requirements against the background</a></p></li>
+</ul>
+</section>
+<section id="alt-text" class="level2">
+<h2 class="anchored" data-anchor-id="alt-text">Alt-text</h2>
+<p>A final consideration, particularly when making charts which are to be viewed online, is to take into account readers who use screen-reading software. We should aim to provide <strong>alt-text</strong> for images, which will be read out loud by screen readers. In doing so, you should aim to summarize the visual elements and key points of the chart.</p>
+<section id="alt-text-defined-from-webaim" class="level3">
+<h3 class="anchored" data-anchor-id="alt-text-defined-from-webaim"><strong>Alt Text defined <a href="https://webaim.org/techniques/alttext/">from Webaim</a>:</strong></h3>
+<blockquote class="blockquote">
+<p>It is read by screen readers in place of images allowing the <strong>content</strong> and <strong>function</strong> of the image to be accessible to those with visual or certain cognitive disabilities.</p>
+<p>It is displayed in place of the image in browsers if the image file is not loaded or when the user has chosen not to view images.</p>
+<p>It provides a semantic meaning and description to images which can be read by search engines or be used to later determine the content of the image from page context alone.</p>
+</blockquote>
+<p>The following is a good template to use for writing alt-text:</p>
+<p><img src="1_VP27n1mvh_O4mOtb7pb-hA.webp" class="img-fluid" width="500"></p>
+<section id="chart-type" class="level4">
+<h4 class="anchored" data-anchor-id="chart-type"><strong>Chart type</strong></h4>
+<p>It’s helpful for people with partial sight to know what chart type it is and gives context for understanding the rest of the visual.<br>
+<em>Example: Line graph</em></p>
+</section>
+<section id="type-of-data" class="level4">
+<h4 class="anchored" data-anchor-id="type-of-data"><strong>Type of data</strong></h4>
+<p>What data is included in the chart? The x and y axis labels may help you figure this out.<br>
+<em>Example: number of bananas sold per day in the last year</em></p>
+</section>
+<section id="reason-for-including-the-chart" class="level4">
+<h4 class="anchored" data-anchor-id="reason-for-including-the-chart"><strong>Reason for including the chart</strong></h4>
+<p>Think about <strong>why</strong> you’re including this visual. What does it show that’s meaningful. There should be a point to every visual and you should tell people what to look for.<br>
+<em>Example: the winter months have more banana sales</em></p>
+</section>
+<section id="link-to-data-or-source" class="level4">
+<h4 class="anchored" data-anchor-id="link-to-data-or-source"><strong>Link to data or source</strong></h4>
+<p>Don’t include this in your alt text, but it should be included somewhere in the surrounding text. People should be able to click on a link to view the source data or dig further into the visual. This provides transparency about your source and lets people explore the data.<br>
+<em>Example: Data from the <a href="https://data.ers.usda.gov/reports.aspx?ID=17850">USDA</a></em></p>
 </section>
 </section>
-<section id="adding-other-aesthetics-to-the-chart" class="level3">
-<h3 class="anchored" data-anchor-id="adding-other-aesthetics-to-the-chart">Adding other aesthetics to the chart</h3>
-<p>Each chart type will allow you to manipulate different aesthetics, depending on what makes sense for that particular shape. If you are working in Posit/RStudio, you can check all of the options for a function by typing <code>?</code> before it, e.g.&nbsp;<code>?geom_col</code>, in to the console (the bottom left pane).</p>
-<p>For <code>geom_col</code>, we <em>have to</em> set <code>x</code> and <code>y</code> and we can <em>optionally</em> set <code>alpha</code> (the transparency), <code>colour</code> (the color of the outline of the bars), <code>fill</code> (the color of the inside of the bars), and <code>linetype</code> and <code>linewidth</code> (allowing you to customise the look of the outline further.</p>
-<section id="within-aes-or-outside-aes" class="level4">
-<h4 class="anchored" data-anchor-id="within-aes-or-outside-aes">Within aes() or outside aes()?</h4>
-<p>These attributes do different things depending on whether you put them <em>inside</em> the <code>aes()</code> function or outside. When <em>outside</em> the aes() function, they allow you to set an attribute to an absolute value. For example, to set the fill of the bars in our previous example to the colour red, you can do the following:</p>
-<div id="qwebr-insertion-location-6"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p><strong>Try it yourself:</strong> Set the outline of this bar chart to black (first copy and paste the existing code), and the linewidth to 2:</p>
-<div id="qwebr-insertion-location-7"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>If you set an attribute <em>within</em> the aes(), you will <em>set that aesthetic to a value from your dataframe.</em></p>
-<p>To demonstrate this, we need to make a new summary of the titanic dataset. Let’s make a new dataframe, which will now count the number of passengers who embarked at each location, for each sex, and call it <code>df2</code>.</p>
-<div id="qwebr-insertion-location-8"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>Now we have three columns in the summary dataset instead of two: <code>sex</code>, <code>embarked</code>, and <code>n</code>.</p>
-<p>If we make the same chart as before with the <code>df2</code> dataset, except now set the <code>fill</code> attribute to the <code>embarked</code> column, <em>within</em> the aes(), it will assign fill colours to each category:</p>
-<div id="qwebr-insertion-location-9"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-</section>
-</section>
-<section id="try-it-yourself" class="level3">
-<h3 class="anchored" data-anchor-id="try-it-yourself">Try it yourself:</h3>
-<p>Recreate the chart above, and set the <code>linetype</code> aesthetic to the <code>embarked</code> category:</p>
-<div id="qwebr-insertion-location-10"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-</section>
-<section id="categorical-vs-continuous-variables" class="level3">
-<h3 class="anchored" data-anchor-id="categorical-vs-continuous-variables">Categorical vs continuous variables</h3>
-<p>Let’s calculate another summary of the dataset.</p>
-<div id="qwebr-insertion-location-11"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>In the last example, we provided a column containing a string (either a Q, a C, or an S) to the <code>fill</code> aesthetic. ggplot interprets these as <em>categorical variables</em>, and automatically assigns colours to them, with the aim of making them as distinctive as possible.</p>
-<p>If we pass a numerical column, this will be interpreted as a <em>continuous variable</em>. Now, ggplot will automatically map a colour scale, running from the darkest (lower number) to the highest (highest number), with a smooth gradient in between. As in this example:</p>
-<div id="qwebr-insertion-location-12"></div>
-<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
-<p>We learn a bit more about scales next week. Turn to the next page to find out about more chart types and their most common attributes.</p>
+<section id="adding-alt-text-in-r-markdown." class="level3">
+<h3 class="anchored" data-anchor-id="adding-alt-text-in-r-markdown.">Adding alt-text in R Markdown.</h3>
+<p>You can add alt-text to static images or to generated plots made in code cells.</p>
+<p>To add alt-text to R Markdown files, switch to the Source editor in Posit Cloud/RStudio.</p>
+<section id="code-cell-options" class="level4">
+<h4 class="anchored" data-anchor-id="code-cell-options">Code cell options</h4>
+<p>We can add what are known as ‘cell options’, which allow us to edit how the result of a code cell is displayed in the knitted markdown file. In R Markdown, enter your code cell options between the first set of curly brackets, after the r. Leave a space, then each option, an equal sign, and the required value. Leave a comma in between each option.</p>
+<p>You can use this to change the figure width and height in the output (<code>fig.width</code> and <code>fig.height</code>), whether or not the code is displayed in the finished file (<code>echo=false)</code>, and many more.</p>
+<p>Alt-text can be added to a generated figure from a code cell using the cell option <code>fig.alt</code>. The screenshot below shows how it should be added to a code cell:</p>
+<p><img src="Screenshot 2024-11-05 at 09.07.17.png" class="img-fluid"></p>
 
 
+</section>
 </section>
 </section>
 
@@ -2810,13 +2806,13 @@ Tip
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./7_data_visualisation_1.html" class="pagination-link" aria-label="Data Visualisation Basics">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Data Visualisation Basics</span></span>
+      <a href="./fair.html" class="pagination-link" aria-label="Reproducibility and FAIR data">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title">Reproducibility and FAIR data</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./chart_types.html" class="pagination-link" aria-label="More chart types">
-        <span class="nav-page-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">More chart types</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./tidytuesday.html" class="pagination-link" aria-label="TidyTuesday visualisation challenge">
+        <span class="nav-page-text"><span class="chapter-number">39</span>&nbsp; <span class="chapter-title">TidyTuesday visualisation challenge</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

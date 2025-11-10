@@ -210,6 +210,11 @@ ggplot() +
 
 ## Adding labels with the labs() function {.smaller}
 
+-   add the function `labs()` as a new layer to your plot using `+`
+-   within `labs()`, you can specify a large number of elements, including **title**, **subtitle**, and **caption**. 
+
+## Adding labels with the labs() function {.smaller}
+
 ```{webr-r}
 #| context: setup
 library(readr)
@@ -257,7 +262,7 @@ df |>
 
 -   When you specify an aesthetic, such as `x`/`y`, `color` and so forth, ggplot2 automatically creates a scale, which is visualised by either an axis or a legend.
 
--   Ggplot takes the axis and legend labels directly from the column names. `labs()` allows you to override these labels. Simply specify the aesthetic and the new label:
+-   Ggplot takes the axis and legend labels directly from the column names. `labs()` allows you to override these labels. Simply specify the aesthetic and the new label.
 
 ## Labelling aesthetics {.smaller}
 

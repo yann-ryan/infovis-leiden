@@ -1222,58 +1222,190 @@
     ]
   },
   {
+    "objectID": "fair.html",
+    "href": "fair.html",
+    "title": "37  Reproducibility and FAIR data",
+    "section": "",
+    "text": "Reproducibility\nAn important principle in working with code and data is reproducibility. Reproducibility is a key part of scientific analysis: the idea that we should do work with the aim that anyone, given the same code. data, and methods, should be able to reproduce our work. This allows others to verify what we have done - that we haven’t accidentally (or maliciously) come to false conclusions.\nTo do this, we should generally publically share the code and data in exactly the same formats, so others can recreate the exact same conditions.",
+    "crumbs": [
+      "Data Visualisation 4",
+      "<span class='chapter-number'>37</span>  <span class='chapter-title'>Reproducibility and FAIR data</span>"
+    ]
+  },
+  {
+    "objectID": "fair.html#reproducibility",
+    "href": "fair.html#reproducibility",
+    "title": "37  Reproducibility and FAIR data",
+    "section": "",
+    "text": "Reproducibility with R\nLuckily, our workflow makes this quite easy. R Markdown files will only ‘knit’ if they have access to the data andwhen the code works from beginning to end. To make the project reproducible, you can simply ensure that all data used is included along with the code. In a ‘live’ project, you would make this publicly available (checking copyright restrictions), on a code repository, usually Github or Zenodo.\nFor your final project, think about packaging everything up so that it is fully reproducible - so that I or anyone else could open the folder and run the code from start to finish and end up with an exact copy of your visualisation. Include your datasets in the .zip file with the Markdown. If you created any additional datasets, for example to help with data cleaning, make sure you include these too. If possible, download your data from online sources rather than loading it directly from the web. Include basic comments on your code, particularly anything which you think is unclear or might need explaining.\n\n\n\n\n\n\nVersioning\n\n\n\nA further aspect of reproducibility is ‘versioning’. R versions and packages change and this can cause problems for others running your code later on. To fix this you can use something called version control. R has a package renv to help with this. It essentially creates a fixed snapshot of R and its packages as you used them at the time you wrote your code, which others can download and use to run your code too. Practicing this is outside the scope of this course, but good to be aware of.",
+    "crumbs": [
+      "Data Visualisation 4",
+      "<span class='chapter-number'>37</span>  <span class='chapter-title'>Reproducibility and FAIR data</span>"
+    ]
+  },
+  {
+    "objectID": "fair.html#fair-data",
+    "href": "fair.html#fair-data",
+    "title": "37  Reproducibility and FAIR data",
+    "section": "FAIR Data",
+    "text": "FAIR Data\nWhen working with data, you will often hear about how to make it FAIR. FAIR is a set of principles developed to make data as reuable as possible. The principles are:\n\nFindable. This means making it easy to find your data, usually by adding keywords and making sure it is openly available and described correctly.\nAccessible. In this context, accessible means making data publically available, where possible.\nInteroperable. Data should use existing standards and formats, so others can easily use or interact with it.\nReusable. Research data should be reusable by others - if data follows the above principles, plus is well documented, this will be the case.\n\nHow does this affect your own work? Primarily, you will be working on existing datasets when making visualisations on this course, but in many cases (on your own research project, for example), you might be responsible for creating datasets.\nHowever, it’s worth bearing in mind the FAIR principles because they can be relevant in how you make your own work reusable. In most cases, you are the ‘end user’ of FAIR data, rather than creating it yourself. However you can ensure that the work you do also results in FAIR data, for example by describing and documenting your own work, and how you analysed or cleaned data.",
+    "crumbs": [
+      "Data Visualisation 4",
+      "<span class='chapter-number'>37</span>  <span class='chapter-title'>Reproducibility and FAIR data</span>"
+    ]
+  },
+  {
+    "objectID": "accessibility.html",
+    "href": "accessibility.html",
+    "title": "38  Data Visualisation and Accessibility Considerations",
+    "section": "",
+    "text": "What does it mean to make our content accessible?\nWhen making visualizations it is important to take into account accessibility. In this context, accessibility means making the content more readable and understandable by everyone.\nWe should remember that those viewing our content, particularly if it is placed online may have issues with:\nSome key ways in which we make visualisations less accessible include:",
+    "crumbs": [
+      "Data Visualisation 4",
+      "<span class='chapter-number'>38</span>  <span class='chapter-title'>Data Visualisation and Accessibility Considerations</span>"
+    ]
+  },
+  {
+    "objectID": "accessibility.html#making-non-data-elements-accessible",
+    "href": "accessibility.html#making-non-data-elements-accessible",
+    "title": "38  Data Visualisation and Accessibility Considerations",
+    "section": "Making non-data elements accessible",
+    "text": "Making non-data elements accessible\nIn the previous chapter we learned how to customise ‘non-data elements’ (titles, fonts, backgrounds, axis tick marks and so forth) using themes. Good use of these can also make data visualisations more accessible.\nSome general considerations for themes:\n\nMake the font as large as is suitable for the image\nUse a sans serif font\nUse a black or dark grey text for annotations and labels of lines or segments\nUse a lighter grey for axes labels so the important information stands out – see this colours guidance for more information\nOnly use coloured text when it is essential – if you are using coloured text use a contrast checker to make sure your text meets the contrast requirements against the background",
+    "crumbs": [
+      "Data Visualisation 4",
+      "<span class='chapter-number'>38</span>  <span class='chapter-title'>Data Visualisation and Accessibility Considerations</span>"
+    ]
+  },
+  {
+    "objectID": "accessibility.html#alt-text",
+    "href": "accessibility.html#alt-text",
+    "title": "38  Data Visualisation and Accessibility Considerations",
+    "section": "Alt-text",
+    "text": "Alt-text\nA final consideration, particularly when making charts which are to be viewed online, is to take into account readers who use screen-reading software. We should aim to provide alt-text for images, which will be read out loud by screen readers. In doing so, you should aim to summarize the visual elements and key points of the chart.\n\nAlt Text defined from Webaim:\n\nIt is read by screen readers in place of images allowing the content and function of the image to be accessible to those with visual or certain cognitive disabilities.\nIt is displayed in place of the image in browsers if the image file is not loaded or when the user has chosen not to view images.\nIt provides a semantic meaning and description to images which can be read by search engines or be used to later determine the content of the image from page context alone.\n\nThe following is a good template to use for writing alt-text:\n\n\nChart type\nIt’s helpful for people with partial sight to know what chart type it is and gives context for understanding the rest of the visual.\nExample: Line graph\n\n\nType of data\nWhat data is included in the chart? The x and y axis labels may help you figure this out.\nExample: number of bananas sold per day in the last year\n\n\nReason for including the chart\nThink about why you’re including this visual. What does it show that’s meaningful. There should be a point to every visual and you should tell people what to look for.\nExample: the winter months have more banana sales\n\n\nLink to data or source\nDon’t include this in your alt text, but it should be included somewhere in the surrounding text. People should be able to click on a link to view the source data or dig further into the visual. This provides transparency about your source and lets people explore the data.\nExample: Data from the USDA\n\n\n\nAdding alt-text in R Markdown.\nYou can add alt-text to static images or to generated plots made in code cells.\nTo add alt-text to R Markdown files, switch to the Source editor in Posit Cloud/RStudio.\n\nCode cell options\nWe can add what are known as ‘cell options’, which allow us to edit how the result of a code cell is displayed in the knitted markdown file. In R Markdown, enter your code cell options between the first set of curly brackets, after the r. Leave a space, then each option, an equal sign, and the required value. Leave a comma in between each option.\nYou can use this to change the figure width and height in the output (fig.width and fig.height), whether or not the code is displayed in the finished file (echo=false), and many more.\nAlt-text can be added to a generated figure from a code cell using the cell option fig.alt. The screenshot below shows how it should be added to a code cell:",
+    "crumbs": [
+      "Data Visualisation 4",
+      "<span class='chapter-number'>38</span>  <span class='chapter-title'>Data Visualisation and Accessibility Considerations</span>"
+    ]
+  },
+  {
+    "objectID": "tidytuesday.html",
+    "href": "tidytuesday.html",
+    "title": "39  TidyTuesday visualisation challenge",
+    "section": "",
+    "text": "Challenge instructions\nDownload, explore, analyse, and visualise a cultural or humanities dataset from the TidyTuesday repository.\nTidyTuesday is a weekly project where a dataset is posted and participants create an analysis and/or visualisation using it.",
+    "crumbs": [
+      "Data Visualisation 4",
+      "<span class='chapter-number'>39</span>  <span class='chapter-title'>TidyTuesday visualisation challenge</span>"
+    ]
+  },
+  {
+    "objectID": "tidytuesday.html#datasets",
+    "href": "tidytuesday.html#datasets",
+    "title": "39  TidyTuesday visualisation challenge",
+    "section": "Datasets",
+    "text": "Datasets\nAll the datasets used on the challenge since 2018 are available to download.\nYou can see the full list here.\nEach dataset has a link to the data, a link to the source, and a sample data article written using it, for inspiration.",
+    "crumbs": [
+      "Data Visualisation 4",
+      "<span class='chapter-number'>39</span>  <span class='chapter-title'>TidyTuesday visualisation challenge</span>"
+    ]
+  },
+  {
+    "objectID": "tidytuesday.html#get-started",
+    "href": "tidytuesday.html#get-started",
+    "title": "39  TidyTuesday visualisation challenge",
+    "section": "Get started",
+    "text": "Get started\nThe easiest way to download the datasets is using the tidytuesdayR R package. Each one has two simple steps. First, downloading the data. Second, saving the data alone as an object.\nI have chosen three good examples to get you started. The links below link to the dataset download page, where you can find out some more information, how to download, plus the source and sample article.\nYou can also use any dataset on the site you like, as long as it has, broadly, a humanities or cultural focus. But if you want to do this, choose quickly, as time will fly!\nSelected British Literary Prizes (1990-2022)\nRolling Stone Album Rankings\nRefugees data\nOpen the ‘TidyTuesday’ workspace area on Posit cloud.",
+    "crumbs": [
+      "Data Visualisation 4",
+      "<span class='chapter-number'>39</span>  <span class='chapter-title'>TidyTuesday visualisation challenge</span>"
+    ]
+  },
+  {
+    "objectID": "tidytuesday.html#do-the-challenge",
+    "href": "tidytuesday.html#do-the-challenge",
+    "title": "39  TidyTuesday visualisation challenge",
+    "section": "Do the challenge",
+    "text": "Do the challenge\nUsing the markdown document, load in your chosen dataset. Read the associated information about it through the link above, as well as looking at the actual data in Posit. Look at the column names and types.\nIn the markdown document, do your data exploration and visualisation.\nNeed help choosing a suitable chart type? Try https://www.data-to-viz.com/\nConsider accessibility: choose a suitable color scheme and adjust theme elements so they are readable.\nAdd a figure caption and alt-text, using the code chunk options.\nQuestions:\n\nWhat is the source of the dataset? Is it easy to find information on it?\nWhat kinds of questions could be asked with this dataset?\nWhat ethical considerations are there with this dataset?",
+    "crumbs": [
+      "Data Visualisation 4",
+      "<span class='chapter-number'>39</span>  <span class='chapter-title'>TidyTuesday visualisation challenge</span>"
+    ]
+  },
+  {
+    "objectID": "at-home-006.html",
+    "href": "at-home-006.html",
+    "title": "40  Home Exercise",
+    "section": "",
+    "text": "Instructions\nThe at-home exercises should be completed using Posit cloud, Home Exercise 5. Create a new .Rmd file (use File -&gt; New File -&gt; R Markdown.\nI advise saving the new file straight away. Because you’ll submit this file as an assignment, use a standardised name: lastname_firstname5. Regularly re-save the file.\nWhen you have finished the exercise (or part of it), ‘knit’ the file. Export the .Rmd and the html as a .zip file, and upload this to the assignment area.",
+    "crumbs": [
+      "Data Visualisation 4",
+      "<span class='chapter-number'>40</span>  <span class='chapter-title'>Home Exercise</span>"
+    ]
+  },
+  {
+    "objectID": "at-home-006.html#task",
+    "href": "at-home-006.html#task",
+    "title": "40  Home Exercise",
+    "section": "Task",
+    "text": "Task\nYou’ve been asked to make a chart to accompany an article about the Nobel Prize awards and laureates. You leave it until the last minute and shamelessly recreate a chart you found here.\n\nlibrary(tidyverse)\nprizes_df &lt;- read_csv('prize_df.csv')\n\nlaureates_df &lt;- read_csv('laureates_df.csv')\n\nplot_df &lt;- laureates_df |&gt; \n  select(gender, prize_id)  |&gt;\n  left_join(prizes_df, by = 'prize_id') |&gt; \n  filter(!is.na(gender)) |&gt;\n  group_by(gender, category) |&gt;\n  summarise(n = n()) \n\nreorder_by_female = plot_df |&gt; \n  filter(gender == 'female') |&gt;\n  arrange(desc(n)) |&gt; pull(category)\n\nplot_df &lt;- plot_df |&gt; \n  mutate(category = factor(category, levels = reorder_by_female))\n  \nplot_df |&gt;\n  ggplot(aes(x = category, y = n, fill = gender)) + \n  geom_col(position = 'dodge') + \n  geom_text(aes(x = category, y = n + 10, label = n), position = position_dodge(0.9)) + \n  labs(title = \"The Nobel Prize Gender Gap\",\n       subtitle = \"Nobel Prize winners between 1901 and 2024\\nby category and gender\",\n       x = NULL, y = NULL)\n\n\n\n\n\n\n\n\nThe editor gets back to you and says it’s great (phew!), but requests that you make the chart more accessible, particularly for those with vision impairments, but generally just easier to read in a small online format.\n\nStart by saving the image and uploading to a CVD simulator Do you think the colour combination would be difficult to distinguish for any types of CVD?\n\nCopy and paste the code for the chart into a new cell and make adjustments.\n\nChoose a better palette of fill colours using scale_fill_.\nMake adjustments to the bars so they are easier to distinguish from the background.\nAdjust the theme to make elements easier to read: for example the font size and face, the contrast between the panel background, the rotation of the axis text.\nWrite an alt text description, following the guidelines on the previous page.\nWhen you’re done, upload again to the colour blind checker to confirm this version meets the requirements.\n\nIn the Markdown document, write a very short description of your changes and why they improve accessibility.\nThe data and code are already made for you in ‘Home Exercise 7’ on Posit cloud.",
+    "crumbs": [
+      "Data Visualisation 4",
+      "<span class='chapter-number'>40</span>  <span class='chapter-title'>Home Exercise</span>"
+    ]
+  },
+  {
     "objectID": "data.html",
     "href": "data.html",
-    "title": "37  Data and Inspiration for the Final Project",
+    "title": "41  Data and Inspiration for the Final Project",
     "section": "",
     "text": "Importing a dataset and dataset standards\nOn this page you can find links to humanities datasets, as well as tips for finding your own.\nI’ll update it as the course goes on to contain information relevant for each of the last three graded assignments, which involve making a visualisation, making a map, and the final project.\nFor these assignments, you’ll need to begin by importing your dataset as an object into the RStudio/Posit environment. How you do this depends a little on the standard of your dataset. As we’re working with tabular data on this course, your data should in most cases be either in one of these formats:\nYou can read data originating from either your local machine, or directly from the internet in some cases.",
     "crumbs": [
       "Useful information",
-      "<span class='chapter-number'>37</span>  <span class='chapter-title'>Data and Inspiration for the Final Project</span>"
+      "<span class='chapter-number'>41</span>  <span class='chapter-title'>Data and Inspiration for the Final Project</span>"
     ]
   },
   {
     "objectID": "data.html#importing-a-dataset-and-dataset-standards",
     "href": "data.html#importing-a-dataset-and-dataset-standards",
-    "title": "37  Data and Inspiration for the Final Project",
+    "title": "41  Data and Inspiration for the Final Project",
     "section": "",
     "text": "comma separated values (files ending in .csv). A very common tabular data format. Use read_csv() from the Tidyverse package readr (remember to load the package first) to read the file in to Posit.\nTab separated values (files ending in .tsv). Another common tabular format. Use read_tsv() from the Tidyverse package readr to read the file.\nExcel files: Microsoft proprietary format, which can contain multiple sheets. Use read_excel() from the Tidyverse package readxl to read the file.\nGoogle sheets. You can read Google sheets directly from the internet using the package googlesheets4.\n\n\n\nIf you’re loading from your local machine, remember to upload the file to Posit cloud first, if you’re using it.\nIf you know the path online to a file in one of the formats above, you can simply add the full path as the filename within quotation marks, e.g. read_csv('https://github.com/yann-ryan/nobel_data/blob/main/laureates_df.csv').",
     "crumbs": [
       "Useful information",
-      "<span class='chapter-number'>37</span>  <span class='chapter-title'>Data and Inspiration for the Final Project</span>"
+      "<span class='chapter-number'>41</span>  <span class='chapter-title'>Data and Inspiration for the Final Project</span>"
     ]
   },
   {
     "objectID": "data.html#datasets-for-making-a-basic-visualisation-the-first-assignment-or-if-you-want-to-stick-with-something-simple-for-the-final-project",
     "href": "data.html#datasets-for-making-a-basic-visualisation-the-first-assignment-or-if-you-want-to-stick-with-something-simple-for-the-final-project",
-    "title": "37  Data and Inspiration for the Final Project",
+    "title": "41  Data and Inspiration for the Final Project",
     "section": "Datasets for making a basic visualisation (the first assignment or if you want to stick with something simple for the final project)",
     "text": "Datasets for making a basic visualisation (the first assignment or if you want to stick with something simple for the final project)\nThe visualisation assignment is asking you to demonstrate your skills in making a visualisation using ggplot2. I highly recommend using one of the datasets we have worked with on the course, which are relatively clean and simple, by humanities data standards. Data cleaning and figuring out formats can be very time consuming, so unless you are very comfortable with these things, I would wait until the final project to use a bespoke dataset.\n\n\n\n\n\n\nWarning\n\n\n\nIf you do want to use your own dataset, be aware that your account on Posit Cloud has a limit of 1GB of RAM. This means that you will not be able to load larger datasets into memory, and you’ll get an error. In this case, it’s best to install R and RStudio on your own machine, which likely has more RAM.\n\n\nWhatever dataset you use, a really important task is to read the documentation available, so you undertand, as best as possible, how it was made and who was responsible for it.\n\nDatasets used on the course\n\nThe Titanic dataset. There are many versions of this on the internet, because it is widely used in machine learning problems. I created a version based on this dataset, because it contains the full list and hasn’t been divided into different parts for training and testing machine learning algorithms. There is a little information on how the dataset was constructed, but unfortunately the link to further information is no longer working. My version is available here.\nThe Bellevue Almshouse data. This is a dataset of records of immigrants who were admitted to the Bellevue Almshouse (house for the poor) in the 1840s. You can find more information and links to the data here.\nThe Movie Dialogue dataset. You can find more information about this dataset here. I created the third file, imdb_genre, from a larger IMDB dataset. You can find that file here.\nThe Nobel Prize Winners dataset. A dataset containing two tables, with information on the Nobel Prizes and the Nobel Prize winners. I created this using the official Nobel API. You can find the files here.\n\n\n\nOther (relatively simple) datasets\nIf you really want to use another dataset, choose something which is clean and manageable for a short assignment. It should also be, broadly speaking, related to humanities, meaning don’t use datasets which are primarily natural sciences, geography, etc. Before you commit to it, check to see that there is at least some documentation regarding where it came from and how it was done. This is important in general (because data should follow FAIR principles), but also more specifically because you’ll need it to write a good report.\n\nThere are a large number of datasets from the ‘TidyTuesday’ weekly challenge. Behind this link you’ll find a collection of folders for each year. In each of these folders you’ll find another folder for each week, but if you scroll past these folders you’ll see useful links to the data and sources. Not all will be relevant, because there are many not relevant to the humanities. They are fairly well documented and include sources, but do check that this information is there before you commit to using them.\nThe Pudding has some nice and often fun datasets, though they have a very American focus.\nI’ve used several of the datasets from this Introduction to Cultural Analytics book by Melanie Walsh. You can find some more datasets on this page. Not all are tabular data - some are primarily text-based, which is outside the scope of this course (you’re welcome to use them to produce visualisations but you’ll likely need some text mining skills which we won’t cover).",
     "crumbs": [
       "Useful information",
-      "<span class='chapter-number'>37</span>  <span class='chapter-title'>Data and Inspiration for the Final Project</span>"
+      "<span class='chapter-number'>41</span>  <span class='chapter-title'>Data and Inspiration for the Final Project</span>"
     ]
   },
   {
     "objectID": "data.html#datasets-for-the-final-project",
     "href": "data.html#datasets-for-the-final-project",
-    "title": "37  Data and Inspiration for the Final Project",
+    "title": "41  Data and Inspiration for the Final Project",
     "section": "Datasets for the final project",
     "text": "Datasets for the final project\nAt the moment this is a random assortment of datasets and data sources related to the humanities! I’ve deliberate avoided listing text-based datasets, of which there are lots but require different techniques to those we have used on the course.\n\nIndividual datasets\n\nShakespeare and Co datasets. Very nice geocoded library lending data. Article here and the datasets are divided into members, books, and events (events generally mean library loans here).\nTitle list of British Library Newspapers\nThis structured literary dataset made for the litRiddle project. There’s also an R package, install.packages(\"litRiddle\").\nThe Museum of Modern Art dataset. Nice dataset for analysis of cultural heritage (more examples in the next section).\nThis dataset based on the World Atlas of Language Structures. It’s a little difficult to find what you need, but has interesting geographic linguistic data. The languages table is the most important.\n\n\n\nData repositories or lists\nThere are many, many sources of datasets available online. Look for relatively simple csv and tsv files or sets of files, and avoid those that mention APIs or Linked Open Data unless you are comfortable working with these things.\n\nCBS Statline: Dutch Statistics. Also an R package here.\nDANS Humanities and Social Sciences: repository for many datasets, just be aware they may be very specific and not always be easy to use.\nKB Labs datasets (many are text based but some are structured).\nThe Google dataset search. However make sure you can trace back the provenance!\nJournal of Open Humanities Data. Journal with open data and articles outlining possible use cases.\nIMDB datasets. Large-scale datasets from the IMDB website. You’ll probably need to install and run R on your local machine, because reading and analysing these will require more RAM than is available in Posit cloud.\nBook catalogue metadata is a nice source of structured humanities data. The Hathi Trust metadata files contain information (not content) on all the works digitised by the Hathi Trust. Look for the most recent file starting with hathi_full. These are also large files and will require you to install and run R Studio on your own machine.\nThe ‘DH toychest’ datasets. In particular, follow the link and scroll down to the section ‘Datasets’.\nList of Museum APIs. Also lists some datasets in regular tabular formats like tsv and csv.\n\n\n\n\n\n\n\nTip\n\n\n\nFor very large datasets, it may also be helpful to use an R package such as data.table which is more efficient than Tidyverse for working with very large data. data.table has a very different syntax to the Tidyverse, but there is a package, tidytable, which converts between the two.\n\n\n\n\nR Packages\n\nHistData\nrefugees (with guidelines here)\nA huge list here - but again, try to only use those with good documentation.\n\n\nR Packages which connect to an API\n\nspotifyr allows you to download data, either public or your own listening data, from Spotify. You need to register for an API key - follow the instructions behind the link.\nRedditExtractoR. I haven’t tried it, but apparently will allow you to download data from Reddit. Use at your own risk!\nThe osmdata package. Download geographic data through R. Very fun to work with, though takes some understanding of the queries. Try a tutorial here if you’re interested.\n\n\n\n\nSocial media data\nUnfortunately, doing analysis on social media data has become difficult in the last few years as companies have locked down their services. There are some individual datasets of collected tweets which you could use, e.g. here. There is an additional step needed with tweets - the collected data is only what are known as tweet IDs, and they must be ‘hydrated’ using software such as Hydrator in order to actually read and analyse them.",
     "crumbs": [
       "Useful information",
-      "<span class='chapter-number'>37</span>  <span class='chapter-title'>Data and Inspiration for the Final Project</span>"
+      "<span class='chapter-number'>41</span>  <span class='chapter-title'>Data and Inspiration for the Final Project</span>"
     ]
   },
   {
     "objectID": "data.html#inspiration-for-the-final-project",
     "href": "data.html#inspiration-for-the-final-project",
-    "title": "37  Data and Inspiration for the Final Project",
+    "title": "41  Data and Inspiration for the Final Project",
     "section": "Inspiration for the final project",
     "text": "Inspiration for the final project\n\nCurrent research in digital history (short historical essays with graphics)\nJournal of Digital History (digital history articles with a code layer)\nJournal of Cultural Analytics (computational articles on culture, often with visual elements)\nThe Pudding (data journalism visual essays with interactive elements)\nThe Killing Times project (example of an interactive visual essay, for those interested in using Shiny).\nShort visual essays by FiveThirtyEight such as this one.\nVisualising Emancipation (a nice example of a visual essay aimed at an academic readership).\nCool stuff made with cultural heritage APIs\nMedium post of ways the MoMA data has been used. Sadly many of the links are broken, but this post is a nice example of the kind of project you could make..",
     "crumbs": [
       "Useful information",
-      "<span class='chapter-number'>37</span>  <span class='chapter-title'>Data and Inspiration for the Final Project</span>"
+      "<span class='chapter-number'>41</span>  <span class='chapter-title'>Data and Inspiration for the Final Project</span>"
     ]
   }
 ]
