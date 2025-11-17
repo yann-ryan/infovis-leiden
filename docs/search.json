@@ -1407,5 +1407,280 @@
       "Useful information",
       "<span class='chapter-number'>41</span>  <span class='chapter-title'>Data and Inspiration for the Final Project</span>"
     ]
+  },
+  {
+    "objectID": "10_digital_mapping_1.html",
+    "href": "10_digital_mapping_1.html",
+    "title": "42  Digital mapping overview",
+    "section": "",
+    "text": "What exactly is digital mapping?\nIn this part of the course, we’ll learn how to create digital maps. More specifically, we’ll create maps which visualise data, meaning maps in which geographic elements, such as points, lines, and polygons, are mapped to external data, for instance cultural or political data. These kinds of maps have become very familiar and widely used in digital history, data journalism and infographics in recent years.\nMaps are useful because some data or information has inherently spatial aspects - where the data is from is as important as what. We might want to understand geographic patterns of a phenomenon, for instance how language is used in different regions, or the demographic and economic patterns of particular places, and so forth.\nOn benefit of a map is that they can be useful cognitive shortcuts. Because we all have models of maps in our head already (think about how you know certain pieces of information about the borders of the provinces or positions of towns in your home country), we can often grasp very quickly lots of information. If you know the rough positions of the towns and provinces of the Netherlands, for instance, you will probably be able to understand some data about them more quickly than if the same information was presented to you in the form of a list or table.\nData maps also help us to see patterns which are specifically geographic in nature - we might see, for example, that a certain data point is more common on coasts, or in particular regions, or notice differences between the centre and periphery.",
+    "crumbs": [
+      "Digital Mapping 1",
+      "<span class='chapter-number'>42</span>  <span class='chapter-title'>Digital mapping overview</span>"
+    ]
+  },
+  {
+    "objectID": "10_digital_mapping_1.html#creating-digital-maps",
+    "href": "10_digital_mapping_1.html#creating-digital-maps",
+    "title": "42  Digital mapping overview",
+    "section": "Creating digital maps",
+    "text": "Creating digital maps\nDigital mapping has its own set of techniques, as there are different methods by which we can represent geographic and physical features of the ‘real’ world as computer code.\n\nTypes of maps\nThe two most common formats for doing this are called raster maps and vector maps. On this course we will work only with vector maps but it is useful to know the difference between the two.\n\nRaster maps\nA raster map represents the physical elements as individual pixels. This is commonly used when we digitise a physical map - each pixel on a map will be shaded and coloured differently, and this shade will mean something. Another example of a raster map is an elevation map. Each pixel is colored by the elevation of that point, i.e.\n\nThis kind of map can be read by a computer, to calculate things like travel times, or to understand ecological differences, and so forth.\n\n\nVector maps\nThe other kind of map is called a vector map. A vector map represents geographic elements as a series of numerical values. These geographic elements are generally points, lines, or polygons. For instance, a point is represented by a set of two coordinates, giving the latitude and longitude on earth. A line would be represented by a series of numbers, which when joined together make up a line on a map.\n\n\n\nA vector map containing rivers, cities, and country borders\n\n\nThe main difference between the two is that vector maps contain shapes which can be specifically read by computer code. Unlike a raster map, with vector data, we can outline the shape of a river or road, or the outline of a province or other political border. This makes vector data particularly useful for creating data visualisations.",
+    "crumbs": [
+      "Digital Mapping 1",
+      "<span class='chapter-number'>42</span>  <span class='chapter-title'>Digital mapping overview</span>"
+    ]
+  },
+  {
+    "objectID": "10_digital_mapping_1.html#mapping-also-involves-mapping-aesthetics-to-values",
+    "href": "10_digital_mapping_1.html#mapping-also-involves-mapping-aesthetics-to-values",
+    "title": "42  Digital mapping overview",
+    "section": "Mapping also involves mapping aesthetics to values",
+    "text": "Mapping also involves mapping aesthetics to values\nAs with all data visualisation, the process involves mapping aesthetics to values. The key difference between maps and other data visualisations is that position is usually based on geographic position, i.e. a real physical location on earth. The most common kinds of data maps you’ll find will use position, size, color, and shape to draw points on a map, or will use position and color (and perhaps patterns) to fill in polygons.\nWhich is used is usually dependent on the specific kind of geographic data you have. Points ‘point’ to specific, precise places on a map, for instance a town, village, or even an exact address. Polygons are widely used when the data we have relates to political or cultural regions and borders.\n\nPoints Map\nThis first graphic is an example of simply using position to create a data visualisation. Each covid death has been drawn as a single tiny black point, and through the placement of millions of these points, we can see precisely where the death toll from Covid was highest.\n\n\n\n\n\n\n\nNote\n\n\n\nThis map of covid deaths demonstrates one weakness of mapping data: often, a map simply duplicates population distribution rather than revealing any useful patterns.\n\n\n\n\n\nhttps://xkcd.com/1138/",
+    "crumbs": [
+      "Digital Mapping 1",
+      "<span class='chapter-number'>42</span>  <span class='chapter-title'>Digital mapping overview</span>"
+    ]
+  },
+  {
+    "objectID": "10_digital_mapping_1.html#using-aesthetics-to-map-data",
+    "href": "10_digital_mapping_1.html#using-aesthetics-to-map-data",
+    "title": "42  Digital mapping overview",
+    "section": "Using aesthetics to map data",
+    "text": "Using aesthetics to map data\nJust like the earlier data visualisations we made on this course, we can also map further aesthetics as well as position to the data. In this next example from the New York Times, data on weather records was mapped. The authors drew points using both colour (a categorical colour scale, either red for heat or blue for cold records) and size (the amount by which the previous record was broken) to communicate the areas where temperature records had been most extreme in that year.\n\n\nChoropleth maps\nA classic use of mapping data to polygons are election maps. This is because election results are usually counted by region, municipality, or other political border. In this example from the 2011 election in the Netherlands, each municipality is represented by a polygon. Each polygon is then coloured by the winning party. A discrete colour scale is used, because this is categorical data (each region has exactly one winning party).\n\nA map where colour is used to present statistical data through polygon shapes is known as a choropleth map. These maps tend to be useful when we have data which is not related to a single point (such as a town or city), but is connected to regions, such as countries, municipalities and so forth.\nHowever, there are some issues we should be aware of making choropleth maps. In the example of the election map above, about half of the map is coloured blue. This might lead us to think that the VVD party received over half of the total votes. But while they were the largest party, in fact they won 112 seats out of a total of 566 - about one-fifth of the votes.\nThis is of course because this map hides the fact that elections are related to population rather than land area. The VVD party are bigger in rural areas which tend to be sparsely populated. Generally, when creating data visualizations, it is best practice that each pixel or piece of ‘ink’ on the page represents the same amount of numerical value. This is not the case if we use geographic data like this. In this case, the numerical unit is a vote, and some votes are represented by less area than others, because of population density.\nOne fix for this is to create a cartogram map. This attempts to distort a map so that the area better reflects the data. This example distorts the shapes of the countries of the European Union so that the area of each is related to the amount of the budget they either contribute or receive (between 2007 and 2013, and per capita).\n\nOver the next few weeks, we’ll learn how to make maps from scratch using R. Starting with mapping some simple data, and moving on to importing our own separate data sources.",
+    "crumbs": [
+      "Digital Mapping 1",
+      "<span class='chapter-number'>42</span>  <span class='chapter-title'>Digital mapping overview</span>"
+    ]
+  },
+  {
+    "objectID": "basemaps.html",
+    "href": "basemaps.html",
+    "title": "43  Working with Shapefiles",
+    "section": "",
+    "text": "What is a shapefile?\nWhen we make maps programmatically, we need to create both the data and the underlying geographic map to go with it.\nIn R this is done using shapefiles. Shapefiles are a general name for datasets of geographic features, such as points, lines or polygons. The type of shapefile we’ll work with first is one containing outline shapes of geographic entities, or features. This could be polygons outlining the shape of the coastline, or it could be detailed internal borders of countries, regions, or municipalities.\nThere are many sources of shapefiles available. Many national and international bodies publish official shapefiles of political regions, often at several different levels. For example, the EU publishes hierarchical shapefiles containing different levels of administrative regions, called LAU (Local Adminstrative Units) and NUTS (nomenclature des unités territoriales statistiques). These can be downloaded and used to create maps programmatically, for example if you want to make a data map of some statistics related to Dutch municipalities. These files can be read into R.\nThere are thousands of shapefiles available to download and use freely from various databases, ranging from historical to political. This week we will learn how to download and map a shapefile using an R package, which is a very simplified workflow, but also very limited in the range and variety of shapefiles which are available. Next week we will learn how to download and import shapefiles from external resources, and use data to create and map our own.",
+    "crumbs": [
+      "Digital Mapping 1",
+      "<span class='chapter-number'>43</span>  <span class='chapter-title'>Working with Shapefiles</span>"
+    ]
+  },
+  {
+    "objectID": "basemaps.html#what-is-a-shapefile",
+    "href": "basemaps.html#what-is-a-shapefile",
+    "title": "43  Working with Shapefiles",
+    "section": "",
+    "text": "Examples of different geographic features found in shapefiles.\n\n\n\n\n\n\n\n\n\nHistorical shapefiles\n\n\n\nBoundaries change throughout time, and often a shapefile containing modern boundaries is not relevant. There are also many sources of historical shapefiles such as the historical GIS of the Low Countries and the Vision of Britain project, containing information on historical national or regional boundaries, often at different points in time.",
+    "crumbs": [
+      "Digital Mapping 1",
+      "<span class='chapter-number'>43</span>  <span class='chapter-title'>Working with Shapefiles</span>"
+    ]
+  },
+  {
+    "objectID": "basemaps.html#the-sf-package-and-simple-features-objects",
+    "href": "basemaps.html#the-sf-package-and-simple-features-objects",
+    "title": "43  Working with Shapefiles",
+    "section": "The sf package and ‘simple features’ objects",
+    "text": "The sf package and ‘simple features’ objects\nTo build a map, we need to import special data into R. To do this we’ll use a package called sf. sf stands for simple features. It is a data format specially made for geographic data. Essentially, a simple features object looks like the dataframes (the rows and columns) we have been working with all along, except with one new column, called geometry. Each row of the data can be considered a ‘feature’, meaning a single point, line, or polygon.\nSo each row contains a single feature. Usually, these will have additional information about them. For example, one ‘feature’ might be a polygon shape for a single country. This might have a row of information with the country name, ISO code, even population and so forth.\nThe special ‘geometry’ column is what makes it geographic information. This contains the geographic information for that feature. In the case of a polygon shape for a country, it will contain a list of the points which, joined together, make up the shape of that polygon. A points feature will contain a single set of geographic coordinates, and a line will contain a list of points, but it won’t be joined-up, like a polygon. Each sf object will only contain one type of feature.\n\n\n\n\n\n\nCoordinate Reference System\n\n\n\nAs well as this geometry column, each sf object will have a further piece of information attached to it - a CRS or coordinate reference system. Often, if you download a map file from the internet, it may already have one of these embedded. If you make your own set of features (a set of points, for example), then you will need to add a CRS yourself. In order to add maps together (for example, to have a baselayer of polygons and a layer of points over that), they’ll both need to have the same CRS. We’ll talk more about the CRS next week.\n\n\nThe good news about sf objects is that they behave just like dataframes. This means that we can apply all the techniques and code we learned over the past few weeks to these objects. For example, if you have a sf object which is a list of countries and you want to map only a few of them, you could do this with filter(). Or, you can use group_by() and summarise() if you have a group of points and you want to group them all together.\nThe sf package also has many additional features to perform complicated calculations and transformations of geographic data. If you are interested in learning more, I highly recommend reading all or part of Geocomputation with R. For now, we will stick with simple calculations, based on the kinds of things we have already been learning, just with geographic data.",
+    "crumbs": [
+      "Digital Mapping 1",
+      "<span class='chapter-number'>43</span>  <span class='chapter-title'>Working with Shapefiles</span>"
+    ]
+  },
+  {
+    "objectID": "basemaps.html#r-natural-earth-package",
+    "href": "basemaps.html#r-natural-earth-package",
+    "title": "43  Working with Shapefiles",
+    "section": "R Natural Earth package",
+    "text": "R Natural Earth package\nThis week we will download and map a simple shapefile, of country borders, using an R package. In cases where you need more specific or detailed shapefiles, you’ll usually need to download them from an external source and import them into R, which we’ll learn over the coming weeks.\nTo download and map shapefiles, we’ll need two new packages: rnaturalearth and sf. You’ll find sf on the next page.\n\nrnaturalearth\nIn R, the easiest way to find shapefiles is using a package and a database called RNaturalEarth. RNaturalEarth allows you to connect to a database called Natural Earth, containing many shapefiles, including many different sets of borders, such as state, country, municipality etc. It is also possible to download a shapefile of the coastline without internal borders, which is useful for some kind of data maps.\nAs well as basic shapes of countries, you can download rivers, lakes, and other physical features, to make more detailed or aeshetically pleasing maps.\n\n\nDownloading shapefiles\nWe’ll practise three methods for getting data from Natural Earth: first, a quick-ish way to download the most-used shapefiles, countries and coastlines, and second, a more general method for downloading any file from the database.\nFirst, load the library:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Digital Mapping 1",
+      "<span class='chapter-number'>43</span>  <span class='chapter-title'>Working with Shapefiles</span>"
+    ]
+  },
+  {
+    "objectID": "basemaps.html#country-borders",
+    "href": "basemaps.html#country-borders",
+    "title": "43  Working with Shapefiles",
+    "section": "Country borders",
+    "text": "Country borders\nTo download a shapefile of country borders, use the function ne_countries(). Remember to save this as an object in your environment using &lt;-. As well as the function itself you’ll need to specify some further parameters:\n\nscale = , which will determine how detailed the borders should be, one of small, medium, or large.\nreturnclass =, which will specify the type of data to be downloaded from the database. In all cases, we’ll use returnclass = 'sf' (note the quotation marks around sf). This returns the file in the format we want to work with, simple features.\nOptionally, you can specify that the function return a single country or list of countries. This is done using the syntax country = 'Netherlands' or country = c('Netherlands', 'Spain').\n\nThe following code will download a dataset in sf format, of all world countries:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nTry it yourself: Download a small scale shapefile containing Germany, Netherlands, France, Belgium, and Luxembourg. Don’t forget to assign it as an object using &lt;-.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Digital Mapping 1",
+      "<span class='chapter-number'>43</span>  <span class='chapter-title'>Working with Shapefiles</span>"
+    ]
+  },
+  {
+    "objectID": "basemaps.html#downloading-coastlines",
+    "href": "basemaps.html#downloading-coastlines",
+    "title": "43  Working with Shapefiles",
+    "section": "Downloading coastlines",
+    "text": "Downloading coastlines\nThis code downloads a simple map of the world’s coastlines, useful if you want a map without any political borders. This is done with the function ne_coastline. In this case, we should specify the scale and returnclass:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Digital Mapping 1",
+      "<span class='chapter-number'>43</span>  <span class='chapter-title'>Working with Shapefiles</span>"
+    ]
+  },
+  {
+    "objectID": "basemaps.html#downloading-other-data",
+    "href": "basemaps.html#downloading-other-data",
+    "title": "43  Working with Shapefiles",
+    "section": "Downloading other data",
+    "text": "Downloading other data\nR Natural Earth has a huge amount of other data you can download. The functions ne_countries() and ne_coastline() are there to give easy access to some of the most common shapefiles. For other data, you can use the more complex ne_download().\nThis function works similarly, but allows you to download other data. This ranges from physical features like lakes and rivers, to cities, ports, and airports. Note however that the package is reliant on the Natural Earth database remaining the same, so occasionally you will find it does not correctly download a dataset.\nIn order to work with this function, you need to know how the Natural Earth database stores data. Each file is one of three categories:\n\ncultural: meaning ‘human-created’ geographic objects such as country borders, cities, and so forth.\nphysical: physical features such as rivers, lakes, mountains.\nraster: geographic data made from pixels instead of shapes. We won’t work with this on this course.\n\nNext, the data is at one of three scales: - small - medium - large.\nOn the Natural Earth data download page, you’ll see that there are links to each of these categories at each different scale.\n\nFind a file on the database website.\nTo download a specific file, first find it on the Natural Earth site. You’ll see the data is divided into categories and sizes:\n\nUse the website to choose the data you’re interested in. Note the size and category you’ve chosen, for example large and cultural.\nClicking on a category button will bring you to a page with download links. Right click and use ‘copy link address’ and save it somewhere. It will look something like https://www.naturalearthdata.com/http//www.naturalearthdata.com/download/50m/cultural/ne_50m_populated_places.zip.\n\n\nConstruct a query\nNow we can construct our query. Within the ne_download() function, specify the correct scale from small, medium large. Next choose the category, from cultural, physical or raster.\nFinally, specify the type. For this, take the saved download link, and take everything after the ne_ and the scale, (in this case ne_10m_, and before the .zip. In this example this is simply populated_places.\nFinally, set the returnclass argument to \"sf\" as before.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nTry it yourself:\nDownload a medium-scale set of rivers - browse to the right section here and find the relevant filename.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nDownload a large-scale set of Admin 1, states and provinces.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Digital Mapping 1",
+      "<span class='chapter-number'>43</span>  <span class='chapter-title'>Working with Shapefiles</span>"
+    ]
+  },
+  {
+    "objectID": "visualising.html",
+    "href": "visualising.html",
+    "title": "44  Wrangling and visualising map data",
+    "section": "",
+    "text": "The sf package\nOn the last page we specified that rnaturalearth should download files in the ‘sf’ class. sf stands for Simple Features, and it is one of several formats of geographic data we could work with.\nA simple features object is very similar to a dataframe. Each ‘feature’, usually meaning a point, a single polygon, or sometimes a line, is represented as one row in a dataframe. In the ‘worldmap’ example, we can see that each shape has other data variables, such as the continent, population, and so forth.\nThis is useful because we can use regular tidyverse verbs on the geographic object, such as filter(), mutate(), summarise(), and join(). This means we can customise the geographic object before we map it.",
+    "crumbs": [
+      "Digital Mapping 1",
+      "<span class='chapter-number'>44</span>  <span class='chapter-title'>Wrangling and visualising map data</span>"
+    ]
+  },
+  {
+    "objectID": "visualising.html#the-sf-package",
+    "href": "visualising.html#the-sf-package",
+    "title": "44  Wrangling and visualising map data",
+    "section": "",
+    "text": "Please enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\n\n\n\n\nGood to know\n\n\n\njoin() is particularly useful because in most real cases, we’ll want to merge a geographic object with some external data. summarise() is also useful, but a bit more complicated, because it will summarise the geometry of the geographic object",
+    "crumbs": [
+      "Digital Mapping 1",
+      "<span class='chapter-number'>44</span>  <span class='chapter-title'>Wrangling and visualising map data</span>"
+    ]
+  },
+  {
+    "objectID": "visualising.html#filtering-a-shapefile",
+    "href": "visualising.html#filtering-a-shapefile",
+    "title": "44  Wrangling and visualising map data",
+    "section": "Filtering a shapefile",
+    "text": "Filtering a shapefile\nIf you run the code above to look at the object ‘worldmap’ in your environment (downloaded from R Natural Earth), you’ll see it is a dataframe with a large number of columns, with one row for each country. If you go to the very last column, you’ll see it has a ‘geometry’ column, where it stores the shapes for each country. But as well as this basic information on the shapes, the data contains continent and even some economic and demographic information. You can use the regular tidyverse functions on this dataframe.\nFor example, instead of downloading individual maps from the Natural Earth server, you can download a single world map and then use filter() to subset it for different purposes.\nTry it yourself: filter the worldmap object to include just the continent Europe.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nTry it yourself: Create a geographic object of countries with a population of less than 5 million (the pop_est column):\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Digital Mapping 1",
+      "<span class='chapter-number'>44</span>  <span class='chapter-title'>Wrangling and visualising map data</span>"
+    ]
+  },
+  {
+    "objectID": "visualising.html#visualising-with-ggplot",
+    "href": "visualising.html#visualising-with-ggplot",
+    "title": "44  Wrangling and visualising map data",
+    "section": "Visualising with ggplot",
+    "text": "Visualising with ggplot\nPlotting and visualising these maps will also be done with a package you are familiar with: ggplot2.\nTo draw maps instead of regular data, it just requires some small changes. To draw a map we’ll use a geometry layer starting with geom_, as we did with geom_col, geom_point and so forth.\nThe geom for maps is called geom_sf() and it works in the exact same way as the others, except it knows to treat the data as a map.\nIn earlier visualisations, we always had to specific the positions as x and y aesthetics. When we use geom_sf on a geographic object, the positions are taken directly from it.\nUsing geom_sf on its own on an sf object will take that object and plot it as a simple two-dimensional map. Following this, you can use the rest of the ggplot syntax you learned to modify the maps. For example, you can change the fill and color of the shapes using fill = and color =. With a points map, you can map size, shape, or color to elements of your data.\nYou can also use the same code as before to change the scales, add annotations, use themes, and set limits to the plot.\nTo create a basic map from an sf object called worldmap simply use ggplot() as before, but add + geom_sf() to your map:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nAs with visualising regular dataframes, use aes() to map variables in the data to aesthetics.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nOr change themes. With maps, in most cases you’ll want to change or remove the extra plot elements. One simple way to do this is with theme_void().\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Digital Mapping 1",
+      "<span class='chapter-number'>44</span>  <span class='chapter-title'>Wrangling and visualising map data</span>"
+    ]
+  },
+  {
+    "objectID": "visualising.html#adjusting-other-layers.",
+    "href": "visualising.html#adjusting-other-layers.",
+    "title": "44  Wrangling and visualising map data",
+    "section": "Adjusting other layers.",
+    "text": "Adjusting other layers.\nJust as with regular ggplot charts, you can adjust the scales, themes, and even add facets.\nTry it yourself:\n\nRemove the continent ‘Antarctica’.\nFilter out any negative GDP values.\nCalculate the GDP per capita in a new column (the population column is pop_est and the total GDP column is gdp_md).\nVisualise the GDP per capita as the fill colour, with a gradient scale running from yellow to red.\nMove the legend to the bottom of the chart and increase the width to fill the horizontal space.\nGive the legend a better title.\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Digital Mapping 1",
+      "<span class='chapter-number'>44</span>  <span class='chapter-title'>Wrangling and visualising map data</span>"
+    ]
+  },
+  {
+    "objectID": "visualising.html#add-titles-and-labels",
+    "href": "visualising.html#add-titles-and-labels",
+    "title": "44  Wrangling and visualising map data",
+    "section": "Add titles and labels:",
+    "text": "Add titles and labels:",
+    "crumbs": [
+      "Digital Mapping 1",
+      "<span class='chapter-number'>44</span>  <span class='chapter-title'>Wrangling and visualising map data</span>"
+    ]
+  },
+  {
+    "objectID": "visualising.html#coordinates-layer",
+    "href": "visualising.html#coordinates-layer",
+    "title": "44  Wrangling and visualising map data",
+    "section": "Coordinates layer",
+    "text": "Coordinates layer\nOne layer we skipped over in ggplot is the coordinates layer. This is because in most cases we don’t want to change it. It is more useful to adjust the coordinates when mapping. Particularly setting limits to zoom in on a particular area of the map. We can make adjustments by specifying the coordinate layer using coord_sf(). Next, you can set the xlim and ylim arguments:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nTry it yourself:",
+    "crumbs": [
+      "Digital Mapping 1",
+      "<span class='chapter-number'>44</span>  <span class='chapter-title'>Wrangling and visualising map data</span>"
+    ]
+  },
+  {
+    "objectID": "visualising.html#working-with-data-maps",
+    "href": "visualising.html#working-with-data-maps",
+    "title": "44  Wrangling and visualising map data",
+    "section": "Working with data maps",
+    "text": "Working with data maps\nCreating maps is a little less exact than making regular visualisations. In most cases, you’ll want to filter the data before hand, as well as limit the coordinates. Here is what happens if we only do one or the other.\nSetting the coordinate limits doesn’t change the data before visualisation. This means that the color scale will be based on the entire map rather than the section used. If the data is mapped to something like population, this might mean that the map colors don’t represent the full range of the data on the visible map, as here:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nOn the other hand, only filtering the data will result in some strange things in many cases. Let’s filter first to include only the visible countries:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\nWhile this is technically correct, the overseas parts of the Netherlands have been included and have expanded the limits of the map beyond the area we’re interested in (we could and probably should include these places as a ‘inset’, but this is beyond the scope here). Setting the coordinate limits will help in this case:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Digital Mapping 1",
+      "<span class='chapter-number'>44</span>  <span class='chapter-title'>Wrangling and visualising map data</span>"
+    ]
+  },
+  {
+    "objectID": "visualising.html#coordinate-reference-system-and-projections",
+    "href": "visualising.html#coordinate-reference-system-and-projections",
+    "title": "44  Wrangling and visualising map data",
+    "section": "Coordinate Reference System and Projections",
+    "text": "Coordinate Reference System and Projections\n\nMap projections try to portray the surface of the earth, or a portion of the earth, on a flat piece of paper or computer screen. In layman’s term, map projections try to transform the earth from its spherical shape (3D) to a planar shape (2D).\nA coordinate reference system (CRS) then defines how the two-dimensional, projected map in your GIS relates to real places on the earth. The decision of which map projection and CRS to use depends on the regional extent of the area you want to work in, on the analysis you want to do, and often on the availability of data.\n\n\n\nAccuracy\n\nMap projections are never absolutely accurate representations of the spherical earth.\nAs a result of the map projection process, every map shows distortions of angular conformity, distance and area.",
+    "crumbs": [
+      "Digital Mapping 1",
+      "<span class='chapter-number'>44</span>  <span class='chapter-title'>Wrangling and visualising map data</span>"
+    ]
+  },
+  {
+    "objectID": "visualising.html#changing-projection",
+    "href": "visualising.html#changing-projection",
+    "title": "44  Wrangling and visualising map data",
+    "section": "Changing projection",
+    "text": "Changing projection\n\nDone using st_transform()\nOver 170 projections available in sf package\nYou can view them using sf_proj_info() in the console",
+    "crumbs": [
+      "Digital Mapping 1",
+      "<span class='chapter-number'>44</span>  <span class='chapter-title'>Wrangling and visualising map data</span>"
+    ]
+  },
+  {
+    "objectID": "visualising.html#changing-projection-1",
+    "href": "visualising.html#changing-projection-1",
+    "title": "44  Wrangling and visualising map data",
+    "section": "Changing projection",
+    "text": "Changing projection\nAdd the correct string with +proj= to the crs = argument in st_transform():\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Digital Mapping 1",
+      "<span class='chapter-number'>44</span>  <span class='chapter-title'>Wrangling and visualising map data</span>"
+    ]
+  },
+  {
+    "objectID": "visualising.html#changing-projection-2",
+    "href": "visualising.html#changing-projection-2",
+    "title": "44  Wrangling and visualising map data",
+    "section": "Changing projection",
+    "text": "Changing projection\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nCompromise\n\nUsed to draw a visual map of the world\nE.g. Robinson projection\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nAngular conformity\n\nUsed for navigation and meterology\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nEqual distance\n\nUsed for navigation, seismic mapping\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nEqual area\n\nUseful for data mapping\n\n\n\n\nCoordinate Reference Systems\nEvery geographic map must specify its coordinate reference system, or CRS. A CRS allows every position on earth to be specified by a set of two or three numbers (the third number is altitude, which is generally ignored for the kinds of maps we’re making). There are two types: geographic and projected.\n\nGeographic CRS\nA geographic CRS uses longitude and latitude to describe a location on earth’s surface. The most popular is called WGS 84. It also has an EPSG code: 4326. The R Natural Earth world maps use this CRS, for example.\n\n\n\nProjected CRS\n\nWay of finding points based on a projected map rather than a globe\nUniversal Transverse Mercator (UTM) most popular\nGlobe is divided into zones - you need to know the zone along with the values\nValues are northing and easting\n\n\n\nProjected\n\n\n\nWhat does it mean for mapping\nMerging or mapping multiple datasets must all be in the same CRS. Sometimes this means setting or transforming the existing CRS.\nYou can transform a map from one CRS to another using st_transform(). The following will change the CRS to British National Grid:\n\nworldmap &lt;- worldmap |&gt; \n  st_transform(crs = 27700)",
+    "crumbs": [
+      "Digital Mapping 1",
+      "<span class='chapter-number'>44</span>  <span class='chapter-title'>Wrangling and visualising map data</span>"
+    ]
+  },
+  {
+    "objectID": "visualising.html#exercises",
+    "href": "visualising.html#exercises",
+    "title": "44  Wrangling and visualising map data",
+    "section": "Exercises",
+    "text": "Exercises\nUse the worldmap data to map the economic category (income_grp) of the South American continent to the fill of the polygon shapes. Adjust the limits of the coordinates to remove the empty space to the west. Set the colour of the borders to ‘black’. Add a suitable title and subtitle, and legend title. Change the fill scale of the visualisation (use three manual colors) and the ‘void’ theme.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
+    "crumbs": [
+      "Digital Mapping 1",
+      "<span class='chapter-number'>44</span>  <span class='chapter-title'>Wrangling and visualising map data</span>"
+    ]
+  },
+  {
+    "objectID": "at-home-007.html",
+    "href": "at-home-007.html",
+    "title": "45  Home Exercise",
+    "section": "",
+    "text": "Using the Nobel Prize dataset (laureates_df.csv), map the country of birth for each Nobel laureate.\nStart with a basemap of countries downloaded using R Natural Earth.\nThis exercise will require you to use your knowledge of techniques you’ve used earlier on the course.\n\nYou need to summarise the data to get a count of the Nobel laureates for each country, and then join this to the worldmap object.\nThe best column to use is ‘iso_birth_country_now’, which is a unique three letter code for each country. This corresponds to the column ‘iso_a3’ in the worldmap object.",
+    "crumbs": [
+      "Digital Mapping 1",
+      "<span class='chapter-number'>45</span>  <span class='chapter-title'>Home Exercise</span>"
+    ]
   }
 ]

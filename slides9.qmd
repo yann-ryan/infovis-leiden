@@ -28,17 +28,45 @@ library(sf)
 -   Gazetteers
 -   Digitisation and analysis of old maps
 
-## Not just digital maps..
+## Creating Digital Maps
 
-![](slides_9_img/Screenshot%202024-11-18%20at%2011.06.45.png)
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
 
-## Not just digital maps..
+library(rnaturalearthdata)
+library(tidyverse)
+library(rnaturalearth)
+library(sf)
+worldmap = ne_countries(scale = 'medium', returnclass = 'sf')
 
-![](slides_9_img/Screenshot%202024-11-18%20at%2011.07.40.png)
+ggplot() + geom_sf(data =worldmap, aes(fill = income_grp)) + theme_void()
+```
 
 ## Creating Digital Maps
 
-::: columns
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+laureates = read_csv('nobel-prize-winners.csv') |> filter(!is.na(bornLong)) |>
+  group_by(bornLocation, bornLong, bornLat) |> summarise(n = n())
+
+
+laureates_sf = st_as_sf(laureates, coords = c('bornLong', 'bornLat'), crs = 4326)
+
+ggplot() + geom_sf(data = worldmap |> filter(continent != 'Antarctica'), 
+                   fill = 'gray70', color = 'gray70') +
+  geom_sf(data = laureates_sf, aes(size = n)) +
+  theme_void() + scale_size_area()
+
+```
+
+## Creating Digital Maps
+
+::::: columns
 ::: {.column width="30%"}
 -   Two main types:
     -   Raster maps
@@ -48,11 +76,11 @@ library(sf)
 ::: {.column width="70%"}
 ![](slides_9_img/RasterVector.jpg){fig-align="center"}
 :::
-:::
+:::::
 
 ## Raster maps
 
-::: columns
+::::: columns
 ::: {.column width="40%"}
 -   Grid of pixels
 -   Each represents something about that point such as terrain, roads, weather, elevation..
@@ -61,11 +89,11 @@ library(sf)
 ::: {.column width="60%"}
 ![](slides_9_img/Contour-map-of-the-Netherlands-legend-elevation-in-m-below-or-above-sea-level-Map.png){fig-align="center" width="360"}
 :::
-:::
+:::::
 
 ## Vector maps
 
-::: columns
+::::: columns
 ::: {.column width="40%"}
 -   Geographic features represented as series of numerical values.
 -   Usually points, lines, and polygons
@@ -74,7 +102,7 @@ library(sf)
 ::: {.column width="60%"}
 ![](slides_9_img/vector.svg)
 :::
-:::
+:::::
 
 ## Mapping also involves mapping aesthetics to values
 
@@ -89,9 +117,15 @@ library(sf)
 -   'ggplot2' for visualising
 -   Optionally, 'tmap' for fancier visual maps.
 
+## What do we need for a map?
+
+-   Basemap
+
+-   Data
+
 ## Shapefiles
 
-::: columns
+::::: columns
 ::: {.column width="40%"}
 -   Shapefiles store geographic vector features
 -   This could be polygons outlining the shape of the coastline, or it could be detailed internal borders of countries, regions, or municipalities.
@@ -100,7 +134,7 @@ library(sf)
 ::: {.column width="60%"}
 ![](features.png){width="600"}
 :::
-:::
+:::::
 
 ## Where do we get shapefiles?
 
@@ -358,102 +392,8 @@ ggplot() +
 
 ```
 
-## Coordinate Reference System and Projections
+## Joining to external data
 
--   **Map projections** try to portray the surface of the earth, or a portion of the earth, on a flat piece of paper or computer screen. In layman's term, map projections try to transform the earth from its spherical shape (3D) to a planar shape (2D).
+-   Look for corresponding columns in your data and basemap
+-   These are often standardised codes
 
--   A **coordinate reference system (CRS)** then defines how the two-dimensional, projected map in your GIS relates to real places on the earth. The decision of which map projection and CRS to use depends on the regional extent of the area you want to work in, on the analysis you want to do, and often on the availability of data.
-
-
-
-![](slides_9_img/projection_families.png)
-
-### Accuracy
-
--   Map projections are never absolutely accurate representations of the spherical earth.
--   As a result of the map projection process, every map shows distortions of angular conformity, distance and area.
-
-#### Compromise
-
--   Used to draw a visual map of the world
-
-![](slides_9_img/robinson_projection.png)
-
-#### Angular conformity
-
--   Used for navigation and meterology
-
-![](slides_9_img/mercator_projection.png)
-
-#### Equal distance
-
--   Used for navigation, seismic mapping
-
-![](slides_9_img/plate_carree_projection.png)
-
-#### Equal area
-
--   Useful for data mapping
-
-![](slides_9_img/mollweide_equal_area_projection.png)
-
-### Coordinate Reference Systems
-
-Every geographic map must specify its coordinate reference system, or CRS. A CRS allows every position on earth to be specified by a set of two or three numbers (the third number is altitude, which is generally ignored for the kinds of maps we're making). There are two types: **geographic** and **projected**.  
-
-#### Geographic
-
-A geographic CRS uses longitude and latitude to describe a location on earth's surface. The most popular is called WGS 84. It also has an EPSG code: 4326. The R Natural Earth world maps use this CRS, for example.
-
-![](slides_9_img/geographic_crs.png)
-
-## Projected
-
--   Way of finding points based on a projected map rather than a globe
--   Universal Transverse Mercator (UTM) most popular
--   Globe is divided into zones - you need to know the zone along with the values
--   Values are northing and easting
-
-## Projected
-
-![](slides_9_img/utm_zones.png)
-
-## What does it mean for us?
-
--   Merging or mapping multiple datasets must all be in the same CRS
--   Sometimes this means setting or transforming the existing CRS
-
-You can transform a map from one CRS to another using st_transform(). The following will change the CRS to British National Grid: 
-
-```{r, eval=FALSE}
-
-worldmap <- worldmap |> 
-  st_transform(crs = 27700)
-
-```
-
-## Changing projection
-
--   Done using `st_transform()`
--   Over 170 projections available in sf package
--   You can view them using `sf_proj_info()` in the console
-
-## Changing projection
-
-```{webr-r}
-
-worldmap_moll <- worldmap |>
-  st_transform(crs = "+proj=moll")
-
-```
-
-## Changing projection
-
-```{webr-r}
-
-ggplot(data = worldmap_moll, aes(fill = pop_est)) + 
-  geom_sf()
-
-```
-
-## Try it yourself

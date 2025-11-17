@@ -1,5 +1,7 @@
 ---
 title: "Making maps with R"
+webr:
+  packages: ['dplyr', 'sf', 'tidyr', 'rnaturalearth', 'rnaturalearthdata']
 ---
 
 # Creating maps in R
@@ -7,9 +9,11 @@ title: "Making maps with R"
 ```{webr-r}
 #| context: setup
 
-library(sf)
-library(tidyverse)
+library(dplyr)
+library(ggplot2)
+library(tidyr)
 library(rnaturalearth)
+library(sf)
 
 worldmap = ne_countries(scale = 'medium', returnclass = 'sf')
 

@@ -51,3 +51,54 @@ Now, add the data using `tm_shape()`, and specify how it should be drawn using `
 #   tm_shape(sco_data_sf) + 
 #   tm_dots()
 ```
+
+## Extra: interactive maps with tmap.
+
+To make nice interactive maps we'll use another package called tmap. `tmap` is a very nice package specifically for making maps. Unfortunately it doesn't use exactly the same syntax we have learned with ggplot, but it is by far the easiest way to make interactive maps.
+
+The following code only works in RStudio so it is static in the book:
+
+-   Load the tmap library.
+
+-   Download a map from R Natural Earth
+
+-   Switch to the 'view' mode using `tmap_mode("view")` to make the output an interactive map.
+
+-   `tm_shape()` is more or less the equivalent of `ggplot()`: it's the 'base' of the map, where we specify which shapefile should be used. On top of this we add layers, such as polygons or points, and also additional map elements such as a legend, scale, projection, and so forth. We can also add additional `tm_shape()` layers.
+
+-   Add the `tm_polygons()` layer which will draw polygon shapes on the map based on the shapefile. Set the `col` to the `income_grp` column. Note the difference from ggplot - where we would set the `fill`, and the column name would *not* be in quotation marks. Set the `id` which will determine which column is used to display text with a mouse hover.
+
+-   Add a `tm_view()` layer, which allows us to set options for the interactive viewer. Add a vector of three numbers: the starting latitude and longitude, and the zoom level.
+
+```{r}
+#| error: false
+#| warning: false
+#| message: false
+
+library(tmap)
+library(tidyverse)
+library(rnaturalearth)
+library(sf)
+
+sf_use_s2(FALSE)
+
+worldmap = ne_countries(scale = 'medium', returnclass = 'sf') 
+
+tmap_mode("view")
+
+tm_shape(worldmap) +
+  tm_polygons(fill="income_grp", id = 'name' ) +
+  tm_view(set.view = c(0, 50, 3))
+
+```
+
+Tmap can do cool things like interactive facets, using the layer `tm_facets()`:
+
+```{r}
+tmap_mode("view")
+
+tm_shape(worldmap) +
+  tm_polygons(c("income_grp", 'pop_est'), id = 'name') +
+  tm_view(set.view = c(0, 50, 4)) + 
+  tm_facets(sync = TRUE, ncol = 2)
+```

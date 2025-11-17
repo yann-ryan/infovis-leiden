@@ -1,16 +1,18 @@
 ---
 title: "Adding geographic features"
+webr:
+  packages: ['dplyr', 'readr', 'ggplot2', 'tidyr', 'rnaturalearth','rnaturalearthdata', 'sf']
 ---
 
 ```{r}
 #| warning: false
 #| message: false
 
-library(tidyverse)
 
 library(rnaturalearth)
 library(sf)
-library(tidyverse)
+library(dplyr)
+library(ggplot2)
 
 sf_use_s2(FALSE)
 

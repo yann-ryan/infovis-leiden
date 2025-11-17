@@ -69,16 +69,16 @@ book:
     - part: "Useful information"
       chapters:
         - data.qmd
- #    - part: "Digital Mapping 1"
- #      chapters:
- #      #  - 10_digital_mapping_1.qmd
- #        - digital_mapping.qmd
- #       # - maps_in_r.qmd
- #        - basemaps.qmd
- #        - visualising.qmd
- #    #     - map_scales.qmd
- #    #     - features.qmd
- #        - at-home-007.qmd
+    - part: "Digital Mapping 1"
+      chapters:
+        - 10_digital_mapping_1.qmd
+   #     - digital_mapping.qmd
+    #    - maps_in_r.qmd
+        - basemaps.qmd
+        - visualising.qmd
+      #  - map_scales.qmd
+      #  - features.qmd
+        - at-home-007.qmd
  #    - part: "Digital Mapping 2"
  #      chapters: 
  #        - full_map.qmd

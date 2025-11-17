@@ -251,7 +251,7 @@ Don't include this in your alt text, but it should be included somewhere in the 
 
 ![](images/clipboard-4181458671.png)
 
-Forcing a relationship by cherry-picking scales
+## Forcing a relationship by cherry-picking scales
 
 ![](images/clipboard-1354166390.png)
 
