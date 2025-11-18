@@ -144,7 +144,7 @@ ggplot() + geom_sf(data = worldmap |> filter(continent != 'Antarctica'),
 
 ## Simple features and the sf package
 
--   The sf package is widely used as a modern way to read and process geographic data
+-   R package sf helps us work with geographic data
 -   sf stands for 'simple features', the name of the format it works with
 -   A simple features object in R looks like a dataframe, with one row per 'feature'
 -   It has an additional 'geometry' column which stores the shape of that feature
@@ -157,7 +157,7 @@ ggplot() + geom_sf(data = worldmap |> filter(continent != 'Antarctica'),
 -   Fairly limited to world-scale objects: includes country borders, coastlines, rivers, lakes.
 -   For some countries (e.g. USA) has more detailed information
 
-## Country borders
+## Country borders {.smaller}
 
 To download a shapefile of country borders, use the function `ne_countries()`. Remember to save this as an object in your environment using `<-`. As well as the function itself you'll need to specify some further parameters:
 
@@ -193,7 +193,7 @@ worldcoastlines = ne_coastline(scale = 'medium', returnclass = 'sf')
 
 ```
 
-## Downloading other data
+## Downloading other data {.smaller}  
 
 -   There are many other datasets but you need to contruct the query yourself using `ne_download()`.
 
@@ -209,7 +209,7 @@ Next, the data is at one of three scales: - small - medium - large.
 
 On the Natural Earth data download page, you'll see that there are links to each of these categories at each different scale.
 
-## Construct a query
+## Construct a query {.smaller} 
 
 -   Within the ne_download() function, specify the correct `scale` from small, medium large. Next choose the `category`, from cultural, physical or raster.
 
@@ -396,4 +396,3 @@ ggplot() +
 
 -   Look for corresponding columns in your data and basemap
 -   These are often standardised codes
-

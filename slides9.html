@@ -2025,7 +2025,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <section id="simple-features-and-the-sf-package" class="slide level2">
 <h2>Simple features and the sf package</h2>
 <ul>
-<li>The sf package is widely used as a modern way to read and process geographic data</li>
+<li>R package sf helps us work with geographic data</li>
 <li>sf stands for ‘simple features’, the name of the format it works with</li>
 <li>A simple features object in R looks like a dataframe, with one row per ‘feature’</li>
 <li>It has an additional ‘geometry’ column which stores the shape of that feature</li>
@@ -2041,7 +2041,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <li>For some countries (e.g.&nbsp;USA) has more detailed information</li>
 </ul>
 </section>
-<section id="country-borders" class="slide level2">
+<section id="country-borders" class="slide level2 smaller">
 <h2>Country borders</h2>
 <p>To download a shapefile of country borders, use the function <code>ne_countries()</code>. Remember to save this as an object in your environment using <code>&lt;-</code>. As well as the function itself you’ll need to specify some further parameters:</p>
 <ul>
@@ -2068,7 +2068,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <div id="qwebr-insertion-location-4"></div>
 <noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </section>
-<section id="downloading-other-data" class="slide level2">
+<section id="downloading-other-data" class="slide level2 smaller">
 <h2>Downloading other data</h2>
 <ul>
 <li>There are many other datasets but you need to contruct the query yourself using <code>ne_download()</code>.</li>
@@ -2085,7 +2085,7 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <p>Next, the data is at one of three scales: - small - medium - large.</p>
 <p>On the Natural Earth data download page, you’ll see that there are links to each of these categories at each different scale.</p>
 </section>
-<section id="construct-a-query" class="slide level2">
+<section id="construct-a-query" class="slide level2 smaller">
 <h2>Construct a query</h2>
 <ul>
 <li><p>Within the ne_download() function, specify the correct <code>scale</code> from small, medium large. Next choose the <code>category</code>, from cultural, physical or raster.</p></li>

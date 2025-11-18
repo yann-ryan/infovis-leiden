@@ -2,12 +2,28 @@
 title: "Home Exercise"
 ---
 
--   Using the Nobel Prize dataset (laureates_df.csv), map the country of birth for each Nobel laureate.
+## Instructions
+
+The at-home exercises should be completed using Posit cloud, Home Exercise 7. Create a new .Rmd file (use File -\> New File -\> R Markdown.
+
+I advise saving the new file straight away. Because you'll submit this file as an assignment, use a standardised name: lastname_firstname7. Regularly re-save the file.
+
+When you have finished the exercise (or part of it), 'knit' the file. Export the .Rmd and the html as a .zip file, and upload this to the assignment area.
+
+## Task
+
+-   Using the Nobel Prize dataset (laureates_df.csv) in the Posit files tab, map the country of birth for each Nobel laureate.
 
 -   Start with a basemap of countries downloaded using R Natural Earth.
 
--   This exercise will require you to use your knowledge of techniques you've used earlier on the course.
+-   This exercise will require you to use your knowledge of techniques you've used earlier on the course. The basic steps with all maps of this kind are to merge your summarised external data with the geographic map object from Natural Earth.
 
-    -   You need to **summarise** the data to get a count of the Nobel laureates for each country, and then **join** this to the worldmap object.
+    -   First, you'll need to **summarise** the data to get a count of the Nobel laureates for each country, and then **join** this to the worldmap object.
 
-    -   The best column to use is 'iso_birth_country_now', which is a unique three letter code for each country. This corresponds to the column 'iso_a3' in the worldmap object.
+    -   As with all joins, you need a column with information common to both, which the join function will use to do the merge. In these two datasets, the relevant column names are **iso_a3** (in the map object) and **iso_birth_country_now** in the Nobel dataset. You'll also need to use this latter column when you're summarising your Nobel data.
+
+-   Improve the basic map with a suitable title, subtitle, legend title, and appropriate themes or theme items.
+
+-   Can you figure out how to change the country border **color** to black?
+
+-   Optional: look in the course book at the section on map projections, and choose another one for this map.

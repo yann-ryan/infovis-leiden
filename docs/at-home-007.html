@@ -500,8 +500,15 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#instructions" id="toc-instructions" class="nav-link active" data-scroll-target="#instructions">Instructions</a></li>
+  <li><a href="#task" id="toc-task" class="nav-link" data-scroll-target="#task">Task</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -525,17 +532,29 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="instructions" class="level2">
+<h2 class="anchored" data-anchor-id="instructions">Instructions</h2>
+<p>The at-home exercises should be completed using Posit cloud, Home Exercise 7. Create a new .Rmd file (use File -&gt; New File -&gt; R Markdown.</p>
+<p>I advise saving the new file straight away. Because you’ll submit this file as an assignment, use a standardised name: lastname_firstname7. Regularly re-save the file.</p>
+<p>When you have finished the exercise (or part of it), ‘knit’ the file. Export the .Rmd and the html as a .zip file, and upload this to the assignment area.</p>
+</section>
+<section id="task" class="level2">
+<h2 class="anchored" data-anchor-id="task">Task</h2>
 <ul>
-<li><p>Using the Nobel Prize dataset (laureates_df.csv), map the country of birth for each Nobel laureate.</p></li>
+<li><p>Using the Nobel Prize dataset (laureates_df.csv) in the Posit files tab, map the country of birth for each Nobel laureate.</p></li>
 <li><p>Start with a basemap of countries downloaded using R Natural Earth.</p></li>
-<li><p>This exercise will require you to use your knowledge of techniques you’ve used earlier on the course.</p>
+<li><p>This exercise will require you to use your knowledge of techniques you’ve used earlier on the course. The basic steps with all maps of this kind are to merge your summarised external data with the geographic map object from Natural Earth.</p>
 <ul>
-<li><p>You need to <strong>summarise</strong> the data to get a count of the Nobel laureates for each country, and then <strong>join</strong> this to the worldmap object.</p></li>
-<li><p>The best column to use is ‘iso_birth_country_now’, which is a unique three letter code for each country. This corresponds to the column ‘iso_a3’ in the worldmap object.</p></li>
+<li><p>First, you’ll need to <strong>summarise</strong> the data to get a count of the Nobel laureates for each country, and then <strong>join</strong> this to the worldmap object.</p></li>
+<li><p>As with all joins, you need a column with information common to both, which the join function will use to do the merge. In these two datasets, the relevant column names are <strong>iso_a3</strong> (in the map object) and <strong>iso_birth_country_now</strong> in the Nobel dataset. You’ll also need to use this latter column when you’re summarising your Nobel data.</p></li>
 </ul></li>
+<li><p>Improve the basic map with a suitable title, subtitle, legend title, and appropriate themes or theme items.</p></li>
+<li><p>Can you figure out how to change the country border <strong>color</strong> to black?</p></li>
+<li><p>Optional: look in the course book at the section on map projections, and choose another one for this map.</p></li>
 </ul>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
