@@ -10,6 +10,17 @@ I advise saving the new file straight away. Because you'll submit this file as a
 
 When you have finished the exercise (or part of it), 'knit' the file. Export the .Rmd and the html as a .zip file, and upload this to the assignment area.
 
+Before you begin, load the following packages at the top of your markdown document:\
+
+```{r}
+#| eval: false
+
+
+library(tidyverse)
+library(rnaturalearth)
+library(sf)
+```
+
 ## Task
 
 -   Using the Nobel Prize dataset (laureates_df.csv) in the Posit files tab, map the country of birth for each Nobel laureate.

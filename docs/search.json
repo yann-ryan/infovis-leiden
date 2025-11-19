@@ -1677,7 +1677,7 @@
     "href": "at-home-007.html",
     "title": "45  Home Exercise",
     "section": "",
-    "text": "Instructions\nThe at-home exercises should be completed using Posit cloud, Home Exercise 7. Create a new .Rmd file (use File -&gt; New File -&gt; R Markdown.\nI advise saving the new file straight away. Because you’ll submit this file as an assignment, use a standardised name: lastname_firstname7. Regularly re-save the file.\nWhen you have finished the exercise (or part of it), ‘knit’ the file. Export the .Rmd and the html as a .zip file, and upload this to the assignment area.",
+    "text": "Instructions\nThe at-home exercises should be completed using Posit cloud, Home Exercise 7. Create a new .Rmd file (use File -&gt; New File -&gt; R Markdown.\nI advise saving the new file straight away. Because you’ll submit this file as an assignment, use a standardised name: lastname_firstname7. Regularly re-save the file.\nWhen you have finished the exercise (or part of it), ‘knit’ the file. Export the .Rmd and the html as a .zip file, and upload this to the assignment area.\nBefore you begin, load the following packages at the top of your markdown document:\nlibrary(tidyverse)\nlibrary(rnaturalearth)\nlibrary(sf)",
     "crumbs": [
       "Digital Mapping 1",
       "<span class='chapter-number'>45</span>  <span class='chapter-title'>Home Exercise</span>"
