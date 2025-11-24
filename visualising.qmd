@@ -294,5 +294,3 @@ Use the worldmap data to map the economic category (`income_grp`) of the South A
 
 
 ```
-
-

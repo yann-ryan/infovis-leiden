@@ -170,7 +170,7 @@ tm_shape(worldmap) +
 Tmap can do cool things like interactive facets, using the layer `tm_facets()`:
 
 ```{r}
-tmap_mode("view")
+
 
 tm_shape(worldmap) +
   tm_polygons(c("income_grp", 'pop_est'), id = 'name') +

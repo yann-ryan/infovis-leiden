@@ -79,14 +79,15 @@ book:
       #  - map_scales.qmd
       #  - features.qmd
         - at-home-007.qmd
- #    - part: "Digital Mapping 2"
- #      chapters: 
- #        - full_map.qmd
- #        - interactives.qmd
- #    # - part: "Digital Mapping 3"
- #    #   chapters:
- #    #     - 12_digital_mapping_3.qmd
- #    #     - points_map.qmd
+    - part: "Digital Mapping 2"
+      chapters:
+        - full_map.qmd
+        - points_map.qmd
+    # - part: "Digital Mapping 3"
+    #   chapters:
+    #     - 12_digital_mapping_3.qmd
+    #     - points_map.qmd
+  #      - interactives.qmd
  #    # - part: "Advanced Chart Design and markdown reports"
  #    #   chapters: 
  #    #     - 13_design.qmd

@@ -9,7 +9,6 @@ execute:
   echo: true
 ---
 
-
 ## 9 Steps to Making a Map
 
 1.  Import your geographic data
@@ -40,8 +39,7 @@ dogs = read_csv('allDogDescriptions.csv')
 
 ```
 
-
-## 2: Figure out the Geographic Unit{.smaller}
+## 2: Figure out the Geographic Unit {.smaller}
 
 -   Each row of information in your data will have a geographic unit - the *type* of area on the map where it records the geographic information. These are usually based on some kind of political or geographic border. Examples include nations, regions, provinces, municipalities, election areas, and so forth. This will be recorded in a single column.
 
@@ -88,13 +86,13 @@ us_states_map |>
 
 ```
 
-
 ## Shapefiles
 
 -   These are often released by official agencies and can be found through a search engine.
 
--   Dutch geo data can often be found through <https://www.pdok.nl/> or the [CBS](https://www.cbs.nl/nl-nl/dossier/nederland-regionaal/geografische-data). 
--   Shapefiles for EU regions can be found at [here](https://ec.europa.eu/eurostat/web/gisco/geodata/statistical-units/territorial-units-statistics). 
+-   Dutch geo data can often be found through <https://www.pdok.nl/> or the [CBS](https://www.cbs.nl/nl-nl/dossier/nederland-regionaal/geografische-data).
+
+-   Shapefiles for EU regions can be found at [here](https://ec.europa.eu/eurostat/web/gisco/geodata/statistical-units/territorial-units-statistics).
 
 -   These use a set of boundaries called NUTS, which range from NUTS-0 (countries) to NUTS-3 (small regions).
 
@@ -129,7 +127,7 @@ nuts |> filter(LEVL_CODE == 1) |>
 
 ## Geopackages (.gpkg files)
 
--   Another common format you will find geographic information is geopackage, which you can recognise by the ending .gpkg. 
+-   Another common format you will find geographic information is geopackage, which you can recognise by the ending .gpkg.
 
 -   Geopackage files are actually an SQL database which can contain many layers of different geographic information.
 
@@ -174,10 +172,9 @@ map |> ggplot() +
 
 -   A good practice is to use a standardised code where one is available. For instance, both dataset may have a standardised 'ISO' code where the country is recorded. This is less ambiguous than a country name, which may have slight variants, or be recorded in another languages, etc.
 
-
 ## 6: Summarise and/or clean your Data
 
--   Once you have your common code, you can get your dataset ready. Usually, this will mean doing a summary (such as a count, or maybe getting an average, or perhaps some kind of proportion by population) for each entry in the geographic field you are using. 
+-   Once you have your common code, you can get your dataset ready. Usually, this will mean doing a summary (such as a count, or maybe getting an average, or perhaps some kind of proportion by population) for each entry in the geographic field you are using.
 
 -   You may also have further cleaning steps, for example fixing inconsistent country names. In the case of the data we're using today, in order to visualise it you want to turn it into 'long' format using the function `pivot_longer()`.
 
@@ -202,26 +199,23 @@ shapefile |>
   left_join(external_data, by = 'common_code')
 ```
 
-
 ## 8: Map with ggplot and geom_sf
 
 -   Now, you can make a map! Remember to use aes() and fill = to specify how ggplot should colour your data.
 
 ## 9: Finishing Touches
 
--   Make edits to your map to make it more readable and looking better aesthetically. 
+-   Make edits to your map to make it more readable and looking better aesthetically.
 
--   You'll probably want to adjust the limits and projection of the map using `coord_sf`, and experiment with the scale using `scale_fill_`. 
+-   You'll probably want to adjust the limits and projection of the map using `coord_sf`, and experiment with the scale using `scale_fill_`.
 
--   You could also think about binning the colors (often it's easier to interpret specific colors on maps rather than a continuous scale). 
+-   You could also think about binning the colors (often it's easier to interpret specific colors on maps rather than a continuous scale).
 
 ## 9: Finishing Touches
 
 -   This is the point where you will need to use `facet_wrap()` to draw maps separately, if you went down this route.
 
 You could also add a map scale bar and a compass using the package ggsn (you'll need to install it separately using `install.packages()`.
-
-
 
 ```{r}
 #| echo: false
@@ -243,8 +237,8 @@ df <- gapminder_df |>
 
 ## Plotly and ggplotly()
 
--   To make interactive plots we can use a library called `plotly.` 
--   Plotly has its own syntax for making plots, but it includes a function which will convert any ggplot plot directly into an interactive plotly plot. 
+-   To make interactive plots we can use a library called `plotly.`
+-   Plotly has its own syntax for making plots, but it includes a function which will convert any ggplot plot directly into an interactive plotly plot.
 -   To use this, simply load the library and add the plot name to the function `ggplotly()`.
 
 ## Plotly and ggplotly()
@@ -252,8 +246,11 @@ df <- gapminder_df |>
 On the interactive plot there are a number of things you can do:
 
 -   Hover over a point to get a 'tooltip' displaying more information about that data point.
+
 -   Zoom in, just draw a rectangle on the plot by clicking and dragging the mouse.
+
 -   Toggle any of the categories on or off by clicking the legend points.
+
 -   When you hover over any part of the plot you'll see some display options at the top right.
 
 -   Any of the themes or scales you use will carry over to the interactive plotly version.
