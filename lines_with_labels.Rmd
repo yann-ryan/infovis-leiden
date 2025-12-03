@@ -1,0 +1,82 @@
+---
+title: "Line chart with labels"
+output: html_document
+date: "2025-12-02"
+---
+
+Before you run the notebook, make sure the following packages are installed. Use install.packages('gapminder') to install the gapminder package for example. It's best to do this in the console (bottom-left pane in Posit) rather than in your notebook. 
+
+This is a minimal working example of the line chart with labels at the ends. The basic chart code is actually quite simple - the idea is to make 3 separate datasets: 1) the categories you want to highlight (in my example, countries), 2) the data for all the other countries and 3) a dataset of only the last data point for each of the highlighted countries. Then using the function geom_text_repel() from the ggrepel package, plus some adjustments to the borders of the plot, you can quite easily make it. 
+
+First load the libraries (install them if you need, first):
+
+```{r}
+library(tidyverse)
+library(gapminder) # this contains the dataset I'll use
+library(ggrepel) # the package to draw text in the correct place
+```
+
+Now load the gapminder dataset and call it an object gapminder_df:
+
+```{r}
+gapminder_df <- gapminder
+```
+
+Make the separate dataframes (I picked the highlighted countries just because they are spread out across the y axis)
+
+```{r}
+highlighted <- gapminder_df |> 
+  filter(country %in% c('Netherlands', 'Bolivia',"China", "Botswana"))
+
+others = gapminder_df |> 
+  filter(!country %in% c('Netherlands', 'Bolivia',"China", "Botswana")) # note the ! to invert the filter
+         
+last = highlighted |> 
+  group_by(country) |> 
+  slice_max(order_by = year, n = 1) # the group_by and slice_max takes the highest value for each group (country)
+  
+```
+
+Make the basic plot - everything else is purely aesthetic.
+
+```{r}
+ggplot() + 
+  geom_line(data = others, aes(x = year, y = lifeExp, group = country), alpha = .1) + # plot all the other lines first and reduce the transparency
+  geom_line(data = highlighted, aes(x = year, y = lifeExp, color = country, group = country), size = 1) + # plot the highlighted lines and color them
+  geom_text_repel(data = last, 
+                  aes(x = year, y = lifeExp, color = country, group = country, label = country),
+                  xlim = c(2025, NA), # this is the only necessary option in geom_text_repel. It moves the text to the year 2025, which is outside the plot.
+  ) + 
+  theme(legend.position = 'none' ,
+            plot.margin = margin(0.1, 3, 0.1, 0.1, "cm"))+ # this plot.margin option is important - it extends the area of the plot beyond the lines. 
+  coord_cartesian(clip = "off") # This is also important, it means that stuff outside of the plot area will still be drawn. 
+```
+
+
+Here is the version with all the added aesthetic changes, and an explanation of what they do:
+
+```{r}
+
+ggplot() + 
+  geom_line(data = others, aes(x = year, y = lifeExp, group = country), alpha = .1) + 
+  geom_line(data = highlighted, aes(x = year, y = lifeExp, color = country, group = country), size = 1) + 
+  geom_text_repel(data = last, 
+                  aes(x = year, y = lifeExp, color = country, group = country, label = country),
+                  xlim = c(2025, NA), 
+                  family = "serif", # this changes the font. Fonts are a bit complicated because they need to be installed. This is one of the defaults.
+                  fontface = "bold", # changes to bold text.
+                  size = 4, # adjust the size of the text
+                  direction = "y", # specifies that if there is overlap, the algorithm should only adjust the text on the y axis
+                  segment.size = .6, # the thickness of the connecting line from the text to the plot end
+                  segment.alpha = .5, # the transparency of the connecting line
+                  segment.linetype = "dotted", # makes the line dotted.
+                  box.padding = .4, # how much space should be kept around each piece of text
+                  segment.curvature = -0.1, # if the connecting line needs to curve, how much is that curve
+                  segment.ncp = 3, # nothing important, a very specific option to do with curved lines.
+                  segment.angle = 180 # also not really doing anything here. 
+  ) + theme_minimal() + 
+   theme(legend.position = 'none' ,
+            plot.margin = margin(0.1, 3, 0.1, 0.1, "cm"))+ 
+  coord_cartesian(clip = "off") + scale_x_continuous(limits = c(1952,2007), breaks = c(1957, 1967, 1977, 1987, 1997, 2007)) # adjusting the scale limits and breaks to make it a bit neater. 
+```
+

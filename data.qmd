@@ -63,6 +63,7 @@ At the moment this is a random assortment of datasets and data sources related t
 -   This [structured literary dataset](https://github.com/karinavdo/RiddleData) made for the litRiddle project. There's also an R package, `install.packages("litRiddle").`
 -   The [Museum of Modern Art dataset](https://github.com/MuseumofModernArt/collection). Nice dataset for analysis of cultural heritage (more examples in the next section).
 -   [This dataset](https://github.com/cldf-datasets/wals/tree/master/cldf) based on the [World Atlas of Language Structures](https://wals.info/). It's a little difficult to find what you need, but has interesting geographic linguistic data. The [languages table](https://github.com/cldf-datasets/wals/blob/master/cldf/languages.csv) is the most important.
+-   This [dataset of extinct or nearly extinct world languages](https://www.kaggle.com/datasets/the-guardian/extinct-languages) (thanks to Ran for this one)
 
 ### Data repositories or lists
 
@@ -91,6 +92,8 @@ For very large datasets, it may also be helpful to use an R package such as data
 :::
 
 ### R Packages
+
+There are many R 'dataset packages'. These can be very useful, because accessing the data is simple - you just need to install a package and then follow some instructions to load the dataset, rather than find and upload a spreadsheet file. They are also generally formatted so they are easy to use in R.
 
 -   HistData
 
@@ -129,3 +132,5 @@ Unfortunately, doing analysis on social media data has become difficult in the l
 -   [Cool stuff made with cultural heritage APIs](http://museum-api.pbworks.com/w/page/21933412/Cool%20stuff%20made%20with%20cultural%20heritage%20APIs)
 
 -   [Medium post of ways the MoMA data has been used](https://medium.com/@foe/here-s-a-roundup-of-how-people-have-used-our-data-so-far-80862e4ce220#.f6272outn). Sadly many of the links are broken, but [this post](https://fivethirtyeight.com/features/a-nerds-guide-to-the-2229-paintings-at-moma/) is a nice example of the kind of project you could make..
+
+-   [Sharon Howard's data blogs](https://mindseye.sharonhoward.org/blog.html). Some use other tech, but many are straightforward R/tidyverse visualisations with historical data, such as [here](https://mindseye.sharonhoward.org/posts/old-bailey-proceedings-part-1-offences/).

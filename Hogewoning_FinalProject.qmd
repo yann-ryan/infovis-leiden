@@ -13,7 +13,6 @@ Dr. Y.C. Ryan
 
 January 14, 2024
 
-
 ```{r Libraries, include=FALSE}
 library(tidyverse)
 library(rnaturalearth)
