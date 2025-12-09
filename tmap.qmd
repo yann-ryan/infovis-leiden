@@ -27,32 +27,52 @@ sco_data = sco_data %>% separate(coordinates, into = c('latitude', 'longitude'),
 
 ```
 
-Now, create an sf object, as we learned in previous weeks
+Now, create an sf object, as we learned in previous weeks. This code converts the longitude and latitude columns to numeric, then filters out any NA values.
 
 ```{r}
 library(sf)
 
-sco_data_sf = st_as_sf(sco_data, coords = c('longitude', 'latitude'), na.fail = FALSE)
+sco_data = sco_data |>
+  mutate(longitude = as.numeric(longitude)) |>
+  mutate(latitude = as.numeric(latitude))|>
+  filter(!is.na(longitude))|> 
+  filter(!is.na(latitude))
+
+sco_data_sf = st_as_sf(sco_data, coords = c('longitude', 'latitude'), na.fail = TRUE, crs = 4326)
 
 ```
 
 To specify an interactive map with tmap use `tmap_mode("view")`
 
 ```{r}
+library(tmap)
 tmap_mode("view")
 ```
 
 Build the map. First add a 'basemap', which is a zoomable world map. A full list of options is available [here](https://leaflet-extras.github.io/leaflet-providers/preview/).
 
-Now, add the data using `tm_shape()`, and specify how it should be drawn using `tm_dots()`. The map below is interactive and clickable:
+Now, add the data using `tm_shape()`, and specify how it should be drawn using `tm_symbols()`. The map below is interactive and clickable:
 
 ```{r}
-# tm_basemap('OpenStreetMap.Mapnik') + 
-#   tm_shape(sco_data_sf) + 
-#   tm_dots()
+tm_basemap('OpenStreetMap.Mapnik') +
+  tm_shape(sco_data_sf) +
+  tm_symbols( ) + 
+  tm_options( set_view = c(2.34, 48.86, 11))
 ```
 
-## Extra: interactive maps with tmap.
+Use some options within `tm_symbols` to make the map more useful. Unlike ggplot, do not put them within aes(), and use quotation marks around the column names. `size` will determine the size of the points, either a column or a value. `fill` will determine the fill colour, again, either a column name or a colour name. `id` should point to a column in your data, which will appear as a label when a user hovers over your map. `popup.vars` should be given a vector of column names, which will then show when a point is clicked.
+
+You can specify the zoom and starting point by adding the layer tm_options() and using the option set_view within it. This should list a vector of length 3 with the longitude, latitude, and zoom level:
+
+```{r}
+tm_basemap('OpenStreetMap.Mapnik') +
+  tm_shape(sco_data_sf) +
+  tm_symbols(size = .75, id = "name", fill = 'gender',
+          popup.vars = c('name', 'gender', 'birth_year', 'death_year') ) + tm_options( set_view = c(2.34, 48.86, 11))
+
+```
+
+## Interactive choropleth maps
 
 To make nice interactive maps we'll use another package called tmap. `tmap` is a very nice package specifically for making maps. Unfortunately it doesn't use exactly the same syntax we have learned with ggplot, but it is by far the easiest way to make interactive maps.
 
@@ -87,7 +107,8 @@ worldmap = ne_countries(scale = 'medium', returnclass = 'sf')
 tmap_mode("view")
 
 tm_shape(worldmap) +
-  tm_polygons(fill="income_grp", id = 'name' ) +
+  tm_polygons(fill
+              ="income_grp", id = 'name' ) +
   tm_view(set.view = c(0, 50, 3))
 
 ```

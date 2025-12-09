@@ -519,6 +519,58 @@ ul.task-list li input[type="checkbox"] {
 </li>
       </ul>
   </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="true">
+ <span class="menu-text">Digital Mapping 3</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./12_digital_mapping_3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">48</span>&nbsp; <span class="chapter-title">Digital Mapping 3</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./points_map.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">47</span>&nbsp; <span class="chapter-title">Creating your own geographic objects</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./interactives.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">50</span>&nbsp; <span class="chapter-title">Making Plots Interactive</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="true">
+ <span class="menu-text">Bonus: Interactivity</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./plotly.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">51</span>&nbsp; <span class="chapter-title">Plotly</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tmap.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">52</span>&nbsp; <span class="chapter-title">Tmap</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -638,8 +690,17 @@ Warning
 <section id="data-repositories-or-lists" class="level3">
 <h3 class="anchored" data-anchor-id="data-repositories-or-lists">Data repositories or lists</h3>
 <p>There are many, many sources of datasets available online. Look for relatively simple csv and tsv files or sets of files, and avoid those that mention APIs or Linked Open Data unless you are comfortable working with these things.</p>
+<section id="national-and-international-statistics-repositories" class="level4">
+<h4 class="anchored" data-anchor-id="national-and-international-statistics-repositories">National and International Statistics Repositories</h4>
 <ul>
 <li><p><a href="https://opendata.cbs.nl/statline/#/CBS/nl/">CBS Statline</a>: Dutch Statistics. Also an R package <a href="https://github.com/edwindj/cbsodataR">here</a>.</p></li>
+<li><p><a href="https://www.e-stat.go.jp/en">e-Stat</a>: official statistics repository of Japan. The <a href="https://dashboard.e-stat.go.jp/en/dataSearch">statistics dashboard</a> is particularly useful.</p></li>
+<li><p><a href="https://ec.europa.eu/eurostat/en/web/main/data/database">Eurostat</a>: official EU statistics, at different regional levels.</p></li>
+</ul>
+</section>
+<section id="other-repositories" class="level4">
+<h4 class="anchored" data-anchor-id="other-repositories">Other Repositories</h4>
+<ul>
 <li><p>DANS <a href="https://ssh.datastations.nl/">Humanities and Social Sciences</a>: repository for many datasets, just be aware they may be very specific and not always be easy to use.</p></li>
 <li><p><a href="https://lab.kb.nl/products/product_type/dataset">KB Labs datasets</a> (many are text based but some are structured).</p></li>
 <li><p>The <a href="https://datasetsearch.research.google.com/">Google dataset search</a>. However make sure you can trace back the provenance!</p></li>
@@ -662,6 +723,7 @@ Tip
 <p>For very large datasets, it may also be helpful to use an R package such as data.table which is more efficient than Tidyverse for working with very large data. data.table has a very different syntax to the Tidyverse, but there is a package, tidytable, which converts between the two.</p>
 </div>
 </div>
+</section>
 </section>
 <section id="r-packages" class="level3">
 <h3 class="anchored" data-anchor-id="r-packages">R Packages</h3>

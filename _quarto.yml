@@ -83,21 +83,21 @@ book:
       chapters:
         - full_map.qmd
         - points_map.qmd
-    # - part: "Digital Mapping 3"
-    #   chapters:
-    #     - 12_digital_mapping_3.qmd
-    #     - points_map.qmd
-  #      - interactives.qmd
+    - part: "Digital Mapping 3"
+      chapters:
+        - 12_digital_mapping_3.qmd
+        - points_map.qmd
+        - interactives.qmd
  #    # - part: "Advanced Chart Design and markdown reports"
  #    #   chapters: 
  #    #     - 13_design.qmd
  #    #     - titles.qmd
  #    #     - themes.qmd
  #    #     - annotations.qmd
- #    # - part: "Bonus: Interactivity"
- #    #   chapters:
- #    #     - plotly.qmd
- #    #     - tmap.qmd
+    - part: "Bonus: Interactivity"
+      chapters:
+        - plotly.qmd
+        - tmap.qmd
   #  appendices:
  #    - extra_exercises.qmd
 

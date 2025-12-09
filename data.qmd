@@ -69,7 +69,15 @@ At the moment this is a random assortment of datasets and data sources related t
 
 There are many, many sources of datasets available online. Look for relatively simple csv and tsv files or sets of files, and avoid those that mention APIs or Linked Open Data unless you are comfortable working with these things.
 
+#### National and International Statistics Repositories
+
 -   [CBS Statline](https://opendata.cbs.nl/statline/#/CBS/nl/): Dutch Statistics. Also an R package [here](https://github.com/edwindj/cbsodataR).
+
+-   [e-Stat](https://www.e-stat.go.jp/en): official statistics repository of Japan. The [statistics dashboard](https://dashboard.e-stat.go.jp/en/dataSearch) is particularly useful.
+
+-   [Eurostat](https://ec.europa.eu/eurostat/en/web/main/data/database): official EU statistics, at different regional levels.
+
+#### Other Repositories
 
 -   DANS [Humanities and Social Sciences](https://ssh.datastations.nl/): repository for many datasets, just be aware they may be very specific and not always be easy to use.
 
